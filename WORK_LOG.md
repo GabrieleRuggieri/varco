@@ -1,0 +1,101 @@
+# Varco — Registro attività
+
+Traccia cosa è stato fatto sul progetto (documentazione, architettura, implementazione).  
+Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
+
+**Legenda stato:** `completato` · `in corso` · `pianificato` · `bloccato`
+
+---
+
+## Riepilogo
+
+| Area | Stato | Note |
+|------|-------|------|
+| Product spec | completato | `06-varco-ai-eu-compliance-it.md` |
+| Architettura | completato | `architecture.md` v1 |
+| Contributing | completato | `CONTRIBUTING.md` |
+| Monorepo / codice | pianificato | Struttura definita, non ancora scaffoldata |
+| Docker Compose | pianificato | Descritto in architettura |
+| Matrice obblighi seed | pianificato | 5 cat × 5 paesi |
+| Connettori catalogo | pianificato | Mock first |
+| Pipeline classificazione | pianificato | Provider astratto: mock / Ollama / OpenAI |
+| Generatore documenti GPSR | pianificato | Template per categoria |
+| Partner broker (mock) | pianificato | RP + EPR |
+| Auth + dashboard | pianificato | Post scaffold |
+
+---
+
+## Cronologia
+
+### 2026-06-12
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Analisi product spec IT/EN | completato | Letti `06-varco-ai-eu-compliance-it.md` e versione EN |
+| Definizione architettura MVP | completato | Principi, stack, domini, API, modello dati, mock locali |
+| Documento `architecture.md` | completato | Vista sistema, mermaid, struttura repo target, env locale |
+| Documento `CONTRIBUTING.md` | completato | Setup, PR, standard, regole matrice |
+| Documento `WORK_LOG.md` | completato | Questo file — tracciamento iniziale |
+| Decisioni stack | completato | pnpm monorepo, Next.js, NestJS API, PG, Redis, MinIO |
+| Identificazione mock | completato | Shopify, Amazon, LLM, partners — DB/Redis/MinIO reali in locale |
+
+**Non fatto (esplicitamente fuori scope di questa sessione):**
+- Scaffold codice (`apps/`, `packages/`, `docker-compose.yml`)
+- Seed matrice YAML
+- Implementazione connettori o API
+- Validazione legale disclaimers
+
+**Decisioni architetturali confermate** (vedi `architecture.md` §15–17):
+- API: NestJS separato da Next.js
+- Auth: Auth.js v5 + Drizzle adapter
+- Connector live: Shopify prima, Amazon mock
+- Lingua: italiano (UI, docs, commenti, commit)
+- Matrice: workflow `bozza` → `approvata` + ruolo `regulatory_admin`
+- LLM: mock (CI) + Ollama opzionale (dev) + OpenAI (staging/prod)
+
+### 2026-06-12 (sessione 2)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Decisioni architetturali | completato | NestJS, Auth.js, IT, Shopify, workflow regulatory |
+| Documentazione monorepo + LLM | completato | Aggiunti §16–17 in `architecture.md` |
+| Strategia Ollama | completato | Provider opzionale in dev, mock resta default CI |
+
+---
+
+## Backlog prossimi passi (ordinato)
+
+1. **Scaffold monorepo** — Turborepo, pnpm workspaces, ESLint/Prettier, `.env.example`
+2. **Docker Compose** — postgres, redis, minio, mailhog, mock-server
+3. **Package `database`** — schema Drizzle, migrations iniziali
+4. **Package `matrix`** — schema Zod, CLI validate/seed, CHANGELOG
+5. **Matrice seed v0** — subset GPSR + EPR packaging per 5×5 (draft, serve review regulatory)
+6. **Mock server** — fixture Shopify catalog + partner webhook
+7. **API skeleton** — auth, org, health, OpenAPI
+8. **Worker** — job `catalog.sync`, `sku.classify`, `document.generate`
+9. **Classification mock** — fixture JSON → matrix match
+10. **Documents** — 1 template risk assessment (toys) end-to-end
+11. **Web MVP** — login, connect catalog (mock), lista SKU, checklist, download PDF
+12. **CI** — GitHub Actions: lint, test, matrix validate
+
+---
+
+## Template per nuove entry
+
+Copia e compila a fine sessione:
+
+```markdown
+### YYYY-MM-DD
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| ... | completato / in corso / pianificato | ... |
+```
+
+---
+
+## Collegamenti
+
+- [Architettura](./architecture.md)
+- [Contributing](./CONTRIBUTING.md)
+- [Product spec (IT)](./06-varco-ai-eu-compliance-it.md)
