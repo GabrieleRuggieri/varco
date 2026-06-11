@@ -1,0 +1,102 @@
+Licenza Varco — Source Available (Tutti i diritti riservati)
+===========================================================
+
+Copyright (c) 2026 Gabriele Ruggieri. Tutti i diritti riservati.
+
+Il presente software e la relativa documentazione (il "Software") sono
+proprietà esclusiva di Gabriele Ruggieri ("Titolare").
+
+Consultando, clonando o in altro modo accedendo a questo repository,
+l'utente ("Utente") accetta i termini seguenti.
+
+
+1. CONSULTAZIONE NON COMMERCIALE
+--------------------------------
+
+È consentito visualizzare il codice sorgente pubblicato nel repository
+ufficiale del progetto Varco su GitHub, esclusivamente a scopo
+informativo e personale non commerciale.
+
+È espressamente vietato, senza autorizzazione scritta preventiva del
+Titolare:
+
+  a) copiare, scaricare, forkare, clonare per uso diverso dalla sola
+     consultazione;
+  b) modificare, adattare, tradurre o creare opere derivate;
+  c) distribuire, pubblicare, sublicenziare o rendere disponibile il
+     Software o parti di esso a terzi;
+  d) utilizzare il Software, in tutto o in parte, per qualsiasi scopo,
+     incluso uso personale, sperimentale o didattico che implichi
+     esecuzione, integrazione o deploy;
+  e) rimuovere o alterare avvisi di copyright o riferimenti al Titolare.
+
+
+2. USO COMMERCIALE E AZIENDALE
+------------------------------
+
+Qualsiasi uso commerciale o a scopo di lucro del Software richiede un
+accordo di licenza commerciale separato con il Titolare.
+
+Per "uso commerciale" si intende, a titolo esemplificativo e non
+esaustivo:
+
+  a) offrire il Software, o un servizio basato su di esso, come SaaS o
+     prodotto a pagamento;
+  b) utilizzare il Software internamente in un'attività economica che
+     genera ricavi (incluso uso da parte di agenzie, consulenti o
+     rivenditori per conto di clienti);
+  c) includere il Software, o parti di esso, in un prodotto o servizio
+     venduto o monetizzato in qualsiasi forma;
+  d) concedere in sublicenza, rivendere o trasferire diritti sul
+     Software.
+
+
+3. PROPRIETÀ
+------------
+
+Il Titolare conserva la piena ed esclusiva proprietà intellettuale sul
+Software. Nessun diritto di proprietà è trasferito all'Utente con la
+sola consultazione del codice.
+
+
+4. ASSENZA DI GARANZIE
+----------------------
+
+IL SOFTWARE È FORNITO "COSÌ COM'È", SENZA GARANZIE DI ALCUN TIPO,
+ESPLICITE O IMPLICITE, INCLUSO MA NON LIMITATO A GARANZIE DI
+COMMERCIABILITÀ, IDONEITÀ A UN PARTICOLARE SCOPO E NON VIOLAZIONE.
+
+
+5. LIMITAZIONE DI RESPONSABILITÀ
+--------------------------------
+
+IN NESSUN CASO IL TITOLARE SARÀ RESPONSABILE PER DANNI DIRETTI,
+INDIRETTI, INCIDENTALI, SPECIALI O CONSEQUENZIALI DERIVANTI DALL'USO O
+DALL'IMPOSSIBILITÀ DI USO DEL SOFTWARE.
+
+
+6. LICENZE COMMERCIALI
+----------------------
+
+Per richiedere una licenza commerciale o autorizzazioni diverse da quelle
+qui descritte, contattare:
+
+  Gabriele Ruggieri
+  https://github.com/GabrieleRuggieri/varco
+
+
+7. REVOCA
+---------
+
+Il Titolare può revocare in qualsiasi momento il permesso di consultazione
+modificando la disponibilità del repository o con comunicazione scritta,
+senza pregiudicare i diritti acquisiti tramite accordi di licenza
+commerciale separati.
+
+
+8. LEGGE APPLICABILE
+--------------------
+
+Il presente accordo è regolato dalla legge italiana. Foro competente
+esclusivo: Italia, salvo diversa indicazione in un accordo commerciale
+scritto.

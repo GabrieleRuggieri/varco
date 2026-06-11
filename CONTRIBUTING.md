@@ -189,4 +189,15 @@ pnpm matrix:validate
 
 ## Licenza
 
-Da definire quando il repository sarà pubblico. Per ora: contribuire solo su invito del team core.
+Il codice è pubblicato in modalità **source available** con tutti i diritti riservati.
+Vedi [LICENSE](./LICENSE) per i termini completi.
+
+In sintesi:
+
+- **Consultazione** del codice su GitHub: consentita a scopo informativo non commerciale.
+- **Fork, modifica, deploy o uso** (anche personale): richiedono autorizzazione scritta del titolare.
+- **Uso commerciale** (SaaS, uso aziendale con ricavi, rivendita): richiede licenza commerciale separata.
+
+I contributi al repository sono accettati solo su invito. Con l'invio di un contributo,
+il contributore concede al titolare i diritti necessari per includere e distribuire
+quel contributo nel progetto, nei limiti della licenza applicabile.
