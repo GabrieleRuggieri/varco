@@ -6,18 +6,23 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "node --watch dist/index.js",
+    "dev": "tsc -p tsconfig.json && node --watch dist/index.js",
     "start": "node dist/index.js",
     "lint": "eslint src/",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --test src/**/*.test.ts"
+    "test": "node --import tsx --test src/**/*.test.ts",
+    "enqueue:demo-sync": "node --import tsx src/scripts/enqueue-demo-sync.ts"
   },
   "dependencies": {
-    "@varco/shared": "workspace:*"
+    "@varco/database": "workspace:*",
+    "@varco/shared": "workspace:*",
+    "bullmq": "^5.53.2",
+    "drizzle-orm": "^0.44.2"
   },
   "devDependencies": {
-    "@varco/tsconfig": "workspace:*",
     "@types/node": "^22.15.29",
+    "@varco/tsconfig": "workspace:*",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
 }

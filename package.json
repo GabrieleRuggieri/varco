@@ -27,7 +27,8 @@
     "matrix:seed": "pnpm --filter @varco/matrix matrix:seed",
     "mock:build": "npm run build --prefix mocks/mock-server",
     "mock:dev": "npm run build --prefix mocks/mock-server && npm run start --prefix mocks/mock-server",
-    "mock:test": "npm run test --prefix mocks/mock-server"
+    "mock:test": "npm run test --prefix mocks/mock-server",
+    "worker:enqueue-demo-sync": "pnpm --filter @varco/worker enqueue:demo-sync"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",

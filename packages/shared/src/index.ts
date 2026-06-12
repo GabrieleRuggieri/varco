@@ -53,3 +53,30 @@ export type LlmProvider = (typeof LLM_PROVIDERS)[number];
 
 /** Versione corrente del perimetro MVP — usata nei log e nei fixture. */
 export const MVP_VERSION = '0.1.0' as const;
+
+/** Nomi job BullMQ — coda unica `varco` con job name discriminante. */
+export const WORKER_JOB_NAMES = {
+  CATALOG_SYNC: 'catalog.sync',
+  SKU_CLASSIFY: 'sku.classify',
+  DOCUMENT_GENERATE: 'document.generate',
+} as const;
+
+export type WorkerJobName = (typeof WORKER_JOB_NAMES)[keyof typeof WORKER_JOB_NAMES];
+
+export const WORKER_QUEUE_NAME = 'varco' as const;
+
+export type CatalogSyncJobPayload = {
+  organizationId: string;
+  connectionId?: string;
+};
+
+export type SkuClassifyJobPayload = {
+  organizationId: string;
+  skuId: string;
+};
+
+export type DocumentGenerateJobPayload = {
+  organizationId: string;
+  skuId: string;
+  templateId: string;
+};

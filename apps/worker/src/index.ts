@@ -1,10 +1,32 @@
-/**
- * Entry point worker — skeleton fase 1.
- * BullMQ e job catalogo/classificazione/documenti in fase successiva.
- */
-import { MVP_VERSION } from '@varco/shared';
+import { Worker } from 'bullmq';
+import { MVP_VERSION, WORKER_QUEUE_NAME } from '@varco/shared';
+import { getBullMqConnection } from './config.js';
+import { processVarcoJob } from './processor.js';
 
-console.log(`[worker] avviato — MVP ${MVP_VERSION} (skeleton, nessun job in coda)`);
+const worker = new Worker(WORKER_QUEUE_NAME, processVarcoJob, {
+  connection: getBullMqConnection(),
+  concurrency: 2,
+});
 
-// Mantieni il processo attivo in dev
-process.stdin.resume();
+worker.on('completed', (job, result) => {
+  console.log(`[worker] ${job.name} #${job.id} completato`, result);
+});
+
+worker.on('failed', (job, error) => {
+  console.error(`[worker] ${job?.name ?? 'unknown'} fallito:`, error.message);
+});
+
+worker.on('error', (error) => {
+  console.error('[worker] errore coda:', error.message);
+});
+
+console.log(`[worker] avviato — MVP ${MVP_VERSION}, coda "${WORKER_QUEUE_NAME}"`);
+
+async function shutdown() {
+  console.log('[worker] arresto in corso...');
+  await worker.close();
+  process.exit(0);
+}
+
+process.on('SIGINT', () => void shutdown());
+process.on('SIGTERM', () => void shutdown());
