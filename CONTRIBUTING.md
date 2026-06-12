@@ -7,7 +7,7 @@ Guida per chi sviluppa sul repository Varco — AI compliance copilot per vender
 ## Prima di iniziare
 
 1. Leggi `06-varco-ai-eu-compliance-it.md` (contesto prodotto).
-2. Leggi `architecture.md` (stack, domini, mock locali).
+2. Leggi [ARCHITECTURE.md](./ARCHITECTURE.md) (stack, domini, mock locali).
 3. Controlla `WORK_LOG.md` per vedere cosa è già stato fatto e cosa è in corso.
 
 ---
@@ -43,13 +43,13 @@ pnpm dev
 
 Con `LLM_PROVIDER=mock` e `SHOPIFY_API_MODE=mock` non servono chiavi API esterne.
 
-Per testare la classificazione con un modello reale in locale, installa [Ollama](https://ollama.com) e imposta `LLM_PROVIDER=ollama` (vedi `architecture.md` §17).
+Per testare la classificazione con un modello reale in locale, installa [Ollama](https://ollama.com) e imposta `LLM_PROVIDER=ollama` (vedi [ARCHITECTURE.md](./ARCHITECTURE.md) §17).
 
 ---
 
 ## Struttura del progetto
 
-Vedi `architecture.md` §4. In sintesi:
+Vedi [ARCHITECTURE.md](./ARCHITECTURE.md) §4. In sintesi:
 
 | Path | Contenuto |
 |------|-----------|
@@ -181,7 +181,7 @@ pnpm matrix:validate
 
 ## Domande
 
-- Architettura: `architecture.md` e issue con label `architecture`
+- Architettura: [ARCHITECTURE.md](./ARCHITECTURE.md) e issue con label `architecture`
 - Prodotto/normative: issue con label `regulatory`
 - Blockers setup: issue con label `dev-env`
 

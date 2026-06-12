@@ -12,7 +12,8 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Area | Stato | Note |
 |------|-------|------|
 | Product spec | completato | `06-varco-ai-eu-compliance-it.md` |
-| Architettura | completato | `architecture.md` v1 |
+| Architettura | completato | `ARCHITECTURE.md` v1 |
+| README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
 | Monorepo / codice | pianificato | Struttura definita, non ancora scaffoldata |
 | Docker Compose | pianificato | Descritto in architettura |
@@ -33,7 +34,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 |----------|-------|-----------|
 | Analisi product spec IT/EN | completato | Letti `06-varco-ai-eu-compliance-it.md` e versione EN |
 | Definizione architettura MVP | completato | Principi, stack, domini, API, modello dati, mock locali |
-| Documento `architecture.md` | completato | Vista sistema, mermaid, struttura repo target, env locale |
+| Documento `ARCHITECTURE.md` | completato | Vista sistema, mermaid, struttura repo target, env locale |
 | Documento `CONTRIBUTING.md` | completato | Setup, PR, standard, regole matrice |
 | Documento `WORK_LOG.md` | completato | Questo file — tracciamento iniziale |
 | Decisioni stack | completato | pnpm monorepo, Next.js, NestJS API, PG, Redis, MinIO |
@@ -45,7 +46,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 - Implementazione connettori o API
 - Validazione legale disclaimers
 
-**Decisioni architetturali confermate** (vedi `architecture.md` §15–17):
+**Decisioni architetturali confermate** (vedi `ARCHITECTURE.md` §15–17):
 - API: NestJS separato da Next.js
 - Auth: Auth.js v5 + Drizzle adapter
 - Connector live: Shopify prima, Amazon mock
@@ -58,8 +59,16 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Attività | Stato | Dettaglio |
 |----------|-------|-----------|
 | Decisioni architetturali | completato | NestJS, Auth.js, IT, Shopify, workflow regulatory |
-| Documentazione monorepo + LLM | completato | Aggiunti §16–17 in `architecture.md` |
+| Documentazione monorepo + LLM | completato | Aggiunti §16–17 in `ARCHITECTURE.md` |
 | Strategia Ollama | completato | Provider opzionale in dev, mock resta default CI |
+
+### 2026-06-12 (sessione 3)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| `README.md` per esterni | completato | Prodotto, MVP, stack, setup; esclusi dati interni (pricing, GTM, unit economics) |
+| Rinomina `ARCHITECTURE.md` | completato | Da `architecture.md`; aggiornati riferimenti in CONTRIBUTING e WORK_LOG |
+| Avvio implementazione a fasi | in corso | Branch da `develop`, commit per fase |
 
 ---
 
@@ -96,6 +105,7 @@ Copia e compila a fine sessione:
 
 ## Collegamenti
 
-- [Architettura](./architecture.md)
+- [README](./README.md)
+- [Architettura](./ARCHITECTURE.md)
 - [Contributing](./CONTRIBUTING.md)
 - [Product spec (IT)](./06-varco-ai-eu-compliance-it.md)

@@ -129,7 +129,7 @@ varco/
 │   └── mock-server/         # Prism o Express: Shopify, Amazon, partners
 ├── docker/
 │   └── docker-compose.yml
-├── architecture.md
+├── ARCHITECTURE.md
 ├── CONTRIBUTING.md
 └── WORK_LOG.md
 ```
