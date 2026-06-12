@@ -26,6 +26,11 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Auth + dashboard | pianificato | Post scaffold |
 | Design system | completato | `design/stripe/DESIGN.md` — riferimento Stripe-inspired |
 
+**Decisioni MVP confermate (2026-06-12):**
+- Auth v1: email/password + sessione demo (`demo@varco.local`); OAuth Shopify in fase successiva
+- Landing `index.html` statica in root; `apps/web` = sola dashboard prodotto
+- Fixture catalogo mock: ~20 SKU sulle 5 categorie MVP
+
 ---
 
 ## Cronologia
@@ -89,6 +94,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 |----------|-------|-----------|
 | Design system Stripe | completato | Import `design/stripe/DESIGN.md` da awesome-design-md; `design/README.md` |
 | Riferimenti design | completato | CONTRIBUTING, README, WORK_LOG aggiornati |
+| Decisioni fasi 6–11 | completato | Auth email v1; landing statica; fixture ~20 SKU |
 
 ---
 

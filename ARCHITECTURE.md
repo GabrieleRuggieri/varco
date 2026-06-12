@@ -494,6 +494,9 @@ Non necessario per «girare in locale»; documentato per continuità.
 | 3 | Primo connector live | **Shopify** poi Amazon | OAuth e Admin API più semplici; Amazon SP-API resta mock fino a fase 2 |
 | 4 | Lingua | **Italiano** | UI, codice (nomi dominio possono restare inglesi dove è convenzione), commenti, documentazione e commit in italiano |
 | 5 | Validazione normativa | **Workflow matrice con ruolo `regulatory_admin`** | Vedi §15.1 |
+| 6 | Auth v1 (MVP) | **Email/password + sessione**; OAuth Shopify dopo | Velocità: demo `demo@varco.local`; Shopify OAuth in fase connettore live |
+| 7 | Landing vs app | **`index.html` statica in root**; `apps/web` = dashboard | Marketing separato dal prodotto Next.js; meno accoppiamento in fase MVP |
+| 8 | Fixture catalogo mock | **~20 SKU**, 5 categorie MVP | Copre toys, apparel, electronics_accessories, cosmetics, home per demo locale |
 
 ### 15.1 Regulatory lead — cos’è e come lo gestiamo
 
