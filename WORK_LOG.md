@@ -15,7 +15,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Architettura | completato | `ARCHITECTURE.md` v1 |
 | README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
-| Monorepo / codice | pianificato | Struttura definita, non ancora scaffoldata |
+| Monorepo / codice | in corso | Fase 1 completata; fase 2 Docker in corso |
 | Docker Compose | pianificato | Descritto in architettura |
 | Matrice obblighi seed | pianificato | 5 cat × 5 paesi |
 | Connettori catalogo | pianificato | Mock first |
@@ -69,13 +69,14 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | `README.md` per esterni | completato | Prodotto, MVP, stack, setup; esclusi dati interni (pricing, GTM, unit economics) |
 | Rinomina `ARCHITECTURE.md` | completato | Da `architecture.md`; aggiornati riferimenti in CONTRIBUTING e WORK_LOG |
 | Avvio implementazione a fasi | in corso | Branch da `develop`, commit per fase |
+| Scaffold monorepo (fase 1) | completato | pnpm, Turborepo, ESLint, Prettier, `.env.example`, apps skeleton, `@varco/shared` |
 
 ---
 
 ## Backlog prossimi passi (ordinato)
 
-1. **Scaffold monorepo** — Turborepo, pnpm workspaces, ESLint/Prettier, `.env.example`
-2. **Docker Compose** — postgres, redis, minio, mailhog, mock-server
+1. ~~**Scaffold monorepo**~~ — completato
+2. **Docker Compose** — postgres, redis, minio, mailhog, mock-server *(in corso)*
 3. **Package `database`** — schema Drizzle, migrations iniziali
 4. **Package `matrix`** — schema Zod, CLI validate/seed, CHANGELOG
 5. **Matrice seed v0** — subset GPSR + EPR packaging per 5×5 (draft, serve review regulatory)

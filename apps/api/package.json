@@ -1,0 +1,23 @@
+{
+  "name": "@varco/api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Backend REST — catalogo, matrice, checklist, documenti, partner",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --watch dist/index.js",
+    "start": "node dist/index.js",
+    "lint": "eslint src/",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "@varco/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@varco/tsconfig": "workspace:*",
+    "@types/node": "^22.15.29",
+    "typescript": "^5.8.3"
+  }
+}
