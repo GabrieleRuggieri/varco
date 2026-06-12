@@ -22,7 +22,9 @@
     "docker:ps": "docker compose ps",
     "db:generate": "pnpm --filter @varco/database db:generate",
     "db:migrate": "pnpm --filter @varco/database db:migrate",
-    "db:seed": "pnpm --filter @varco/database db:seed"
+    "db:seed": "pnpm --filter @varco/database db:seed",
+    "matrix:validate": "pnpm --filter @varco/matrix matrix:validate",
+    "matrix:seed": "pnpm --filter @varco/matrix matrix:seed"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",

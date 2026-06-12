@@ -21,7 +21,35 @@ Guida per chi sviluppa sul repository Varco — AI compliance copilot per vender
 - pnpm ≥ 9
 - Git
 
-### Avvio (quando il codice sarà presente)
+### Installare pnpm
+
+Node include **Corepack**, ma su macOS spesso serve un comando con privilegi elevati la prima volta:
+
+```bash
+# Opzione consigliata (allineata a packageManager nel repo)
+sudo corepack enable
+corepack prepare pnpm@9.15.9 --activate
+pnpm -v   # deve stampare 9.15.x
+```
+
+Alternative se Corepack non è disponibile:
+
+```bash
+# Homebrew
+brew install pnpm
+
+# Oppure npm globale (può richiedere sudo se prefix è /usr/local)
+npm install -g pnpm@9
+```
+
+**Senza installazione globale** puoi usare temporaneamente:
+
+```bash
+npx pnpm@9.15.9 install
+npx pnpm@9.15.9 dev
+```
+
+### Avvio
 
 ```bash
 git clone <repo-url>

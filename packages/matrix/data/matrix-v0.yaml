@@ -1,0 +1,177 @@
+# Matrice obblighi Varco — seed v0 (MVP 5 categorie × 5 paesi)
+# STATO: tutte le regole sono in BOZZA — richiedono review regulatory prima del lancio.
+# Non costituisce consulenza legale. Vedi disclaimer in app.
+
+version: "2026-06-01-v0"
+disclaimer: >
+  Matrice in bozza per sviluppo. Obblighi indicativi su GPSR e EPR imballaggi
+  per DE, FR, IT, ES, NL. Validazione esterna obbligatoria prima della produzione.
+
+rules:
+  # --- GPSR: obblighi trasversali (tutte le categorie MVP) ---
+
+  - id: gpsr_responsible_person_v0
+    countries: [DE, FR, IT, ES, NL]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: responsible_person
+    severity: critical
+    regulation_ref: "GPSR Art. 16 (Reg. UE 2023/988)"
+    deadline_type: before_market_placement
+    checklist_template_id: rp_appointment
+    document_templates: []
+    effective_from: "2024-12-13"
+    review_status: bozza
+    notes: >
+      Responsible Person UE per prodotti non alimentari immessi sul mercato.
+      BOZZA — verificare requisiti per cosmetici (CPR) e categorie specifiche.
+
+  - id: gpsr_technical_file_v0
+    countries: [DE, FR, IT, ES, NL]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: technical_file
+    severity: critical
+    regulation_ref: "GPSR Art. 9"
+    deadline_type: before_market_placement
+    checklist_template_id: technical_file_skeleton
+    document_templates: [technical_file_skeleton]
+    effective_from: "2024-12-13"
+    review_status: bozza
+    notes: Fascicolo tecnico con documentazione di conformità e risk assessment.
+
+  - id: gpsr_declaration_of_conformity_v0
+    countries: [DE, FR, IT, ES, NL]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: declaration_of_conformity
+    severity: high
+    regulation_ref: "GPSR Art. 10"
+    deadline_type: before_market_placement
+    checklist_template_id: declaration_of_conformity
+    document_templates: [declaration_of_conformity]
+    effective_from: "2024-12-13"
+    review_status: bozza
+    notes: Dichiarazione di conformità UE — template per categoria da revisionare.
+
+  - id: gpsr_labeling_v0
+    countries: [DE, FR, IT, ES, NL]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: labeling
+    severity: high
+    regulation_ref: "GPSR Art. 9(7) e allegati"
+    deadline_type: before_market_placement
+    checklist_template_id: label_elements
+    document_templates: [label_elements]
+    effective_from: "2024-12-13"
+    review_status: bozza
+    notes: >
+      Elementi etichetta — avvertenze, tracciabilità, indirizzo RP.
+      Requisiti aggiuntivi per cosmetici (CPR) e giocattoli (EN 71).
+
+  - id: gpsr_product_safety_assessment_v0
+    countries: [DE, FR, IT, ES, NL]
+    product_categories: [toys, electronics_accessories, cosmetics, home]
+    obligation_type: product_safety_assessment
+    severity: high
+    regulation_ref: "GPSR Art. 9(5)"
+    deadline_type: before_market_placement
+    checklist_template_id: risk_assessment
+    document_templates: [risk_assessment]
+    effective_from: "2024-12-13"
+    review_status: bozza
+    notes: >
+      Valutazione sicurezza / risk assessment. Tessile (apparel) può richiedere
+      analisi diverse — BOZZA da affinare con regulatory lead.
+
+  # --- GPSR: raffini per categoria (bozza) ---
+
+  - id: gpsr_toys_en71_v0
+    countries: [DE, FR, IT, ES, NL]
+    product_categories: [toys]
+    obligation_type: technical_file
+    severity: critical
+    regulation_ref: "Direttiva 2009/48/CE (Sicurezza giocattoli)"
+    deadline_type: before_market_placement
+    checklist_template_id: toys_technical_file
+    document_templates: [technical_file_skeleton, risk_assessment]
+    effective_from: "2024-12-13"
+    review_status: bozza
+    notes: Requisiti EN 71 e marcatura CE giocattoli — bozza normativa.
+
+  - id: gpsr_cosmetics_cpr_v0
+    countries: [DE, FR, IT, ES, NL]
+    product_categories: [cosmetics]
+    obligation_type: labeling
+    severity: critical
+    regulation_ref: "Reg. (CE) 1223/2009 (CPR)"
+    deadline_type: before_market_placement
+    checklist_template_id: cosmetics_labeling
+    document_templates: [label_elements]
+    effective_from: "2024-12-13"
+    review_status: bozza
+    notes: Etichettatura INCI, PAO, responsabile immissione — non sostituisce notifica CPNP.
+
+  # --- EPR imballaggi: un obbligo per paese (tutte le categorie) ---
+
+  - id: epr_packaging_de_lucid_v0
+    countries: [DE]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: epr_packaging
+    severity: critical
+    regulation_ref: "VerpackG / LUCID (Germania)"
+    deadline_type: before_first_sale
+    checklist_template_id: epr_de_lucid
+    document_templates: []
+    effective_from: "2019-01-01"
+    review_status: bozza
+    notes: Registrazione LUCID e dichiarazioni imballaggi Germania.
+
+  - id: epr_packaging_fr_citeo_v0
+    countries: [FR]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: epr_packaging
+    severity: critical
+    regulation_ref: "Code de l'environnement / Citeo (Francia)"
+    deadline_type: before_first_sale
+    checklist_template_id: epr_fr_citeo
+    document_templates: []
+    effective_from: "2022-01-01"
+    review_status: bozza
+    notes: Registrazione EPR imballaggi Francia — bozza, verificare ecoconception.
+
+  - id: epr_packaging_it_conai_v0
+    countries: [IT]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: epr_packaging
+    severity: critical
+    regulation_ref: "D.Lgs. 152/2006 / CONAI (Italia)"
+    deadline_type: before_first_sale
+    checklist_template_id: epr_it_conai
+    document_templates: []
+    effective_from: "2020-01-01"
+    review_status: bozza
+    notes: Adesione CONAI e contributi ambientali imballaggi Italia.
+
+  - id: epr_packaging_es_v0
+    countries: [ES]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: epr_packaging
+    severity: critical
+    regulation_ref: "RD 1055/2022 (Spagna)"
+    deadline_type: before_first_sale
+    checklist_template_id: epr_es_envipack
+    document_templates: []
+    effective_from: "2023-01-01"
+    review_status: bozza
+    notes: Registro produttori imballaggi Spagna — bozza.
+
+  - id: epr_packaging_nl_v0
+    countries: [NL]
+    product_categories: [toys, apparel, electronics_accessories, cosmetics, home]
+    obligation_type: epr_packaging
+    severity: critical
+    regulation_ref: "Wet milieubeheer / Afvalfonds (Paesi Bassi)"
+    deadline_type: before_first_sale
+    checklist_template_id: epr_nl_packaging
+    document_templates: []
+    effective_from: "2021-01-01"
+    review_status: bozza
+    notes: Registrazione imballaggi Paesi Bassi — bozza.

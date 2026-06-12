@@ -15,10 +15,10 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Architettura | completato | `ARCHITECTURE.md` v1 |
 | README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
-| Monorepo / codice | in corso | Fasi 1–3 su `develop`; prossima: package matrix |
+| Monorepo / codice | in corso | Fasi 1–4 su `develop`; prossima: mock server / API |
 | Docker Compose | completato | postgres, redis, minio, mailhog, mock-server |
 | Package database | completato | Drizzle 13 tabelle, migration `0000_init`, seed demo |
-| Matrice obblighi seed | pianificato | 5 cat × 5 paesi |
+| Matrice obblighi seed | completato | `matrix-v0.yaml` — 12 regole in bozza |
 | Connettori catalogo | pianificato | Mock first |
 | Pipeline classificazione | pianificato | Provider astratto: mock / Ollama / OpenAI |
 | Generatore documenti GPSR | pianificato | Template per categoria |
@@ -74,6 +74,14 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Docker Compose (fase 2) | completato | PG 16, Redis, MinIO, Mailhog, mock-server Fastify |
 | Package database (fase 3) | completato | Schema Drizzle 13 tabelle, migration `0000_init`, seed demo |
 
+### 2026-06-12 (sessione 4)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Istruzioni install pnpm | completato | Sezione in CONTRIBUTING (corepack / brew / npx) |
+| Package matrix (fase 4) | completato | Zod, engine match, CLI validate/seed, CHANGELOG |
+| Matrice seed v0 | completato | 12 regole GPSR+EPR, tutte `review_status: bozza` |
+
 ---
 
 ## Backlog prossimi passi (ordinato)
@@ -81,8 +89,8 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 1. ~~**Scaffold monorepo**~~ — completato
 2. ~~**Docker Compose**~~ — in merge *(fase 2)*
 3. ~~**Package `database`**~~ — in merge *(fase 3)*
-4. **Package `matrix`** — schema Zod, CLI validate/seed, CHANGELOG
-5. **Matrice seed v0** — subset GPSR + EPR packaging per 5×5 (draft, serve review regulatory)
+4. ~~**Package `matrix`**~~ — in merge *(fase 4)*
+5. ~~**Matrice seed v0**~~ — in merge *(12 regole bozza)*
 6. **Mock server** — fixture Shopify catalog + partner webhook
 7. **API skeleton** — auth, org, health, OpenAPI
 8. **Worker** — job `catalog.sync`, `sku.classify`, `document.generate`

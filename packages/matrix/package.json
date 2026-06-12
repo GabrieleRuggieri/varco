@@ -1,0 +1,34 @@
+{
+  "name": "@varco/matrix",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Matrice obblighi UE — YAML versionato, validazione Zod, seed PostgreSQL",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test src/**/*.test.ts",
+    "matrix:validate": "tsx src/cli/validate.ts",
+    "matrix:seed": "tsx src/cli/seed.ts"
+  },
+  "dependencies": {
+    "@varco/database": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "yaml": "^2.8.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@varco/tsconfig": "workspace:*",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
