@@ -1,15 +1,8 @@
-import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { VarcoSession } from '@/lib/session';
 import styles from './AppShell.module.css';
 import { LogoutButton } from './LogoutButton';
-
-const NAV = [
-  { href: '/', label: 'Panoramica' },
-  { href: '/catalog', label: 'Catalogo' },
-  { href: '/skus', label: 'SKU' },
-  { href: '/checklist', label: 'Checklist' },
-] as const;
+import { SidebarNav } from './SidebarNav';
 
 export function AppShell({ session, children }: { session: VarcoSession; children: ReactNode }) {
   return (
@@ -19,13 +12,7 @@ export function AppShell({ session, children }: { session: VarcoSession; childre
           <span className={styles.logoMark}>V</span>
           <span className={styles.logoText}>Varco</span>
         </div>
-        <nav className={styles.nav}>
-          {NAV.map((item) => (
-            <Link key={item.href} href={item.href} className={styles.navLink}>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <SidebarNav />
         <div className={styles.user}>
           <p className={styles.userOrg}>{session.organizationName}</p>
           <p className={styles.userEmail}>{session.email}</p>

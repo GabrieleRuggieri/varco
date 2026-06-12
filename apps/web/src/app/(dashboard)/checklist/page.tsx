@@ -32,7 +32,7 @@ export default async function ChecklistPage() {
 
       <div className={styles.card}>
         {items.length === 0 ? (
-          <p style={{ margin: 0, color: 'var(--color-ink-mute)' }}>
+          <p style={{ margin: 0, color: 'var(--color-ink-subtle)' }}>
             Checklist vuota — classifica almeno uno SKU.
           </p>
         ) : (
@@ -53,7 +53,7 @@ export default async function ChecklistPage() {
                   <tr key={item.id}>
                     <td>
                       <div>{item.skuCode}</div>
-                      <div style={{ fontSize: 12, color: 'var(--color-ink-mute)' }}>
+                      <div style={{ fontSize: 12, color: 'var(--color-ink-subtle)' }}>
                         {item.productTitle}
                       </div>
                     </td>
@@ -63,7 +63,7 @@ export default async function ChecklistPage() {
                     <td>
                       <StatusBadge status={item.status} severity={item.severity} />
                     </td>
-                    <td style={{ fontSize: 12, color: 'var(--color-ink-mute)' }}>
+                    <td style={{ fontSize: 12, color: 'var(--color-ink-subtle)' }}>
                       {item.regulationRef}
                     </td>
                   </tr>

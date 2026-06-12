@@ -28,7 +28,7 @@ export default async function CatalogPage() {
       <div className={styles.card} style={{ marginTop: '1rem' }}>
         <h2 className={pageStyles.sectionTitle}>Connessioni</h2>
         {connections.connections.length === 0 ? (
-          <p style={{ color: 'var(--color-ink-mute)', margin: 0 }}>
+          <p style={{ color: 'var(--color-ink-subtle)', margin: 0 }}>
             Nessuna connessione ancora — verrà creata al primo sync.
           </p>
         ) : (

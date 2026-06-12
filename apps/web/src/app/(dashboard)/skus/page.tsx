@@ -23,7 +23,7 @@ export default async function SkusPage() {
 
       <div className={styles.card}>
         {skus.length === 0 ? (
-          <p style={{ margin: 0, color: 'var(--color-ink-mute)' }}>
+          <p style={{ margin: 0, color: 'var(--color-ink-subtle)' }}>
             Nessuno SKU — vai su Catalogo e sincronizza.
           </p>
         ) : (

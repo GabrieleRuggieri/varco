@@ -143,7 +143,7 @@ I contributi al repository sono accettati solo su invito.
 | Documento | Contenuto |
 |-----------|-----------|
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | Architettura di sistema, domini, API, modello dati |
-| [design/README.md](./design/README.md) | Sistema visivo di riferimento (Stripe-inspired) |
-| [design/stripe/DESIGN.md](./design/stripe/DESIGN.md) | Token colori, tipografia, componenti UI |
+| [design/README.md](./design/README.md) | Sistema visivo di riferimento (Linear-inspired) |
+| [design/linear/DESIGN.md](./design/linear/DESIGN.md) | Token colori, tipografia, componenti UI |
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | Setup sviluppo, standard di codice, processo PR |
 | [WORK_LOG.md](./WORK_LOG.md) | Registro attività e stato implementazione |

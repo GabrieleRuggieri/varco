@@ -4,28 +4,28 @@
   justify-content: center;
   gap: 0.5rem;
   border: none;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
   font-family: var(--font-sans);
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
 }
 
 .button:disabled {
-  opacity: 0.55;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
 .primary {
   composes: button;
-  padding: 0.65rem 1.25rem;
-  font-size: 14px;
+  padding: 8px 14px;
   color: #fff;
   background: var(--color-primary);
 }
 
 .primary:hover:not(:disabled) {
-  background: var(--color-primary-deep);
+  background: var(--color-primary-hover);
 }
 
 .primary:active:not(:disabled) {
@@ -34,87 +34,91 @@
 
 .secondary {
   composes: button;
-  padding: 0.55rem 1rem;
+  padding: 8px 12px;
   font-size: 13px;
-  color: var(--color-ink-secondary);
-  background: var(--color-canvas);
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  background: var(--color-surface-1);
   border: 1px solid var(--color-hairline);
 }
 
 .secondary:hover:not(:disabled) {
-  border-color: var(--color-ink-mute);
+  background: var(--color-surface-2);
+  border-color: var(--color-hairline-strong);
+  color: var(--color-ink);
 }
 
 .ghost {
   composes: button;
-  padding: 0.45rem 0.75rem;
+  padding: 6px 10px;
   font-size: 13px;
-  color: var(--color-ink-mute);
+  font-weight: 400;
+  color: var(--color-ink-subtle);
   background: transparent;
 }
 
 .ghost:hover:not(:disabled) {
   color: var(--color-ink);
-  background: rgba(13, 37, 61, 0.04);
+  background: var(--color-surface-2);
 }
 
 .card {
-  background: var(--color-canvas);
+  background: var(--color-surface-1);
   border: 1px solid var(--color-hairline);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
   padding: 1.25rem 1.5rem;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+  border-radius: var(--radius-md);
   font-size: 12px;
-  font-weight: 400;
-  background: var(--color-canvas-soft);
-  color: var(--color-ink-secondary);
+  font-weight: 500;
+  background: var(--color-surface-3);
+  color: var(--color-ink-muted);
   border: 1px solid var(--color-hairline);
 }
 
 .badgeCritical {
   composes: badge;
-  color: var(--color-ruby);
-  border-color: rgba(234, 34, 97, 0.25);
-  background: rgba(234, 34, 97, 0.06);
+  color: var(--color-critical);
+  border-color: rgba(229, 72, 77, 0.35);
+  background: rgba(229, 72, 77, 0.1);
 }
 
 .badgeOpen {
   composes: badge;
-  color: var(--color-primary-deep);
-  border-color: rgba(83, 58, 253, 0.2);
-  background: rgba(83, 58, 253, 0.06);
+  color: var(--color-primary-hover);
+  border-color: rgba(94, 106, 210, 0.35);
+  background: rgba(94, 106, 210, 0.12);
 }
 
 .input {
   width: 100%;
-  padding: 0.7rem 0.9rem;
+  padding: 0.65rem 0.85rem;
   border: 1px solid var(--color-hairline);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 400;
   color: var(--color-ink);
-  background: var(--color-canvas);
+  background: var(--color-surface-2);
 }
 
 .input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(83, 58, 253, 0.12);
+  box-shadow: 0 0 0 2px rgba(94, 106, 210, 0.35);
 }
 
 .label {
   display: block;
   margin-bottom: 0.35rem;
-  font-size: 13px;
-  color: var(--color-ink-mute);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-ink-subtle);
 }
 
 .table {
@@ -126,18 +130,23 @@
 .table th {
   text-align: left;
   padding: 0.65rem 0.75rem;
-  font-weight: 400;
-  color: var(--color-ink-mute);
+  font-weight: 500;
+  color: var(--color-ink-subtle);
   border-bottom: 1px solid var(--color-hairline);
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .table td {
-  padding: 0.85rem 0.75rem;
+  padding: 0.75rem;
   border-bottom: 1px solid var(--color-hairline);
   vertical-align: middle;
+  color: var(--color-ink-muted);
+}
+
+.table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .table tr:last-child td {
@@ -146,16 +155,16 @@
 
 .alert {
   padding: 0.75rem 1rem;
-  border-radius: 8px;
-  font-size: 14px;
-  background: rgba(83, 58, 253, 0.06);
-  border: 1px solid rgba(83, 58, 253, 0.15);
-  color: var(--color-ink-secondary);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  background: rgba(94, 106, 210, 0.1);
+  border: 1px solid rgba(94, 106, 210, 0.25);
+  color: var(--color-ink-muted);
 }
 
 .alertError {
   composes: alert;
-  background: rgba(234, 34, 97, 0.06);
-  border-color: rgba(234, 34, 97, 0.2);
-  color: var(--color-ruby);
+  background: rgba(229, 72, 77, 0.1);
+  border-color: rgba(229, 72, 77, 0.3);
+  color: var(--color-critical);
 }

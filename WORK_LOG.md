@@ -28,7 +28,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Generatore documenti GPSR | completato | `risk_assessment` PDF → MinIO; API download firmato |
 | Partner broker (mock) | pianificato | RP + EPR |
 | Auth + dashboard | completato | Login demo, catalogo, SKU, checklist, PDF (fase 11) |
-| Design system | completato | `design/stripe/DESIGN.md` — riferimento Stripe-inspired |
+| Design system | completato | `design/linear/DESIGN.md` — dashboard Linear-inspired |
 
 **Decisioni MVP confermate (2026-06-12):**
 - Auth v1: email/password + sessione demo (`demo@varco.local`); OAuth Shopify in fase successiva
@@ -135,7 +135,13 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 
 | Attività | Stato | Dettaglio |
 |----------|-------|-----------|
-| Web MVP (fase 11) | completato | Next.js dashboard Stripe-inspired; login `demo@varco.local` / `demo` |
+| Web MVP (fase 11) | completato | Next.js dashboard; login `demo@varco.local` / `demo` |
+
+### 2026-06-12 (sessione 12)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Design Linear | completato | Import `design/linear/DESIGN.md`; dashboard dark-first lavender |
 
 ---
 

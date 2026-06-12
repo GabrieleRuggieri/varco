@@ -1,17 +1,19 @@
 # Design — Varco
 
 Riferimenti visivi e token per UI, landing e componenti.  
-**Sistema adottato:** Stripe-inspired ([`design/stripe/DESIGN.md`](./stripe/DESIGN.md)).
+**Sistema adottato:** Linear-inspired ([`design/linear/DESIGN.md`](./linear/DESIGN.md)).
 
 ---
 
-## Perché Stripe-inspired
+## Perché Linear-inspired
 
-Varco è un B2B SaaS su compliance e documenti: serve **fiducia**, chiarezza su numeri/scadenze e un linguaggio da “infrastruttura” (non consumer playful). Il design Stripe-inspired copre:
+Varco è un B2B SaaS su checklist, stati e documenti compliance: serve **precisione operativa**, densità informativa e un tono da tool pro (non consumer playful). Il design Linear-inspired copre:
 
-- Landing e marketing (`index.html`)
-- Dashboard prodotto (`apps/web`)
-- Tabelle SKU, checklist, pricing, stati di gravità
+- Dashboard prodotto (`apps/web`) — dark-first, lavender accent `#5e6ad2`
+- Tabelle SKU, checklist, stati e gravità obblighi
+- Flussi task: sync → classifica → PDF
+
+Riferimento storico Stripe: [`design/stripe/`](./stripe/) (sostituito come sistema primario).
 
 ---
 
@@ -19,40 +21,40 @@ Varco è un B2B SaaS su compliance e documenti: serve **fiducia**, chiarezza su 
 
 | File | Contenuto |
 |------|-----------|
-| [`stripe/DESIGN.md`](./stripe/DESIGN.md) | Token colori, tipografia, spacing, componenti, do/don't |
-| [`stripe/SOURCE.md`](./stripe/SOURCE.md) | Provenienza e licenza del file upstream |
+| [`linear/DESIGN.md`](./linear/DESIGN.md) | Token colori, tipografia, spacing, componenti, do/don't |
+| [`linear/SOURCE.md`](./linear/SOURCE.md) | Provenienza e licenza del file upstream |
+| [`stripe/DESIGN.md`](./stripe/DESIGN.md) | Archivio — precedente riferimento |
 
 ---
 
 ## Come usarlo (team e agenti)
 
-1. **Prima di modificare UI** — leggi `stripe/DESIGN.md` e usa i token documentati (`{colors.primary}`, `{typography.body-tabular}`, `{rounded.pill}`, ecc.).
-2. **Font in produzione** — Sohne non è disponibile; usa **Inter** weight 300 (display) come sostituto indicato nel DESIGN.md.
-3. **Numeri e compliance** — contatori SKU, prezzi, scadenze: `font-feature-settings: "tnum"` (`body-tabular`).
-4. **CTA** — un solo pulsante filled indigo per sezione (`button-primary-pill`); il resto outline o ghost.
-5. **Dashboard Varco** — mockup prodotto su `{colors.canvas}` / `{colors.canvas-soft}`; tier evidenziato su `{colors.brand-dark-900}`.
-6. **Disclaimer legale** — sempre visibile; non usare verde “success” aggressivo per implicare “sei a norma”.
+1. **Prima di modificare UI** — leggi `linear/DESIGN.md` e usa i token (`{colors.primary}`, `{colors.surface-1}`, `{rounded.md}`, ecc.).
+2. **Font in produzione** — Linear custom non disponibile; usa **Inter** 400 (body), 500–600 (titoli).
+3. **Numeri e compliance** — SKU, scadenze, contatori: `font-variant-numeric: tabular-nums`.
+4. **CTA** — un solo pulsante filled lavender per sezione (`button-primary`); secondari su `surface-1` con hairline.
+5. **Dashboard** — canvas `#010102`, card su `surface-1`, testo `ink` chiaro.
+6. **Disclaimer legale** — sempre visibile; non usare verde `semantic-success` per implicare “sei a norma”.
 
 ### Mappatura rapida Varco → token
 
 | Elemento Varco | Componente / token DESIGN.md |
 |----------------|------------------------------|
-| Hero landing | Gradient mesh + `display-xxl` + `nav-bar-on-mesh` |
-| Card funzionalità | `card-feature-light` |
-| Piani Starter/Growth/Scale | `card-pricing` / `card-pricing-featured` |
-| Mock dashboard SKU | `card-dashboard-mockup` + `body-tabular` |
-| Tag stato (GPSR, DE, RP) | `pill-tag-soft` |
-| Checklist / gravità critical | `ruby` solo come accento, non come CTA |
-| Form login / catalogo | `text-input` / `text-input-focused` |
+| Shell dashboard | `canvas` + sidebar `surface-2` |
+| Card SKU / checklist | `card-panel` / `surface-1` + `hairline` |
+| Tabella dati | `body-sm` + header `caption` uppercase |
+| Tag stato obbligo | `pill-tag` su `surface-3` |
+| Gravità critical | accento rosso custom — **non** CTA primaria |
+| Form login | `text-input` su `surface-1`, focus ring `primary` |
 
 ---
 
 ## Aggiornamenti
 
-Il file upstream vive in [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/stripe).  
-Per allinearsi a una versione nuova: sostituire `design/stripe/DESIGN.md` e annotare in `WORK_LOG.md`.
+Il file upstream vive in [awesome-design-md — linear.app](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/linear.app).  
+Per allinearsi a una versione nuova: sostituire `design/linear/DESIGN.md` e annotare in `WORK_LOG.md`.
 
-Modifiche **specifiche Varco** (es. token semantici compliance) vanno in un file separato `design/varco-extensions.md` — non alterare il DESIGN.md stripe senza motivo.
+Modifiche **specifiche Varco** (es. token semantici compliance) vanno in `design/varco-extensions.md` — non alterare il DESIGN.md linear senza motivo.
 
 ---
 

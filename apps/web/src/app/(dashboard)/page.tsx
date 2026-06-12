@@ -36,7 +36,7 @@ export default async function OverviewPage() {
         </div>
         <div className={styles.card}>
           <p className={pageStyles.statLabel}>Obblighi critical</p>
-          <p className={`${pageStyles.statValue} tnum`} style={{ color: 'var(--color-ruby)' }}>
+          <p className={`${pageStyles.statValue} tnum`} style={{ color: 'var(--color-critical)' }}>
             {critical}
           </p>
         </div>
