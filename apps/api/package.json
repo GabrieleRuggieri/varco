@@ -3,21 +3,30 @@
   "version": "0.0.0",
   "private": true,
   "description": "Backend REST — catalogo, matrice, checklist, documenti, partner",
-  "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "node --watch dist/index.js",
-    "start": "node dist/index.js",
+    "dev": "tsc -p tsconfig.json && node --watch dist/main.js",
+    "start": "node dist/main.js",
     "lint": "eslint src/",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --test src/**/*.test.ts"
+    "test": "node --import tsx --test src/**/*.test.ts"
   },
   "dependencies": {
-    "@varco/shared": "workspace:*"
+    "@nestjs/common": "^11.1.3",
+    "@nestjs/core": "^11.1.3",
+    "@nestjs/platform-express": "^11.1.3",
+    "@nestjs/swagger": "^11.2.0",
+    "@varco/database": "workspace:*",
+    "@varco/shared": "workspace:*",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
   },
   "devDependencies": {
-    "@varco/tsconfig": "workspace:*",
+    "@nestjs/testing": "^11.1.3",
+    "@types/express": "^5.0.3",
     "@types/node": "^22.15.29",
+    "@varco/tsconfig": "workspace:*",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
 }
