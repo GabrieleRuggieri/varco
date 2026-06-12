@@ -93,6 +93,9 @@ importers:
       '@varco/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      nanoid:
+        specifier: ^3.3.11
+        version: 3.3.12
       next:
         specifier: ^15.3.3
         version: 15.5.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)

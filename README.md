@@ -93,6 +93,8 @@ pnpm dev
 
 Con `LLM_PROVIDER=mock` e `SHOPIFY_API_MODE=mock` non servono chiavi API esterne per lo sviluppo locale.
 
+**Dashboard demo:** http://localhost:3000 — login `demo@varco.local` / `demo` (dopo `pnpm db:seed`).
+
 Guida completa per chi contribuisce: [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Struttura del repository

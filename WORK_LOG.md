@@ -15,7 +15,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Architettura | completato | `ARCHITECTURE.md` v1 |
 | README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
-| Monorepo / codice | in corso | Fase 10 completata; prossima: Web MVP |
+| Monorepo / codice | in corso | Fase 11 completata; prossima: CI |
 | Docker Compose | completato | postgres, redis, minio, mailhog, mock-server |
 | Package database | completato | Drizzle 13 tabelle, migration `0000_init`, seed demo |
 | Matrice obblighi seed | completato | `matrix-v0.yaml` — 12 regole in bozza |
@@ -27,7 +27,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Pipeline classificazione | pianificato | Provider astratto: mock / Ollama / OpenAI |
 | Generatore documenti GPSR | completato | `risk_assessment` PDF → MinIO; API download firmato |
 | Partner broker (mock) | pianificato | RP + EPR |
-| Auth + dashboard | pianificato | Post scaffold |
+| Auth + dashboard | completato | Login demo, catalogo, SKU, checklist, PDF (fase 11) |
 | Design system | completato | `design/stripe/DESIGN.md` — riferimento Stripe-inspired |
 
 **Decisioni MVP confermate (2026-06-12):**
@@ -131,6 +131,12 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 |----------|-------|-----------|
 | Documenti PDF (fase 10) | completato | `@varco/documents`, template toys, MinIO, `GET /checklist` |
 
+### 2026-06-12 (sessione 11)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Web MVP (fase 11) | completato | Next.js dashboard Stripe-inspired; login `demo@varco.local` / `demo` |
+
 ---
 
 ## Backlog prossimi passi (ordinato)
@@ -145,7 +151,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 8. ~~**Worker**~~ — completato *(fase 8)*
 9. ~~**Classification mock**~~ — completato *(fase 9)*
 10. ~~**Documents**~~ — completato *(fase 10)*
-11. **Web MVP** — login, connect catalog (mock), lista SKU, checklist, download PDF
+11. ~~**Web MVP**~~ — completato *(fase 11)*
 12. **CI** — GitHub Actions: lint, test, matrix validate
 
 ---

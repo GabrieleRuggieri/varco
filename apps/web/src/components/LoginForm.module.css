@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 360px;
+}
+
+.hint {
+  margin: 0.5rem 0 0;
+  font-size: 12px;
+  color: var(--color-ink-mute);
+  text-align: center;
+}

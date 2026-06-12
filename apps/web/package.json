@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@varco/shared": "workspace:*",
+    "nanoid": "^3.3.11",
     "next": "^15.3.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

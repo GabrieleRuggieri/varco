@@ -1,0 +1,23 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import styles from './AppShell.module.css';
+
+export function LogoutButton() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  async function logout() {
+    setLoading(true);
+    await fetch('/api/auth/logout', { method: 'POST' });
+    router.push('/login');
+    router.refresh();
+  }
+
+  return (
+    <button type="button" className={styles.logoutBtn} onClick={() => void logout()} disabled={loading}>
+      {loading ? 'Uscita…' : 'Esci'}
+    </button>
+  );
+}
