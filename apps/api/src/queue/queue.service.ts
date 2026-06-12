@@ -1,0 +1,32 @@
+import { Injectable, OnModuleDestroy } from '@nestjs/common';
+import {
+  closeVarcoQueue,
+  enqueueCatalogSync,
+  enqueueDocumentGenerate,
+  enqueueSkuClassify,
+} from '@varco/queue';
+import type { EnqueuedJob } from '@varco/queue';
+import type {
+  CatalogSyncJobPayload,
+  DocumentGenerateJobPayload,
+  SkuClassifyJobPayload,
+} from '@varco/shared';
+
+@Injectable()
+export class QueueService implements OnModuleDestroy {
+  enqueueCatalogSync(payload: CatalogSyncJobPayload): Promise<EnqueuedJob> {
+    return enqueueCatalogSync(payload);
+  }
+
+  enqueueSkuClassify(payload: SkuClassifyJobPayload): Promise<EnqueuedJob> {
+    return enqueueSkuClassify(payload);
+  }
+
+  enqueueDocumentGenerate(payload: DocumentGenerateJobPayload): Promise<EnqueuedJob> {
+    return enqueueDocumentGenerate(payload);
+  }
+
+  async onModuleDestroy() {
+    await closeVarcoQueue();
+  }
+}

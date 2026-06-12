@@ -1,11 +1,9 @@
 /**
  * Accoda catalog.sync per l'organizzazione demo — utile in sviluppo locale.
- * Richiede: postgres + redis + mock server attivi.
  */
 import { eq } from 'drizzle-orm';
 import { createDb, organizations } from '@varco/database';
-import { WORKER_JOB_NAMES } from '@varco/shared';
-import { getVarcoQueue } from '../lib/queue.js';
+import { closeVarcoQueue, enqueueCatalogSync } from '@varco/queue';
 
 const DEMO_ORG_NAME = 'Varco Demo';
 
@@ -21,13 +19,9 @@ const run = async () => {
     throw new Error(`Organizzazione "${DEMO_ORG_NAME}" non trovata — esegui pnpm db:seed`);
   }
 
-  const queue = getVarcoQueue();
-  const job = await queue.add(WORKER_JOB_NAMES.CATALOG_SYNC, {
-    organizationId: org.id,
-  });
-
-  console.log(`[enqueue] Job ${WORKER_JOB_NAMES.CATALOG_SYNC} accodato: ${job.id}`);
-  await queue.close();
+  const job = await enqueueCatalogSync({ organizationId: org.id });
+  console.log(`[enqueue] catalog.sync accodato: ${job.id}`);
+  await closeVarcoQueue();
   process.exit(0);
 };
 

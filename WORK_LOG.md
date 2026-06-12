@@ -15,12 +15,14 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Architettura | completato | `ARCHITECTURE.md` v1 |
 | README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
-| Monorepo / codice | in corso | Fase 8 completata; prossima: classification mock |
+| Monorepo / codice | in corso | Fase 9 completata; prossima: documenti PDF |
 | Docker Compose | completato | postgres, redis, minio, mailhog, mock-server |
 | Package database | completato | Drizzle 13 tabelle, migration `0000_init`, seed demo |
 | Matrice obblighi seed | completato | `matrix-v0.yaml` — 12 regole in bozza |
 | API NestJS | completato | Health, org, webhook partner, OpenAPI `/api/docs` |
-| Worker BullMQ | completato | Coda `varco`: `catalog.sync`, `sku.classify`, `document.generate` |
+| Worker BullMQ | completato | Coda `varco`: sync catalogo, classificazione, documenti |
+| API catalogo / SKU | completato | `POST /catalog/sync`, `GET /skus`, `POST /skus/:id/classify` |
+| Classification mock | completato | `@varco/classification` + fixture 21 SKU → matrice → checklist |
 | Connettori catalogo | completato | Mock server Shopify; API riceve webhook partner |
 | Pipeline classificazione | pianificato | Provider astratto: mock / Ollama / OpenAI |
 | Generatore documenti GPSR | pianificato | Template per categoria |
@@ -116,6 +118,13 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 |----------|-------|-----------|
 | Worker BullMQ (fase 8) | completato | Sync catalogo da mock Shopify; stub classify/document; `pnpm worker:enqueue-demo-sync` |
 
+### 2026-06-12 (sessione 9)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| API catalog sync | completato | `POST /api/catalog/sync` accoda job; `@varco/queue` condiviso |
+| Classification mock (fase 9) | completato | Fixture LLM, `matchRules`, `classification_runs` + `checklist_items` |
+
 ---
 
 ## Backlog prossimi passi (ordinato)
@@ -128,7 +137,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 6. ~~**Mock server**~~ — completato *(fase 6)*
 7. ~~**API skeleton**~~ — completato *(fase 7)*
 8. ~~**Worker**~~ — completato *(fase 8)*
-9. **Classification mock** — fixture JSON → matrix match
+9. ~~**Classification mock**~~ — completato *(fase 9)*
 10. **Documents** — 1 template risk assessment (toys) end-to-end
 11. **Web MVP** — login, connect catalog (mock), lista SKU, checklist, download PDF
 12. **CI** — GitHub Actions: lint, test, matrix validate

@@ -14,7 +14,10 @@
     "enqueue:demo-sync": "node --import tsx src/scripts/enqueue-demo-sync.ts"
   },
   "dependencies": {
+    "@varco/classification": "workspace:*",
     "@varco/database": "workspace:*",
+    "@varco/matrix": "workspace:*",
+    "@varco/queue": "workspace:*",
     "@varco/shared": "workspace:*",
     "bullmq": "^5.53.2",
     "drizzle-orm": "^0.44.2"

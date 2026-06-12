@@ -1,11 +1,11 @@
 import { Worker } from 'bullmq';
+import { getBullMqConnection } from '@varco/queue';
 import { MVP_VERSION, WORKER_QUEUE_NAME } from '@varco/shared';
-import { getBullMqConnection } from './config.js';
 import { processVarcoJob } from './processor.js';
 
 const worker = new Worker(WORKER_QUEUE_NAME, processVarcoJob, {
   connection: getBullMqConnection(),
-  concurrency: 2,
+  concurrency: 4,
 });
 
 worker.on('completed', (job, result) => {

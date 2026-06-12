@@ -1,0 +1,244 @@
+{
+  "TOYS-WOOD-050": {
+    "product_category": "toys",
+    "confidence": 0.91,
+    "materials": [
+      "wood",
+      "water_based_paint"
+    ],
+    "target_age_min": 3,
+    "evidence_snippets": [
+      "Blocchi costruzione legno — set 50 pezzi"
+    ]
+  },
+  "TOYS-PLSH-030": {
+    "product_category": "toys",
+    "confidence": 0.91,
+    "materials": [
+      "polyester",
+      "fiber_fill"
+    ],
+    "target_age_min": 3,
+    "evidence_snippets": [
+      "Peluche conno orso — 30 cm"
+    ]
+  },
+  "TOYS-SLME-006": {
+    "product_category": "toys",
+    "confidence": 0.58,
+    "materials": [
+      "plastic",
+      "glitter"
+    ],
+    "target_age_min": 6,
+    "evidence_snippets": [
+      "Kit slime glitter — 6 colori"
+    ]
+  },
+  "TOYS-PZLE-500": {
+    "product_category": "toys",
+    "confidence": 0.91,
+    "materials": [
+      "cardboard",
+      "soy_ink"
+    ],
+    "target_age_min": 3,
+    "evidence_snippets": [
+      "Puzzle mappe Europa — 500 pezzi"
+    ]
+  },
+  "APP-TEE-BLK-S": {
+    "product_category": "apparel",
+    "confidence": 0.91,
+    "materials": [
+      "organic_cotton"
+    ],
+    "evidence_snippets": [
+      "T-shirt cotone bio — unisex"
+    ]
+  },
+  "APP-TEE-BLK-M": {
+    "product_category": "apparel",
+    "confidence": 0.91,
+    "materials": [
+      "organic_cotton"
+    ],
+    "evidence_snippets": [
+      "T-shirt cotone bio — unisex"
+    ]
+  },
+  "APP-HDY-GRY-L": {
+    "product_category": "apparel",
+    "confidence": 0.91,
+    "materials": [
+      "cotton",
+      "polyester"
+    ],
+    "evidence_snippets": [
+      "Felpa oversize — french terry"
+    ]
+  },
+  "APP-LEG-BLK-M": {
+    "product_category": "apparel",
+    "confidence": 0.91,
+    "materials": [
+      "nylon",
+      "elastane"
+    ],
+    "evidence_snippets": [
+      "Leggings yoga — compressione leggera"
+    ]
+  },
+  "APP-BCK-KHK-OS": {
+    "product_category": "apparel",
+    "confidence": 0.91,
+    "materials": [
+      "cotton"
+    ],
+    "evidence_snippets": [
+      "Cappello bucket — cotone canvas"
+    ]
+  },
+  "ELC-USBC-2M-BLK": {
+    "product_category": "electronics_accessories",
+    "confidence": 0.91,
+    "materials": [
+      "aluminum",
+      "nylon",
+      "copper"
+    ],
+    "evidence_snippets": [
+      "Cavo USB-C — 2m braided"
+    ]
+  },
+  "ELC-IPH15-SIL-BLU": {
+    "product_category": "electronics_accessories",
+    "confidence": 0.91,
+    "materials": [
+      "silicone"
+    ],
+    "evidence_snippets": [
+      "Cover silicone iPhone 15"
+    ]
+  },
+  "ELC-PWBK-10K": {
+    "product_category": "electronics_accessories",
+    "confidence": 0.91,
+    "materials": [
+      "lithium_polymer",
+      "plastic",
+      "requires_battery:true"
+    ],
+    "requires_battery": true,
+    "evidence_snippets": [
+      "Power bank 10000 mAh — PD 20W"
+    ]
+  },
+  "ELC-TWS-ANC-WHT": {
+    "product_category": "electronics_accessories",
+    "confidence": 0.91,
+    "materials": [
+      "plastic",
+      "silicone",
+      "requires_battery:true"
+    ],
+    "requires_battery": true,
+    "evidence_snippets": [
+      "Auricolari TWS — cancellazione rumore"
+    ]
+  },
+  "COS-CRM-HYA-50": {
+    "product_category": "cosmetics",
+    "confidence": 0.91,
+    "materials": [
+      "aqua",
+      "glycerin",
+      "hyaluronic_acid"
+    ],
+    "is_cosmetic": true,
+    "evidence_snippets": [
+      "Crema viso idratante — acido ialuronico"
+    ]
+  },
+  "COS-SHP-SLD-80": {
+    "product_category": "cosmetics",
+    "confidence": 0.91,
+    "materials": [
+      "plant_oils",
+      "sodium_cocoyl_isethionate"
+    ],
+    "is_cosmetic": true,
+    "evidence_snippets": [
+      "Shampoo solido — capelli secchi"
+    ]
+  },
+  "COS-LIP-MAT-RED": {
+    "product_category": "cosmetics",
+    "confidence": 0.91,
+    "materials": [
+      "dimethicone",
+      "pigments"
+    ],
+    "is_cosmetic": true,
+    "evidence_snippets": [
+      "Rossetto matte — rosso classico"
+    ]
+  },
+  "COS-SRM-VTC-30": {
+    "product_category": "cosmetics",
+    "confidence": 0.91,
+    "materials": [
+      "ascorbic_acid",
+      "glass"
+    ],
+    "is_cosmetic": true,
+    "evidence_snippets": [
+      "Siero vitamina C — 30ml"
+    ]
+  },
+  "HOME-LMP-LED-DIM": {
+    "product_category": "home",
+    "confidence": 0.91,
+    "materials": [
+      "aluminum",
+      "plastic",
+      "led"
+    ],
+    "evidence_snippets": [
+      "Lampada LED scrivania — dimmer"
+    ]
+  },
+  "HOME-GLS-SET5": {
+    "product_category": "home",
+    "confidence": 0.91,
+    "materials": [
+      "borosilicate_glass",
+      "bamboo"
+    ],
+    "evidence_snippets": [
+      "Set contenitori vetro — meal prep"
+    ]
+  },
+  "HOME-PLW-MEM-STD": {
+    "product_category": "home",
+    "confidence": 0.91,
+    "materials": [
+      "memory_foam",
+      "cotton"
+    ],
+    "evidence_snippets": [
+      "Cuscino memory foam — ergonomico"
+    ]
+  },
+  "HOME-DIF-US-300": {
+    "product_category": "home",
+    "confidence": 0.91,
+    "materials": [
+      "plastic",
+      "pp"
+    ],
+    "evidence_snippets": [
+      "Diffusore aromi — ultrasonico"
+    ]
+  }
+}
