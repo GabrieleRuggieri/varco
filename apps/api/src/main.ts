@@ -24,6 +24,8 @@ async function bootstrap() {
     .addTag('organizations')
     .addTag('catalog')
     .addTag('skus')
+    .addTag('documents')
+    .addTag('checklist')
     .addTag('partner')
     .build();
 

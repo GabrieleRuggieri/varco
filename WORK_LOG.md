@@ -15,7 +15,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Architettura | completato | `ARCHITECTURE.md` v1 |
 | README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
-| Monorepo / codice | in corso | Fase 9 completata; prossima: documenti PDF |
+| Monorepo / codice | in corso | Fase 10 completata; prossima: Web MVP |
 | Docker Compose | completato | postgres, redis, minio, mailhog, mock-server |
 | Package database | completato | Drizzle 13 tabelle, migration `0000_init`, seed demo |
 | Matrice obblighi seed | completato | `matrix-v0.yaml` — 12 regole in bozza |
@@ -25,7 +25,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Classification mock | completato | `@varco/classification` + fixture 21 SKU → matrice → checklist |
 | Connettori catalogo | completato | Mock server Shopify; API riceve webhook partner |
 | Pipeline classificazione | pianificato | Provider astratto: mock / Ollama / OpenAI |
-| Generatore documenti GPSR | pianificato | Template per categoria |
+| Generatore documenti GPSR | completato | `risk_assessment` PDF → MinIO; API download firmato |
 | Partner broker (mock) | pianificato | RP + EPR |
 | Auth + dashboard | pianificato | Post scaffold |
 | Design system | completato | `design/stripe/DESIGN.md` — riferimento Stripe-inspired |
@@ -125,6 +125,12 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | API catalog sync | completato | `POST /api/catalog/sync` accoda job; `@varco/queue` condiviso |
 | Classification mock (fase 9) | completato | Fixture LLM, `matchRules`, `classification_runs` + `checklist_items` |
 
+### 2026-06-12 (sessione 10)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Documenti PDF (fase 10) | completato | `@varco/documents`, template toys, MinIO, `GET /checklist` |
+
 ---
 
 ## Backlog prossimi passi (ordinato)
@@ -138,7 +144,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 7. ~~**API skeleton**~~ — completato *(fase 7)*
 8. ~~**Worker**~~ — completato *(fase 8)*
 9. ~~**Classification mock**~~ — completato *(fase 9)*
-10. **Documents** — 1 template risk assessment (toys) end-to-end
+10. ~~**Documents**~~ — completato *(fase 10)*
 11. **Web MVP** — login, connect catalog (mock), lista SKU, checklist, download PDF
 12. **CI** — GitHub Actions: lint, test, matrix validate
 

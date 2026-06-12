@@ -80,3 +80,9 @@ export type DocumentGenerateJobPayload = {
   skuId: string;
   templateId: string;
 };
+
+/** Template documento GPSR v1 — estendibile per categoria. */
+export const DOCUMENT_TEMPLATE_IDS = ['risk_assessment'] as const;
+export type DocumentTemplateId = (typeof DOCUMENT_TEMPLATE_IDS)[number];
+
+export const DOCUMENT_TEMPLATE_VERSION = '1.0.0' as const;

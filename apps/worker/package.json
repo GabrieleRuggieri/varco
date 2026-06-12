@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@varco/classification": "workspace:*",
+    "@varco/documents": "workspace:*",
     "@varco/database": "workspace:*",
     "@varco/matrix": "workspace:*",
     "@varco/queue": "workspace:*",
