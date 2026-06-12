@@ -124,6 +124,7 @@ varco/
 │   ├── documents/           # Template GPSR, generator
 │   ├── partners/            # Adapter RP/EPR
 │   └── shared/              # Tipi, costanti, utils
+├── design/                  # Riferimento visivo (stripe/DESIGN.md)
 ├── fixtures/                # Cataloghi mock, risposte LLM, matrix seed
 ├── mocks/
 │   └── mock-server/         # Prism o Express: Shopify, Amazon, partners

@@ -24,6 +24,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Generatore documenti GPSR | pianificato | Template per categoria |
 | Partner broker (mock) | pianificato | RP + EPR |
 | Auth + dashboard | pianificato | Post scaffold |
+| Design system | completato | `design/stripe/DESIGN.md` — riferimento Stripe-inspired |
 
 ---
 
@@ -82,6 +83,13 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Package matrix (fase 4) | completato | Zod, engine match, CLI validate/seed, CHANGELOG |
 | Matrice seed v0 | completato | 12 regole GPSR+EPR, tutte `review_status: bozza` |
 
+### 2026-06-12 (sessione 5)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Design system Stripe | completato | Import `design/stripe/DESIGN.md` da awesome-design-md; `design/README.md` |
+| Riferimenti design | completato | CONTRIBUTING, README, WORK_LOG aggiornati |
+
 ---
 
 ## Backlog prossimi passi (ordinato)
@@ -118,6 +126,7 @@ Copia e compila a fine sessione:
 ## Collegamenti
 
 - [README](./README.md)
+- [Design](./design/README.md)
 - [Architettura](./ARCHITECTURE.md)
 - [Contributing](./CONTRIBUTING.md)
 - [Product spec (IT)](./06-varco-ai-eu-compliance-it.md)

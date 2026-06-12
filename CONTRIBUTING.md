@@ -8,7 +8,8 @@ Guida per chi sviluppa sul repository Varco — AI compliance copilot per vender
 
 1. Leggi `06-varco-ai-eu-compliance-it.md` (contesto prodotto).
 2. Leggi [ARCHITECTURE.md](./ARCHITECTURE.md) (stack, domini, mock locali).
-3. Controlla `WORK_LOG.md` per vedere cosa è già stato fatto e cosa è in corso.
+3. Leggi [design/README.md](./design/README.md) e [design/stripe/DESIGN.md](./design/stripe/DESIGN.md) (sistema visivo di riferimento).
+4. Controlla `WORK_LOG.md` per vedere cosa è già stato fatto e cosa è in corso.
 
 ---
 
@@ -153,6 +154,7 @@ git checkout -b feat/short-description
 - Flussi onboarding (collega catalogo → prima checklist)
 - Copy disclaimer e confini di responsabilità
 - Lead magnet «scanner 1 SKU gratis»
+- UI allineata a [design/stripe/DESIGN.md](./design/stripe/DESIGN.md) (token, componenti, do/don't)
 
 ---
 
@@ -162,6 +164,7 @@ git checkout -b feat/short-description
 - **TypeScript** strict dove possibile.
 - **Formatting:** Prettier (config in repo quando aggiunta).
 - **Lint:** ESLint.
+- **UI / CSS:** seguire i token in `design/stripe/DESIGN.md`; font sostituto **Inter** 300; numeri con `tnum`.
 - **API:** validazione input con Zod; errori HTTP coerenti.
 - **DB:** migrations via Drizzle; no modifiche manuali su prod.
 - **Test:** unit per matrix engine e classification mapping; integration per flussi critici con fixture.
