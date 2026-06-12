@@ -1,0 +1,19 @@
+{
+  "name": "@varco/mock-server",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Mock HTTP per Shopify, Amazon e partner RP/EPR in sviluppo locale",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --watch dist/index.js"
+  },
+  "dependencies": {
+    "fastify": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "typescript": "^5.8.3"
+  }
+}

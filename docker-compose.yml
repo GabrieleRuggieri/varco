@@ -1,0 +1,98 @@
+# Stack infrastrutturale locale per Varco.
+# Le app (web, api, worker) girano sull'host via `pnpm dev`.
+# Vedi ARCHITECTURE.md §9 e CONTRIBUTING.md.
+
+name: varco
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: varco-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: varco
+      POSTGRES_PASSWORD: varco
+      POSTGRES_DB: varco
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U varco -d varco']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: varco-redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  minio:
+    image: minio/minio:latest
+    container_name: varco-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - minio_data:/data
+
+  minio-init:
+    image: minio/mc:latest
+    container_name: varco-minio-init
+    depends_on:
+      - minio
+    restart: on-failure
+    entrypoint: >
+      /bin/sh -c "
+      for i in 1 2 3 4 5 6 7 8 9 10; do
+        mc alias set local http://minio:9000 minioadmin minioadmin && break;
+        sleep 2;
+      done &&
+      mc mb --ignore-existing local/varco-documents &&
+      echo 'Bucket varco-documents pronto'
+      "
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    container_name: varco-mailhog
+    restart: unless-stopped
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+
+  mock-server:
+    build:
+      context: ./mocks/mock-server
+      dockerfile: Dockerfile
+    container_name: varco-mock-server
+    restart: unless-stopped
+    ports:
+      - '4010:4010'
+    environment:
+      PORT: '4010'
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:4010/health']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:
