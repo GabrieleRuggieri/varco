@@ -2,32 +2,31 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { IconBox, IconCheckSquare, IconHome, IconList } from './icons';
 import styles from './AppShell.module.css';
 
 const NAV = [
-  { href: '/', label: 'Panoramica', exact: true },
-  { href: '/catalog', label: 'Catalogo', exact: false },
-  { href: '/skus', label: 'SKU', exact: false },
-  { href: '/checklist', label: 'Checklist', exact: false },
+  { href: '/', label: 'Panoramica', icon: IconHome, exact: true },
+  { href: '/catalog', label: 'Catalogo', icon: IconBox, exact: false },
+  { href: '/skus', label: 'SKU', icon: IconList, exact: false },
+  { href: '/checklist', label: 'Checklist', icon: IconCheckSquare, exact: false },
 ] as const;
 
 export function SidebarNav() {
   const pathname = usePathname();
 
   return (
-    <nav className={styles.nav}>
-      {NAV.map((item) => {
-        const active = item.exact ? pathname === item.href : pathname.startsWith(item.href);
+    <div className={styles.navSection}>
+      <p className={styles.navLabel}>Navigazione</p>
+      {NAV.map(({ href, label, icon: Icon, exact }) => {
+        const active = exact ? pathname === href : pathname.startsWith(href);
         return (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={active ? styles.navLinkActive : styles.navLink}
-          >
-            {item.label}
+          <Link key={href} href={href} className={active ? styles.navLinkActive : styles.navLink}>
+            <Icon size={15} />
+            {label}
           </Link>
         );
       })}
-    </nav>
+    </div>
   );
 }

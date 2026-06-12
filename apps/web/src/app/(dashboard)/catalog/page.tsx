@@ -2,7 +2,7 @@ import { CatalogSyncButton } from '@/components/CatalogSyncButton';
 import styles from '@/components/ui/ui.module.css';
 import { api } from '@/lib/api';
 import { getSession } from '@/lib/session';
-import pageStyles from '../page.module.css';
+import { IconBox, IconSync } from '@/components/icons';
 
 export default async function CatalogPage() {
   const session = await getSession();
@@ -14,23 +14,46 @@ export default async function CatalogPage() {
 
   return (
     <div>
-      <h1 className={pageStyles.heading}>Catalogo</h1>
-      <p className={pageStyles.lead}>
-        Connetti e sincronizza il catalogo marketplace. In locale usa il mock server Shopify sulla
-        porta 4010.
-      </p>
-
-      <div className={styles.card}>
-        <h2 className={pageStyles.sectionTitle}>Sincronizzazione</h2>
-        <CatalogSyncButton organizationId={session.organizationId} />
+      <div className={styles.pageHeader}>
+        <div className={styles.pageHeaderLeft}>
+          <h1 className={styles.pageTitle}>Catalogo</h1>
+          <p className={styles.pageLead}>
+            Sincronizza prodotti e SKU dal mock server Shopify (porta 4010).
+          </p>
+        </div>
       </div>
 
-      <div className={styles.card} style={{ marginTop: '1rem' }}>
-        <h2 className={pageStyles.sectionTitle}>Connessioni</h2>
+      <div className={styles.card} style={{ marginBottom: '0.75rem' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1rem',
+          }}
+        >
+          <div>
+            <p style={{ margin: '0 0 3px', fontSize: 14, fontWeight: 600, color: 'var(--color-ink-muted)' }}>
+              Shopify Mock
+            </p>
+            <p style={{ margin: 0, fontSize: 12, color: 'var(--color-ink-subtle)' }}>
+              Mock server · localhost:4010 · connessione attiva
+            </p>
+          </div>
+          <CatalogSyncButton organizationId={session.organizationId} />
+        </div>
+      </div>
+
+      <div className={styles.card}>
         {connections.connections.length === 0 ? (
-          <p style={{ color: 'var(--color-ink-subtle)', margin: 0 }}>
-            Nessuna connessione ancora — verrà creata al primo sync.
-          </p>
+          <div className={styles.emptyState}>
+            <IconBox className={styles.emptyStateIcon} />
+            <p className={styles.emptyStateTitle}>Nessuna connessione</p>
+            <p className={styles.emptyStateBody}>
+              Avvia la prima sincronizzazione per registrare la connessione Shopify.
+            </p>
+          </div>
         ) : (
           <table className={styles.table}>
             <thead>
@@ -42,7 +65,12 @@ export default async function CatalogPage() {
             <tbody>
               {connections.connections.map((c) => (
                 <tr key={c.id}>
-                  <td>{c.provider}</td>
+                  <td>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <IconSync size={13} style={{ color: 'var(--color-success)', opacity: 0.9 }} />
+                      <strong style={{ color: 'var(--color-ink)' }}>{c.provider}</strong>
+                    </div>
+                  </td>
                   <td className="tnum">
                     {c.lastSyncAt ? new Date(c.lastSyncAt).toLocaleString('it-IT') : '—'}
                   </td>

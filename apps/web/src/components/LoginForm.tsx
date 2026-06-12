@@ -67,8 +67,13 @@ export function LoginForm() {
 
       {error ? <p className={styles.alertError}>{error}</p> : null}
 
-      <button type="submit" className={styles.primary} disabled={loading}>
-        {loading ? 'Accesso…' : 'Accedi alla dashboard'}
+      <button
+        type="submit"
+        className={styles.primary}
+        disabled={loading}
+        style={{ padding: '10px 14px', fontSize: 14, marginTop: 4 }}
+      >
+        {loading ? 'Accesso…' : 'Accedi alla dashboard →'}
       </button>
 
       <p className={loginStyles.hint}>Demo: {DEMO_EMAIL} / demo</p>

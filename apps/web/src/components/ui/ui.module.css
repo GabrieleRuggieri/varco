@@ -1,21 +1,21 @@
+/* ── PULSANTI ─────────────────────────────────────────────────────────── */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 6px;
   border: none;
   border-radius: var(--radius-md);
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
-  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+  transition: background var(--transition-fast), color var(--transition-fast),
+    border-color var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
 }
-
-.button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+.button:disabled { opacity: 0.45; cursor: not-allowed; }
+.button svg { flex-shrink: 0; }
 
 .primary {
   composes: button;
@@ -23,27 +23,18 @@
   color: #fff;
   background: var(--color-primary);
 }
-
-.primary:hover:not(:disabled) {
-  background: var(--color-primary-hover);
-}
-
-.primary:active:not(:disabled) {
-  background: var(--color-primary-press);
-}
+.primary:hover:not(:disabled) { background: var(--color-primary-hover); }
+.primary:active:not(:disabled) { background: var(--color-primary-press); }
 
 .secondary {
   composes: button;
-  padding: 8px 12px;
-  font-size: 13px;
-  font-weight: 500;
+  padding: 7px 12px;
   color: var(--color-ink-muted);
-  background: var(--color-surface-1);
+  background: var(--color-surface-2);
   border: 1px solid var(--color-hairline);
 }
-
 .secondary:hover:not(:disabled) {
-  background: var(--color-surface-2);
+  background: var(--color-surface-3);
   border-color: var(--color-hairline-strong);
   color: var(--color-ink);
 }
@@ -51,17 +42,16 @@
 .ghost {
   composes: button;
   padding: 6px 10px;
-  font-size: 13px;
   font-weight: 400;
   color: var(--color-ink-subtle);
   background: transparent;
 }
-
 .ghost:hover:not(:disabled) {
-  color: var(--color-ink);
+  color: var(--color-ink-muted);
   background: var(--color-surface-2);
 }
 
+/* ── CARD ─────────────────────────────────────────────────────────────── */
 .card {
   background: var(--color-surface-1);
   border: 1px solid var(--color-hairline);
@@ -69,13 +59,23 @@
   padding: 1.25rem 1.5rem;
 }
 
+.cardFlat {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.5rem;
+}
+
+/* ── BADGE / SEVERITY ─────────────────────────────────────────────────── */
 .badge {
   display: inline-flex;
   align-items: center;
+  gap: 5px;
   padding: 2px 8px;
-  border-radius: var(--radius-md);
-  font-size: 12px;
-  font-weight: 500;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   background: var(--color-surface-3);
   color: var(--color-ink-muted);
   border: 1px solid var(--color-hairline);
@@ -84,10 +84,27 @@
 .badgeCritical {
   composes: badge;
   color: var(--color-critical);
-  border-color: rgba(229, 72, 77, 0.35);
-  background: rgba(229, 72, 77, 0.1);
+  border-color: var(--color-critical-border);
+  background: var(--color-critical-bg);
 }
-
+.badgeHigh {
+  composes: badge;
+  color: var(--color-high);
+  border-color: var(--color-high-border);
+  background: var(--color-high-bg);
+}
+.badgeMedium {
+  composes: badge;
+  color: var(--color-medium);
+  border-color: var(--color-medium-border);
+  background: var(--color-medium-bg);
+}
+.badgeSuccess {
+  composes: badge;
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+  background: var(--color-success-bg);
+}
 .badgeOpen {
   composes: badge;
   color: var(--color-primary-hover);
@@ -95,9 +112,19 @@
   background: rgba(94, 106, 210, 0.12);
 }
 
+/* punto colorato prefix */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: currentColor;
+}
+
+/* ── INPUT ────────────────────────────────────────────────────────────── */
 .input {
   width: 100%;
-  padding: 0.65rem 0.85rem;
+  padding: 9px 12px;
   border: 1px solid var(--color-hairline);
   border-radius: var(--radius-md);
   font-family: var(--font-sans);
@@ -105,66 +132,141 @@
   font-weight: 400;
   color: var(--color-ink);
   background: var(--color-surface-2);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
-
+.input::placeholder { color: var(--color-ink-tertiary); }
 .input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(94, 106, 210, 0.35);
+  box-shadow: 0 0 0 3px var(--color-primary-glow);
 }
 
 .label {
   display: block;
-  margin-bottom: 0.35rem;
+  margin-bottom: 6px;
   font-size: 12px;
   font-weight: 500;
   color: var(--color-ink-subtle);
+  letter-spacing: 0.01em;
 }
 
+/* ── TABELLA ──────────────────────────────────────────────────────────── */
 .table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 13px;
 }
-
 .table th {
   text-align: left;
-  padding: 0.65rem 0.75rem;
-  font-weight: 500;
+  padding: 10px 12px;
+  font-weight: 600;
   color: var(--color-ink-subtle);
   border-bottom: 1px solid var(--color-hairline);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  background: var(--color-surface-2);
 }
-
+.table th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+.table th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
 .table td {
-  padding: 0.75rem;
+  padding: 12px;
   border-bottom: 1px solid var(--color-hairline);
   vertical-align: middle;
   color: var(--color-ink-muted);
 }
-
-.table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+.table tr:last-child td { border-bottom: none; }
+.table tbody tr {
+  transition: background var(--transition-fast);
 }
+.table tbody tr:hover td { background: var(--color-surface-hover); }
 
-.table tr:last-child td {
-  border-bottom: none;
-}
-
+/* ── ALERT ────────────────────────────────────────────────────────────── */
 .alert {
-  padding: 0.75rem 1rem;
+  padding: 10px 14px;
   border-radius: var(--radius-md);
   font-size: 13px;
-  background: rgba(94, 106, 210, 0.1);
-  border: 1px solid rgba(94, 106, 210, 0.25);
+  background: rgba(94, 106, 210, 0.08);
+  border: 1px solid rgba(94, 106, 210, 0.2);
   color: var(--color-ink-muted);
 }
-
 .alertError {
   composes: alert;
-  background: rgba(229, 72, 77, 0.1);
-  border-color: rgba(229, 72, 77, 0.3);
+  background: var(--color-critical-bg);
+  border-color: var(--color-critical-border);
   color: var(--color-critical);
+}
+
+/* ── EMPTY STATE ──────────────────────────────────────────────────────── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  gap: 0.75rem;
+  text-align: center;
+}
+.emptyStateIcon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-ink-tertiary);
+  opacity: 0.6;
+}
+.emptyStateTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+}
+.emptyStateBody {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-ink-subtle);
+  max-width: 30ch;
+  line-height: 1.5;
+}
+
+/* ── PAGE HEADER ──────────────────────────────────────────────────────── */
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.pageHeaderLeft { flex: 1; min-width: 0; }
+.pageTitle {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+}
+.pageLead {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-ink-subtle);
+  max-width: 60ch;
+}
+.pageActions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+
+/* ── PILL TAG ─────────────────────────────────────────────────────────── */
+.pillTag {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--color-surface-3);
+  color: var(--color-ink-subtle);
+  border: 1px solid var(--color-hairline);
+}
+
+/* ── DIVIDER ──────────────────────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-hairline);
+  margin: 1rem 0;
 }

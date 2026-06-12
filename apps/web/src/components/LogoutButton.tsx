@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { IconLogout } from './icons';
 import styles from './AppShell.module.css';
 
 export function LogoutButton() {
@@ -17,6 +18,7 @@ export function LogoutButton() {
 
   return (
     <button type="button" className={styles.logoutBtn} onClick={() => void logout()} disabled={loading}>
+      <IconLogout size={13} />
       {loading ? 'Uscita…' : 'Esci'}
     </button>
   );
