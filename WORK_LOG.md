@@ -15,9 +15,9 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Architettura | completato | `ARCHITECTURE.md` v1 |
 | README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
-| Monorepo / codice | in corso | Fase 1 completata; fase 2 Docker in corso |
+| Monorepo / codice | in corso | Fasi 1–3 su `develop`; prossima: package matrix |
 | Docker Compose | completato | postgres, redis, minio, mailhog, mock-server |
-| Package database | in corso | Drizzle schema, migration init, seed demo |
+| Package database | completato | Drizzle 13 tabelle, migration `0000_init`, seed demo |
 | Matrice obblighi seed | pianificato | 5 cat × 5 paesi |
 | Connettori catalogo | pianificato | Mock first |
 | Pipeline classificazione | pianificato | Provider astratto: mock / Ollama / OpenAI |
@@ -72,7 +72,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Avvio implementazione a fasi | in corso | Branch da `develop`, commit per fase |
 | Scaffold monorepo (fase 1) | completato | pnpm, Turborepo, ESLint, Prettier, `.env.example`, apps skeleton, `@varco/shared` |
 | Docker Compose (fase 2) | completato | PG 16, Redis, MinIO, Mailhog, mock-server Fastify |
-| Package database (fase 3) | in corso | Schema Drizzle 13 tabelle, migration `0000_init`, seed demo |
+| Package database (fase 3) | completato | Schema Drizzle 13 tabelle, migration `0000_init`, seed demo |
 
 ---
 
