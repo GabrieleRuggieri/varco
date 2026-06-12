@@ -1,0 +1,412 @@
+{
+  "products": [
+    {
+      "id": 8001001,
+      "title": "Blocchi costruzione legno — set 50 pezzi",
+      "body_html": "<p>Giocattolo educativo in legno certificato, finitura a base acqua. Età 3+.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Toys",
+      "tags": "varco_category:toys, materials:wood,water_based_paint, target_countries:DE,FR,IT",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9001001,
+          "product_id": 8001001,
+          "sku": "TOYS-WOOD-050",
+          "title": "Default",
+          "price": "34.90",
+          "inventory_quantity": 120
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/toys-wood.jpg" }]
+    },
+    {
+      "id": 8001002,
+      "title": "Peluche conno orso — 30 cm",
+      "body_html": "<p>Peluche in polyester, imbottitura fibra riciclata. Lavabile 30°C.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Toys",
+      "tags": "varco_category:toys, materials:polyester,fiber_fill, target_countries:DE,FR,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9001002,
+          "product_id": 8001002,
+          "sku": "TOYS-PLSH-030",
+          "title": "Default",
+          "price": "19.99",
+          "inventory_quantity": 85
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/toys-plush.jpg" }]
+    },
+    {
+      "id": 8001003,
+      "title": "Kit slime glitter — 6 colori",
+      "body_html": "<p>Set slime non tossico per bambini 6+. Contiene borace in quantità trace.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Toys",
+      "tags": "varco_category:toys, materials:plastic,glitter, target_countries:DE,IT",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9001003,
+          "product_id": 8001003,
+          "sku": "TOYS-SLME-006",
+          "title": "Default",
+          "price": "14.50",
+          "inventory_quantity": 200
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/toys-slime.jpg" }]
+    },
+    {
+      "id": 8001004,
+      "title": "Puzzle mappe Europa — 500 pezzi",
+      "body_html": "<p>Puzzle cartone riciclato, stampa soy-based. Età 8+.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Toys",
+      "tags": "varco_category:toys, materials:cardboard,soy_ink, target_countries:FR,IT,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9001004,
+          "product_id": 8001004,
+          "sku": "TOYS-PZLE-500",
+          "title": "Default",
+          "price": "22.00",
+          "inventory_quantity": 60
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/toys-puzzle.jpg" }]
+    },
+    {
+      "id": 8002001,
+      "title": "T-shirt cotone bio — unisex",
+      "body_html": "<p>100% cotone biologico pettinato, 180 gsm. Prodotto in PT.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Apparel",
+      "tags": "varco_category:apparel, materials:organic_cotton, target_countries:DE,FR,IT,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9002001,
+          "product_id": 8002001,
+          "sku": "APP-TEE-BLK-S",
+          "title": "Nero / S",
+          "price": "29.00",
+          "inventory_quantity": 40
+        },
+        {
+          "id": 9002002,
+          "product_id": 8002001,
+          "sku": "APP-TEE-BLK-M",
+          "title": "Nero / M",
+          "price": "29.00",
+          "inventory_quantity": 55
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-tee.jpg" }]
+    },
+    {
+      "id": 8002002,
+      "title": "Felpa oversize — french terry",
+      "body_html": "<p>Felpa 80% cotone 20% polyester, cappuccio con coulisse.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Apparel",
+      "tags": "varco_category:apparel, materials:cotton,polyester, target_countries:DE,FR",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9002003,
+          "product_id": 8002002,
+          "sku": "APP-HDY-GRY-L",
+          "title": "Grigio / L",
+          "price": "59.00",
+          "inventory_quantity": 30
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-hoodie.jpg" }]
+    },
+    {
+      "id": 8002003,
+      "title": "Leggings yoga — compressione leggera",
+      "body_html": "<p>Tessuto tecnico 88% nylon 12% elastan, flatlock seams.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Apparel",
+      "tags": "varco_category:apparel, materials:nylon,elastane, target_countries:IT,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9002004,
+          "product_id": 8002003,
+          "sku": "APP-LEG-BLK-M",
+          "title": "Nero / M",
+          "price": "45.00",
+          "inventory_quantity": 70
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-leggings.jpg" }]
+    },
+    {
+      "id": 8002004,
+      "title": "Cappello bucket — cotone canvas",
+      "body_html": "<p>Cappello bucket unisex, cotone canvas 320 gsm, ricamo logo.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Apparel",
+      "tags": "varco_category:apparel, materials:cotton, target_countries:DE,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9002005,
+          "product_id": 8002004,
+          "sku": "APP-BCK-KHK-OS",
+          "title": "Khaki / OS",
+          "price": "24.00",
+          "inventory_quantity": 95
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-bucket.jpg" }]
+    },
+    {
+      "id": 8003001,
+      "title": "Cavo USB-C — 2m braided",
+      "body_html": "<p>Cavo ricarica USB-C 60W, nylon braided, connettori alluminio.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Electronics",
+      "tags": "varco_category:electronics_accessories, materials:aluminum,nylon,copper, target_countries:DE,FR,IT,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9003001,
+          "product_id": 8003001,
+          "sku": "ELC-USBC-2M-BLK",
+          "title": "Nero",
+          "price": "12.99",
+          "inventory_quantity": 500
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/elec-cable.jpg" }]
+    },
+    {
+      "id": 8003002,
+      "title": "Cover silicone iPhone 15",
+      "body_html": "<p>Cover protettiva silicone liquido, wireless charging compatible.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Electronics",
+      "tags": "varco_category:electronics_accessories, materials:silicone, target_countries:DE,FR,IT",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9003002,
+          "product_id": 8003002,
+          "sku": "ELC-IPH15-SIL-BLU",
+          "title": "Blu",
+          "price": "18.50",
+          "inventory_quantity": 150
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/elec-case.jpg" }]
+    },
+    {
+      "id": 8003003,
+      "title": "Power bank 10000 mAh — PD 20W",
+      "body_html": "<p>Batteria esterna lithium polymer, USB-C PD, indicatore LED.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Electronics",
+      "tags": "varco_category:electronics_accessories, materials:lithium_polymer,plastic, requires_battery:true, target_countries:DE,FR,ES",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9003003,
+          "product_id": 8003003,
+          "sku": "ELC-PWBK-10K",
+          "title": "Default",
+          "price": "39.90",
+          "inventory_quantity": 80
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/elec-powerbank.jpg" }]
+    },
+    {
+      "id": 8003004,
+      "title": "Auricolari TWS — cancellazione rumore",
+      "body_html": "<p>Earbuds Bluetooth 5.3, case ricarica USB-C, IPX4.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Electronics",
+      "tags": "varco_category:electronics_accessories, materials:plastic,silicone, requires_battery:true, target_countries:IT,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9003004,
+          "product_id": 8003004,
+          "sku": "ELC-TWS-ANC-WHT",
+          "title": "Bianco",
+          "price": "79.00",
+          "inventory_quantity": 45
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/elec-earbuds.jpg" }]
+    },
+    {
+      "id": 8004001,
+      "title": "Crema viso idratante — acido ialuronico",
+      "body_html": "<p>Crema viso vegan, 50ml, senza profumo. INCI completo su etichetta.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Cosmetics",
+      "tags": "varco_category:cosmetics, materials:aqua,glycerin,hyaluronic_acid, target_countries:DE,FR,IT,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9004001,
+          "product_id": 8004001,
+          "sku": "COS-CRM-HYA-50",
+          "title": "50 ml",
+          "price": "28.00",
+          "inventory_quantity": 110
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-cream.jpg" }]
+    },
+    {
+      "id": 8004002,
+      "title": "Shampoo solido — capelli secchi",
+      "body_html": "<p>Shampoo bar 80g, senza sulfati, packaging carta FSC.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Cosmetics",
+      "tags": "varco_category:cosmetics, materials:plant_oils,sodium_cocoyl_isethionate, target_countries:DE,FR",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9004002,
+          "product_id": 8004002,
+          "sku": "COS-SHP-SLD-80",
+          "title": "80 g",
+          "price": "11.90",
+          "inventory_quantity": 180
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-shampoo.jpg" }]
+    },
+    {
+      "id": 8004003,
+      "title": "Rossetto matte — rosso classico",
+      "body_html": "<p>Rossetto liquido matte long-wear, 5ml, cruelty free.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Cosmetics",
+      "tags": "varco_category:cosmetics, materials:dimethicone,pigments, target_countries:IT,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9004003,
+          "product_id": 8004003,
+          "sku": "COS-LIP-MAT-RED",
+          "title": "Rosso 01",
+          "price": "16.50",
+          "inventory_quantity": 90
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-lipstick.jpg" }]
+    },
+    {
+      "id": 8004004,
+      "title": "Siero vitamina C — 30ml",
+      "body_html": "<p>Siero concentrato 15% vitamina C, packaging vetro ambrato.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Cosmetics",
+      "tags": "varco_category:cosmetics, materials:ascorbic_acid,glass, target_countries:DE,IT,FR",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9004004,
+          "product_id": 8004004,
+          "sku": "COS-SRM-VTC-30",
+          "title": "30 ml",
+          "price": "32.00",
+          "inventory_quantity": 65
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-serum.jpg" }]
+    },
+    {
+      "id": 8005001,
+      "title": "Lampada LED scrivania — dimmer",
+      "body_html": "<p>Lampada LED 4000K, braccio flessibile, alimentazione USB-C 5V.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Home",
+      "tags": "varco_category:home, materials:aluminum,plastic,led, target_countries:DE,FR,IT,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9005001,
+          "product_id": 8005001,
+          "sku": "HOME-LMP-LED-DIM",
+          "title": "Default",
+          "price": "49.00",
+          "inventory_quantity": 75
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/home-lamp.jpg" }]
+    },
+    {
+      "id": 8005002,
+      "title": "Set contenitori vetro — meal prep",
+      "body_html": "<p>5 contenitori borosilicato con coperchio bamboo, oven safe.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Home",
+      "tags": "varco_category:home, materials:borosilicate_glass,bamboo, target_countries:DE,IT",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9005002,
+          "product_id": 8005002,
+          "sku": "HOME-GLS-SET5",
+          "title": "Set 5 pz",
+          "price": "36.00",
+          "inventory_quantity": 50
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/home-glass.jpg" }]
+    },
+    {
+      "id": 8005003,
+      "title": "Cuscino memory foam — ergonomico",
+      "body_html": "<p>Cuscino cervicale memory foam, fodera removable cotone.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Home",
+      "tags": "varco_category:home, materials:memory_foam,cotton, target_countries:FR,ES,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9005003,
+          "product_id": 8005003,
+          "sku": "HOME-PLW-MEM-STD",
+          "title": "Standard",
+          "price": "42.00",
+          "inventory_quantity": 40
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/home-pillow.jpg" }]
+    },
+    {
+      "id": 8005004,
+      "title": "Diffusore aromi — ultrasonico",
+      "body_html": "<p>Diffusore ultrasuoni 300ml, timer 1/3/6h, luce LED soft.</p>",
+      "vendor": "Varco Demo Shop",
+      "product_type": "Home",
+      "tags": "varco_category:home, materials:plastic,pp, target_countries:DE,FR,NL",
+      "status": "active",
+      "variants": [
+        {
+          "id": 9005004,
+          "product_id": 8005004,
+          "sku": "HOME-DIF-US-300",
+          "title": "Bianco",
+          "price": "27.50",
+          "inventory_quantity": 100
+        }
+      ],
+      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/home-diffuser.jpg" }]
+    }
+  ]
+}

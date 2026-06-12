@@ -24,7 +24,10 @@
     "db:migrate": "pnpm --filter @varco/database db:migrate",
     "db:seed": "pnpm --filter @varco/database db:seed",
     "matrix:validate": "pnpm --filter @varco/matrix matrix:validate",
-    "matrix:seed": "pnpm --filter @varco/matrix matrix:seed"
+    "matrix:seed": "pnpm --filter @varco/matrix matrix:seed",
+    "mock:build": "npm run build --prefix mocks/mock-server",
+    "mock:dev": "npm run build --prefix mocks/mock-server && npm run start --prefix mocks/mock-server",
+    "mock:test": "npm run test --prefix mocks/mock-server"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",

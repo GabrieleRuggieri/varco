@@ -78,14 +78,19 @@ services:
 
   mock-server:
     build:
-      context: ./mocks/mock-server
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: mocks/mock-server/Dockerfile
     container_name: varco-mock-server
     restart: unless-stopped
     ports:
       - '4010:4010'
     environment:
       PORT: '4010'
+      FIXTURES_DIR: /fixtures
+      PARTNER_WEBHOOK_DELAY_MS: '5000'
+      # VARCO_WEBHOOK_URL: http://host.docker.internal:3001/api/internal/partner-webhook
+    volumes:
+      - ./fixtures:/fixtures:ro
     healthcheck:
       test: ['CMD', 'wget', '-qO-', 'http://localhost:4010/health']
       interval: 10s

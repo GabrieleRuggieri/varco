@@ -15,11 +15,11 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Architettura | completato | `ARCHITECTURE.md` v1 |
 | README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
-| Monorepo / codice | in corso | Fasi 1–4 su `develop`; prossima: mock server / API |
+| Monorepo / codice | in corso | Fase 6 completata; prossima: API skeleton NestJS |
 | Docker Compose | completato | postgres, redis, minio, mailhog, mock-server |
 | Package database | completato | Drizzle 13 tabelle, migration `0000_init`, seed demo |
 | Matrice obblighi seed | completato | `matrix-v0.yaml` — 12 regole in bozza |
-| Connettori catalogo | pianificato | Mock first |
+| Connettori catalogo | in corso | Mock server Shopify completo; package connectors in fase 7 |
 | Pipeline classificazione | pianificato | Provider astratto: mock / Ollama / OpenAI |
 | Generatore documenti GPSR | pianificato | Template per categoria |
 | Partner broker (mock) | pianificato | RP + EPR |
@@ -96,6 +96,12 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Riferimenti design | completato | CONTRIBUTING, README, WORK_LOG aggiornati |
 | Decisioni fasi 6–11 | completato | Auth email v1; landing statica; fixture ~20 SKU |
 
+### 2026-06-12 (sessione 6)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Mock server catalogo (fase 6) | completato | Fixture 20 prodotti / 21 SKU; OAuth, products API, partner RP/EPR + webhook simulato |
+
 ---
 
 ## Backlog prossimi passi (ordinato)
@@ -105,7 +111,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 3. ~~**Package `database`**~~ — in merge *(fase 3)*
 4. ~~**Package `matrix`**~~ — in merge *(fase 4)*
 5. ~~**Matrice seed v0**~~ — in merge *(12 regole bozza)*
-6. **Mock server** — fixture Shopify catalog + partner webhook
+6. ~~**Mock server**~~ — in merge *(fase 6)*
 7. **API skeleton** — auth, org, health, OpenAPI
 8. **Worker** — job `catalog.sync`, `sku.classify`, `document.generate`
 9. **Classification mock** — fixture JSON → matrix match

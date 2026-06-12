@@ -68,7 +68,13 @@ pnpm dev
 - API: http://localhost:3001
 - Mailhog: http://localhost:8025
 - MinIO console: http://localhost:9001
-- Mock server: http://localhost:4010
+- Mock server: http://localhost:4010 ([`fixtures/shopify-catalog.json`](./fixtures/shopify-catalog.json) — 20 prodotti, 21 SKU)
+
+```bash
+pnpm mock:dev          # mock server in locale (senza Docker)
+pnpm mock:test         # test route Shopify/partner
+curl http://localhost:4010/shopify/catalog/stats
+```
 
 Con `LLM_PROVIDER=mock` e `SHOPIFY_API_MODE=mock` non servono chiavi API esterne.
 
