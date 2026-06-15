@@ -4,7 +4,7 @@
   "private": true,
   "description": "Dashboard Next.js — checklist, catalogo, documenti",
   "scripts": {
-    "build": "node --env-file=../../.env ./node_modules/next/dist/bin/next build",
+    "build": "next build",
     "dev": "node --env-file=../../.env ./node_modules/next/dist/bin/next dev --port ${WEB_PORT:-3000}",
     "start": "node --env-file=../../.env ./node_modules/next/dist/bin/next start --port ${WEB_PORT:-3000}",
     "lint": "eslint .",
