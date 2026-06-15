@@ -86,17 +86,17 @@ Per testare la classificazione con un modello reale in locale, installa [Ollama]
 
 Vedi [ARCHITECTURE.md](./ARCHITECTURE.md) §4. In sintesi:
 
-| Path | Contenuto |
-|------|-----------|
-| `apps/web` | Dashboard Next.js |
-| `apps/api` | Backend API |
-| `apps/worker` | Job asincroni |
-| `packages/auth` | JWT e sessioni |
-| `packages/matrix` | Matrice obblighi (YAML + validazione) |
-| `packages/classification` | Pipeline LLM → matrix |
-| `packages/documents` | Template GPSR |
-| `mocks/mock-server` | API mock (Shopify, Amazon, Partner) |
-| `fixtures/` | Dati di test e mock |
+| Path                      | Contenuto                             |
+| ------------------------- | ------------------------------------- |
+| `apps/web`                | Dashboard Next.js                     |
+| `apps/api`                | Backend API                           |
+| `apps/worker`             | Job asincroni                         |
+| `packages/auth`           | JWT e sessioni                        |
+| `packages/matrix`         | Matrice obblighi (YAML + validazione) |
+| `packages/classification` | Pipeline LLM → matrix                 |
+| `packages/documents`      | Template GPSR                         |
+| `mocks/mock-server`       | API mock (Shopify, Amazon, Partner)   |
+| `fixtures/`               | Dati di test e mock                   |
 
 ---
 

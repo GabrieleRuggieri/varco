@@ -4,7 +4,7 @@
 
 Varco trasforma le normative europee sui prodotti (GPSR, EPR, etichettatura, PPWR) in una checklist operativa per SKU, con bozze di documenti generate da template revisionati — così brand e seller possono espandere la vendita cross-border nell'UE senza navigare da soli decine di portali e consulenti frammentati.
 
-> **Importante:** Varco supporta la *preparazione* di documenti e dati strutturati. Non è consulenza legale e non certifica la conformità del prodotto. Ogni output include disclaimer espliciti.
+> **Importante:** Varco supporta la _preparazione_ di documenti e dati strutturati. Non è consulenza legale e non certifica la conformità del prodotto. Ogni output include disclaimer espliciti.
 
 ---
 
@@ -20,13 +20,13 @@ Brand D2C e seller su marketplace (Shopify, Amazon, Etsy) con cataloghi da 10 a 
 
 ## Cosa fa
 
-| Funzionalità | Descrizione |
-|--------------|-------------|
-| **Scansione catalogo** | Collegamento a Shopify/Amazon; import titoli, descrizioni, materiali, immagini e mercati target |
-| **Classificazione SKU** | L'AI estrae attributi strutturati (categoria, materiali, età, ecc.); gli obblighi derivano da una **matrice curata da esperti**, non dall'output libero del modello |
-| **Checklist per paese** | Obblighi con gravità, scadenze e stato operativo — da «27 paesi di legalese» a «le tue N azioni da fare» |
-| **Generatore documenti GPSR** | Bozze di risk assessment, scheletro fascicolo tecnico, dichiarazione di conformità, elementi di etichetta — da template per categoria |
-| **RP ed EPR via partner** | Orchestrazione di nomina Responsible Person e registrazioni ai consorzi tramite partner integrati (Varco coordina, non eroga il servizio) |
+| Funzionalità                  | Descrizione                                                                                                                                                         |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Scansione catalogo**        | Collegamento a Shopify/Amazon; import titoli, descrizioni, materiali, immagini e mercati target                                                                     |
+| **Classificazione SKU**       | L'AI estrae attributi strutturati (categoria, materiali, età, ecc.); gli obblighi derivano da una **matrice curata da esperti**, non dall'output libero del modello |
+| **Checklist per paese**       | Obblighi con gravità, scadenze e stato operativo — da «27 paesi di legalese» a «le tue N azioni da fare»                                                            |
+| **Generatore documenti GPSR** | Bozze di risk assessment, scheletro fascicolo tecnico, dichiarazione di conformità, elementi di etichetta — da template per categoria                               |
+| **RP ed EPR via partner**     | Orchestrazione di nomina Responsible Person e registrazioni ai consorzi tramite partner integrati (Varco coordina, non eroga il servizio)                           |
 
 ### Perimetro MVP (v1)
 
@@ -83,16 +83,16 @@ Le voci generate dalla matrice compaiono per **SKU × paese**: tipo obbligo (fas
 
 ## Stack tecnologico
 
-| Componente | Tecnologia |
-|------------|------------|
-| Monorepo | pnpm + Turborepo |
-| Frontend | Next.js 15, TypeScript |
-| API | NestJS |
-| Worker | BullMQ + Redis |
-| Database | PostgreSQL 16, Drizzle ORM |
-| Auth | Auth.js v5 |
-| Storage | MinIO (locale) / S3 (produzione) |
-| LLM | Provider astratto: `mock` \| `ollama` \| `openai` |
+| Componente | Tecnologia                                        |
+| ---------- | ------------------------------------------------- |
+| Monorepo   | pnpm + Turborepo                                  |
+| Frontend   | Next.js 15, TypeScript                            |
+| API        | NestJS                                            |
+| Worker     | BullMQ + Redis                                    |
+| Database   | PostgreSQL 16, Drizzle ORM                        |
+| Auth       | Auth.js v5                                        |
+| Storage    | MinIO (locale) / S3 (produzione)                  |
+| LLM        | Provider astratto: `mock` \| `ollama` \| `openai` |
 
 ## Avvio rapido
 
@@ -124,12 +124,12 @@ In un secondo terminale, con `pnpm dev` attivo, popola catalogo, checklist e PDF
 pnpm demo:populate
 ```
 
-| Servizio | URL |
-|----------|-----|
-| Web | http://localhost:3000 |
-| API | http://localhost:3001 |
-| Mailhog | http://localhost:8025 |
-| MinIO | http://localhost:9001 |
+| Servizio | URL                   |
+| -------- | --------------------- |
+| Web      | http://localhost:3000 |
+| API      | http://localhost:3001 |
+| Mailhog  | http://localhost:8025 |
+| MinIO    | http://localhost:9001 |
 
 Con `LLM_PROVIDER=mock` e `SHOPIFY_API_MODE=mock` non servono chiavi API esterne per lo sviluppo locale.
 
@@ -163,14 +163,14 @@ varco/
 
 ## Glossario
 
-| Termine | Significato |
-|---------|-------------|
-| **GPSR** | Regolamento generale sulla sicurezza dei prodotti (UE), in vigore dal dicembre 2024 |
-| **EPR** | Extended Producer Responsibility — registrazione e contributi per imballaggi/prodotti, per paese |
-| **PPWR** | Regolamento UE sugli imballaggi e sui rifiuti di imballaggio |
-| **RP** | Responsible Person — soggetto stabilito nell'UE responsabile della conformità |
-| **DoC** | Dichiarazione di Conformità |
-| **SKU** | Singolo articolo a catalogo |
+| Termine  | Significato                                                                                      |
+| -------- | ------------------------------------------------------------------------------------------------ |
+| **GPSR** | Regolamento generale sulla sicurezza dei prodotti (UE), in vigore dal dicembre 2024              |
+| **EPR**  | Extended Producer Responsibility — registrazione e contributi per imballaggi/prodotti, per paese |
+| **PPWR** | Regolamento UE sugli imballaggi e sui rifiuti di imballaggio                                     |
+| **RP**   | Responsible Person — soggetto stabilito nell'UE responsabile della conformità                    |
+| **DoC**  | Dichiarazione di Conformità                                                                      |
+| **SKU**  | Singolo articolo a catalogo                                                                      |
 
 ## Licenza
 
@@ -184,9 +184,9 @@ I contributi al repository sono accettati solo su invito.
 
 ## Documentazione
 
-| Documento | Contenuto |
-|-----------|-----------|
-| [ARCHITECTURE.md](./ARCHITECTURE.md) | Architettura di sistema, domini, API, modello dati |
-| [design/README.md](./design/README.md) | Sistema visivo di riferimento (Replit-inspired) |
-| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Token colori, tipografia, componenti UI |
-| [CONTRIBUTING.md](./CONTRIBUTING.md) | Setup sviluppo, standard di codice, processo PR |
+| Documento                                            | Contenuto                                          |
+| ---------------------------------------------------- | -------------------------------------------------- |
+| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Architettura di sistema, domini, API, modello dati |
+| [design/README.md](./design/README.md)               | Sistema visivo di riferimento (Replit-inspired)    |
+| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Token colori, tipografia, componenti UI            |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Setup sviluppo, standard di codice, processo PR    |

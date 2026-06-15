@@ -20,11 +20,11 @@ Riferimenti archiviati: [`design/stripe/`](./stripe/) (precedente), ~~`design/li
 
 ## File di riferimento
 
-| File | Contenuto |
-|------|-----------|
+| File                                     | Contenuto                             |
+| ---------------------------------------- | ------------------------------------- |
 | [`replit/DESIGN.md`](./replit/DESIGN.md) | Token colori, tipografia, principi UI |
-| [`replit/SOURCE.md`](./replit/SOURCE.md) | Provenienza e riferimenti brand |
-| [`stripe/DESIGN.md`](./stripe/DESIGN.md) | Archivio — precedente riferimento |
+| [`replit/SOURCE.md`](./replit/SOURCE.md) | Provenienza e riferimenti brand       |
+| [`stripe/DESIGN.md`](./stripe/DESIGN.md) | Archivio — precedente riferimento     |
 
 Implementazione CSS: `apps/web/src/app/globals.css` (`:root`).
 
@@ -41,14 +41,14 @@ Implementazione CSS: `apps/web/src/app/globals.css` (`:root`).
 
 ### Mappatura rapida Varco → token
 
-| Elemento Varco | Token CSS |
-|----------------|-----------|
-| Shell dashboard | `--color-canvas` + sidebar `--color-glass` |
-| Card SKU / checklist | `--color-surface-1` + `--color-hairline` |
-| Tabella dati | body 13px + header caption uppercase |
-| Tag stato obbligo | `--color-surface-2` + pill border |
-| Gravità critical | `--color-critical` — non CTA primaria |
-| Form login | `--color-surface-1`, focus `--color-primary` |
+| Elemento Varco       | Token CSS                                    |
+| -------------------- | -------------------------------------------- |
+| Shell dashboard      | `--color-canvas` + sidebar `--color-glass`   |
+| Card SKU / checklist | `--color-surface-1` + `--color-hairline`     |
+| Tabella dati         | body 13px + header caption uppercase         |
+| Tag stato obbligo    | `--color-surface-2` + pill border            |
+| Gravità critical     | `--color-critical` — non CTA primaria        |
+| Form login           | `--color-surface-1`, focus `--color-primary` |
 
 ---
 

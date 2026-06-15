@@ -25,7 +25,7 @@ Varco turns EU product regulations (GPSR, EPR, labeling, PPWR) from 27 countries
 
 ## Core problem solved
 
-In December 2024, GPSR came into force and thousands of US, UK, and Asian small sellers simply geo-blocked the EU — not because they couldn't comply, but because nobody could tell them *what compliance meant for their products*. Every product placed on the EU market needs a Responsible Person, a technical file and risk assessment, conformity documentation, compliant labeling, and per-country packaging EPR registration (LUCID in Germany, Citeo in France, CONAI in Italy — each with its own portal, fees, and deadlines). PPWR adds a new wave of obligations from August 2026, with more phases in 2028 and 2030. Obligations are per-country, per-category, and constantly changing. The current options are €2–5k consultants per market, fragmented single-obligation services, or abandoning the market entirely. Every geo-blocked checkout is revenue surrendered to compliance paperwork.
+In December 2024, GPSR came into force and thousands of US, UK, and Asian small sellers simply geo-blocked the EU — not because they couldn't comply, but because nobody could tell them _what compliance meant for their products_. Every product placed on the EU market needs a Responsible Person, a technical file and risk assessment, conformity documentation, compliant labeling, and per-country packaging EPR registration (LUCID in Germany, Citeo in France, CONAI in Italy — each with its own portal, fees, and deadlines). PPWR adds a new wave of obligations from August 2026, with more phases in 2028 and 2030. Obligations are per-country, per-category, and constantly changing. The current options are €2–5k consultants per market, fragmented single-obligation services, or abandoning the market entirely. Every geo-blocked checkout is revenue surrendered to compliance paperwork.
 
 ## Why now
 
@@ -41,11 +41,11 @@ D2C brands and marketplace sellers (Shopify, Amazon, Etsy) with 10–500 SKUs an
 
 ## Market size
 
-| Level | Estimate | Reasoning |
-|---|---|---|
-| TAM | €0.5–1.5B/year | 500k–1M sellers with multi-country product compliance obligations into/within the EU × €1–3k/year (currently spent on consultants, fragmented services, or surrendered revenue) |
-| SAM | €150–300M/year | 100–150k sellers in the 10–500 SKU segment across the first 5 categories and languages (EN, IT, DE) |
-| SOM at 3 years | €4–7M ARR | 1,500–3,000 paying customers + take-rate on brokered services |
+| Level          | Estimate       | Reasoning                                                                                                                                                                       |
+| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TAM            | €0.5–1.5B/year | 500k–1M sellers with multi-country product compliance obligations into/within the EU × €1–3k/year (currently spent on consultants, fragmented services, or surrendered revenue) |
+| SAM            | €150–300M/year | 100–150k sellers in the 10–500 SKU segment across the first 5 categories and languages (EN, IT, DE)                                                                             |
+| SOM at 3 years | €4–7M ARR      | 1,500–3,000 paying customers + take-rate on brokered services                                                                                                                   |
 
 Market anchors:
 
@@ -60,7 +60,7 @@ Sources: Etsy Seller Handbook (GPSR), UK press (Telegraph, ChannelX/ecommercenew
 - **Catalog scan → obligation map** — connect Shopify/Amazon; AI classifies every SKU by category, materials, and target markets, and produces the exact per-country obligation list with severity and deadlines. From "27 countries of legalese" to "your 14 action items"
 - **Compliance file builder** — AI drafts risk assessments, technical-file skeletons, declarations of conformity, and required label elements (warnings, RP address, Triman/sorting symbols) per SKU; flags missing supplier documents and chases them with automated requests
 - **Responsible Person + EPR registrations, brokered** — appoint the EU Responsible Person and register with national packaging/WEEE schemes through integrated partners, from one dashboard instead of 27 portals
-- **Regulation radar** — monitors EU and national rule changes (PPWR phases, category-specific rules), translates legalese into plain language, and tells each seller what changed *for their SKUs* and what to do about it
+- **Regulation radar** — monitors EU and national rule changes (PPWR phases, category-specific rules), translates legalese into plain language, and tells each seller what changed _for their SKUs_ and what to do about it
 - **Marketplace shield** — keeps Amazon/Etsy compliance attributes synced so listings don't get suppressed; alerts before a missing data point triggers a 48-hour takedown
 
 ## How it works — MVP and architecture
@@ -79,37 +79,37 @@ Sources: Etsy Seller Handbook (GPSR), UK press (Telegraph, ChannelX/ecommercenew
 
 ## Competition and positioning
 
-| Competitor | What it does | Why it's not enough |
-|---|---|---|
+| Competitor                                     | What it does                      | Why it's not enough                                                                   |
+| ---------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------- |
 | Consultants and TIC firms (SGS, TÜV, Intertek) | Bespoke compliance, certification | €2–5k per market, per project; doesn't scale across catalogs or continuous monitoring |
-| AVASK | VAT + EPR + RP for Amazon sellers | Service-heavy and tax-led: no per-SKU automation, no self-serve product |
-| ecosistant (5k+ sellers), Lizenzero | EPR registrations and filings | Single-obligation: no GPSR, files, labels, or regulatory monitoring |
-| ProductIP | Technical file platform | Document-centric and pre-AI: per-file pricing, built for structured importers |
-| Obelis and various Authorised Reps | Responsible Person only | One obligation, manual processes |
-| Native marketplace tools (Amazon Compliance) | Minimal attribute collection | Amazon-only, reactive, no multi-channel or EPR support |
+| AVASK                                          | VAT + EPR + RP for Amazon sellers | Service-heavy and tax-led: no per-SKU automation, no self-serve product               |
+| ecosistant (5k+ sellers), Lizenzero            | EPR registrations and filings     | Single-obligation: no GPSR, files, labels, or regulatory monitoring                   |
+| ProductIP                                      | Technical file platform           | Document-centric and pre-AI: per-file pricing, built for structured importers         |
+| Obelis and various Authorised Reps             | Responsible Person only           | One obligation, manual processes                                                      |
+| Native marketplace tools (Amazon Compliance)   | Minimal attribute collection      | Amazon-only, reactive, no multi-channel or EPR support                                |
 
 **Positioning:** the only end-to-end seller-facing layer — AI classification → documents → brokered registrations → continuous monitoring — at SMB pricing. Competitors each solve one obligation; the seller has fourteen.
 
 ## Pricing model
 
-| Tier | Price | Includes |
-|---|---|---|
-| Starter | €79/month | Up to 50 SKUs, 3 countries, obligation map, document generator, regulation radar |
-| Growth | €199/month | 250 SKUs, all 27 EU countries, marketplace sync, supplier doc chasing, EPR filing calendar, brokered RP/registrations |
-| Scale | €499/month | 1,000+ SKUs, multi-brand workspace, API, agency seats, priority compliance review |
+| Tier    | Price      | Includes                                                                                                              |
+| ------- | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| Starter | €79/month  | Up to 50 SKUs, 3 countries, obligation map, document generator, regulation radar                                      |
+| Growth  | €199/month | 250 SKUs, all 27 EU countries, marketplace sync, supplier doc chasing, EPR filing calendar, brokered RP/registrations |
+| Scale   | €499/month | 1,000+ SKUs, multi-brand workspace, API, agency seats, priority compliance review                                     |
 
 Anchor against the alternative: one consultant, one market, one time costs more than a year of Growth. Brokered services (Responsible Person, PRO registrations) are billed at cost-plus, making Varco a SaaS with an embedded services take-rate.
 
 ## Unit economics
 
-| Item | Estimate |
-|---|---|
-| AI COGS | negligible: <€1 per SKU at onboarding (classification + drafting) |
-| The real COGS: knowledge ops | 2 regulatory analysts (~€10–12k/month) maintain the matrix for *all* customers: a fixed cost that dilutes with scale |
-| Gross margin | ~70% early → 85–90% at scale (the matrix cost doesn't grow with customers) |
-| Brokered services | cost + 20–30% take-rate (RP, scheme registrations) |
-| Expected CAC | €200–400 (panic-driven SEO + communities + partners); payback <4 months on the Growth plan |
-| Target NRR | 110–120% (more SKUs, more countries, more services over time) |
+| Item                         | Estimate                                                                                                             |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| AI COGS                      | negligible: <€1 per SKU at onboarding (classification + drafting)                                                    |
+| The real COGS: knowledge ops | 2 regulatory analysts (~€10–12k/month) maintain the matrix for _all_ customers: a fixed cost that dilutes with scale |
+| Gross margin                 | ~70% early → 85–90% at scale (the matrix cost doesn't grow with customers)                                           |
+| Brokered services            | cost + 20–30% take-rate (RP, scheme registrations)                                                                   |
+| Expected CAC                 | €200–400 (panic-driven SEO + communities + partners); payback <4 months on the Growth plan                           |
+| Target NRR                   | 110–120% (more SKUs, more countries, more services over time)                                                        |
 
 The structure is a vertical SaaS with embedded services: software scales, analysts guard correctness, partners deliver the physical filings.
 
@@ -134,20 +134,20 @@ Compliance is structurally a subscription: new SKUs every month, new markets eve
 Before building the platform (6–8 weeks):
 
 1. **30 interviews** with geo-blocked or suspended sellers (recruited in Etsy/Amazon forums): what stopped them, what they tried, what they'd pay
-2. **Concierge with 5 brands** — take 5 real brands to GPSR+EPR compliance for Germany and France *by hand*: validates the obligation matrix, measures hours per SKU, tests the RP/scheme partner economics
+2. **Concierge with 5 brands** — take 5 real brands to GPSR+EPR compliance for Germany and France _by hand_: validates the obligation matrix, measures hours per SKU, tests the RP/scheme partner economics
 3. **Per-category landing pages with deposit** — "GPSR for toy sellers", waitlist with a €99 deposit: measures conversion per category and picks the first vertical
-4. **Legal review of the perimeter** — *before* launch: framing as "document preparation and verified data", never "legal advice"; disclaimers and liability boundaries approved by a lawyer
+4. **Legal review of the perimeter** — _before_ launch: framing as "document preparation and verified data", never "legal advice"; disclaimers and liability boundaries approved by a lawyer
 
 **Go/no-go criteria:** 10 paying concierge clients at ≥€1,500/year equivalent; DE+FR matrix completed and validated by an external expert; partner economics sustainable (≥20% margin on brokerage).
 
 ## 12-month roadmap
 
-| Phase | Months | Goal |
-|---|---|---|
-| Validation | 1–2 | Interviews, 5-brand concierge, RP/EPR partner agreement, regulatory lead hired |
-| MVP build | 3–6 | Catalog connector, 5-category × 5-country matrix, document generator, checklist; closed beta with 20 brands |
-| Public launch | 7 | Anchored to the PPWR deadline (August 2026): the panic spike is the moment of maximum demand |
-| Expansion | 8–12 | From 5 to 12 countries, Amazon attribute sync, EPR calendar, agency workspace; target 300 paying customers |
+| Phase         | Months | Goal                                                                                                        |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------------- |
+| Validation    | 1–2    | Interviews, 5-brand concierge, RP/EPR partner agreement, regulatory lead hired                              |
+| MVP build     | 3–6    | Catalog connector, 5-category × 5-country matrix, document generator, checklist; closed beta with 20 brands |
+| Public launch | 7      | Anchored to the PPWR deadline (August 2026): the panic spike is the moment of maximum demand                |
+| Expansion     | 8–12   | From 5 to 12 countries, Amazon attribute sync, EPR calendar, agency workspace; target 300 paying customers  |
 
 ## KPIs to watch
 

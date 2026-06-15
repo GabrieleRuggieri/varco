@@ -25,7 +25,7 @@ Varco trasforma le normative europee sui prodotti (GPSR, EPR, etichettatura, PPW
 
 ## Problema risolto
 
-A dicembre 2024 è entrato in vigore il GPSR e migliaia di piccoli seller americani, inglesi e asiatici hanno semplicemente geo-bloccato l'Europa — non perché non potessero adeguarsi, ma perché nessuno sapeva dirgli *cosa significasse la compliance per i loro prodotti*. Ogni prodotto immesso sul mercato UE richiede un Responsible Person, un fascicolo tecnico con risk assessment, documentazione di conformità, etichettatura a norma e la registrazione EPR imballaggi Paese per Paese (LUCID in Germania, Citeo in Francia, CONAI in Italia — ognuno con portale, tariffe e scadenze proprie). Il PPWR aggiunge una nuova ondata di obblighi da agosto 2026, con ulteriori fasi nel 2028 e 2030. Gli obblighi sono per Paese, per categoria, e cambiano in continuazione. Le opzioni attuali: consulenti da 2–5k € a mercato, servizi frammentati mono-obbligo, o rinunciare al mercato. Ogni checkout geo-bloccato è fatturato regalato alla burocrazia.
+A dicembre 2024 è entrato in vigore il GPSR e migliaia di piccoli seller americani, inglesi e asiatici hanno semplicemente geo-bloccato l'Europa — non perché non potessero adeguarsi, ma perché nessuno sapeva dirgli _cosa significasse la compliance per i loro prodotti_. Ogni prodotto immesso sul mercato UE richiede un Responsible Person, un fascicolo tecnico con risk assessment, documentazione di conformità, etichettatura a norma e la registrazione EPR imballaggi Paese per Paese (LUCID in Germania, Citeo in Francia, CONAI in Italia — ognuno con portale, tariffe e scadenze proprie). Il PPWR aggiunge una nuova ondata di obblighi da agosto 2026, con ulteriori fasi nel 2028 e 2030. Gli obblighi sono per Paese, per categoria, e cambiano in continuazione. Le opzioni attuali: consulenti da 2–5k € a mercato, servizi frammentati mono-obbligo, o rinunciare al mercato. Ogni checkout geo-bloccato è fatturato regalato alla burocrazia.
 
 ## Perché ora
 
@@ -41,11 +41,11 @@ Brand D2C e seller marketplace (Shopify, Amazon, Etsy) con 10–500 SKU e 100k�
 
 ## Dimensione del mercato
 
-| Livello | Stima | Ragionamento |
-|---|---|---|
-| TAM | €0,5–1,5 mld/anno | 500k–1M di seller con obblighi di compliance prodotto multi-Paese verso/dentro l'UE × €1–3k/anno (oggi spesi in consulenti, servizi frammentati o fatturato rinunciato) |
-| SAM | €150–300M/anno | 100–150k seller nel segmento 10–500 SKU nelle prime 5 categorie e lingue (EN, IT, DE) |
-| SOM a 3 anni | €4–7M ARR | 1.500–3.000 clienti paganti + take-rate sui servizi intermediati |
+| Livello      | Stima             | Ragionamento                                                                                                                                                            |
+| ------------ | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TAM          | €0,5–1,5 mld/anno | 500k–1M di seller con obblighi di compliance prodotto multi-Paese verso/dentro l'UE × €1–3k/anno (oggi spesi in consulenti, servizi frammentati o fatturato rinunciato) |
+| SAM          | €150–300M/anno    | 100–150k seller nel segmento 10–500 SKU nelle prime 5 categorie e lingue (EN, IT, DE)                                                                                   |
+| SOM a 3 anni | €4–7M ARR         | 1.500–3.000 clienti paganti + take-rate sui servizi intermediati                                                                                                        |
 
 Ancore di mercato:
 
@@ -60,7 +60,7 @@ Fonti: Etsy Seller Handbook (GPSR), stampa UK (Telegraph, ChannelX/ecommercenews
 - **Scansione catalogo → mappa obblighi** — colleghi Shopify/Amazon; l'AI classifica ogni SKU per categoria, materiali e mercati target, e produce la lista esatta di obblighi per Paese con gravità e scadenze. Da «27 Paesi di legalese» a «le tue 14 azioni da fare»
 - **Costruttore del fascicolo di conformità** — l'AI redige risk assessment, scheletri di fascicolo tecnico, dichiarazioni di conformità e gli elementi di etichetta richiesti (avvertenze, indirizzo RP, simbolo Triman/info di raccolta) per SKU; segnala i documenti fornitore mancanti e li sollecita con richieste automatiche
 - **Responsible Person + registrazioni EPR, intermediati** — nomini il Responsible Person UE e ti registri ai sistemi nazionali imballaggi/RAEE tramite partner integrati, da una dashboard sola invece di 27 portali
-- **Radar normativo** — monitora le modifiche UE e nazionali (fasi PPWR, regole di categoria), traduce il legalese in linguaggio semplice e dice a ogni seller cosa è cambiato *per i suoi SKU* e cosa fare
+- **Radar normativo** — monitora le modifiche UE e nazionali (fasi PPWR, regole di categoria), traduce il legalese in linguaggio semplice e dice a ogni seller cosa è cambiato _per i suoi SKU_ e cosa fare
 - **Scudo marketplace** — tiene sincronizzati gli attributi di compliance su Amazon/Etsy così le inserzioni non vengono sospese; avvisa prima che un dato mancante inneschi un takedown in 48 ore
 
 ## Come funziona — MVP e architettura
@@ -79,37 +79,37 @@ Fonti: Etsy Seller Handbook (GPSR), stampa UK (Telegraph, ChannelX/ecommercenews
 
 ## Concorrenza e posizionamento
 
-| Concorrente | Cosa fa | Perché non basta |
-|---|---|---|
-| Consulenti e TIC (SGS, TÜV, Intertek) | Compliance su misura, certificazioni | €2–5k a mercato, per progetto, non scala sui cataloghi né sul monitoraggio continuo |
-| AVASK | VAT + EPR + RP per seller Amazon | Service-heavy e tax-led: nessuna automazione per SKU, nessun prodotto self-serve |
-| ecosistant (5k+ seller), Lizenzero | Registrazioni e dichiarazioni EPR | Mono-obbligo: niente GPSR, fascicoli, etichette o monitoraggio normativo |
-| ProductIP | Piattaforma per fascicoli tecnici | Document-centric e pre-AI: prezzo per fascicolo, pensato per importatori strutturati |
-| Obelis e Authorised Rep vari | Solo Responsible Person | Un singolo obbligo, processi manuali |
-| Tool nativi marketplace (Amazon Compliance) | Raccolta attributi minima | Solo Amazon, reattivo, nessun supporto multi-canale né EPR |
+| Concorrente                                 | Cosa fa                              | Perché non basta                                                                     |
+| ------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------ |
+| Consulenti e TIC (SGS, TÜV, Intertek)       | Compliance su misura, certificazioni | €2–5k a mercato, per progetto, non scala sui cataloghi né sul monitoraggio continuo  |
+| AVASK                                       | VAT + EPR + RP per seller Amazon     | Service-heavy e tax-led: nessuna automazione per SKU, nessun prodotto self-serve     |
+| ecosistant (5k+ seller), Lizenzero          | Registrazioni e dichiarazioni EPR    | Mono-obbligo: niente GPSR, fascicoli, etichette o monitoraggio normativo             |
+| ProductIP                                   | Piattaforma per fascicoli tecnici    | Document-centric e pre-AI: prezzo per fascicolo, pensato per importatori strutturati |
+| Obelis e Authorised Rep vari                | Solo Responsible Person              | Un singolo obbligo, processi manuali                                                 |
+| Tool nativi marketplace (Amazon Compliance) | Raccolta attributi minima            | Solo Amazon, reattivo, nessun supporto multi-canale né EPR                           |
 
 **Posizionamento:** l'unico layer end-to-end seller-facing — classificazione AI → documenti → registrazioni intermediate → monitoraggio continuo — a prezzo SMB. I competitor risolvono un obbligo ciascuno; il seller ne ha quattordici.
 
 ## Modello di pricing
 
-| Piano | Prezzo | Include |
-|---|---|---|
-| Starter | 79 €/mese | Fino a 50 SKU, 3 Paesi, mappa obblighi, generatore documenti, radar normativo |
-| Growth | 199 €/mese | 250 SKU, tutti i 27 Paesi UE, sync marketplace, sollecito documenti fornitori, calendario adempimenti EPR, RP/registrazioni intermediati |
-| Scale | 499 €/mese | 1.000+ SKU, workspace multi-brand, API, postazioni agenzia, revisione compliance prioritaria |
+| Piano   | Prezzo     | Include                                                                                                                                  |
+| ------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Starter | 79 €/mese  | Fino a 50 SKU, 3 Paesi, mappa obblighi, generatore documenti, radar normativo                                                            |
+| Growth  | 199 €/mese | 250 SKU, tutti i 27 Paesi UE, sync marketplace, sollecito documenti fornitori, calendario adempimenti EPR, RP/registrazioni intermediati |
+| Scale   | 499 €/mese | 1.000+ SKU, workspace multi-brand, API, postazioni agenzia, revisione compliance prioritaria                                             |
 
 Àncora rispetto all'alternativa: un consulente, un mercato, una volta sola costa più di un anno di Growth. I servizi intermediati (Responsible Person, registrazioni ai consorzi) sono fatturati a cost-plus: Varco è un SaaS con una take-rate sui servizi incorporata.
 
 ## Unit economics
 
-| Voce | Stima |
-|---|---|
-| COGS AI | trascurabile: <€1 per SKU in onboarding (classificazione + drafting) |
-| COGS vero: knowledge ops | 2 analisti regolatori (~€10–12k/mese) mantengono la matrice per *tutti* i clienti: costo fisso che si diluisce con la scala |
-| Margine lordo | ~70% all'inizio → 85–90% a scala (il costo della matrice non cresce coi clienti) |
-| Servizi intermediati | cost + 20–30% di take-rate (RP, registrazioni consorzi) |
-| CAC previsto | €200–400 (SEO «panic-driven» + community + partner); payback <4 mesi sul piano Growth |
-| NRR target | 110–120% (più SKU, più Paesi, più servizi nel tempo) |
+| Voce                     | Stima                                                                                                                       |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| COGS AI                  | trascurabile: <€1 per SKU in onboarding (classificazione + drafting)                                                        |
+| COGS vero: knowledge ops | 2 analisti regolatori (~€10–12k/mese) mantengono la matrice per _tutti_ i clienti: costo fisso che si diluisce con la scala |
+| Margine lordo            | ~70% all'inizio → 85–90% a scala (il costo della matrice non cresce coi clienti)                                            |
+| Servizi intermediati     | cost + 20–30% di take-rate (RP, registrazioni consorzi)                                                                     |
+| CAC previsto             | €200–400 (SEO «panic-driven» + community + partner); payback <4 mesi sul piano Growth                                       |
+| NRR target               | 110–120% (più SKU, più Paesi, più servizi nel tempo)                                                                        |
 
 La struttura è da SaaS verticale con servizi incorporati: il software scala, gli analisti presidiano la correttezza, i partner erogano gli adempimenti fisici.
 
@@ -134,20 +134,20 @@ La compliance è strutturalmente un abbonamento: nuovi SKU ogni mese, nuovi merc
 Prima di costruire la piattaforma (6–8 settimane):
 
 1. **30 interviste** a seller geo-bloccati o sospesi (reclutati nei forum Etsy/Amazon): cosa li ha fermati, cosa hanno provato, quanto pagherebbero
-2. **Concierge su 5 brand** — portare 5 brand reali alla conformità GPSR+EPR per Germania e Francia *a mano*: valida la matrice obblighi, misura le ore per SKU, testa l'economics dei partner RP/consorzi
+2. **Concierge su 5 brand** — portare 5 brand reali alla conformità GPSR+EPR per Germania e Francia _a mano_: valida la matrice obblighi, misura le ore per SKU, testa l'economics dei partner RP/consorzi
 3. **Landing per categoria con deposito** — «GPSR per chi vende giocattoli», waitlist con deposito €99: misura la conversione per categoria e sceglie il primo verticale
-4. **Review legale del perimetro** — *prima* del lancio: framing «preparazione documenti e dati verificati», mai «consulenza legale»; disclaimers e confini di responsabilità approvati da un legale
+4. **Review legale del perimetro** — _prima_ del lancio: framing «preparazione documenti e dati verificati», mai «consulenza legale»; disclaimers e confini di responsabilità approvati da un legale
 
 **Criteri go/no-go:** 10 clienti concierge paganti a ≥€1.500/anno equivalente; matrice DE+FR completata e validata da un esperto esterno; economics dei partner sostenibili (margine ≥20% sull'intermediazione).
 
 ## Roadmap 12 mesi
 
-| Fase | Mesi | Obiettivo |
-|---|---|---|
-| Validazione | 1–2 | Interviste, concierge 5 brand, accordo con partner RP/EPR, assunzione regulatory lead |
-| Build MVP | 3–6 | Connettore catalogo, matrice 5 categorie × 5 Paesi, generatore documenti, checklist; beta chiusa con 20 brand |
-| Lancio pubblico | 7 | Agganciato alla scadenza PPWR (agosto 2026): il picco di panico è il momento di massima domanda |
-| Espansione | 8–12 | Da 5 a 12 Paesi, sync attributi Amazon, calendario EPR, workspace agenzie; target 300 clienti paganti |
+| Fase            | Mesi | Obiettivo                                                                                                     |
+| --------------- | ---- | ------------------------------------------------------------------------------------------------------------- |
+| Validazione     | 1–2  | Interviste, concierge 5 brand, accordo con partner RP/EPR, assunzione regulatory lead                         |
+| Build MVP       | 3–6  | Connettore catalogo, matrice 5 categorie × 5 Paesi, generatore documenti, checklist; beta chiusa con 20 brand |
+| Lancio pubblico | 7    | Agganciato alla scadenza PPWR (agosto 2026): il picco di panico è il momento di massima domanda               |
+| Espansione      | 8–12 | Da 5 a 12 Paesi, sync attributi Amazon, calendario EPR, workspace agenzie; target 300 clienti paganti         |
 
 ## KPI da monitorare
 

@@ -1,10 +1,10 @@
 # Provenienza — design/replit/DESIGN.md
 
-| Campo | Valore |
-|-------|--------|
-| Riferimento | [replit.com](https://replit.com) — marketing e product UI 2025–2026 |
-| Brand | [replit.com/brand](https://replit.com/brand) — palette, Diatype, iconografia |
-| Tipo | Analisi *ispirata* a Replit — **non** documentazione ufficiale Replit Inc. |
+| Campo       | Valore                                                                       |
+| ----------- | ---------------------------------------------------------------------------- |
+| Riferimento | [replit.com](https://replit.com) — marketing e product UI 2025–2026          |
+| Brand       | [replit.com/brand](https://replit.com/brand) — palette, Diatype, iconografia |
+| Tipo        | Analisi _ispirata_ a Replit — **non** documentazione ufficiale Replit Inc.   |
 
 ## Adozione Varco
 

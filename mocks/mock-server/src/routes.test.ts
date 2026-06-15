@@ -2,11 +2,7 @@ import assert from 'node:assert/strict';
 import { test, before, after } from 'node:test';
 import Fastify from 'fastify';
 import { countSkus, loadShopifyCatalog, resetCatalogCache } from './lib/catalog.js';
-import {
-  createPartnerRequest,
-  getPartnerRequest,
-  resetPartnerStore,
-} from './lib/partner-store.js';
+import { createPartnerRequest, getPartnerRequest, resetPartnerStore } from './lib/partner-store.js';
 import { registerPartnerRoutes } from './routes/partners.js';
 import { registerShopifyRoutes } from './routes/shopify.js';
 

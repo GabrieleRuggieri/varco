@@ -3,12 +3,7 @@
  */
 
 export type PartnerRequestType = 'rp' | 'epr_packaging';
-export type PartnerRequestStatus =
-  | 'draft'
-  | 'submitted'
-  | 'processing'
-  | 'active'
-  | 'rejected';
+export type PartnerRequestStatus = 'draft' | 'submitted' | 'processing' | 'active' | 'rejected';
 
 export type PartnerRequest = {
   id: string;

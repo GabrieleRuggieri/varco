@@ -17,25 +17,28 @@ type PartnerBody = {
 export async function registerPartnerRoutes(app: FastifyInstance): Promise<void> {
   const handleCreate =
     (type: PartnerRequestType) =>
-    async (body: PartnerBody, reply: { code: (n: number) => { send: (p: unknown) => unknown } }) => {
+    async (
+      body: PartnerBody,
+      reply: { code: (n: number) => { send: (p: unknown) => unknown } },
+    ) => {
       if (!body?.country || body.country.length !== 2) {
         return reply.code(400).send({ error: 'country obbligatorio (ISO 3166-1 alpha-2)' });
       }
-    const request = createPartnerRequest({
-      type,
-      country: body.country.toUpperCase(),
-      skuId: body.sku_id,
-    });
-    schedulePartnerWebhook(request);
-    return {
-      id: request.id,
-      external_ref: request.externalRef,
-      status: request.status,
-      type: request.type,
-      country: request.country,
-      message: `Richiesta accettata — webhook simulato tra ${process.env.PARTNER_WEBHOOK_DELAY_MS ?? 5000}ms`,
+      const request = createPartnerRequest({
+        type,
+        country: body.country.toUpperCase(),
+        skuId: body.sku_id,
+      });
+      schedulePartnerWebhook(request);
+      return {
+        id: request.id,
+        external_ref: request.externalRef,
+        status: request.status,
+        type: request.type,
+        country: request.country,
+        message: `Richiesta accettata — webhook simulato tra ${process.env.PARTNER_WEBHOOK_DELAY_MS ?? 5000}ms`,
+      };
     };
-  };
 
   app.post<{ Body: PartnerBody }>('/partners/rp/requests', async (request, reply) => {
     return handleCreate('rp')(request.body, reply);

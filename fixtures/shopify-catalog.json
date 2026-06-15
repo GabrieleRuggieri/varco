@@ -126,7 +126,9 @@
           "inventory_quantity": 30
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-hoodie.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-hoodie.jpg" }
+      ]
     },
     {
       "id": 8002003,
@@ -146,7 +148,9 @@
           "inventory_quantity": 70
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-leggings.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-leggings.jpg" }
+      ]
     },
     {
       "id": 8002004,
@@ -166,7 +170,9 @@
           "inventory_quantity": 95
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-bucket.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/apparel-bucket.jpg" }
+      ]
     },
     {
       "id": 8003001,
@@ -226,7 +232,9 @@
           "inventory_quantity": 80
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/elec-powerbank.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/elec-powerbank.jpg" }
+      ]
     },
     {
       "id": 8003004,
@@ -266,7 +274,9 @@
           "inventory_quantity": 110
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-cream.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-cream.jpg" }
+      ]
     },
     {
       "id": 8004002,
@@ -286,7 +296,9 @@
           "inventory_quantity": 180
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-shampoo.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-shampoo.jpg" }
+      ]
     },
     {
       "id": 8004003,
@@ -306,7 +318,9 @@
           "inventory_quantity": 90
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-lipstick.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-lipstick.jpg" }
+      ]
     },
     {
       "id": 8004004,
@@ -326,7 +340,9 @@
           "inventory_quantity": 65
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-serum.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/cosmetics-serum.jpg" }
+      ]
     },
     {
       "id": 8005001,
@@ -406,7 +422,9 @@
           "inventory_quantity": 100
         }
       ],
-      "images": [{ "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/home-diffuser.jpg" }]
+      "images": [
+        { "src": "https://cdn.shopify.com/s/files/1/0000/0001/products/home-diffuser.jpg" }
+      ]
     }
   ]
 }
