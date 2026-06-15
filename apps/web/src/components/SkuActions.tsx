@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { IconDownload, IconDocument, IconSparkle } from '@/components/icons';
+import { useApiPost } from '@/hooks/useApiPost';
 import styles from './ui/ui.module.css';
 
 type Props = {
@@ -12,56 +13,36 @@ type Props = {
 
 export function SkuActions({ skuId, skuCode }: Props) {
   const router = useRouter();
-  const [message, setMessage] = useState<string | null>(null);
-  const [isError, setIsError] = useState(false);
-  const [busy, setBusy] = useState<string | null>(null);
-
-  async function post(path: string, body: unknown, label: string) {
-    setBusy(label);
-    setMessage(null);
-    setIsError(false);
-    try {
-      const res = await fetch(`/api/v1/${path}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-      const data = (await res.json()) as { jobId?: string; error?: string };
-      if (!res.ok) throw new Error(data.error ?? 'Richiesta fallita');
-      setMessage(`Job accodato (${data.jobId ?? 'ok'}) · ricarica tra qualche secondo`);
-      router.refresh();
-    } catch {
-      setMessage(`Errore: ${label}`);
-      setIsError(true);
-    } finally {
-      setBusy(null);
-    }
-  }
+  const { message, isError, busy, post } = useApiPost();
+  const [dlMessage, setDlMessage] = useState<string | null>(null);
+  const [dlError, setDlError] = useState(false);
 
   async function downloadLatest() {
-    setBusy('download');
-    setMessage(null);
-    setIsError(false);
+    setDlMessage(null);
+    setDlError(false);
     try {
       const listRes = await fetch(`/api/v1/skus/${skuId}/documents`);
       const list = (await listRes.json()) as { documents: { id: string }[]; error?: string };
-      if (!listRes.ok) throw new Error(list.error);
+      if (!listRes.ok) throw new Error(list.error ?? 'Errore lista documenti');
       const doc = list.documents[0];
       if (!doc) {
-        setMessage('Nessun documento — genera prima il risk assessment');
+        setDlMessage('Nessun documento — genera prima il risk assessment');
         return;
       }
       const dlRes = await fetch(`/api/v1/documents/${doc.id}/download`);
       const dl = (await dlRes.json()) as { downloadUrl: string; error?: string };
-      if (!dlRes.ok) throw new Error(dl.error);
+      if (!dlRes.ok) throw new Error(dl.error ?? 'Errore download');
       window.open(dl.downloadUrl, '_blank', 'noopener,noreferrer');
-    } catch {
-      setMessage('Download non riuscito — MinIO attivo?');
-      setIsError(true);
-    } finally {
-      setBusy(null);
+      router.refresh();
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      setDlMessage(`Download non riuscito — ${msg}`);
+      setDlError(true);
     }
   }
+
+  const displayMessage = message ?? dlMessage;
+  const displayError = message ? isError : dlError;
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -97,12 +78,12 @@ export function SkuActions({ skuId, skuCode }: Props) {
         <IconDownload size={13} />
         Scarica
       </button>
-      {message ? (
+      {displayMessage ? (
         <p
-          className={isError ? styles.alertError : styles.alert}
+          className={displayError ? styles.alertError : styles.alert}
           style={{ width: '100%', margin: '4px 0 0', fontSize: 11 }}
         >
-          {message}
+          {displayMessage}
         </p>
       ) : null}
     </div>

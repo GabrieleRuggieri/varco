@@ -10,10 +10,19 @@ export default async function OverviewPage() {
   const session = await getSession();
   if (!session) return null;
 
-  const [skus, checklist] = await Promise.all([
-    api.listSkus().catch(() => ({ skus: [], total: 0 })),
-    api.listChecklist().catch(() => ({ items: [], total: 0 })),
+  const [skusResult, checklistResult] = await Promise.allSettled([
+    api.listSkus(),
+    api.listChecklist(),
   ]);
+
+  const skus =
+    skusResult.status === 'fulfilled' ? skusResult.value : { skus: [], total: 0 };
+  const checklist =
+    checklistResult.status === 'fulfilled' ? checklistResult.value : { items: [], total: 0 };
+  const apiError =
+    skusResult.status === 'rejected' || checklistResult.status === 'rejected'
+      ? 'Impossibile raggiungere il servizio API. Verifica che il backend sia avviato.'
+      : null;
 
   const openItems = checklist.items.filter((i) =>
     ['open', 'in_progress', 'needs_review'].includes(i.status),
@@ -54,6 +63,11 @@ export default async function OverviewPage() {
 
   return (
     <div>
+      {apiError && (
+        <p className={styles.alertError} style={{ margin: '0 0 1rem' }}>
+          {apiError}
+        </p>
+      )}
       <section className={pageStyles.hero}>
         <p className={styles.pageEyebrow}>Compliance GPSR · UE</p>
         <h1 className={pageStyles.heroTitle}>{session.organizationName}</h1>

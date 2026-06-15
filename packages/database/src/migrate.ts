@@ -10,8 +10,11 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const migrationsFolder = path.join(__dirname, '..', 'drizzle');
 
-const connectionString =
-  process.env.DATABASE_URL ?? 'postgresql://varco:varco@localhost:5432/varco';
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) {
+  console.error('[db:migrate] DATABASE_URL non configurato.');
+  process.exit(1);
+}
 
 const run = async () => {
   const client = postgres(connectionString, { max: 1 });

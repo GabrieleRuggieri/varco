@@ -13,6 +13,12 @@ out/
 .env
 .env.local
 .env.*.local
+.env.production
+.env.staging
+.env.development
+*.pem
+*.key
+credentials.json
 
 # Log e cache
 *.log
@@ -35,3 +41,11 @@ drizzle/meta/
 
 # Storage locale
 uploads/
+
+# Landing statica (pricing, monetizzazione, GTM — info interne)
+/index.html
+/styles.css
+/script.js
+
+# Registro attività locale (note interne, non versionato)
+WORK_LOG.md

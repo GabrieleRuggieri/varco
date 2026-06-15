@@ -56,10 +56,9 @@ export class WebhookSecretGuard implements CanActivate {
 
     const expected = process.env.PARTNER_WEBHOOK_SECRET;
     if (!expected) {
-      if (process.env.NODE_ENV === 'production') {
-        throw new UnauthorizedException('PARTNER_WEBHOOK_SECRET non configurato');
-      }
-      return true;
+      throw new UnauthorizedException(
+        'PARTNER_WEBHOOK_SECRET non configurato. Imposta la variabile di ambiente.',
+      );
     }
 
     const request = context.switchToHttp().getRequest<{

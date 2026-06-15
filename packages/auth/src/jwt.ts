@@ -9,10 +9,10 @@ import {
 export function getAuthSecret(): string {
   const secret = process.env.AUTH_SECRET;
   if (!secret || secret.length < 32) {
-    if (process.env.NODE_ENV === 'production') {
-      throw new Error('AUTH_SECRET deve essere impostato (min 32 caratteri) in produzione');
-    }
-    return 'dev-auth-secret-change-me-before-production-32chars';
+    throw new Error(
+      'AUTH_SECRET non configurato o troppo corto (min 32 caratteri). ' +
+        'Imposta la variabile di ambiente in tutti gli ambienti.',
+    );
   }
   return secret;
 }

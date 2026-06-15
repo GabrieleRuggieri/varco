@@ -31,7 +31,8 @@ export function LoginForm() {
       return;
     }
 
-    const from = searchParams.get('callbackUrl') ?? '/';
+    const raw = searchParams.get('callbackUrl') ?? '/';
+    const from = raw.startsWith('/') && !raw.startsWith('//') ? raw : '/';
     router.push(from);
     router.refresh();
   }

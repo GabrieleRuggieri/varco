@@ -1,10 +1,8 @@
 import { Body, Controller, Headers, Post } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Public, WebhookAuth } from '../auth/decorators.js';
-import {
-  PartnerWebhookService,
-  type PartnerWebhookPayload,
-} from './partner-webhook.service';
+import { PartnerWebhookService } from './partner-webhook.service.js';
+import { PartnerWebhookDto } from './partner-webhook.dto.js';
 
 @ApiTags('partner')
 @Controller('internal/partner-webhook')
@@ -15,9 +13,9 @@ export class PartnerWebhookController {
   @WebhookAuth()
   @Post()
   @ApiOperation({ summary: 'Webhook partner RP/EPR (mock o live)' })
-  @ApiBody({ description: 'Payload evento partner' })
+  @ApiBody({ type: PartnerWebhookDto, description: 'Payload evento partner' })
   async handleWebhook(
-    @Body() payload: PartnerWebhookPayload,
+    @Body() payload: PartnerWebhookDto,
     @Headers('x-varco-mock-partner') mockHeader?: string,
   ) {
     const event = await this.partnerWebhookService.ingest({

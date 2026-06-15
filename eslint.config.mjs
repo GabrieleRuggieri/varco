@@ -1,5 +1,8 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
+// eslint-plugin-react-hooks supports flat config from v5+
+// Install: pnpm add -D eslint-plugin-react-hooks (eseguito via pnpm install dopo aver aggiornato package.json)
+import reactHooks from 'eslint-plugin-react-hooks';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default tseslint.config(
@@ -15,11 +18,34 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    plugins: {
+      'react-hooks': reactHooks,
+    },
     rules: {
+      // React Hooks
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+
+      // TypeScript
       '@typescript-eslint/no-unused-vars': [
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
+      ],
+      '@typescript-eslint/no-floating-promises': 'error',
+    },
+  },
+  // react-hooks/exhaustive-deps è applicabile solo ai file React
+  {
+    files: ['apps/web/**/*.{ts,tsx}'],
+    languageOptions: {
+      parserOptions: {
+        project: './apps/web/tsconfig.json',
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
   },
 );

@@ -4,10 +4,17 @@ import { api } from '@/lib/api';
 import { IconBox, IconSync } from '@/components/icons';
 
 export default async function CatalogPage() {
-  const connections = await api.listConnections().catch(() => ({ connections: [] }));
+  const result = await api.listConnections().catch((err: unknown) => err);
+  const apiError = result instanceof Error ? result.message : null;
+  const connections = apiError ? { connections: [] } : (result as Awaited<ReturnType<typeof api.listConnections>>);
 
   return (
     <div>
+      {apiError && (
+        <p className={styles.alertError} style={{ margin: '0 0 1rem' }}>
+          {apiError}
+        </p>
+      )}
       <div className={styles.pageHeader}>
         <div className={styles.pageHeaderLeft}>
           <p className={styles.pageEyebrow}>Integrazioni</p>

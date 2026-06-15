@@ -34,11 +34,20 @@ async function proxy(request: NextRequest, context: RouteContext) {
   const body =
     request.method === 'GET' || request.method === 'HEAD' ? undefined : await request.text();
 
-  const upstream = await fetch(`${getApiBaseUrl()}/${targetPath}${search}`, {
-    method: request.method,
-    headers,
-    body,
-  });
+  let upstream: Response;
+  try {
+    upstream = await fetch(`${getApiBaseUrl()}/${targetPath}${search}`, {
+      method: request.method,
+      headers,
+      body,
+    });
+  } catch (err) {
+    console.error('[BFF] Upstream fetch error:', err);
+    return NextResponse.json(
+      { error: 'Servizio API non raggiungibile. Riprova tra qualche istante.' },
+      { status: 502 },
+    );
+  }
 
   const responseBody = await upstream.text();
   return new NextResponse(responseBody, {

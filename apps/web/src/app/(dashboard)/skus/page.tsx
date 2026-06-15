@@ -4,13 +4,17 @@ import { api } from '@/lib/api';
 import { IconList } from '@/components/icons';
 
 export default async function SkusPage() {
-  const { skus, total } = await api.listSkus().catch(() => ({
-    skus: [],
-    total: 0,
-  }));
+  const result = await api.listSkus().catch((err: unknown) => err);
+  const apiError = result instanceof Error ? result.message : null;
+  const { skus, total } = apiError ? { skus: [], total: 0 } : (result as Awaited<ReturnType<typeof api.listSkus>>);
 
   return (
     <div>
+      {apiError && (
+        <p className={styles.alertError} style={{ margin: '0 0 1rem' }}>
+          {apiError}
+        </p>
+      )}
       <div className={styles.pageHeader}>
         <div className={styles.pageHeaderLeft}>
           <p className={styles.pageEyebrow}>Prodotti</p>

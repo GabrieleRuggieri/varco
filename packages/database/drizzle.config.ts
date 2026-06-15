@@ -1,7 +1,9 @@
 import { defineConfig } from 'drizzle-kit';
 
-const databaseUrl =
-  process.env.DATABASE_URL ?? 'postgresql://varco:varco@localhost:5432/varco';
+const databaseUrl = process.env.DATABASE_URL;
+if (!databaseUrl) {
+  throw new Error('DATABASE_URL non configurato. Impossibile avviare drizzle-kit.');
+}
 
 export default defineConfig({
   schema: './src/schema/index.ts',

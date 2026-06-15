@@ -29,10 +29,12 @@ export default function LoginPage() {
         <Suspense fallback={<p style={{ color: 'var(--color-ink-subtle)', fontSize: 13 }}>Caricamento…</p>}>
           <LoginForm />
         </Suspense>
-        <div className={styles.footer}>
-          <span className={styles.footerDot} />
-          <p className={styles.footerText}>Ambiente demo · admin@varco.local / admin</p>
-        </div>
+        {process.env.NODE_ENV === 'development' && (
+          <div className={styles.footer}>
+            <span className={styles.footerDot} />
+            <p className={styles.footerText}>Ambiente demo · admin@varco.local / admin</p>
+          </div>
+        )}
       </div>
       <p className={styles.bottomNote}>
         Varco prepara documenti e dati strutturati. Non è consulenza legale.

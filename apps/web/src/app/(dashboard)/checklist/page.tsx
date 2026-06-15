@@ -28,10 +28,9 @@ const COUNTRY_FLAGS: Record<string, string> = {
 };
 
 export default async function ChecklistPage() {
-  const { items, total } = await api.listChecklist().catch(() => ({
-    items: [],
-    total: 0,
-  }));
+  const result = await api.listChecklist().catch((err: unknown) => err);
+  const apiError = result instanceof Error ? result.message : null;
+  const { items, total } = apiError ? { items: [], total: 0 } : (result as Awaited<ReturnType<typeof api.listChecklist>>);
 
   const open = items.filter((i) => ['open', 'in_progress', 'needs_review'].includes(i.status)).length;
   const done = items.filter((i) => i.status === 'completed').length;
@@ -39,6 +38,11 @@ export default async function ChecklistPage() {
 
   return (
     <div>
+      {apiError && (
+        <p className={styles.alertError} style={{ margin: '0 0 1rem' }}>
+          {apiError}
+        </p>
+      )}
       <div className={styles.pageHeader}>
         <div className={styles.pageHeaderLeft}>
           <p className={styles.pageEyebrow}>Obblighi</p>
