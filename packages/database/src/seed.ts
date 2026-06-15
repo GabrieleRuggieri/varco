@@ -4,12 +4,7 @@
 import { hash } from 'bcryptjs';
 import { eq } from 'drizzle-orm';
 import { createDb } from './client.js';
-import {
-  organizationMembers,
-  organizations,
-  userCredentials,
-  users,
-} from './schema/index.js';
+import { organizationMembers, organizations, userCredentials, users } from './schema/index.js';
 
 const DEMO_ORG_NAME = 'Varco Demo';
 const DEMO_USER_EMAIL = 'admin@varco.local';
@@ -70,10 +65,7 @@ const run = async () => {
       .returning();
     console.log(`[db:seed] Utente demo creato: ${user?.email}`);
   } else {
-    await db
-      .update(users)
-      .set({ name: 'Admin' })
-      .where(eq(users.id, user.id));
+    await db.update(users).set({ name: 'Admin' }).where(eq(users.id, user.id));
     console.log('[db:seed] Utente demo già presente');
   }
 

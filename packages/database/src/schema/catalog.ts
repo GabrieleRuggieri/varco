@@ -20,10 +20,7 @@ export const catalogConnections = pgTable(
   },
   (table) => [
     index('catalog_connections_org_id_idx').on(table.organizationId),
-    uniqueIndex('catalog_connections_org_provider_uidx').on(
-      table.organizationId,
-      table.provider,
-    ),
+    uniqueIndex('catalog_connections_org_provider_uidx').on(table.organizationId, table.provider),
   ],
 );
 

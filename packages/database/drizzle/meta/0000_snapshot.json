@@ -116,9 +116,7 @@
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -225,12 +223,8 @@
           "name": "catalog_connections_organization_id_organizations_id_fk",
           "tableFrom": "catalog_connections",
           "tableTo": "organizations",
-          "columnsFrom": [
-            "organization_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["organization_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -355,12 +349,8 @@
           "name": "products_organization_id_organizations_id_fk",
           "tableFrom": "products",
           "tableTo": "organizations",
-          "columnsFrom": [
-            "organization_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["organization_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -467,12 +457,8 @@
           "name": "skus_product_id_products_id_fk",
           "tableFrom": "skus",
           "tableTo": "products",
-          "columnsFrom": [
-            "product_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["product_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -527,9 +513,7 @@
         "matrix_versions_content_hash_unique": {
           "name": "matrix_versions_content_hash_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "content_hash"
-          ]
+          "columns": ["content_hash"]
         }
       },
       "policies": {},
@@ -675,12 +659,8 @@
           "name": "obligation_rules_matrix_version_id_matrix_versions_id_fk",
           "tableFrom": "obligation_rules",
           "tableTo": "matrix_versions",
-          "columnsFrom": [
-            "matrix_version_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["matrix_version_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -740,12 +720,8 @@
           "name": "rule_change_logs_rule_id_obligation_rules_id_fk",
           "tableFrom": "rule_change_logs",
           "tableTo": "obligation_rules",
-          "columnsFrom": [
-            "rule_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["rule_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -882,12 +858,8 @@
           "name": "checklist_items_sku_id_skus_id_fk",
           "tableFrom": "checklist_items",
           "tableTo": "skus",
-          "columnsFrom": [
-            "sku_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["sku_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -895,12 +867,8 @@
           "name": "checklist_items_obligation_rule_id_obligation_rules_id_fk",
           "tableFrom": "checklist_items",
           "tableTo": "obligation_rules",
-          "columnsFrom": [
-            "obligation_rule_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["obligation_rule_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -908,12 +876,8 @@
           "name": "checklist_items_classification_run_id_classification_runs_id_fk",
           "tableFrom": "checklist_items",
           "tableTo": "classification_runs",
-          "columnsFrom": [
-            "classification_run_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["classification_run_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1002,12 +966,8 @@
           "name": "classification_runs_sku_id_skus_id_fk",
           "tableFrom": "classification_runs",
           "tableTo": "skus",
-          "columnsFrom": [
-            "sku_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["sku_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1015,12 +975,8 @@
           "name": "classification_runs_matrix_version_id_matrix_versions_id_fk",
           "tableFrom": "classification_runs",
           "tableTo": "matrix_versions",
-          "columnsFrom": [
-            "matrix_version_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["matrix_version_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1109,12 +1065,8 @@
           "name": "documents_sku_id_skus_id_fk",
           "tableFrom": "documents",
           "tableTo": "skus",
-          "columnsFrom": [
-            "sku_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["sku_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1228,12 +1180,8 @@
           "name": "partner_requests_organization_id_organizations_id_fk",
           "tableFrom": "partner_requests",
           "tableTo": "organizations",
-          "columnsFrom": [
-            "organization_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["organization_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1241,12 +1189,8 @@
           "name": "partner_requests_sku_id_skus_id_fk",
           "tableFrom": "partner_requests",
           "tableTo": "skus",
-          "columnsFrom": [
-            "sku_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["sku_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -1294,12 +1238,8 @@
           "name": "partner_webhook_events_partner_request_id_partner_requests_id_fk",
           "tableFrom": "partner_webhook_events",
           "tableTo": "partner_requests",
-          "columnsFrom": [
-            "partner_request_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["partner_request_id"],
+          "columnsTo": ["id"],
           "onDelete": "set null",
           "onUpdate": "no action"
         }
@@ -1315,42 +1255,22 @@
     "public.catalog_provider": {
       "name": "catalog_provider",
       "schema": "public",
-      "values": [
-        "shopify",
-        "amazon"
-      ]
+      "values": ["shopify", "amazon"]
     },
     "public.checklist_status": {
       "name": "checklist_status",
       "schema": "public",
-      "values": [
-        "open",
-        "in_progress",
-        "blocked",
-        "completed",
-        "waived",
-        "needs_review"
-      ]
+      "values": ["open", "in_progress", "blocked", "completed", "waived", "needs_review"]
     },
     "public.country_code": {
       "name": "country_code",
       "schema": "public",
-      "values": [
-        "DE",
-        "FR",
-        "IT",
-        "ES",
-        "NL"
-      ]
+      "values": ["DE", "FR", "IT", "ES", "NL"]
     },
     "public.matrix_review_status": {
       "name": "matrix_review_status",
       "schema": "public",
-      "values": [
-        "bozza",
-        "revisionata",
-        "approvata"
-      ]
+      "values": ["bozza", "revisionata", "approvata"]
     },
     "public.obligation_type": {
       "name": "obligation_type",
@@ -1367,51 +1287,27 @@
     "public.org_role": {
       "name": "org_role",
       "schema": "public",
-      "values": [
-        "owner",
-        "member",
-        "regulatory_admin"
-      ]
+      "values": ["owner", "member", "regulatory_admin"]
     },
     "public.partner_request_status": {
       "name": "partner_request_status",
       "schema": "public",
-      "values": [
-        "draft",
-        "submitted",
-        "processing",
-        "active",
-        "rejected"
-      ]
+      "values": ["draft", "submitted", "processing", "active", "rejected"]
     },
     "public.partner_request_type": {
       "name": "partner_request_type",
       "schema": "public",
-      "values": [
-        "rp",
-        "epr_packaging"
-      ]
+      "values": ["rp", "epr_packaging"]
     },
     "public.product_category": {
       "name": "product_category",
       "schema": "public",
-      "values": [
-        "toys",
-        "apparel",
-        "electronics_accessories",
-        "cosmetics",
-        "home"
-      ]
+      "values": ["toys", "apparel", "electronics_accessories", "cosmetics", "home"]
     },
     "public.severity_level": {
       "name": "severity_level",
       "schema": "public",
-      "values": [
-        "critical",
-        "high",
-        "medium",
-        "low"
-      ]
+      "values": ["critical", "high", "medium", "low"]
     }
   },
   "schemas": {},

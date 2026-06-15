@@ -1,7 +1,4 @@
-import {
-  DOCUMENT_TEMPLATE_VERSION,
-  type DocumentTemplateId,
-} from '@varco/shared';
+import { DOCUMENT_TEMPLATE_VERSION, type DocumentTemplateId } from '@varco/shared';
 import { buildDocumentStorageKey } from './storage-key.js';
 import { uploadPdf } from './storage/s3.js';
 import {

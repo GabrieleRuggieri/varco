@@ -34,11 +34,7 @@ export async function closeVarcoQueue(): Promise<void> {
   }
 }
 
-async function addJob(
-  name: string,
-  data: unknown,
-  jobId: string,
-): Promise<EnqueuedJob> {
+async function addJob(name: string, data: unknown, jobId: string): Promise<EnqueuedJob> {
   const q = getVarcoQueue();
   const job = await q.add(name, data, {
     ...DEFAULT_JOB_OPTIONS,
@@ -59,9 +55,7 @@ export async function enqueueCatalogSync(
   );
 }
 
-export async function enqueueSkuClassify(
-  payload: SkuClassifyJobPayload,
-): Promise<EnqueuedJob> {
+export async function enqueueSkuClassify(payload: SkuClassifyJobPayload): Promise<EnqueuedJob> {
   return addJob(WORKER_JOB_NAMES.SKU_CLASSIFY, payload, `sku-classify-${payload.skuId}`);
 }
 

@@ -16,7 +16,9 @@ export const organizationMembers = pgTable(
     role: orgRoleEnum('role').notNull().default('owner'),
     createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
   },
-  (table) => [unique('organization_members_org_user_unique').on(table.organizationId, table.userId)],
+  (table) => [
+    unique('organization_members_org_user_unique').on(table.organizationId, table.userId),
+  ],
 );
 
 /** Password hash per provider Credentials (bcrypt) */

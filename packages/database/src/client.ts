@@ -7,7 +7,7 @@ export function createDb(connectionString?: string) {
   const url = connectionString ?? process.env.DATABASE_URL;
   if (!url) {
     throw new Error(
-      'DATABASE_URL non configurato. Imposta la variabile di ambiente prima di avviare l\'applicazione.',
+      "DATABASE_URL non configurato. Imposta la variabile di ambiente prima di avviare l'applicazione.",
     );
   }
   const client = postgres(url, { max: 10 });

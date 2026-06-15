@@ -21,9 +21,7 @@ function secretKey(): Uint8Array {
   return new TextEncoder().encode(getAuthSecret());
 }
 
-export async function signApiAccessToken(
-  payload: ApiAccessTokenPayload,
-): Promise<string> {
+export async function signApiAccessToken(payload: ApiAccessTokenPayload): Promise<string> {
   return new SignJWT({
     email: payload.email,
     organizationId: payload.organizationId,

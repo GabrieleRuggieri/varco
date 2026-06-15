@@ -1,9 +1,5 @@
 import { index, jsonb, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
-import {
-  countryCodeEnum,
-  partnerRequestStatusEnum,
-  partnerRequestTypeEnum,
-} from './enums.js';
+import { countryCodeEnum, partnerRequestStatusEnum, partnerRequestTypeEnum } from './enums.js';
 import { organizations } from './organizations.js';
 import { skus } from './catalog.js';
 

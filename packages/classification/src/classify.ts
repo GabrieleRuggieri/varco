@@ -11,7 +11,8 @@ export async function classifySku(
   ctx: SkuClassificationContext,
   options: ClassifyOptions = {},
 ): Promise<StructuredClassification> {
-  const provider = options.provider ?? (process.env.LLM_PROVIDER as LlmProvider | undefined) ?? 'mock';
+  const provider =
+    options.provider ?? (process.env.LLM_PROVIDER as LlmProvider | undefined) ?? 'mock';
 
   switch (provider) {
     case 'mock':

@@ -2,13 +2,7 @@ import { z } from 'zod';
 
 /** Valori allineati a @varco/shared e enum PostgreSQL */
 const countryCode = z.enum(['DE', 'FR', 'IT', 'ES', 'NL']);
-const productCategory = z.enum([
-  'toys',
-  'apparel',
-  'electronics_accessories',
-  'cosmetics',
-  'home',
-]);
+const productCategory = z.enum(['toys', 'apparel', 'electronics_accessories', 'cosmetics', 'home']);
 const obligationType = z.enum([
   'responsible_person',
   'technical_file',
