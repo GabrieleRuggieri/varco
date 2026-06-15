@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
-import { type SkusService } from './skus.service';
+import { SkusService } from './skus.service';
 
 @ApiTags('skus')
 @Controller('skus')

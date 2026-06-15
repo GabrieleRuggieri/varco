@@ -2,7 +2,7 @@ import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { and, asc, desc, eq } from 'drizzle-orm';
 import { classificationRuns, products, skus, type Database } from '@varco/database';
 import { DATABASE } from '../database/database.module';
-import { type QueueService } from '../queue/queue.service';
+import { QueueService } from '../queue/queue.service';
 
 @Injectable()
 export class SkusService {

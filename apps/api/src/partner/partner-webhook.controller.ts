@@ -1,7 +1,7 @@
 import { Body, Controller, Headers, Post } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Public, WebhookAuth } from '../auth/decorators.js';
-import { type PartnerWebhookService } from './partner-webhook.service.js';
+import { PartnerWebhookService } from './partner-webhook.service.js';
 import { PartnerWebhookDto } from './partner-webhook.dto.js';
 
 @ApiTags('partner')

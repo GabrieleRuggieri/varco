@@ -4,7 +4,7 @@ import { getDownloadUrl } from '@varco/documents';
 import { documents, products, skus, type Database } from '@varco/database';
 import type { DocumentTemplateId } from '@varco/shared';
 import { DATABASE } from '../database/database.module';
-import { type QueueService } from '../queue/queue.service';
+import { QueueService } from '../queue/queue.service';
 
 @Injectable()
 export class DocumentsService {
