@@ -74,7 +74,7 @@
       <tspan x="0" y="58" fill="#ff3c00">senza perderti nella normativa</tspan>
     </text>
     <text font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="400" fill="#52545a">
-      <tspan x="0" y="108">Catalogo ’ Classificazione AI ’ Matrice obblighi ’ Checklist ’ Documenti</tspan>
+      <tspan x="0" y="108">Catalogo &gt; Classificazione AI &gt; Matrice obblighi &gt; Checklist &gt; Documenti</tspan>
     </text>
   </g>
 
@@ -120,7 +120,7 @@
 
     <!-- Mini checklist preview -->
     <g transform="translate(28 148)">
-      <text font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#898c94" letter-spacing="0.08em">CHECKLIST · DE · IT · FR</text>
+      <text font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#898c94" letter-spacing="0.08em">CHECKLIST - DE - IT - FR</text>
 
       <g transform="translate(0 20)">
         <rect width="664" height="36" rx="6" fill="#ffffff" stroke="#efefef"/>
@@ -142,7 +142,7 @@
     </g>
   </g>
 
-  <!-- Right panel  markets + stack -->
+  <!-- Right panel  markets + stack -->
   <g transform="translate(840 120)" filter="url(#cardShadow)">
     <rect x="0" y="0" width="360" height="448" rx="12" fill="#ffffff" stroke="#dfddd8" stroke-width="1.5"/>
 
@@ -190,8 +190,8 @@
 
       <g transform="translate(0 128)">
         <rect width="312" height="88" rx="8" fill="#faf6f1" stroke="#dfddd8"/>
-        <text x="16" y="36" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="13" font-weight="600" fill="#312e2e">GPSR · EPR · Etichettatura</text>
-        <text x="16" y="58" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" fill="#898c94">La matrice decide  l'AI non inventa obblighi</text>
+        <text x="16" y="36" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="13" font-weight="600" fill="#312e2e">GPSR - EPR - Etichettatura</text>
+        <text x="16" y="58" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" fill="#898c94">La matrice decide  l'AI non inventa obblighi</text>
         <rect x="16" y="68" width="120" height="6" rx="999" fill="#efefef"/>
         <rect x="16" y="68" width="84" height="6" rx="999" fill="url(#orangeBar)"/>
       </g>
@@ -205,6 +205,6 @@
   </g>
 
   <!-- Footer tagline -->
-  <text x="80" y="612" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#898c94">pnpm dev · admin@varco.local · LLM_PROVIDER=mock</text>
-  <text x="1200" y="612" text-anchor="end" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" font-weight="500" fill="#cbc7c3">design/replit · Ember Orange #ff3c00</text>
+  <text x="80" y="612" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#898c94">pnpm dev - admin@varco.local - LLM_PROVIDER=mock</text>
+  <text x="1200" y="612" text-anchor="end" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" font-weight="500" fill="#cbc7c3">design/replit - Ember Orange #ff3c00</text>
 </svg>
