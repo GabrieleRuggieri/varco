@@ -7,16 +7,14 @@ export type S3Config = {
 };
 
 export function getS3Config(): S3Config {
-  const accessKey = process.env.S3_ACCESS_KEY ?? 'minioadmin';
-  const secretKey = process.env.S3_SECRET_KEY ?? 'minioadmin';
+  const accessKey = process.env.S3_ACCESS_KEY;
+  const secretKey = process.env.S3_SECRET_KEY;
 
-  if (process.env.NODE_ENV === 'production') {
-    if (!process.env.S3_ACCESS_KEY || !process.env.S3_SECRET_KEY) {
-      throw new Error('S3_ACCESS_KEY e S3_SECRET_KEY devono essere configurati in produzione.');
-    }
-    if (accessKey === 'minioadmin' || secretKey === 'minioadmin') {
-      throw new Error('Le credenziali S3 di default (minioadmin) non possono essere usate in produzione.');
-    }
+  if (!accessKey || !secretKey) {
+    throw new Error(
+      'S3_ACCESS_KEY e S3_SECRET_KEY devono essere configurati. ' +
+        'Copia .env.example in .env e imposta i valori appropriati.',
+    );
   }
 
   return {
