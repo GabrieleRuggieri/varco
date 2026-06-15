@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { api } from '@/lib/api';
 import { getSession } from '@/lib/session';
 import styles from '@/components/ui/ui.module.css';
@@ -92,32 +93,40 @@ export default async function OverviewPage() {
           <p className={pageStyles.sectionSub}>4 passi per ogni SKU</p>
           <ol className={pageStyles.steps}>
             <li>
-              <span className={pageStyles.stepNum}>1</span>
-              <div>
-                <strong>Sincronizza catalogo</strong>
-                <span>Importa prodotti e SKU dal mock Shopify</span>
-              </div>
+              <Link href="/catalog" className={pageStyles.stepLink}>
+                <span className={pageStyles.stepNum}>1</span>
+                <div>
+                  <strong>Sincronizza catalogo</strong>
+                  <span>Importa prodotti e SKU dal mock Shopify</span>
+                </div>
+              </Link>
             </li>
             <li>
-              <span className={pageStyles.stepNum}>2</span>
-              <div>
-                <strong>Classifica SKU</strong>
-                <span>Classificazione AI → matrice obblighi</span>
-              </div>
+              <Link href="/skus" className={pageStyles.stepLink}>
+                <span className={pageStyles.stepNum}>2</span>
+                <div>
+                  <strong>Classifica SKU</strong>
+                  <span>Classificazione AI → matrice obblighi</span>
+                </div>
+              </Link>
             </li>
             <li>
-              <span className={pageStyles.stepNum}>3</span>
-              <div>
-                <strong>Rivedi checklist</strong>
-                <span>Obblighi per paese con gravità</span>
-              </div>
+              <Link href="/checklist" className={pageStyles.stepLink}>
+                <span className={pageStyles.stepNum}>3</span>
+                <div>
+                  <strong>Rivedi checklist</strong>
+                  <span>Obblighi per paese con gravità</span>
+                </div>
+              </Link>
             </li>
             <li>
-              <span className={pageStyles.stepNum}>4</span>
-              <div>
-                <strong>Genera PDF</strong>
-                <span>Risk assessment e documenti GPSR</span>
-              </div>
+              <Link href="/skus" className={pageStyles.stepLink}>
+                <span className={pageStyles.stepNum}>4</span>
+                <div>
+                  <strong>Genera PDF</strong>
+                  <span>Risk assessment e documenti GPSR</span>
+                </div>
+              </Link>
             </li>
           </ol>
         </div>

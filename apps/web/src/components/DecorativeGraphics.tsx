@@ -4,17 +4,6 @@ import styles from './DecorativeGraphics.module.css';
 export function DecorativeGraphics() {
   return (
     <div className={styles.root} aria-hidden>
-      {/* Stella arancione — top right */}
-      <svg className={`${styles.doodle} ${styles.star1}`} viewBox="0 0 48 48" fill="none">
-        <path
-          d="M24 4l4.8 14.8H44L30 28.4l4.8 15.6L24 33.6 11.2 44 16 28.4 2 18.8h15.2L24 4z"
-          stroke="var(--color-primary)"
-          strokeWidth="2"
-          strokeLinejoin="round"
-          fill="rgba(255, 60, 0, 0.08)"
-        />
-      </svg>
-
       {/* Squiggle blu */}
       <svg className={`${styles.doodle} ${styles.squiggle}`} viewBox="0 0 120 40" fill="none">
         <path

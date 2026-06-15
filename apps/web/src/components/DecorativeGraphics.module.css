@@ -11,14 +11,6 @@
   animation: doodleFloat 12s ease-in-out infinite;
 }
 
-.star1 {
-  width: 52px;
-  height: 52px;
-  top: 8%;
-  right: 12%;
-  animation-delay: 0s;
-}
-
 .squiggle {
   width: 140px;
   height: 48px;
@@ -61,6 +53,6 @@
 }
 
 @media (max-width: 768px) {
-  .star1, .circle, .squiggle { opacity: 0.5; transform: scale(0.75); }
+  .circle, .squiggle { opacity: 0.5; transform: scale(0.75); }
   .blob { width: 180px; height: 180px; }
 }

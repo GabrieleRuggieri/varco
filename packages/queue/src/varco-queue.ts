@@ -49,18 +49,20 @@ async function addJob(
 
 export async function enqueueCatalogSync(
   payload: CatalogSyncJobPayload,
+  options?: { force?: boolean },
 ): Promise<EnqueuedJob> {
+  const suffix = options?.force ? `-${Date.now()}` : '';
   return addJob(
     WORKER_JOB_NAMES.CATALOG_SYNC,
     payload,
-    `catalog-sync:${payload.organizationId}`,
+    `catalog-sync-${payload.organizationId}${suffix}`,
   );
 }
 
 export async function enqueueSkuClassify(
   payload: SkuClassifyJobPayload,
 ): Promise<EnqueuedJob> {
-  return addJob(WORKER_JOB_NAMES.SKU_CLASSIFY, payload, `sku-classify:${payload.skuId}`);
+  return addJob(WORKER_JOB_NAMES.SKU_CLASSIFY, payload, `sku-classify-${payload.skuId}`);
 }
 
 export async function enqueueDocumentGenerate(
@@ -69,6 +71,6 @@ export async function enqueueDocumentGenerate(
   return addJob(
     WORKER_JOB_NAMES.DOCUMENT_GENERATE,
     payload,
-    `document:${payload.skuId}:${payload.templateId}`,
+    `document-${payload.skuId}-${payload.templateId}`,
   );
 }

@@ -151,15 +151,6 @@
   z-index: 0;
 }
 
-.star {
-  position: absolute;
-  top: 14%;
-  right: 18%;
-  width: 44px;
-  height: 44px;
-  animation: doodleFloat 10s ease-in-out infinite;
-}
-
 .squiggle {
   position: absolute;
   bottom: 22%;
@@ -170,5 +161,5 @@
 }
 
 @media (max-width: 480px) {
-  .star, .squiggle { display: none; }
+  .squiggle { display: none; }
 }
