@@ -47,6 +47,40 @@ Catalogo → Classificazione AI (attributi) → Matrice obblighi (lookup) → Ch
 
 Per il dettaglio tecnico vedi [ARCHITECTURE.md](./ARCHITECTURE.md).
 
+## Guida alla dashboard
+
+Il flusso operativo in cinque schermate — dalla login alla checklist obblighi per paese.
+
+### 1. Accesso
+
+Accedi con le credenziali demo per entrare nella dashboard organizzazione.
+
+![Login — accesso alla dashboard Varco](./docs/images/01-login.png)
+
+### 2. Panoramica
+
+La home riassume lo stato del catalogo: SKU importati, azioni aperte, obblighi critical e completati. La **pipeline compliance** mostra i quattro passi del flusso; i **mercati attivi** elencano i paesi MVP (DE, FR, IT, ES, NL).
+
+![Panoramica — metriche, pipeline e mercati attivi](./docs/images/02-overview.png)
+
+### 3. Sincronizza catalogo
+
+Collega il mock Shopify (porta 4010) e importa prodotti e varianti SKU nel database Varco. Ogni sync aggiorna titoli, materiali, categorie e paesi target estratti dai tag.
+
+![Catalogo — sync dal mock Shopify](./docs/images/03-catalogo.png)
+
+### 4. Classifica SKU
+
+Per ogni variante puoi avviare la **classificazione AI**: il modello estrae attributi strutturati e la **matrice obblighi** (non l'LLM) determina i requisiti. Da qui si generano anche i PDF risk assessment GPSR.
+
+![SKU — tabella prodotti e azioni Classifica / PDF](./docs/images/04-skus.png)
+
+### 5. Rivedi checklist
+
+Le voci generate dalla matrice compaiono per **SKU × paese**: tipo obbligo (fascicolo tecnico, etichettatura, RP, EPR…), **gravità** (critical / high / …), stato operativo e riferimento normativo (es. GPSR Art. 9, CONAI).
+
+![Checklist — obblighi per paese con gravità e riferimenti normativi](./docs/images/05-checklist.png)
+
 ## Stack tecnologico
 
 | Componente | Tecnologia |
@@ -62,7 +96,7 @@ Per il dettaglio tecnico vedi [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 ## Avvio rapido
 
-> Il progetto è in fase di implementazione attiva. I comandi sotto descrivono il setup target quando il codice sarà disponibile.
+Demo locale completa in pochi minuti.
 
 ### Prerequisiti
 
@@ -73,7 +107,7 @@ Per il dettaglio tecnico vedi [ARCHITECTURE.md](./ARCHITECTURE.md).
 ### Setup
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/GabrieleRuggieri/varco.git
 cd varco
 pnpm install
 cp .env.example .env
@@ -82,6 +116,12 @@ pnpm db:migrate
 pnpm db:seed
 pnpm matrix:seed
 pnpm dev
+```
+
+In un secondo terminale, con `pnpm dev` attivo, popola catalogo, checklist e PDF demo:
+
+```bash
+pnpm demo:populate
 ```
 
 | Servizio | URL |
@@ -93,7 +133,8 @@ pnpm dev
 
 Con `LLM_PROVIDER=mock` e `SHOPIFY_API_MODE=mock` non servono chiavi API esterne per lo sviluppo locale.
 
-**Dashboard demo:** http://localhost:3000 — login `admin@varco.local` / `admin` (dopo `pnpm db:seed`).
+**Dashboard demo:** http://localhost:3000 — login `admin@varco.local` / `admin` (dopo `pnpm db:seed`).  
+Per riempire catalogo, checklist e PDF: `pnpm demo:populate` (con `pnpm dev` attivo).
 
 Guida completa per chi contribuisce: [CONTRIBUTING.md](./CONTRIBUTING.md).
 

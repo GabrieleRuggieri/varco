@@ -144,6 +144,14 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 |----------|-------|-----------|
 | Design Replit | completato | Tema light warm; rimosso `design/linear/`; IBM Plex Sans |
 
+### 2026-06-12 (sessione 13 — rilascio demo)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Demo workflow | completato | `pnpm demo:populate`; fix JWT condiviso API/web/worker |
+| Documentazione | completato | README con guida dashboard e screenshot in `docs/images/` |
+| Merge su `main` | completato | Branch `feat/web-redesign` integrato per demo pubblica |
+
 ---
 
 ## Backlog prossimi passi (ordinato)
