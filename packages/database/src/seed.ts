@@ -12,8 +12,9 @@ import {
 } from './schema/index.js';
 
 const DEMO_ORG_NAME = 'Varco Demo';
-const DEMO_USER_EMAIL = 'demo@varco.local';
-const DEMO_PASSWORD = 'demo';
+const DEMO_USER_EMAIL = 'admin@varco.local';
+const LEGACY_DEMO_EMAIL = 'demo@varco.local';
+const DEMO_PASSWORD = 'admin';
 
 const run = async () => {
   const db = createDb();
@@ -45,16 +46,34 @@ const run = async () => {
   let user = (await db.select().from(users).where(eq(users.email, DEMO_USER_EMAIL)).limit(1))[0];
 
   if (!user) {
+    const legacy = (
+      await db.select().from(users).where(eq(users.email, LEGACY_DEMO_EMAIL)).limit(1)
+    )[0];
+    if (legacy) {
+      [user] = await db
+        .update(users)
+        .set({ email: DEMO_USER_EMAIL, name: 'Admin' })
+        .where(eq(users.id, legacy.id))
+        .returning();
+      console.log(`[db:seed] Utente demo rinominato: ${LEGACY_DEMO_EMAIL} → ${DEMO_USER_EMAIL}`);
+    }
+  }
+
+  if (!user) {
     [user] = await db
       .insert(users)
       .values({
         email: DEMO_USER_EMAIL,
-        name: 'Demo Seller',
+        name: 'Admin',
         emailVerified: new Date(),
       })
       .returning();
     console.log(`[db:seed] Utente demo creato: ${user?.email}`);
   } else {
+    await db
+      .update(users)
+      .set({ name: 'Admin' })
+      .where(eq(users.id, user.id));
     console.log('[db:seed] Utente demo già presente');
   }
 

@@ -1,6 +1,7 @@
+import { DecorativeGraphics } from './DecorativeGraphics';
 import styles from './AmbientMesh.module.css';
 
-/** Sfondo decorativo stile linear.app — mesh + griglia + glow */
+/** Sfondo caldo stile replit.com — mesh + griglia + doodle */
 export function AmbientMesh() {
   return (
     <div className={styles.root} aria-hidden>
@@ -8,6 +9,7 @@ export function AmbientMesh() {
       <div className={styles.grid} />
       <div className={styles.orb1} />
       <div className={styles.orb2} />
+      <DecorativeGraphics />
     </div>
   );
 }

@@ -11,25 +11,11 @@
   height: 2px;
   background: linear-gradient(
     90deg,
-    rgba(94, 106, 210, 0.15) 0%,
-    rgba(94, 106, 210, 0.5) 50%,
-    rgba(48, 164, 108, 0.4) 100%
+    rgba(36, 146, 255, 0.2) 0%,
+    rgba(255, 60, 0, 0.5) 50%,
+    rgba(26, 158, 74, 0.4) 100%
   );
   border-radius: 1px;
-}
-
-.track::after {
-  content: '';
-  position: absolute;
-  inset: -1px 0;
-  background: linear-gradient(90deg, transparent, rgba(130, 143, 255, 0.6), transparent);
-  animation: shimmer 3s ease-in-out infinite;
-  opacity: 0.5;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
 }
 
 .steps {
@@ -61,23 +47,18 @@
 .node {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 8px;
   display: grid;
   place-items: center;
   color: var(--node-color);
-  background: color-mix(in srgb, var(--node-color) 12%, var(--color-surface-2));
-  border: 1px solid color-mix(in srgb, var(--node-color) 35%, var(--color-hairline));
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
-    0 4px 16px color-mix(in srgb, var(--node-color) 15%, transparent);
+  background: color-mix(in srgb, var(--node-color) 10%, var(--color-surface-1));
+  border: 1px solid color-mix(in srgb, var(--node-color) 30%, var(--color-hairline));
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .step:hover .node {
   transform: translateY(-2px);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-    0 8px 24px color-mix(in srgb, var(--node-color) 25%, transparent);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--node-color) 18%, transparent);
 }
 
 .label {

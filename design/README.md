@@ -1,19 +1,20 @@
 # Design — Varco
 
 Riferimenti visivi e token per UI, landing e componenti.  
-**Sistema adottato:** Linear-inspired ([`design/linear/DESIGN.md`](./linear/DESIGN.md)).
+**Sistema adottato:** Replit-inspired ([`design/replit/DESIGN.md`](./replit/DESIGN.md)).
 
 ---
 
-## Perché Linear-inspired
+## Perché Replit-inspired
 
-Varco è un B2B SaaS su checklist, stati e documenti compliance: serve **precisione operativa**, densità informativa e un tono da tool pro (non consumer playful). Il design Linear-inspired copre:
+Varco è un copilot operativo per compliance prodotto: serve chiarezza, energia creativa e un tono accessibile (non dark enterprise). Il design Replit-inspired copre:
 
-- Dashboard prodotto (`apps/web`) — dark-first, lavender accent `#5e6ad2`
+- Dashboard prodotto (`apps/web`) — canvas caldo `#faf6f1`, accento arancione `#ff3c00`
 - Tabelle SKU, checklist, stati e gravità obblighi
 - Flussi task: sync → classifica → PDF
+- Doodle SVG e mesh decorativi su sfondo chiaro
 
-Riferimento storico Stripe: [`design/stripe/`](./stripe/) (sostituito come sistema primario).
+Riferimenti archiviati: [`design/stripe/`](./stripe/) (precedente), ~~`design/linear/`~~ (rimosso).
 
 ---
 
@@ -21,40 +22,40 @@ Riferimento storico Stripe: [`design/stripe/`](./stripe/) (sostituito come siste
 
 | File | Contenuto |
 |------|-----------|
-| [`linear/DESIGN.md`](./linear/DESIGN.md) | Token colori, tipografia, spacing, componenti, do/don't |
-| [`linear/SOURCE.md`](./linear/SOURCE.md) | Provenienza e licenza del file upstream |
+| [`replit/DESIGN.md`](./replit/DESIGN.md) | Token colori, tipografia, principi UI |
+| [`replit/SOURCE.md`](./replit/SOURCE.md) | Provenienza e riferimenti brand |
 | [`stripe/DESIGN.md`](./stripe/DESIGN.md) | Archivio — precedente riferimento |
+
+Implementazione CSS: `apps/web/src/app/globals.css` (`:root`).
 
 ---
 
 ## Come usarlo (team e agenti)
 
-1. **Prima di modificare UI** — leggi `linear/DESIGN.md` e usa i token (`{colors.primary}`, `{colors.surface-1}`, `{rounded.md}`, ecc.).
-2. **Font in produzione** — Linear custom non disponibile; usa **Inter** 400 (body), 500–600 (titoli).
-3. **Numeri e compliance** — SKU, scadenze, contatori: `font-variant-numeric: tabular-nums`.
-4. **CTA** — un solo pulsante filled lavender per sezione (`button-primary`); secondari su `surface-1` con hairline.
-5. **Dashboard** — canvas `#010102`, card su `surface-1`, testo `ink` chiaro.
-6. **Disclaimer legale** — sempre visibile; non usare verde `semantic-success` per implicare “sei a norma”.
+1. **Prima di modificare UI** — leggi `replit/DESIGN.md` e usa i token CSS (`--color-primary`, `--color-canvas`, ecc.).
+2. **Font in produzione** — ABC Diatype non disponibile; usa **IBM Plex Sans** (400–700) e **IBM Plex Mono** per codice.
+3. **Numeri e compliance** — SKU, scadenze, contatori: `font-variant-numeric: tabular-nums` (classe `.tnum`).
+4. **CTA** — pulsante filled arancione (`--color-primary`); secondari bianchi con bordo hairline.
+5. **Dashboard** — canvas `#faf6f1`, card bianche, testo ink scuro.
+6. **Disclaimer legale** — sempre visibile; non usare verde success per implicare “sei a norma”.
 
 ### Mappatura rapida Varco → token
 
-| Elemento Varco | Componente / token DESIGN.md |
-|----------------|------------------------------|
-| Shell dashboard | `canvas` + sidebar `surface-2` |
-| Card SKU / checklist | `card-panel` / `surface-1` + `hairline` |
-| Tabella dati | `body-sm` + header `caption` uppercase |
-| Tag stato obbligo | `pill-tag` su `surface-3` |
-| Gravità critical | accento rosso custom — **non** CTA primaria |
-| Form login | `text-input` su `surface-1`, focus ring `primary` |
+| Elemento Varco | Token CSS |
+|----------------|-----------|
+| Shell dashboard | `--color-canvas` + sidebar `--color-glass` |
+| Card SKU / checklist | `--color-surface-1` + `--color-hairline` |
+| Tabella dati | body 13px + header caption uppercase |
+| Tag stato obbligo | `--color-surface-2` + pill border |
+| Gravità critical | `--color-critical` — non CTA primaria |
+| Form login | `--color-surface-1`, focus `--color-primary` |
 
 ---
 
 ## Aggiornamenti
 
-Il file upstream vive in [awesome-design-md — linear.app](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/linear.app).  
-Per allinearsi a una versione nuova: sostituire `design/linear/DESIGN.md` e annotare in `WORK_LOG.md`.
-
-Modifiche **specifiche Varco** (es. token semantici compliance) vanno in `design/varco-extensions.md` — non alterare il DESIGN.md linear senza motivo.
+Riferimenti ufficiali: [replit.com](https://replit.com), [replit.com/brand](https://replit.com/brand).  
+Modifiche token Varco: aggiornare `globals.css` e annotare in `WORK_LOG.md`.
 
 ---
 

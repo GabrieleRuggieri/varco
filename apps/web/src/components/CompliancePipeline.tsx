@@ -2,13 +2,13 @@ import styles from './CompliancePipeline.module.css';
 import { IconBox, IconCheckSquare, IconDocument, IconSparkle } from './icons';
 
 const STEPS = [
-  { label: 'Catalogo', sub: 'Sync Shopify', icon: IconBox, color: '#828fff' },
-  { label: 'Classifica', sub: 'AI + matrice', icon: IconSparkle, color: '#5e6ad2' },
-  { label: 'Checklist', sub: 'Obblighi UE', icon: IconCheckSquare, color: '#e8c84a' },
-  { label: 'Documenti', sub: 'PDF GPSR', icon: IconDocument, color: '#30a46c' },
+  { label: 'Catalogo', sub: 'Sync Shopify', icon: IconBox, color: '#2492ff' },
+  { label: 'Classifica', sub: 'AI + matrice', icon: IconSparkle, color: '#ff3c00' },
+  { label: 'Checklist', sub: 'Obblighi UE', icon: IconCheckSquare, color: '#ff764c' },
+  { label: 'Documenti', sub: 'PDF GPSR', icon: IconDocument, color: '#1a9e4a' },
 ] as const;
 
-/** Diagramma pipeline compliance — ispirato alle product screenshots di linear.app */
+/** Diagramma pipeline compliance — stile replit.com */
 export function CompliancePipeline() {
   return (
     <div className={styles.wrap}>

@@ -1,0 +1,66 @@
+.root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.doodle {
+  position: absolute;
+  animation: doodleFloat 12s ease-in-out infinite;
+}
+
+.star1 {
+  width: 52px;
+  height: 52px;
+  top: 8%;
+  right: 12%;
+  animation-delay: 0s;
+}
+
+.squiggle {
+  width: 140px;
+  height: 48px;
+  top: 22%;
+  left: 6%;
+  animation-delay: -3s;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  bottom: 18%;
+  right: 8%;
+  animation-delay: -6s;
+}
+
+.plus {
+  width: 36px;
+  height: 36px;
+  top: 55%;
+  left: 4%;
+  animation-delay: -2s;
+}
+
+.blob {
+  width: 280px;
+  height: 280px;
+  bottom: -60px;
+  left: -40px;
+  animation-delay: -4s;
+  animation-duration: 16s;
+}
+
+.dots {
+  width: 60px;
+  height: 60px;
+  top: 12%;
+  left: 42%;
+  animation-delay: -8s;
+}
+
+@media (max-width: 768px) {
+  .star1, .circle, .squiggle { opacity: 0.5; transform: scale(0.75); }
+  .blob { width: 180px; height: 180px; }
+}

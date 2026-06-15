@@ -7,7 +7,7 @@ test('sign e verify API access token', async () => {
 
   const token = await signApiAccessToken({
     sub: 'user-1',
-    email: 'demo@varco.local',
+    email: 'admin@varco.local',
     organizationId: 'org-1',
     organizationIds: ['org-1'],
     organizationName: 'Varco Demo',

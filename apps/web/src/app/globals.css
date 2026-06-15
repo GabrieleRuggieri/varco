@@ -1,66 +1,69 @@
-/* Token Linear-inspired — vedi design/linear/DESIGN.md e linear.app */
+/* Token Replit-inspired — vedi design/replit/DESIGN.md e replit.com */
 :root {
-  /* Primario — Linear lavender */
-  --color-primary: #5e6ad2;
-  --color-primary-hover: #828fff;
-  --color-primary-press: #5e69d1;
-  --color-primary-glow: rgba(94, 106, 210, 0.35);
-  --color-primary-subtle: rgba(94, 106, 210, 0.12);
+  /* Brand — Ember Orange */
+  --color-primary: #ff3c00;
+  --color-primary-hover: #ff5519;
+  --color-primary-press: #ec4e02;
+  --color-primary-glow: rgba(255, 60, 0, 0.22);
+  --color-primary-subtle: rgba(255, 60, 0, 0.1);
+
+  /* Accenti secondari */
+  --color-accent-blue: #2492ff;
+  --color-accent-coral: #ff764c;
+  --color-accent-peach: #ffb199;
 
   /* Testo */
-  --color-ink: #f7f8f8;
-  --color-ink-muted: #d0d6e0;
-  --color-ink-subtle: #8a8f98;
-  --color-ink-tertiary: #62666d;
+  --color-ink: #0e0e0f;
+  --color-ink-muted: #312e2e;
+  --color-ink-subtle: #52545a;
+  --color-ink-tertiary: #898c94;
 
-  /* Superfici — scala Linear (#010102 → #18191a) */
-  --color-canvas: #010102;
-  --color-surface-1: #0f1011;
-  --color-surface-2: #141516;
-  --color-surface-3: #18191a;
-  --color-surface-4: #191a1b;
-  --color-surface-hover: #1c1d20;
-  --color-glass: rgba(15, 16, 17, 0.72);
+  /* Superfici — canvas caldo Replit */
+  --color-canvas: #faf6f1;
+  --color-surface-1: #ffffff;
+  --color-surface-2: #efefef;
+  --color-surface-3: #dfddd8;
+  --color-surface-4: #f5f3f0;
+  --color-surface-hover: #f0ede8;
+  --color-glass: rgba(255, 255, 255, 0.92);
 
   /* Bordi */
-  --color-hairline: #23252a;
-  --color-hairline-strong: #34343a;
-  --color-hairline-tertiary: #3e3e44;
+  --color-hairline: #dfddd8;
+  --color-hairline-strong: #cbc7c3;
+  --color-hairline-tertiary: #898c94;
 
   /* Semantici */
-  --color-critical: #f2605c;
-  --color-critical-bg: rgba(242, 96, 92, 0.1);
-  --color-critical-border: rgba(242, 96, 92, 0.35);
-  --color-high: #f5a623;
-  --color-high-bg: rgba(245, 166, 35, 0.1);
-  --color-high-border: rgba(245, 166, 35, 0.35);
-  --color-medium: #e8c84a;
-  --color-medium-bg: rgba(232, 200, 74, 0.1);
-  --color-medium-border: rgba(232, 200, 74, 0.35);
-  --color-success: #27a644;
-  --color-success-bg: rgba(39, 166, 68, 0.1);
-  --color-success-border: rgba(39, 166, 68, 0.35);
+  --color-critical: #ff3c00;
+  --color-critical-bg: rgba(255, 60, 0, 0.08);
+  --color-critical-border: rgba(255, 60, 0, 0.28);
+  --color-high: #ec4e02;
+  --color-high-bg: rgba(236, 78, 2, 0.08);
+  --color-high-border: rgba(236, 78, 2, 0.25);
+  --color-medium: #ff764c;
+  --color-medium-bg: rgba(255, 118, 76, 0.1);
+  --color-medium-border: rgba(255, 118, 76, 0.3);
+  --color-success: #1a9e4a;
+  --color-success-bg: rgba(26, 158, 74, 0.08);
+  --color-success-border: rgba(26, 158, 74, 0.28);
 
-  /* Geometry */
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  /* Geometry — radii stretti stile product UI Replit */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
   --radius-card: 12px;
   --radius-pill: 999px;
 
-  /* Ombre */
-  --shadow-card:
-    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-    0 1px 2px rgba(0, 0, 0, 0.4);
+  /* Ombre leggere — border-first */
+  --shadow-card: 0 0 0 1px rgba(49, 46, 46, 0.06);
   --shadow-elevated:
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-    0 8px 32px rgba(0, 0, 0, 0.5),
-    0 0 48px rgba(94, 106, 210, 0.06);
-  --shadow-glow: 0 0 24px rgba(94, 106, 210, 0.25);
+    0 0 0 1px rgba(49, 46, 46, 0.05),
+    0 8px 32px rgba(14, 14, 15, 0.07);
+  --shadow-glow: 0 0 20px rgba(255, 60, 0, 0.18);
 
   /* Tipografia */
-  --font-sans: var(--font-inter), 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-ibm-plex), 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-ibm-mono), 'IBM Plex Mono', ui-monospace, monospace;
 
   /* Transizioni */
   --transition-fast: 0.12s cubic-bezier(0.4, 0, 0.2, 1);
@@ -92,35 +95,38 @@ a { color: inherit; text-decoration: none; }
   font-variant-numeric: tabular-nums;
 }
 
-/* Testo gradiente — stile headline linear.app */
+/* Headline gradient — ink → coral (stile replit.com) */
 .textGradient {
-  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-ink-muted) 50%, var(--color-primary-hover) 100%);
+  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-ink-muted) 45%, var(--color-primary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Animazioni globali */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(94, 106, 210, 0); }
-  50% { box-shadow: 0 0 20px 2px rgba(94, 106, 210, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 60, 0, 0); }
+  50% { box-shadow: 0 0 16px 2px rgba(255, 60, 0, 0.12); }
 }
 
 @keyframes dotPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.85); }
+  50% { opacity: 0.65; transform: scale(0.9); }
+}
+
+@keyframes doodleFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
 }
 
 .animateIn {
   animation: fadeIn 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
-/* scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
@@ -129,7 +135,6 @@ a { color: inherit; text-decoration: none; }
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-ink-tertiary); }
 
-/* focus visibile accessibile */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;

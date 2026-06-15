@@ -25,29 +25,29 @@ export default async function OverviewPage() {
       label: 'SKU in catalogo',
       value: skus.total,
       icon: IconBox,
-      color: '#828fff',
-      glow: 'rgba(130, 143, 255, 0.12)',
+      color: '#2492ff',
+      bg: 'rgba(36, 146, 255, 0.08)',
     },
     {
       label: 'Azioni aperte',
       value: openItems,
       icon: IconCheckSquare,
-      color: '#f5a623',
-      glow: 'rgba(245, 166, 35, 0.12)',
+      color: '#ff764c',
+      bg: 'rgba(255, 118, 76, 0.1)',
     },
     {
       label: 'Obblighi critical',
       value: critical,
       icon: IconWarning,
-      color: '#f2605c',
-      glow: 'rgba(242, 96, 92, 0.12)',
+      color: '#ff3c00',
+      bg: 'rgba(255, 60, 0, 0.08)',
     },
     {
       label: 'Completati',
       value: completed,
       icon: IconDocument,
-      color: '#27a644',
-      glow: 'rgba(39, 166, 68, 0.12)',
+      color: '#1a9e4a',
+      bg: 'rgba(26, 158, 74, 0.08)',
     },
   ];
 
@@ -63,14 +63,14 @@ export default async function OverviewPage() {
 
       <div className={pageStyles.statsGrid}>
         {stats.map((s) => (
-          <div
-            key={s.label}
-            className={pageStyles.statCard}
-            style={{ ['--stat-glow' as string]: s.glow }}
-          >
+          <div key={s.label} className={pageStyles.statCard}>
             <div
               className={pageStyles.statIcon}
-              style={{ ['--icon-color' as string]: s.color, color: s.color }}
+              style={{
+                ['--icon-color' as string]: s.color,
+                ['--stat-bg' as string]: s.bg,
+                color: s.color,
+              }}
             >
               <s.icon size={18} />
             </div>
@@ -82,7 +82,7 @@ export default async function OverviewPage() {
 
       <div className={styles.cardGlow} style={{ marginBottom: '0.75rem' }}>
         <p className={pageStyles.sectionTitle}>Pipeline compliance</p>
-        <p className={pageStyles.sectionSub}>Dal catalogo al documento — come su linear.app, ma per il GPSR</p>
+        <p className={pageStyles.sectionSub}>Dal catalogo al documento — il flusso compliance per il GPSR</p>
         <CompliancePipeline />
       </div>
 

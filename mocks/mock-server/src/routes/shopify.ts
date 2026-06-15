@@ -31,7 +31,7 @@ export async function registerShopifyRoutes(app: FastifyInstance): Promise<void>
     shop: {
       id: 7001001,
       name: 'Varco Demo Shop',
-      email: 'demo@varco.local',
+      email: 'admin@varco.local',
       domain: 'varco-demo.myshopify.com',
       myshopify_domain: 'varco-demo.myshopify.com',
       country_code: 'IT',

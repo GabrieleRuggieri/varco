@@ -29,10 +29,10 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Partner broker (mock) | pianificato | RP + EPR |
 | Auth + dashboard | completato | Auth.js v5 + JWT API + BFF proxy |
 | CI GitHub Actions | completato | lint, test, typecheck, matrix validate, build |
-| Design system | completato | `design/linear/DESIGN.md` — dashboard Linear-inspired |
+| Design system | completato | `design/replit/DESIGN.md` — dashboard Replit-inspired (light, arancione) |
 
 **Decisioni MVP confermate (2026-06-12):**
-- Auth v1: email/password + sessione demo (`demo@varco.local`); OAuth Shopify in fase successiva
+- Auth v1: email/password + sessione demo (`admin@varco.local` / `admin`); OAuth Shopify in fase successiva
 - Landing `index.html` statica in root; `apps/web` = sola dashboard prodotto
 - Fixture catalogo mock: ~20 SKU sulle 5 categorie MVP
 
@@ -136,13 +136,13 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 
 | Attività | Stato | Dettaglio |
 |----------|-------|-----------|
-| Web MVP (fase 11) | completato | Next.js dashboard; login `demo@varco.local` / `demo` |
+| Web MVP (fase 11) | completato | Next.js dashboard; login `admin@varco.local` / `admin` |
 
 ### 2026-06-12 (sessione 12)
 
 | Attività | Stato | Dettaglio |
 |----------|-------|-----------|
-| Design Linear | completato | Import `design/linear/DESIGN.md`; dashboard dark-first lavender |
+| Design Replit | completato | Tema light warm; rimosso `design/linear/`; IBM Plex Sans |
 
 ---
 
