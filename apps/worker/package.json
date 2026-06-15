@@ -10,7 +10,7 @@
     "start": "node --env-file=../../.env dist/index.js",
     "lint": "eslint src/",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --import tsx --test src/**/*.test.ts",
+    "test": "node --import tsx --test $(find src -name '*.test.ts')",
     "enqueue:demo-sync": "node --env-file=../../.env --import tsx src/scripts/enqueue-demo-sync.ts",
     "populate:demo": "node --env-file=../../.env --import tsx src/scripts/populate-demo-workflow.ts"
   },

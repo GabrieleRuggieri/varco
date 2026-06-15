@@ -9,7 +9,7 @@
     "start": "node --env-file=../../.env dist/main.js",
     "lint": "eslint src/",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --import tsx --test src/**/*.test.ts"
+    "test": "node --import tsx --test $(find src -name '*.test.ts')"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.3",

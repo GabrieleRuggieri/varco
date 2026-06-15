@@ -15,7 +15,7 @@
     "dev": "tsc -p tsconfig.json --watch",
     "lint": "eslint src/",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --import tsx --test src/**/*.test.ts",
+    "test": "node --import tsx --test $(find src -name '*.test.ts')",
     "matrix:validate": "tsx src/cli/validate.ts",
     "matrix:seed": "tsx src/cli/seed.ts"
   },
