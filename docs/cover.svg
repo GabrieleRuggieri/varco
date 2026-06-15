@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" fill="none" role="img" aria-labelledby="coverTitle coverDesc">
+  <title id="coverTitle">Varco  Copilot AI di compliance per vendere in Europa</title>
+  <desc id="coverDesc">Cover illustration with warm canvas, ember orange accent, compliance pipeline and EU market badges</desc>
+
+  <defs>
+    <linearGradient id="bgWash" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#faf6f1"/>
+      <stop offset="55%" stop-color="#f5f0ea"/>
+      <stop offset="100%" stop-color="#faf6f1"/>
+    </linearGradient>
+
+    <radialGradient id="peachBlob" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(180 520) rotate(12) scale(280 220)">
+      <stop offset="0%" stop-color="#ffb199" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ff764c" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="coralBlob" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1120 120) rotate(-18) scale(240 200)">
+      <stop offset="0%" stop-color="#ff764c" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ff3c00" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="blueGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(980 480) scale(180)">
+      <stop offset="0%" stop-color="#2492ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#2492ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="orangeBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff3c00"/>
+      <stop offset="100%" stop-color="#ff764c"/>
+    </linearGradient>
+
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#0e0e0f" flood-opacity="0.07"/>
+    </filter>
+
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#dfddd8" stroke-width="0.75" opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bgWash)"/>
+  <rect width="1280" height="640" fill="url(#grid)" opacity="0.35"/>
+  <ellipse cx="180" cy="520" rx="280" ry="220" fill="url(#peachBlob)"/>
+  <ellipse cx="1120" cy="120" rx="240" ry="200" fill="url(#coralBlob)"/>
+  <circle cx="980" cy="480" r="180" fill="url(#blueGlow)"/>
+
+  <!-- Decorative doodles -->
+  <g opacity="0.55" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M90 140C130 90 170 170 220 120s110-40 160 20" stroke="#2492ff" stroke-width="3" fill="none"/>
+    <circle cx="1080" cy="520" r="42" stroke="#ff764c" stroke-width="2.5" stroke-dasharray="7 9" fill="none"/>
+    <path d="M1180 300v52M1154 326h52" stroke="#898c94" stroke-width="2.5" opacity="0.5"/>
+    <path d="M140 420l18-28 18 28-18 10z" fill="#ff3c00" opacity="0.22"/>
+    <circle cx="760" cy="88" r="4" fill="#ff3c00"/>
+    <circle cx="800" cy="72" r="2.5" fill="#2492ff"/>
+    <circle cx="828" cy="96" r="3" fill="#ff764c"/>
+  </g>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1280" height="6" fill="url(#orangeBar)"/>
+
+  <!-- Logo mark -->
+  <g transform="translate(80 72)">
+    <rect x="0" y="0" width="52" height="52" rx="12" fill="#ffffff" stroke="#dfddd8" stroke-width="1.5"/>
+    <path d="M16 34V18h8.5c5.2 0 8.5 2.8 8.5 7.2 0 3.1-1.7 5.4-4.6 6.5L36 34h-6.8l-5.8-7.4H22v7.4H16zm6-12.2h2.1c2.4 0 3.8-1.1 3.8-3s-1.4-3-3.8-3H22v6z" fill="#ff3c00"/>
+    <text x="68" y="36" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="34" font-weight="700" fill="#0e0e0f" letter-spacing="-0.5">Varco</text>
+    <text x="68" y="58" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="14" font-weight="500" fill="#52545a">Copilot compliance UE</text>
+  </g>
+
+  <!-- Hero copy -->
+  <g transform="translate(80 168)">
+    <text font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="52" font-weight="700" fill="#0e0e0f" letter-spacing="-1.2">
+      <tspan x="0" y="0">Vendi in Europa</tspan>
+      <tspan x="0" y="58" fill="#ff3c00">senza perderti nella normativa</tspan>
+    </text>
+    <text font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="20" font-weight="400" fill="#52545a">
+      <tspan x="0" y="108">Catalogo ’ Classificazione AI ’ Matrice obblighi ’ Checklist ’ Documenti</tspan>
+    </text>
+  </g>
+
+  <!-- Pipeline card -->
+  <g transform="translate(80 320)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="720" height="248" rx="12" fill="#ffffff" stroke="#dfddd8" stroke-width="1.5"/>
+
+    <!-- Pipeline steps -->
+    <g font-family="'IBM Plex Sans', system-ui, sans-serif">
+      <g transform="translate(28 36)">
+        <rect width="148" height="88" rx="8" fill="#faf6f1" stroke="#dfddd8"/>
+        <rect x="16" y="16" width="28" height="28" rx="6" fill="#ff3c00" opacity="0.12"/>
+        <path d="M26 30h8M30 26v8" stroke="#ff3c00" stroke-width="2" stroke-linecap="round"/>
+        <text x="16" y="62" font-size="13" font-weight="600" fill="#0e0e0f">Catalogo</text>
+        <text x="16" y="78" font-size="11" fill="#898c94">Shopify mock</text>
+      </g>
+
+      <path d="M188 80h36" stroke="#cbc7c3" stroke-width="2" stroke-dasharray="4 5"/>
+      <polygon points="224,76 232,80 224,84" fill="#cbc7c3"/>
+
+      <g transform="translate(244 36)">
+        <rect width="148" height="88" rx="8" fill="#faf6f1" stroke="#dfddd8"/>
+        <circle cx="30" cy="30" r="12" fill="#2492ff" opacity="0.14"/>
+        <path d="M24 30h12M30 24v12" stroke="#2492ff" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+        <text x="16" y="62" font-size="13" font-weight="600" fill="#0e0e0f">Classifica</text>
+        <text x="16" y="78" font-size="11" fill="#898c94">Attributi AI</text>
+      </g>
+
+      <path d="M404 80h36" stroke="#cbc7c3" stroke-width="2" stroke-dasharray="4 5"/>
+      <polygon points="440,76 448,80 440,84" fill="#cbc7c3"/>
+
+      <g transform="translate(460 36)">
+        <rect width="148" height="88" rx="8" fill="#faf6f1" stroke="#dfddd8"/>
+        <rect x="16" y="16" width="28" height="28" rx="6" fill="#ff764c" opacity="0.15"/>
+        <path d="M22 30h16M22 24h10M22 36h14" stroke="#ff764c" stroke-width="2" stroke-linecap="round"/>
+        <text x="16" y="62" font-size="13" font-weight="600" fill="#0e0e0f">Matrice</text>
+        <text x="16" y="78" font-size="11" fill="#898c94">Lookup norme</text>
+      </g>
+
+      <path d="M620 80h36" stroke="#cbc7c3" stroke-width="2" stroke-dasharray="4 5"/>
+      <polygon points="656,76 664,80 656,84" fill="#cbc7c3"/>
+    </g>
+
+    <!-- Mini checklist preview -->
+    <g transform="translate(28 148)">
+      <text font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#898c94" letter-spacing="0.08em">CHECKLIST · DE · IT · FR</text>
+
+      <g transform="translate(0 20)">
+        <rect width="664" height="36" rx="6" fill="#ffffff" stroke="#efefef"/>
+        <circle cx="18" cy="18" r="5" fill="#ff3c00" opacity="0.85"/>
+        <text x="34" y="22" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" font-weight="500" fill="#312e2e">Fascicolo tecnico GPSR</text>
+        <rect x="540" y="10" width="58" height="16" rx="999" fill="rgba(255,60,0,0.08)" stroke="rgba(255,60,0,0.28)"/>
+        <text x="552" y="22" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="10" font-weight="600" fill="#ff3c00">critical</text>
+        <text x="610" y="22" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#898c94">DE</text>
+      </g>
+
+      <g transform="translate(0 64)">
+        <rect width="664" height="36" rx="6" fill="#ffffff" stroke="#efefef"/>
+        <circle cx="18" cy="18" r="5" fill="#ff764c" opacity="0.85"/>
+        <text x="34" y="22" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" font-weight="500" fill="#312e2e">Registrazione EPR imballaggi</text>
+        <rect x="540" y="10" width="48" height="16" rx="999" fill="rgba(255,118,76,0.1)" stroke="rgba(255,118,76,0.3)"/>
+        <text x="552" y="22" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="10" font-weight="600" fill="#ec4e02">high</text>
+        <text x="610" y="22" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#898c94">IT</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right panel  markets + stack -->
+  <g transform="translate(840 120)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="360" height="448" rx="12" fill="#ffffff" stroke="#dfddd8" stroke-width="1.5"/>
+
+    <text x="28" y="40" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" font-weight="600" fill="#898c94" letter-spacing="0.08em">MERCATI MVP</text>
+
+    <!-- Country pills -->
+    <g transform="translate(28 56)" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" font-weight="600">
+      <g transform="translate(0 0)">
+        <rect width="56" height="32" rx="999" fill="#faf6f1" stroke="#dfddd8"/>
+        <text x="18" y="21" fill="#312e2e">DE</text>
+      </g>
+      <g transform="translate(68 0)">
+        <rect width="56" height="32" rx="999" fill="#faf6f1" stroke="#dfddd8"/>
+        <text x="18" y="21" fill="#312e2e">FR</text>
+      </g>
+      <g transform="translate(136 0)">
+        <rect width="56" height="32" rx="999" fill="#ff3c00" fill-opacity="0.1" stroke="#ff3c00" stroke-opacity="0.28"/>
+        <text x="18" y="21" fill="#ff3c00">IT</text>
+      </g>
+      <g transform="translate(204 0)">
+        <rect width="56" height="32" rx="999" fill="#faf6f1" stroke="#dfddd8"/>
+        <text x="18" y="21" fill="#312e2e">ES</text>
+      </g>
+      <g transform="translate(272 0)">
+        <rect width="56" height="32" rx="999" fill="#faf6f1" stroke="#dfddd8"/>
+        <text x="18" y="21" fill="#312e2e">NL</text>
+      </g>
+    </g>
+
+    <!-- Stats -->
+    <g transform="translate(28 128)">
+      <text font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" font-weight="600" fill="#898c94" letter-spacing="0.08em">PANORAMICA</text>
+
+      <g transform="translate(0 24)">
+        <rect width="148" height="88" rx="8" fill="#faf6f1" stroke="#dfddd8"/>
+        <text x="16" y="34" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="28" font-weight="700" fill="#0e0e0f" font-variant-numeric="tabular-nums">21</text>
+        <text x="16" y="56" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" fill="#52545a">SKU importati</text>
+      </g>
+
+      <g transform="translate(164 24)">
+        <rect width="148" height="88" rx="8" fill="#faf6f1" stroke="#dfddd8"/>
+        <text x="16" y="34" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="28" font-weight="700" fill="#ff3c00" font-variant-numeric="tabular-nums">5</text>
+        <text x="16" y="56" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" fill="#52545a">Paesi attivi</text>
+      </g>
+
+      <g transform="translate(0 128)">
+        <rect width="312" height="88" rx="8" fill="#faf6f1" stroke="#dfddd8"/>
+        <text x="16" y="36" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="13" font-weight="600" fill="#312e2e">GPSR · EPR · Etichettatura</text>
+        <text x="16" y="58" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" fill="#898c94">La matrice decide  l'AI non inventa obblighi</text>
+        <rect x="16" y="68" width="120" height="6" rx="999" fill="#efefef"/>
+        <rect x="16" y="68" width="84" height="6" rx="999" fill="url(#orangeBar)"/>
+      </g>
+    </g>
+
+    <!-- CTA -->
+    <g transform="translate(28 368)">
+      <rect width="304" height="48" rx="8" fill="#ff3c00"/>
+      <text x="152" y="31" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="15" font-weight="600" fill="#ffffff">Apri dashboard demo</text>
+    </g>
+  </g>
+
+  <!-- Footer tagline -->
+  <text x="80" y="612" font-family="'IBM Plex Mono', monospace" font-size="12" fill="#898c94">pnpm dev · admin@varco.local · LLM_PROVIDER=mock</text>
+  <text x="1200" y="612" text-anchor="end" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="12" font-weight="500" fill="#cbc7c3">design/replit · Ember Orange #ff3c00</text>
+</svg>

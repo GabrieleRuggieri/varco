@@ -1,3 +1,5 @@
+![Varco — Copilot AI di compliance per vendere in Europa](./docs/cover.svg)
+
 # Varco
 
 **Copilot AI di compliance per vendere in Europa.**
