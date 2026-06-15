@@ -1,5 +1,5 @@
-import { Controller, Get, Param, Post, Query } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { Controller, Get, Param, Post } from '@nestjs/common';
+import { ApiOkResponse, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
 import { SkusService } from './skus.service';
 

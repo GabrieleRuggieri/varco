@@ -1,5 +1,5 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
 import { CatalogService } from './catalog.service';
 import { CatalogSyncDto } from './dto/catalog-sync.dto';
