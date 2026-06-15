@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@varco/database": "workspace:*",
-    "drizzle-orm": "^0.44.2",
+    "drizzle-orm": "^0.45.2",
     "yaml": "^2.8.0",
     "zod": "^3.25.67"
   },

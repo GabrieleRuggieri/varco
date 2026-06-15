@@ -22,7 +22,7 @@
     "@varco/queue": "workspace:*",
     "@varco/shared": "workspace:*",
     "bullmq": "^5.53.2",
-    "drizzle-orm": "^0.44.2"
+    "drizzle-orm": "^0.45.2"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
