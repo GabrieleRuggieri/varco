@@ -10,8 +10,7 @@ export type ParsedShopifyTags = {
 const MVP_COUNTRY_SET = new Set<string>(MVP_COUNTRIES);
 const MVP_CATEGORY_SET = new Set<string>(MVP_PRODUCT_CATEGORIES);
 
-const TAG_SEGMENT_RE =
-  /,\s*(?=varco_category:|materials:|target_countries:)/;
+const TAG_SEGMENT_RE = /,\s*(?=varco_category:|materials:|target_countries:)/;
 
 /** Estrae attributi Varco dai tag Shopify (`varco_category:`, `materials:`, `target_countries:`). */
 export function parseShopifyTags(tags: string): ParsedShopifyTags {

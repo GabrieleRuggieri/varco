@@ -87,8 +87,6 @@ export const api = {
   },
 
   async getDocumentDownloadUrl(documentId: string) {
-    return parseJson<{ downloadUrl: string }>(
-      await authFetch(`/documents/${documentId}/download`),
-    );
+    return parseJson<{ downloadUrl: string }>(await authFetch(`/documents/${documentId}/download`));
   },
 };

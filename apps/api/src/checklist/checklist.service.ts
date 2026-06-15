@@ -1,12 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { and, asc, eq } from 'drizzle-orm';
-import {
-  checklistItems,
-  obligationRules,
-  products,
-  skus,
-  type Database,
-} from '@varco/database';
+import { checklistItems, obligationRules, products, skus, type Database } from '@varco/database';
 import { DATABASE } from '../database/database.module';
 
 @Injectable()

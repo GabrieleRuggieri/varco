@@ -26,11 +26,7 @@ export class DocumentsController {
     @CurrentUser() user: RequestUser,
     @Body() body: GenerateDocumentDto,
   ) {
-    return this.documentsService.triggerGenerate(
-      user.organizationId,
-      skuId,
-      body.templateId,
-    );
+    return this.documentsService.triggerGenerate(user.organizationId, skuId, body.templateId);
   }
 
   @Get('documents/:id/download')

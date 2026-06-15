@@ -7,32 +7,65 @@ type Status = 'open' | 'in_progress' | 'needs_review' | 'completed' | string;
 
 function SeverityBadge({ severity }: { severity: Severity | string }) {
   switch (severity) {
-    case 'critical': return <span className={styles.badgeCritical}><span className={styles.dot} />critical</span>;
-    case 'high':     return <span className={styles.badgeHigh}><span className={styles.dot} />high</span>;
-    case 'medium':   return <span className={styles.badgeMedium}><span className={styles.dot} />medium</span>;
-    default:         return <span className={styles.badge}>{severity}</span>;
+    case 'critical':
+      return (
+        <span className={styles.badgeCritical}>
+          <span className={styles.dot} />
+          critical
+        </span>
+      );
+    case 'high':
+      return (
+        <span className={styles.badgeHigh}>
+          <span className={styles.dot} />
+          high
+        </span>
+      );
+    case 'medium':
+      return (
+        <span className={styles.badgeMedium}>
+          <span className={styles.dot} />
+          medium
+        </span>
+      );
+    default:
+      return <span className={styles.badge}>{severity}</span>;
   }
 }
 
 function StatusBadge({ status }: { status: Status }) {
   switch (status) {
-    case 'completed':    return <span className={styles.badgeSuccess}>{status}</span>;
-    case 'in_progress':  return <span className={styles.badgeOpen}>{status}</span>;
-    case 'needs_review': return <span className={styles.badgeHigh}>{status}</span>;
-    default:             return <span className={styles.badge}>{status}</span>;
+    case 'completed':
+      return <span className={styles.badgeSuccess}>{status}</span>;
+    case 'in_progress':
+      return <span className={styles.badgeOpen}>{status}</span>;
+    case 'needs_review':
+      return <span className={styles.badgeHigh}>{status}</span>;
+    default:
+      return <span className={styles.badge}>{status}</span>;
   }
 }
 
 const COUNTRY_FLAGS: Record<string, string> = {
-  DE: '🇩🇪', FR: '🇫🇷', IT: '🇮🇹', ES: '🇪🇸', NL: '🇳🇱', GB: '🇬🇧', BE: '🇧🇪',
+  DE: '🇩🇪',
+  FR: '🇫🇷',
+  IT: '🇮🇹',
+  ES: '🇪🇸',
+  NL: '🇳🇱',
+  GB: '🇬🇧',
+  BE: '🇧🇪',
 };
 
 export default async function ChecklistPage() {
   const result = await api.listChecklist().catch((err: unknown) => err);
   const apiError = result instanceof Error ? result.message : null;
-  const { items, total } = apiError ? { items: [], total: 0 } : (result as Awaited<ReturnType<typeof api.listChecklist>>);
+  const { items, total } = apiError
+    ? { items: [], total: 0 }
+    : (result as Awaited<ReturnType<typeof api.listChecklist>>);
 
-  const open = items.filter((i) => ['open', 'in_progress', 'needs_review'].includes(i.status)).length;
+  const open = items.filter((i) =>
+    ['open', 'in_progress', 'needs_review'].includes(i.status),
+  ).length;
   const done = items.filter((i) => i.status === 'completed').length;
   const crit = items.filter((i) => i.severity === 'critical').length;
 

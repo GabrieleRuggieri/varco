@@ -1,12 +1,6 @@
 import { and, eq, sql } from 'drizzle-orm';
 import { classifySku } from '@varco/classification';
-import {
-  checklistItems,
-  classificationRuns,
-  products,
-  skus,
-  type Database,
-} from '@varco/database';
+import { checklistItems, classificationRuns, products, skus, type Database } from '@varco/database';
 import { loadLatestMatrixRules, matchRules } from '@varco/matrix';
 import type { SkuClassifyJobPayload } from '@varco/shared';
 import type { ChecklistStatus } from '@varco/shared';
@@ -41,7 +35,9 @@ export async function handleSkuClassify(
     .limit(1);
 
   if (!skuRow) {
-    throw new Error(`SKU ${payload.skuId} non trovato per organizzazione ${payload.organizationId}`);
+    throw new Error(
+      `SKU ${payload.skuId} non trovato per organizzazione ${payload.organizationId}`,
+    );
   }
 
   const classification = await classifySku({
@@ -95,11 +91,7 @@ export async function handleSkuClassify(
         .insert(checklistItems)
         .values(checklistRows)
         .onConflictDoUpdate({
-          target: [
-            checklistItems.skuId,
-            checklistItems.country,
-            checklistItems.obligationRuleId,
-          ],
+          target: [checklistItems.skuId, checklistItems.country, checklistItems.obligationRuleId],
           set: {
             status: checklistStatus,
             classificationRunId: run.id,

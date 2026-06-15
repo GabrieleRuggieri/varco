@@ -22,12 +22,7 @@ export function useApiPost() {
     busy: null,
   });
 
-  async function post(
-    path: string,
-    body: unknown,
-    label: string,
-    options?: ApiPostOptions,
-  ) {
+  async function post(path: string, body: unknown, label: string, options?: ApiPostOptions) {
     setState({ message: null, isError: false, busy: label });
     try {
       const res = await fetch(`/api/v1/${path}`, {

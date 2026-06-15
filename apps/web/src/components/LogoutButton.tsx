@@ -18,7 +18,12 @@ export function LogoutButton() {
   }
 
   return (
-    <button type="button" className={styles.logoutBtn} onClick={() => void logout()} disabled={loading}>
+    <button
+      type="button"
+      className={styles.logoutBtn}
+      onClick={() => void logout()}
+      disabled={loading}
+    >
       <IconLogout size={13} />
       {loading ? 'Uscita…' : 'Esci'}
     </button>

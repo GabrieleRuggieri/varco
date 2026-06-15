@@ -6,7 +6,9 @@ import { IconList } from '@/components/icons';
 export default async function SkusPage() {
   const result = await api.listSkus().catch((err: unknown) => err);
   const apiError = result instanceof Error ? result.message : null;
-  const { skus, total } = apiError ? { skus: [], total: 0 } : (result as Awaited<ReturnType<typeof api.listSkus>>);
+  const { skus, total } = apiError
+    ? { skus: [], total: 0 }
+    : (result as Awaited<ReturnType<typeof api.listSkus>>);
 
   return (
     <div>
@@ -40,7 +42,8 @@ export default async function SkusPage() {
             </div>
             <p className={styles.emptyStateTitle}>Catalogo vuoto</p>
             <p className={styles.emptyStateBody}>
-              Vai su <strong>Catalogo</strong> e sincronizza il mock Shopify per importare i prodotti.
+              Vai su <strong>Catalogo</strong> e sincronizza il mock Shopify per importare i
+              prodotti.
             </p>
           </div>
         ) : (
@@ -74,7 +77,9 @@ export default async function SkusPage() {
                     <td>
                       <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
                         {sku.targetCountries.map((c) => (
-                          <span key={c} className={styles.pillTag}>{c}</span>
+                          <span key={c} className={styles.pillTag}>
+                            {c}
+                          </span>
                         ))}
                       </div>
                     </td>

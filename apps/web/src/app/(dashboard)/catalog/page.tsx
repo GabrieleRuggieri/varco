@@ -6,7 +6,9 @@ import { IconBox, IconSync } from '@/components/icons';
 export default async function CatalogPage() {
   const result = await api.listConnections().catch((err: unknown) => err);
   const apiError = result instanceof Error ? result.message : null;
-  const connections = apiError ? { connections: [] } : (result as Awaited<ReturnType<typeof api.listConnections>>);
+  const connections = apiError
+    ? { connections: [] }
+    : (result as Awaited<ReturnType<typeof api.listConnections>>);
 
   return (
     <div>
@@ -36,7 +38,14 @@ export default async function CatalogPage() {
           }}
         >
           <div>
-            <p style={{ margin: '0 0 3px', fontSize: 14, fontWeight: 600, color: 'var(--color-ink-muted)' }}>
+            <p
+              style={{
+                margin: '0 0 3px',
+                fontSize: 14,
+                fontWeight: 600,
+                color: 'var(--color-ink-muted)',
+              }}
+            >
               Shopify Mock
             </p>
             <p style={{ margin: 0, fontSize: 12, color: 'var(--color-ink-subtle)' }}>

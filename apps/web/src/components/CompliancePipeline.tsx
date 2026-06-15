@@ -16,10 +16,7 @@ export function CompliancePipeline() {
       <div className={styles.steps}>
         {STEPS.map((step, i) => (
           <div key={step.label} className={styles.step} style={{ animationDelay: `${i * 80}ms` }}>
-            <div
-              className={styles.node}
-              style={{ ['--node-color' as string]: step.color }}
-            >
+            <div className={styles.node} style={{ ['--node-color' as string]: step.color }}>
               <step.icon size={16} />
             </div>
             <p className={styles.label}>{step.label}</p>

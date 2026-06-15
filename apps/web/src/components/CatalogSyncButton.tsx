@@ -8,7 +8,9 @@ export function CatalogSyncButton() {
   const { message, isError, busy, post } = useApiPost();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', alignItems: 'flex-start' }}>
+    <div
+      style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', alignItems: 'flex-start' }}
+    >
       <button
         type="button"
         className={styles.primary}
@@ -24,7 +26,10 @@ export function CatalogSyncButton() {
         {busy === 'sync' ? 'Sincronizzazione…' : 'Sincronizza ora'}
       </button>
       {message ? (
-        <p className={isError ? styles.alertError : styles.alert} style={{ margin: 0, fontSize: 12 }}>
+        <p
+          className={isError ? styles.alertError : styles.alert}
+          style={{ margin: 0, fontSize: 12 }}
+        >
           {message}
         </p>
       ) : null}

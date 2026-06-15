@@ -49,7 +49,9 @@ export async function handleDocumentGenerate(
     .limit(1);
 
   if (!row) {
-    throw new Error(`SKU ${payload.skuId} non trovato per organizzazione ${payload.organizationId}`);
+    throw new Error(
+      `SKU ${payload.skuId} non trovato per organizzazione ${payload.organizationId}`,
+    );
   }
 
   const [latestRun] = await db
@@ -60,9 +62,9 @@ export async function handleDocumentGenerate(
     .limit(1);
 
   const structured = latestRun?.structuredOutput as StructuredClassification | undefined;
-  const productCategory =
-    structured?.product_category ?? row.categoryHint ?? 'toys';
-  const confidence = structured?.confidence ?? (latestRun?.confidence ? Number(latestRun.confidence) : undefined);
+  const productCategory = structured?.product_category ?? row.categoryHint ?? 'toys';
+  const confidence =
+    structured?.confidence ?? (latestRun?.confidence ? Number(latestRun.confidence) : undefined);
 
   const templateId = payload.templateId as DocumentTemplateId;
   const generated = await generateDocument({

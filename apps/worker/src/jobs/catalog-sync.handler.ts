@@ -1,10 +1,5 @@
 import { and, eq } from 'drizzle-orm';
-import {
-  catalogConnections,
-  products,
-  skus,
-  type Database,
-} from '@varco/database';
+import { catalogConnections, products, skus, type Database } from '@varco/database';
 import type { CatalogSyncJobPayload } from '@varco/shared';
 import { parseShopifyTags } from '../lib/parse-shopify-tags.js';
 import { fetchAllMockShopifyProducts } from '../lib/shopify-mock-client.js';
@@ -143,5 +138,8 @@ async function resolveConnection(db: Database, payload: CatalogSyncJobPayload) {
 }
 
 function stripHtml(html: string): string {
-  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }

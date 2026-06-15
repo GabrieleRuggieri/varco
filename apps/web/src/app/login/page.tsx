@@ -24,9 +24,12 @@ export default function LoginPage() {
           <h1 className={styles.title}>Varco</h1>
         </div>
         <p className={styles.subtitle}>
-          Il sistema per obblighi prodotto e documenti GPSR — pensato per brand e seller che vendono in Europa.
+          Il sistema per obblighi prodotto e documenti GPSR — pensato per brand e seller che vendono
+          in Europa.
         </p>
-        <Suspense fallback={<p style={{ color: 'var(--color-ink-subtle)', fontSize: 13 }}>Caricamento…</p>}>
+        <Suspense
+          fallback={<p style={{ color: 'var(--color-ink-subtle)', fontSize: 13 }}>Caricamento…</p>}
+        >
           <LoginForm />
         </Suspense>
         {process.env.NODE_ENV === 'development' && (

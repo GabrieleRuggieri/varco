@@ -3,13 +3,7 @@
  * 1. Sync catalogo · 2. Classifica SKU · 3. Checklist · 4. PDF risk assessment
  */
 import { eq } from 'drizzle-orm';
-import {
-  createDb,
-  checklistItems,
-  documents,
-  organizations,
-  skus,
-} from '@varco/database';
+import { createDb, checklistItems, documents, organizations, skus } from '@varco/database';
 import {
   closeVarcoQueue,
   enqueueCatalogSync,
@@ -42,7 +36,9 @@ async function assertMockCatalogReady(): Promise<void> {
   } catch (err) {
     const reason = err instanceof Error ? err.message : String(err);
     console.error(`[demo:populate] Mock Shopify non pronto (${reason}).`);
-    console.error('[demo:populate] Esegui: docker compose build mock-server && docker compose up -d mock-server');
+    console.error(
+      '[demo:populate] Esegui: docker compose build mock-server && docker compose up -d mock-server',
+    );
     process.exit(1);
   }
 }
@@ -143,7 +139,9 @@ const run = async () => {
 
   await closeVarcoQueue();
   console.log('[demo:populate] Completato — apri http://localhost:3000');
-  console.log(`  SKU: ${skuRows.length} · Checklist: ${checklistCount.length} · PDF: ${docCount.length}`);
+  console.log(
+    `  SKU: ${skuRows.length} · Checklist: ${checklistCount.length} · PDF: ${docCount.length}`,
+  );
   process.exit(0);
 };
 

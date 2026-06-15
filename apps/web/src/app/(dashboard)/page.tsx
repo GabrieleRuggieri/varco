@@ -15,8 +15,7 @@ export default async function OverviewPage() {
     api.listChecklist(),
   ]);
 
-  const skus =
-    skusResult.status === 'fulfilled' ? skusResult.value : { skus: [], total: 0 };
+  const skus = skusResult.status === 'fulfilled' ? skusResult.value : { skus: [], total: 0 };
   const checklist =
     checklistResult.status === 'fulfilled' ? checklistResult.value : { items: [], total: 0 };
   const apiError =
@@ -97,7 +96,9 @@ export default async function OverviewPage() {
 
       <div className={styles.cardGlow} style={{ marginBottom: '0.75rem' }}>
         <p className={pageStyles.sectionTitle}>Pipeline compliance</p>
-        <p className={pageStyles.sectionSub}>Dal catalogo al documento — il flusso compliance per il GPSR</p>
+        <p className={pageStyles.sectionSub}>
+          Dal catalogo al documento — il flusso compliance per il GPSR
+        </p>
         <CompliancePipeline />
       </div>
 

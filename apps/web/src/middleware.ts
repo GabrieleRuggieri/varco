@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 function hasSessionCookie(request: NextRequest): boolean {
   return Boolean(
     request.cookies.get('authjs.session-token')?.value ||
-      request.cookies.get('__Secure-authjs.session-token')?.value,
+    request.cookies.get('__Secure-authjs.session-token')?.value,
   );
 }
 
