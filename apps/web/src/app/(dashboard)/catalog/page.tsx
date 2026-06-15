@@ -1,21 +1,16 @@
 import { CatalogSyncButton } from '@/components/CatalogSyncButton';
 import styles from '@/components/ui/ui.module.css';
 import { api } from '@/lib/api';
-import { getSession } from '@/lib/session';
 import { IconBox, IconSync } from '@/components/icons';
 
 export default async function CatalogPage() {
-  const session = await getSession();
-  if (!session) return null;
-
-  const connections = await api
-    .listConnections(session.organizationId)
-    .catch(() => ({ connections: [] }));
+  const connections = await api.listConnections().catch(() => ({ connections: [] }));
 
   return (
     <div>
       <div className={styles.pageHeader}>
         <div className={styles.pageHeaderLeft}>
+          <p className={styles.pageEyebrow}>Integrazioni</p>
           <h1 className={styles.pageTitle}>Catalogo</h1>
           <p className={styles.pageLead}>
             Sincronizza prodotti e SKU dal mock server Shopify (porta 4010).
@@ -23,7 +18,7 @@ export default async function CatalogPage() {
         </div>
       </div>
 
-      <div className={styles.card} style={{ marginBottom: '0.75rem' }}>
+      <div className={styles.cardGlow} style={{ marginBottom: '0.75rem' }}>
         <div
           style={{
             display: 'flex',
@@ -41,14 +36,16 @@ export default async function CatalogPage() {
               Mock server · localhost:4010 · connessione attiva
             </p>
           </div>
-          <CatalogSyncButton organizationId={session.organizationId} />
+          <CatalogSyncButton />
         </div>
       </div>
 
       <div className={styles.card}>
         {connections.connections.length === 0 ? (
           <div className={styles.emptyState}>
-            <IconBox className={styles.emptyStateIcon} />
+            <div className={styles.emptyStateIconWrap}>
+              <IconBox size={22} />
+            </div>
             <p className={styles.emptyStateTitle}>Nessuna connessione</p>
             <p className={styles.emptyStateBody}>
               Avvia la prima sincronizzazione per registrare la connessione Shopify.

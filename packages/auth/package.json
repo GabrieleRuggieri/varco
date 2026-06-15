@@ -1,0 +1,33 @@
+{
+  "name": "@varco/auth",
+  "version": "0.0.0",
+  "private": true,
+  "description": "JWT API access tokens e utilità auth condivise web ↔ API",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "jose": "^6.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@varco/tsconfig": "workspace:*",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

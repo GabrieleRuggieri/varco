@@ -42,7 +42,13 @@ async function deliverWebhook(requestId: string, targetUrl: string | null): Prom
     try {
       const res = await fetch(targetUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Varco-Mock-Partner': 'true' },
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Varco-Mock-Partner': 'true',
+          ...(process.env.PARTNER_WEBHOOK_SECRET
+            ? { 'X-Varco-Webhook-Secret': process.env.PARTNER_WEBHOOK_SECRET }
+            : {}),
+        },
         body: JSON.stringify(payload),
       });
       recordWebhookEvent({

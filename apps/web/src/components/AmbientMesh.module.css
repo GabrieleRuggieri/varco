@@ -1,0 +1,56 @@
+.root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% -20%, rgba(94, 106, 210, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 0%, rgba(130, 143, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 35% at 0% 100%, rgba(94, 106, 210, 0.05) 0%, transparent 45%);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black 20%, transparent 75%);
+  opacity: 0.5;
+}
+
+.orb1 {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  top: -120px;
+  right: -80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(94, 106, 210, 0.12) 0%, transparent 70%);
+  filter: blur(40px);
+  animation: orbFloat 18s ease-in-out infinite;
+}
+
+.orb2 {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  bottom: -60px;
+  left: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(130, 143, 255, 0.08) 0%, transparent 70%);
+  filter: blur(50px);
+  animation: orbFloat 22s ease-in-out infinite reverse;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20px, 16px) scale(1.05); }
+}

@@ -1,17 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { DOCUMENT_TEMPLATE_IDS } from '@varco/shared';
-import { IsIn, IsUUID } from 'class-validator';
+import { IsIn } from 'class-validator';
+import { DOCUMENT_TEMPLATE_IDS, type DocumentTemplateId } from '@varco/shared';
 
 export class GenerateDocumentDto {
-  @ApiProperty({ description: 'UUID organizzazione tenant' })
-  @IsUUID()
-  organizationId!: string;
-
-  @ApiProperty({
-    description: 'Template documento GPSR',
-    enum: DOCUMENT_TEMPLATE_IDS,
-    default: 'risk_assessment',
-  })
-  @IsIn([...DOCUMENT_TEMPLATE_IDS])
-  templateId: (typeof DOCUMENT_TEMPLATE_IDS)[number] = 'risk_assessment';
+  @ApiProperty({ enum: DOCUMENT_TEMPLATE_IDS })
+  @IsIn(DOCUMENT_TEMPLATE_IDS)
+  templateId!: DocumentTemplateId;
 }

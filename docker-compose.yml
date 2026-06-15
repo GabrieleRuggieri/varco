@@ -88,6 +88,7 @@ services:
       PORT: '4010'
       FIXTURES_DIR: /fixtures
       PARTNER_WEBHOOK_DELAY_MS: '5000'
+      PARTNER_WEBHOOK_SECRET: dev-webhook-secret-change-in-prod
       # VARCO_WEBHOOK_URL: http://host.docker.internal:3001/api/internal/partner-webhook
     volumes:
       - ./fixtures:/fixtures:ro

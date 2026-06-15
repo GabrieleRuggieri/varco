@@ -1,20 +1,27 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const SESSION_COOKIE = 'varco_session';
-const PUBLIC_PATHS = ['/login', '/api/auth'];
+function hasSessionCookie(request: NextRequest): boolean {
+  return Boolean(
+    request.cookies.get('authjs.session-token')?.value ||
+      request.cookies.get('__Secure-authjs.session-token')?.value,
+  );
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const isPublic =
+    pathname.startsWith('/login') ||
+    pathname.startsWith('/api/auth') ||
+    pathname === '/favicon.ico';
 
-  if (PUBLIC_PATHS.some((p) => pathname.startsWith(p))) {
+  if (isPublic) {
     return NextResponse.next();
   }
 
-  const session = request.cookies.get(SESSION_COOKIE);
-  if (!session?.value) {
+  if (!hasSessionCookie(request)) {
     const login = new URL('/login', request.url);
-    login.searchParams.set('from', pathname);
+    login.searchParams.set('callbackUrl', pathname);
     return NextResponse.redirect(login);
   }
 

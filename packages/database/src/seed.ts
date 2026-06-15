@@ -1,27 +1,31 @@
 /**
- * Seed dati demo — organizzazione e utente di sviluppo.
- * Catalogo e matrice: vedi `pnpm matrix:seed` (fase matrix).
+ * Seed dati demo — organizzazione, utente, credenziali e membership.
  */
+import { hash } from 'bcryptjs';
 import { eq } from 'drizzle-orm';
 import { createDb } from './client.js';
-import { organizations, users } from './schema/index.js';
+import {
+  organizationMembers,
+  organizations,
+  userCredentials,
+  users,
+} from './schema/index.js';
 
 const DEMO_ORG_NAME = 'Varco Demo';
 const DEMO_USER_EMAIL = 'demo@varco.local';
+const DEMO_PASSWORD = 'demo';
 
 const run = async () => {
   const db = createDb();
 
   console.log('[db:seed] Inserimento organizzazione demo...');
 
-  const existingOrg = await db
-    .select()
-    .from(organizations)
-    .where(eq(organizations.name, DEMO_ORG_NAME))
-    .limit(1);
+  let org = (
+    await db.select().from(organizations).where(eq(organizations.name, DEMO_ORG_NAME)).limit(1)
+  )[0];
 
-  if (existingOrg.length === 0) {
-    const [org] = await db
+  if (!org) {
+    [org] = await db
       .insert(organizations)
       .values({
         name: DEMO_ORG_NAME,
@@ -31,22 +35,53 @@ const run = async () => {
       .returning();
     console.log(`[db:seed] Organizzazione creata: ${org?.id}`);
   } else {
-    console.log(`[db:seed] Organizzazione demo già presente`);
+    console.log('[db:seed] Organizzazione demo già presente');
   }
 
-  const [user] = await db
-    .insert(users)
+  if (!org) {
+    throw new Error('Organizzazione demo non disponibile');
+  }
+
+  let user = (await db.select().from(users).where(eq(users.email, DEMO_USER_EMAIL)).limit(1))[0];
+
+  if (!user) {
+    [user] = await db
+      .insert(users)
+      .values({
+        email: DEMO_USER_EMAIL,
+        name: 'Demo Seller',
+        emailVerified: new Date(),
+      })
+      .returning();
+    console.log(`[db:seed] Utente demo creato: ${user?.email}`);
+  } else {
+    console.log('[db:seed] Utente demo già presente');
+  }
+
+  if (!user) {
+    throw new Error('Utente demo non disponibile');
+  }
+
+  const passwordHash = await hash(DEMO_PASSWORD, 12);
+  await db
+    .insert(userCredentials)
+    .values({ userId: user.id, passwordHash })
+    .onConflictDoUpdate({
+      target: userCredentials.userId,
+      set: { passwordHash, updatedAt: new Date() },
+    });
+
+  await db
+    .insert(organizationMembers)
     .values({
-      email: DEMO_USER_EMAIL,
-      name: 'Demo Seller',
+      organizationId: org.id,
+      userId: user.id,
+      role: 'owner',
     })
-    .onConflictDoNothing()
-    .returning();
+    .onConflictDoNothing();
 
-  if (user) {
-    console.log(`[db:seed] Utente demo: ${user.email}`);
-  }
-
+  console.log('[db:seed] Credenziali e membership demo configurate');
+  console.log(`[db:seed] Login: ${DEMO_USER_EMAIL} / ${DEMO_PASSWORD}`);
   console.log('[db:seed] Completato');
   process.exit(0);
 };

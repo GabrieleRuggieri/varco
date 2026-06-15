@@ -1,5 +1,6 @@
 import { Body, Controller, Headers, Post } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { Public, WebhookAuth } from '../auth/decorators.js';
 import {
   PartnerWebhookService,
   type PartnerWebhookPayload,
@@ -10,6 +11,8 @@ import {
 export class PartnerWebhookController {
   constructor(private readonly partnerWebhookService: PartnerWebhookService) {}
 
+  @Public()
+  @WebhookAuth()
   @Post()
   @ApiOperation({ summary: 'Webhook partner RP/EPR (mock o live)' })
   @ApiBody({ description: 'Payload evento partner' })

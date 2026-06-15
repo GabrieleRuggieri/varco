@@ -12,9 +12,14 @@
     "test": "node -e \"process.exit(0)\""
   },
   "dependencies": {
+    "@varco/auth": "workspace:*",
+    "@varco/database": "workspace:*",
     "@varco/shared": "workspace:*",
+    "bcryptjs": "^3.0.2",
+    "drizzle-orm": "^0.44.2",
     "nanoid": "^3.3.11",
     "next": "^15.3.3",
+    "next-auth": "^5.0.0-beta.29",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

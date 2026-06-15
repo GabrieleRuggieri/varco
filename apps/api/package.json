@@ -16,6 +16,8 @@
     "@nestjs/core": "^11.1.3",
     "@nestjs/platform-express": "^11.1.3",
     "@nestjs/swagger": "^11.2.0",
+    "@nestjs/throttler": "^6.4.0",
+    "@varco/auth": "workspace:*",
     "@varco/database": "workspace:*",
     "@varco/documents": "workspace:*",
     "@varco/queue": "workspace:*",

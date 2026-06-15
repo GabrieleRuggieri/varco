@@ -1,14 +1,10 @@
 import { SkuActions } from '@/components/SkuActions';
 import styles from '@/components/ui/ui.module.css';
 import { api } from '@/lib/api';
-import { getSession } from '@/lib/session';
 import { IconList } from '@/components/icons';
 
 export default async function SkusPage() {
-  const session = await getSession();
-  if (!session) return null;
-
-  const { skus, total } = await api.listSkus(session.organizationId).catch(() => ({
+  const { skus, total } = await api.listSkus().catch(() => ({
     skus: [],
     total: 0,
   }));
@@ -17,6 +13,7 @@ export default async function SkusPage() {
     <div>
       <div className={styles.pageHeader}>
         <div className={styles.pageHeaderLeft}>
+          <p className={styles.pageEyebrow}>Prodotti</p>
           <h1 className={styles.pageTitle}>SKU</h1>
           <p className={styles.pageLead}>
             {total > 0
@@ -34,7 +31,9 @@ export default async function SkusPage() {
       <div className={styles.card}>
         {skus.length === 0 ? (
           <div className={styles.emptyState}>
-            <IconList className={styles.emptyStateIcon} />
+            <div className={styles.emptyStateIconWrap}>
+              <IconList size={22} />
+            </div>
             <p className={styles.emptyStateTitle}>Catalogo vuoto</p>
             <p className={styles.emptyStateBody}>
               Vai su <strong>Catalogo</strong> e sincronizza il mock Shopify per importare i prodotti.
@@ -56,19 +55,7 @@ export default async function SkusPage() {
                 {skus.map((sku) => (
                   <tr key={sku.id}>
                     <td className="tnum">
-                      <code
-                        style={{
-                          background: 'var(--color-surface-3)',
-                          border: '1px solid var(--color-hairline)',
-                          padding: '2px 6px',
-                          borderRadius: 4,
-                          fontSize: 12,
-                          color: 'var(--color-ink)',
-                          fontFamily: 'monospace',
-                        }}
-                      >
-                        {sku.skuCode}
-                      </code>
+                      <span className={styles.code}>{sku.skuCode}</span>
                     </td>
                     <td style={{ color: 'var(--color-ink)', fontWeight: 500 }}>
                       {sku.productTitle}
@@ -88,11 +75,7 @@ export default async function SkusPage() {
                       </div>
                     </td>
                     <td>
-                      <SkuActions
-                        organizationId={session.organizationId}
-                        skuId={sku.id}
-                        skuCode={sku.skuCode}
-                      />
+                      <SkuActions skuId={sku.id} skuCode={sku.skuCode} />
                     </td>
                   </tr>
                 ))}

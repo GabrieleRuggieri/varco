@@ -15,7 +15,7 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Architettura | completato | `ARCHITECTURE.md` v1 |
 | README esterno | completato | `README.md` |
 | Contributing | completato | `CONTRIBUTING.md` |
-| Monorepo / codice | in corso | Fase 11 completata; prossima: CI |
+| Monorepo / codice | in corso | Fase 12 auth/CI completata; prossimo: Shopify OAuth, LLM live |
 | Docker Compose | completato | postgres, redis, minio, mailhog, mock-server |
 | Package database | completato | Drizzle 13 tabelle, migration `0000_init`, seed demo |
 | Matrice obblighi seed | completato | `matrix-v0.yaml` — 12 regole in bozza |
@@ -27,7 +27,8 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 | Pipeline classificazione | pianificato | Provider astratto: mock / Ollama / OpenAI |
 | Generatore documenti GPSR | completato | `risk_assessment` PDF → MinIO; API download firmato |
 | Partner broker (mock) | pianificato | RP + EPR |
-| Auth + dashboard | completato | Login demo, catalogo, SKU, checklist, PDF (fase 11) |
+| Auth + dashboard | completato | Auth.js v5 + JWT API + BFF proxy |
+| CI GitHub Actions | completato | lint, test, typecheck, matrix validate, build |
 | Design system | completato | `design/linear/DESIGN.md` — dashboard Linear-inspired |
 
 **Decisioni MVP confermate (2026-06-12):**
@@ -158,7 +159,9 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 9. ~~**Classification mock**~~ — completato *(fase 9)*
 10. ~~**Documents**~~ — completato *(fase 10)*
 11. ~~**Web MVP**~~ — completato *(fase 11)*
-12. **CI** — GitHub Actions: lint, test, matrix validate
+12. ~~**CI**~~ — completato *(GitHub Actions)*
+13. ~~**Auth reale + API security**~~ — completato *(Auth.js, JWT, guards, BFF)*
+14. **Shopify OAuth** — connettore live
 
 ---
 

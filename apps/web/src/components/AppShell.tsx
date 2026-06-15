@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { VarcoSession } from '@/lib/session';
+import { AmbientMesh } from './AmbientMesh';
 import styles from './AppShell.module.css';
 import { LogoutButton } from './LogoutButton';
 import { SidebarNav } from './SidebarNav';
@@ -9,6 +10,7 @@ export function AppShell({ session, children }: { session: VarcoSession; childre
 
   return (
     <div className={styles.shell}>
+      <AmbientMesh />
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
           <span className={styles.logoMark}>V</span>
@@ -24,6 +26,7 @@ export function AppShell({ session, children }: { session: VarcoSession; childre
               <p className={styles.userOrg}>{session.organizationName}</p>
               <p className={styles.userEmail}>{session.email}</p>
             </div>
+            <span className={styles.statusDot} title="Sessione attiva" />
           </div>
           <LogoutButton />
         </div>
@@ -36,7 +39,9 @@ export function AppShell({ session, children }: { session: VarcoSession; childre
             Varco prepara documenti e dati strutturati. Non è consulenza legale.
           </p>
         </header>
-        <div className={styles.content}>{children}</div>
+        <div className={styles.content}>
+          <div className={styles.pageInner}>{children}</div>
+        </div>
       </div>
     </div>
   );

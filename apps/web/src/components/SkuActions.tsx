@@ -2,17 +2,15 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { getApiBaseUrl } from '@/lib/config';
 import { IconDownload, IconDocument, IconSparkle } from '@/components/icons';
 import styles from './ui/ui.module.css';
 
 type Props = {
-  organizationId: string;
   skuId: string;
   skuCode: string;
 };
 
-export function SkuActions({ organizationId, skuId, skuCode }: Props) {
+export function SkuActions({ skuId, skuCode }: Props) {
   const router = useRouter();
   const [message, setMessage] = useState<string | null>(null);
   const [isError, setIsError] = useState(false);
@@ -23,13 +21,13 @@ export function SkuActions({ organizationId, skuId, skuCode }: Props) {
     setMessage(null);
     setIsError(false);
     try {
-      const res = await fetch(`${getApiBaseUrl()}${path}`, {
+      const res = await fetch(`/api/v1/${path}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
-      const data = (await res.json()) as { jobId?: string };
-      if (!res.ok) throw new Error('Richiesta fallita');
+      const data = (await res.json()) as { jobId?: string; error?: string };
+      if (!res.ok) throw new Error(data.error ?? 'Richiesta fallita');
       setMessage(`Job accodato (${data.jobId ?? 'ok'}) · ricarica tra qualche secondo`);
       router.refresh();
     } catch {
@@ -45,19 +43,17 @@ export function SkuActions({ organizationId, skuId, skuCode }: Props) {
     setMessage(null);
     setIsError(false);
     try {
-      const listRes = await fetch(
-        `${getApiBaseUrl()}/skus/${skuId}/documents?organizationId=${organizationId}`,
-      );
-      const list = (await listRes.json()) as { documents: { id: string }[] };
+      const listRes = await fetch(`/api/v1/skus/${skuId}/documents`);
+      const list = (await listRes.json()) as { documents: { id: string }[]; error?: string };
+      if (!listRes.ok) throw new Error(list.error);
       const doc = list.documents[0];
       if (!doc) {
         setMessage('Nessun documento — genera prima il risk assessment');
         return;
       }
-      const dlRes = await fetch(
-        `${getApiBaseUrl()}/documents/${doc.id}/download?organizationId=${organizationId}`,
-      );
-      const dl = (await dlRes.json()) as { downloadUrl: string };
+      const dlRes = await fetch(`/api/v1/documents/${doc.id}/download`);
+      const dl = (await dlRes.json()) as { downloadUrl: string; error?: string };
+      if (!dlRes.ok) throw new Error(dl.error);
       window.open(dl.downloadUrl, '_blank', 'noopener,noreferrer');
     } catch {
       setMessage('Download non riuscito — MinIO attivo?');
@@ -73,9 +69,7 @@ export function SkuActions({ organizationId, skuId, skuCode }: Props) {
         type="button"
         className={styles.secondary}
         disabled={!!busy}
-        onClick={() =>
-          void post(`/skus/${skuId}/classify`, { organizationId }, 'classify')
-        }
+        onClick={() => void post(`skus/${skuId}/classify`, {}, 'classify')}
         title={`Classifica ${skuCode}`}
       >
         <IconSparkle size={13} />
@@ -86,7 +80,7 @@ export function SkuActions({ organizationId, skuId, skuCode }: Props) {
         className={styles.secondary}
         disabled={!!busy}
         onClick={() =>
-          void post(`/skus/${skuId}/documents`, { organizationId, templateId: 'risk_assessment' }, 'pdf')
+          void post(`skus/${skuId}/documents`, { templateId: 'risk_assessment' }, 'pdf')
         }
         title={`Genera PDF per ${skuCode}`}
       >

@@ -7,13 +7,14 @@ export default function LoginPage() {
     <div className={styles.page}>
       <div className={styles.mesh} aria-hidden />
       <div className={styles.grid} aria-hidden />
+      <div className={styles.orb} aria-hidden />
       <div className={styles.card}>
         <div className={styles.logoArea}>
           <span className={styles.logoMark}>V</span>
           <h1 className={styles.title}>Varco</h1>
         </div>
         <p className={styles.subtitle}>
-          Copilot di compliance per vendere in Europa — GPSR, EPR e obblighi di sicurezza prodotto.
+          Il sistema per obblighi prodotto e documenti GPSR — pensato per brand e seller che vendono in Europa.
         </p>
         <Suspense fallback={<p style={{ color: 'var(--color-ink-subtle)', fontSize: 13 }}>Caricamento…</p>}>
           <LoginForm />

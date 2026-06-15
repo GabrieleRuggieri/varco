@@ -1,6 +1,7 @@
 import { api } from '@/lib/api';
 import { getSession } from '@/lib/session';
 import styles from '@/components/ui/ui.module.css';
+import { CompliancePipeline } from '@/components/CompliancePipeline';
 import { IconBox, IconCheckSquare, IconDocument, IconWarning } from '@/components/icons';
 import pageStyles from './overview.module.css';
 
@@ -9,8 +10,8 @@ export default async function OverviewPage() {
   if (!session) return null;
 
   const [skus, checklist] = await Promise.all([
-    api.listSkus(session.organizationId).catch(() => ({ skus: [], total: 0 })),
-    api.listChecklist(session.organizationId).catch(() => ({ items: [], total: 0 })),
+    api.listSkus().catch(() => ({ skus: [], total: 0 })),
+    api.listChecklist().catch(() => ({ items: [], total: 0 })),
   ]);
 
   const openItems = checklist.items.filter((i) =>
@@ -24,43 +25,53 @@ export default async function OverviewPage() {
       label: 'SKU in catalogo',
       value: skus.total,
       icon: IconBox,
-      color: 'var(--color-primary-hover)',
+      color: '#828fff',
+      glow: 'rgba(130, 143, 255, 0.12)',
     },
     {
       label: 'Azioni aperte',
       value: openItems,
       icon: IconCheckSquare,
-      color: 'var(--color-high)',
+      color: '#f5a623',
+      glow: 'rgba(245, 166, 35, 0.12)',
     },
     {
       label: 'Obblighi critical',
       value: critical,
       icon: IconWarning,
-      color: 'var(--color-critical)',
+      color: '#f2605c',
+      glow: 'rgba(242, 96, 92, 0.12)',
     },
     {
       label: 'Completati',
       value: completed,
       icon: IconDocument,
-      color: 'var(--color-success)',
+      color: '#27a644',
+      glow: 'rgba(39, 166, 68, 0.12)',
     },
   ];
 
   return (
     <div>
-      <div className={styles.pageHeader}>
-        <div className={styles.pageHeaderLeft}>
-          <h1 className={styles.pageTitle}>Panoramica</h1>
-          <p className={styles.pageLead}>
-            {session.organizationName} · Obblighi GPSR + EPR per DE, FR, IT, ES, NL
-          </p>
-        </div>
-      </div>
+      <section className={pageStyles.hero}>
+        <p className={styles.pageEyebrow}>Compliance GPSR · UE</p>
+        <h1 className={pageStyles.heroTitle}>{session.organizationName}</h1>
+        <p className={pageStyles.heroLead}>
+          Il sistema per obblighi prodotto, checklist per SKU e documenti GPSR — DE, FR, IT, ES, NL.
+        </p>
+      </section>
 
       <div className={pageStyles.statsGrid}>
         {stats.map((s) => (
-          <div key={s.label} className={pageStyles.statCard}>
-            <div className={pageStyles.statIcon} style={{ color: s.color }}>
+          <div
+            key={s.label}
+            className={pageStyles.statCard}
+            style={{ ['--stat-glow' as string]: s.glow }}
+          >
+            <div
+              className={pageStyles.statIcon}
+              style={{ ['--icon-color' as string]: s.color, color: s.color }}
+            >
               <s.icon size={18} />
             </div>
             <p className={`${pageStyles.statValue} tnum`}>{s.value}</p>
@@ -69,9 +80,16 @@ export default async function OverviewPage() {
         ))}
       </div>
 
+      <div className={styles.cardGlow} style={{ marginBottom: '0.75rem' }}>
+        <p className={pageStyles.sectionTitle}>Pipeline compliance</p>
+        <p className={pageStyles.sectionSub}>Dal catalogo al documento — come su linear.app, ma per il GPSR</p>
+        <CompliancePipeline />
+      </div>
+
       <div className={pageStyles.grid2}>
         <div className={styles.card}>
           <p className={pageStyles.sectionTitle}>Flusso di lavoro</p>
+          <p className={pageStyles.sectionSub}>4 passi per ogni SKU</p>
           <ol className={pageStyles.steps}>
             <li>
               <span className={pageStyles.stepNum}>1</span>
@@ -106,6 +124,7 @@ export default async function OverviewPage() {
 
         <div className={styles.card}>
           <p className={pageStyles.sectionTitle}>Mercati attivi</p>
+          <p className={pageStyles.sectionSub}>5 paesi MVP · GPSR + EPR</p>
           <div className={pageStyles.countryGrid}>
             {[
               { code: 'DE', name: 'Germania', flag: '🇩🇪' },

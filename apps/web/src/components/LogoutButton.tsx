@@ -1,5 +1,6 @@
 'use client';
 
+import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { IconLogout } from './icons';
@@ -11,7 +12,7 @@ export function LogoutButton() {
 
   async function logout() {
     setLoading(true);
-    await fetch('/api/auth/logout', { method: 'POST' });
+    await signOut({ redirect: false });
     router.push('/login');
     router.refresh();
   }

@@ -1,6 +1,5 @@
 import styles from '@/components/ui/ui.module.css';
 import { api } from '@/lib/api';
-import { getSession } from '@/lib/session';
 import { IconCheckSquare } from '@/components/icons';
 
 type Severity = 'critical' | 'high' | 'medium' | 'low';
@@ -29,10 +28,7 @@ const COUNTRY_FLAGS: Record<string, string> = {
 };
 
 export default async function ChecklistPage() {
-  const session = await getSession();
-  if (!session) return null;
-
-  const { items, total } = await api.listChecklist(session.organizationId).catch(() => ({
+  const { items, total } = await api.listChecklist().catch(() => ({
     items: [],
     total: 0,
   }));
@@ -45,7 +41,8 @@ export default async function ChecklistPage() {
     <div>
       <div className={styles.pageHeader}>
         <div className={styles.pageHeaderLeft}>
-          <h1 className={styles.pageTitle}>Checklist obblighi</h1>
+          <p className={styles.pageEyebrow}>Obblighi</p>
+          <h1 className={styles.pageTitle}>Checklist</h1>
           <p className={styles.pageLead}>
             {total > 0
               ? `${total} voci generate dalla matrice · ${open} aperte · ${done} completate · ${crit} critical`
@@ -63,7 +60,9 @@ export default async function ChecklistPage() {
       <div className={styles.card}>
         {items.length === 0 ? (
           <div className={styles.emptyState}>
-            <IconCheckSquare className={styles.emptyStateIcon} />
+            <div className={styles.emptyStateIconWrap}>
+              <IconCheckSquare size={22} />
+            </div>
             <p className={styles.emptyStateTitle}>Checklist vuota</p>
             <p className={styles.emptyStateBody}>
               Classifica almeno uno SKU dalla pagina <strong>SKU</strong>. La matrice obblighi
@@ -87,21 +86,9 @@ export default async function ChecklistPage() {
                 {items.map((item) => (
                   <tr key={item.id}>
                     <td>
-                      <code
-                        style={{
-                          display: 'inline-block',
-                          background: 'var(--color-surface-3)',
-                          border: '1px solid var(--color-hairline)',
-                          padding: '1px 5px',
-                          borderRadius: 4,
-                          fontSize: 11,
-                          fontFamily: 'monospace',
-                          marginBottom: 3,
-                          color: 'var(--color-ink)',
-                        }}
-                      >
+                      <span className={styles.code} style={{ marginBottom: 3 }}>
                         {item.skuCode}
-                      </code>
+                      </span>
                       <div style={{ fontSize: 12, color: 'var(--color-ink-subtle)' }}>
                         {item.productTitle}
                       </div>

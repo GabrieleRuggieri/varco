@@ -1,16 +1,16 @@
 'use client';
 
+import { signIn } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
-import { DEMO_EMAIL } from '@/lib/config';
 import styles from './ui/ui.module.css';
 import loginStyles from './LoginForm.module.css';
 
 export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [email, setEmail] = useState(DEMO_EMAIL);
-  const [password, setPassword] = useState('demo');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -19,20 +19,19 @@ export function LoginForm() {
     setLoading(true);
     setError(null);
 
-    const res = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
+    const result = await signIn('credentials', {
+      email,
+      password,
+      redirect: false,
     });
 
-    if (!res.ok) {
-      const data = (await res.json()) as { error?: string };
-      setError(data.error ?? 'Accesso non riuscito');
+    if (result?.error) {
+      setError('Credenziali non valide');
       setLoading(false);
       return;
     }
 
-    const from = searchParams.get('from') ?? '/';
+    const from = searchParams.get('callbackUrl') ?? '/';
     router.push(from);
     router.refresh();
   }
@@ -75,8 +74,6 @@ export function LoginForm() {
       >
         {loading ? 'Accesso…' : 'Accedi alla dashboard →'}
       </button>
-
-      <p className={loginStyles.hint}>Demo: {DEMO_EMAIL} / demo</p>
     </form>
   );
 }

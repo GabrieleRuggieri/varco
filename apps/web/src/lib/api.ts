@@ -1,3 +1,4 @@
+import { getApiAccessToken } from './api-auth';
 import { getApiBaseUrl } from './config';
 
 export class ApiError extends Error {
@@ -18,12 +19,15 @@ async function parseJson<T>(response: Response): Promise<T> {
   return response.json() as Promise<T>;
 }
 
-export type Organization = {
-  id: string;
-  name: string;
-  defaultTargetCountries: string[];
-  plan: string;
-};
+async function authFetch(path: string, init?: RequestInit): Promise<Response> {
+  const token = await getApiAccessToken();
+  const headers = new Headers(init?.headers);
+  headers.set('Authorization', `Bearer ${token}`);
+  if (init?.body && !headers.has('Content-Type')) {
+    headers.set('Content-Type', 'application/json');
+  }
+  return fetch(`${getApiBaseUrl()}${path}`, { ...init, headers, cache: 'no-store' });
+}
 
 export type SkuRow = {
   id: string;
@@ -59,83 +63,32 @@ export type DocumentRow = {
 };
 
 export const api = {
-  async getOrganizations() {
-    return parseJson<{ organizations: Organization[] }>(
-      await fetch(`${getApiBaseUrl()}/organizations`, { cache: 'no-store' }),
-    );
-  },
-
-  async listConnections(organizationId: string) {
+  async listConnections() {
     return parseJson<{
       connections: { id: string; provider: string; lastSyncAt: string | null }[];
-    }>(
-      await fetch(
-        `${getApiBaseUrl()}/catalog/connections?organizationId=${organizationId}`,
-        { cache: 'no-store' },
-      ),
-    );
+    }>(await authFetch('/catalog/connections'));
   },
 
-  async syncCatalog(organizationId: string) {
-    return parseJson<{ jobId: string; status: string }>(
-      await fetch(`${getApiBaseUrl()}/catalog/sync`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ organizationId }),
-      }),
-    );
+  async listSkus() {
+    return parseJson<{ skus: SkuRow[]; total: number }>(await authFetch('/skus'));
   },
 
-  async listSkus(organizationId: string) {
-    return parseJson<{ skus: SkuRow[]; total: number }>(
-      await fetch(`${getApiBaseUrl()}/skus?organizationId=${organizationId}`, {
-        cache: 'no-store',
-      }),
-    );
-  },
-
-  async classifySku(organizationId: string, skuId: string) {
-    return parseJson<{ jobId: string; status: string }>(
-      await fetch(`${getApiBaseUrl()}/skus/${skuId}/classify`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ organizationId }),
-      }),
-    );
-  },
-
-  async generateDocument(organizationId: string, skuId: string, templateId = 'risk_assessment') {
-    return parseJson<{ jobId: string; status: string }>(
-      await fetch(`${getApiBaseUrl()}/skus/${skuId}/documents`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ organizationId, templateId }),
-      }),
-    );
-  },
-
-  async listChecklist(organizationId: string, skuId?: string) {
-    const params = new URLSearchParams({ organizationId });
-    if (skuId) params.set('skuId', skuId);
+  async listChecklist(skuId?: string) {
+    const params = skuId ? `?skuId=${encodeURIComponent(skuId)}` : '';
     return parseJson<{ items: ChecklistRow[]; total: number }>(
-      await fetch(`${getApiBaseUrl()}/checklist?${params}`, { cache: 'no-store' }),
+      await authFetch(`/checklist${params}`),
     );
   },
 
-  async listDocuments(organizationId: string, skuId: string) {
+  async listDocuments(skuId: string) {
     return parseJson<{ documents: DocumentRow[]; total: number }>(
-      await fetch(`${getApiBaseUrl()}/skus/${skuId}/documents?organizationId=${organizationId}`, {
-        cache: 'no-store',
-      }),
+      await authFetch(`/skus/${skuId}/documents`),
     );
   },
 
-  async getDocumentDownloadUrl(organizationId: string, documentId: string) {
+  async getDocumentDownloadUrl(documentId: string) {
     return parseJson<{ downloadUrl: string }>(
-      await fetch(
-        `${getApiBaseUrl()}/documents/${documentId}/download?organizationId=${organizationId}`,
-        { cache: 'no-store' },
-      ),
+      await authFetch(`/documents/${documentId}/download`),
     );
   },
 };

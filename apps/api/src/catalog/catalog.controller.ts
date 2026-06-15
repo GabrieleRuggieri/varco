@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
 import { CatalogService } from './catalog.service';
 import { CatalogSyncDto } from './dto/catalog-sync.dto';
 
@@ -10,17 +11,16 @@ export class CatalogController {
 
   @Get('connections')
   @ApiOperation({ summary: 'Connessioni marketplace per organizzazione' })
-  @ApiQuery({ name: 'organizationId', required: true })
   @ApiOkResponse({ description: 'Elenco connessioni catalogo' })
-  async listConnections(@Query('organizationId') organizationId: string) {
-    const connections = await this.catalogService.listConnections(organizationId);
+  async listConnections(@CurrentUser() user: RequestUser) {
+    const connections = await this.catalogService.listConnections(user.organizationId);
     return { connections };
   }
 
   @Post('sync')
   @ApiOperation({ summary: 'Accoda sincronizzazione catalogo (job catalog.sync)' })
   @ApiOkResponse({ description: 'Job accodato su Redis/BullMQ' })
-  async sync(@Body() body: CatalogSyncDto) {
-    return this.catalogService.triggerSync(body.organizationId, body.connectionId);
+  async sync(@CurrentUser() user: RequestUser, @Body() body: CatalogSyncDto) {
+    return this.catalogService.triggerSync(user.organizationId, body.connectionId);
   }
 }
