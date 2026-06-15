@@ -1,4 +1,9 @@
-import { type CanActivate, type ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  type CanActivate,
+  type ExecutionContext,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { type Reflector } from '@nestjs/core';
 import { verifyApiAccessToken } from '@varco/auth';
 import { IS_PUBLIC_KEY, WEBHOOK_AUTH_KEY } from './decorators.js';
