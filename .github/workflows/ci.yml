@@ -35,6 +35,9 @@ jobs:
       - name: Audit dependencies
         run: pnpm audit --audit-level=high
 
+      - name: Format check
+        run: pnpm format:check
+
       - name: Lint
         run: pnpm lint
 

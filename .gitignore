@@ -35,12 +35,18 @@ pnpm-debug.log*
 
 # Test
 coverage/
+.env.test
+.env.test.local
 
 # Drizzle
 drizzle/meta/
 
 # Storage locale
 uploads/
+
+# Deploy
+.vercel
+.netlify
 
 # Landing statica (pricing, monetizzazione, GTM — info interne)
 /index.html

@@ -147,15 +147,18 @@ varco/
 │   ├── api/          # Backend REST
 │   └── worker/       # Job asincroni
 ├── packages/
-│   ├── database/     # Schema e migrations
+│   ├── auth/         # JWT e sessioni
+│   ├── database/     # Schema e migrations (Drizzle)
 │   ├── matrix/       # Matrice obblighi (YAML + validazione)
-│   ├── connectors/   # Shopify, Amazon, mock
-│   ├── classification/
-│   ├── documents/
-│   ├── partners/
-│   └── shared/
+│   ├── classification/ # Pipeline AI → attributi strutturati
+│   ├── documents/    # Template e generazione PDF GPSR
+│   ├── queue/        # BullMQ job definitions
+│   └── shared/       # Utility condivise
+├── mocks/
+│   └── mock-server/  # API mock (Shopify, Amazon, Partner)
 ├── fixtures/         # Dati di test
-└── docker/           # Docker Compose
+├── docker/           # Postgres init scripts
+└── docker-compose.yml
 ```
 
 ## Glossario
@@ -187,4 +190,3 @@ I contributi al repository sono accettati solo su invito.
 | [design/README.md](./design/README.md) | Sistema visivo di riferimento (Replit-inspired) |
 | [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Token colori, tipografia, componenti UI |
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | Setup sviluppo, standard di codice, processo PR |
-| [WORK_LOG.md](./WORK_LOG.md) | Registro attività e stato implementazione |

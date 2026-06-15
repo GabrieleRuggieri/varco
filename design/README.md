@@ -55,7 +55,7 @@ Implementazione CSS: `apps/web/src/app/globals.css` (`:root`).
 ## Aggiornamenti
 
 Riferimenti ufficiali: [replit.com](https://replit.com), [replit.com/brand](https://replit.com/brand).  
-Modifiche token Varco: aggiornare `globals.css` e annotare in `WORK_LOG.md`.
+Modifiche token Varco: aggiornare `globals.css` e aprire un issue/PR dedicato.
 
 ---
 
@@ -63,4 +63,3 @@ Modifiche token Varco: aggiornare `globals.css` e annotare in `WORK_LOG.md`.
 
 - [CONTRIBUTING.md](../CONTRIBUTING.md) — standard di codice e UI
 - [ARCHITECTURE.md](../ARCHITECTURE.md) — stack frontend
-- [WORK_LOG.md](../WORK_LOG.md) — cronologia

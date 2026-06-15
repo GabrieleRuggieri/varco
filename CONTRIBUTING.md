@@ -9,7 +9,7 @@ Guida per chi sviluppa sul repository Varco — AI compliance copilot per vender
 1. Leggi `06-varco-ai-eu-compliance-it.md` (contesto prodotto).
 2. Leggi [ARCHITECTURE.md](./ARCHITECTURE.md) (stack, domini, mock locali).
 3. Leggi [design/README.md](./design/README.md) e [design/replit/DESIGN.md](./design/replit/DESIGN.md) (sistema visivo di riferimento).
-4. Controlla `WORK_LOG.md` per vedere cosa è già stato fatto e cosa è in corso.
+4. Consulta le issue aperte su GitHub per lo stato del lavoro in corso.
 
 ---
 
@@ -91,10 +91,11 @@ Vedi [ARCHITECTURE.md](./ARCHITECTURE.md) §4. In sintesi:
 | `apps/web` | Dashboard Next.js |
 | `apps/api` | Backend API |
 | `apps/worker` | Job asincroni |
+| `packages/auth` | JWT e sessioni |
 | `packages/matrix` | Matrice obblighi (YAML + validazione) |
-| `packages/connectors` | Shopify, Amazon, mock |
 | `packages/classification` | Pipeline LLM → matrix |
 | `packages/documents` | Template GPSR |
+| `mocks/mock-server` | API mock (Shopify, Amazon, Partner) |
 | `fixtures/` | Dati di test e mock |
 
 ---
@@ -124,7 +125,7 @@ git checkout -b feat/short-description
 - Descrizione: cosa, perché, come testato.
 - Screenshots per UI.
 - Se tocchi la **matrice obblighi**: indicare reviewer regulatory (non solo code review tech).
-- Aggiorna `WORK_LOG.md` con una riga sotto la data del merge.
+- Aggiorna `packages/matrix/CHANGELOG.md` se modifichi la matrice obblighi.
 
 ### 5. Checklist PR
 
@@ -168,7 +169,7 @@ git checkout -b feat/short-description
 
 - **Lingua:** italiano per UI, documentazione, commenti nel codice e messaggi di commit. I nomi di dominio in inglese sono accettati dove è convenzione consolidata (`Sku`, `ChecklistItem`, `GET /skus`).
 - **TypeScript** strict dove possibile.
-- **Formatting:** Prettier (config in repo quando aggiunta).
+- **Formatting:** Prettier (config in `.prettierrc`). Eseguire `pnpm format` prima del commit.
 - **Lint:** ESLint.
 - **UI / CSS:** seguire i token in `design/replit/DESIGN.md` e `apps/web/src/app/globals.css`; font **IBM Plex Sans** 400–700; numeri con `tnum`.
 - **API:** validazione input con Zod; errori HTTP coerenti.
@@ -202,7 +203,6 @@ git checkout -b feat/short-description
 
 ```bash
 pnpm test
-pnpm test:integration
 pnpm matrix:validate
 ```
 

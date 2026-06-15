@@ -117,22 +117,21 @@ varco/
 │   ├── api/                 # REST/GraphQL BFF
 │   └── worker/              # Background jobs
 ├── packages/
+│   ├── auth/                # JWT e sessioni
 │   ├── database/            # Schema Drizzle, migrations
 │   ├── matrix/              # Matrice obblighi (YAML/JSON + validazione)
-│   ├── connectors/          # Shopify, Amazon, mock
 │   ├── classification/      # Prompt, parser, mapping matrix
 │   ├── documents/           # Template GPSR, generator
-│   ├── partners/            # Adapter RP/EPR
+│   ├── queue/               # BullMQ job definitions
 │   └── shared/              # Tipi, costanti, utils
-├── design/                  # Riferimento visivo (stripe/DESIGN.md)
+├── design/                  # Riferimento visivo (replit/DESIGN.md)
 ├── fixtures/                # Cataloghi mock, risposte LLM, matrix seed
 ├── mocks/
-│   └── mock-server/         # Prism o Express: Shopify, Amazon, partners
-├── docker/
-│   └── docker-compose.yml
+│   └── mock-server/         # API mock: Shopify, Amazon, Partner
+├── docker/                  # Postgres init scripts
+├── docker-compose.yml
 ├── ARCHITECTURE.md
-├── CONTRIBUTING.md
-└── WORK_LOG.md
+└── CONTRIBUTING.md
 ```
 
 ---
@@ -495,7 +494,7 @@ Non necessario per «girare in locale»; documentato per continuità.
 | 4 | Lingua | **Italiano** | UI, codice (nomi dominio possono restare inglesi dove è convenzione), commenti, documentazione e commit in italiano |
 | 5 | Validazione normativa | **Workflow matrice con ruolo `regulatory_admin`** | Vedi §15.1 |
 | 6 | Auth v1 (MVP) | **Email/password + sessione**; OAuth Shopify dopo | Velocità: demo `admin@varco.local` / `admin`; Shopify OAuth in fase connettore live |
-| 7 | Landing vs app | **`index.html` statica in root**; `apps/web` = dashboard | Marketing separato dal prodotto Next.js; meno accoppiamento in fase MVP |
+| 7 | Landing vs app | **`apps/web` = dashboard**; landing marketing separata (non nel repo) | Marketing separato dal prodotto Next.js; meno accoppiamento in fase MVP |
 | 8 | Fixture catalogo mock | **~20 SKU**, 5 categorie MVP | Copre toys, apparel, electronics_accessories, cosmetics, home per demo locale |
 
 ### 15.1 Regulatory lead — cos’è e come lo gestiamo
@@ -600,5 +599,4 @@ Ollama di solito gira **sull’host** (GPU/macOS), non nel container. Il worker/
 ## 18. Riferimenti
 
 - Product spec: `06-varco-ai-eu-compliance-it.md`
-- Activity log: `WORK_LOG.md`
 - Contributing: `CONTRIBUTING.md`

@@ -17,7 +17,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node --import tsx --test $(find src -name '*.test.ts')",
     "matrix:validate": "tsx src/cli/validate.ts",
-    "matrix:seed": "tsx src/cli/seed.ts"
+    "matrix:seed": "node --env-file=../../.env --import tsx src/cli/seed.ts"
   },
   "dependencies": {
     "@varco/database": "workspace:*",
