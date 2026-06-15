@@ -1,15 +1,8 @@
 import { getApiAccessToken } from './api-auth';
 import { getApiBaseUrl } from './config';
+import { ApiError } from './api-error';
 
-export class ApiError extends Error {
-  constructor(
-    message: string,
-    public status: number,
-  ) {
-    super(message);
-    this.name = 'ApiError';
-  }
-}
+export { ApiError } from './api-error';
 
 async function parseJson<T>(response: Response): Promise<T> {
   if (!response.ok) {

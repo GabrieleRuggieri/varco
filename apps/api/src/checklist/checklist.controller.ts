@@ -1,7 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
-import { ChecklistService } from './checklist.service';
+import { type ChecklistService } from './checklist.service';
 
 @ApiTags('checklist')
 @Controller('checklist')

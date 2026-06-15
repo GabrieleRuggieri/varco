@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ApiError } from '@/lib/api';
+import { ApiError } from '@/lib/api-error';
 
 describe('ApiError', () => {
   it('è un Error con nome ApiError', () => {

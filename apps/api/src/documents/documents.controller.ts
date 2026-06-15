@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
-import { DocumentsService } from './documents.service';
-import { GenerateDocumentDto } from './dto/generate-document.dto';
+import { type DocumentsService } from './documents.service';
+import { type GenerateDocumentDto } from './dto/generate-document.dto';
 
 @ApiTags('documents')
 @Controller()

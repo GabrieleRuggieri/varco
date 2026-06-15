@@ -35,17 +35,19 @@ export default tseslint.config(
         'error',
         { prefer: 'type-imports', fixStyle: 'inline-type-imports' },
       ],
-      '@typescript-eslint/no-floating-promises': 'error',
     },
   },
-  // react-hooks/exhaustive-deps è applicabile solo ai file React
+  // Regole type-aware e react-hooks solo su apps/web
   {
     files: ['apps/web/**/*.{ts,tsx}'],
     languageOptions: {
       parserOptions: {
-        project: './apps/web/tsconfig.json',
+        projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
+    },
+    rules: {
+      '@typescript-eslint/no-floating-promises': 'error',
     },
   },
 );
