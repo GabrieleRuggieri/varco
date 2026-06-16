@@ -10,13 +10,13 @@ Varco trasforma le normative europee sui prodotti (GPSR, EPR, etichettatura, PPW
 
 ## Altre lingue
 
-| | Lingua | README |
-|---|--------|--------|
-| 🇬🇧 | English | [README.en.md](./README.en.md) |
-| 🇩🇪 | Deutsch | [README.de.md](./README.de.md) |
-| 🇫🇷 | Français | [README.fr.md](./README.fr.md) |
-| 🇪🇸 | Español | [README.es.md](./README.es.md) |
-| 🇳🇱 | Nederlands | [README.nl.md](./README.nl.md) |
+|     | Lingua     | README                         |
+| --- | ---------- | ------------------------------ |
+| 🇬🇧  | English    | [README.en.md](./README.en.md) |
+| 🇩🇪  | Deutsch    | [README.de.md](./README.de.md) |
+| 🇫🇷  | Français   | [README.fr.md](./README.fr.md) |
+| 🇪🇸  | Español    | [README.es.md](./README.es.md) |
+| 🇳🇱  | Nederlands | [README.nl.md](./README.nl.md) |
 
 ---
 

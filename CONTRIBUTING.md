@@ -169,7 +169,7 @@ git checkout -b feat/short-description
 
 - **Lingua:** italiano per UI, documentazione, commenti nel codice e messaggi di commit. I nomi di dominio in inglese sono accettati dove è convenzione consolidata (`Sku`, `ChecklistItem`, `GET /skus`).
 - **TypeScript** strict dove possibile.
-- **Formatting:** Prettier (config in `.prettierrc`). Eseguire `pnpm format` prima del commit.
+- **Formatting:** Prettier (config in `.prettierrc`). I file in stage vengono formattati automaticamente dal hook pre-commit (`husky` + `lint-staged`). Per formattare tutto il repo: `pnpm format`.
 - **Lint:** ESLint.
 - **UI / CSS:** seguire i token in `design/replit/DESIGN.md` e `apps/web/src/app/globals.css`; font **IBM Plex Sans** 400–700; numeri con `tnum`.
 - **API:** validazione input con Zod; errori HTTP coerenti.

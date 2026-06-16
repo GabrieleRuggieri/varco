@@ -22,13 +22,13 @@ D2C-Brands und Marketplace-Seller (Shopify, Amazon, Etsy) mit Katalogen von 10 b
 
 ## Was Varco leistet
 
-| Funktion                       | Beschreibung                                                                                                                                                         |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Katalog-Scan**               | Anbindung an Shopify/Amazon; Import von Titeln, Beschreibungen, Materialien, Bildern und Zielmärkten                                                                 |
-| **SKU-Klassifizierung**        | KI extrahiert strukturierte Attribute (Kategorie, Materialien, Alter usw.); Pflichten stammen aus einer **von Experten kuratierten Matrix**, nicht aus freiem Modelloutput |
-| **Checkliste pro Land**        | Pflichten mit Schweregrad, Fristen und operativem Status — von «27 Länder Rechtstext» zu «deine N nächsten Schritte»                                               |
-| **GPSR-Dokumentengenerator**   | Entwürfe für Risikobewertung, technische Dokumentation, Konformitätserklärung, Kennzeichnungselemente — aus kategoriespezifischen Vorlagen                          |
-| **RP und EPR über Partner**    | Orchestrierung der Benennung einer Responsible Person und Registrierungen bei Konsortien über integrierte Partner (Varco koordiniert, erbringt den Service nicht)   |
+| Funktion                     | Beschreibung                                                                                                                                                               |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Katalog-Scan**             | Anbindung an Shopify/Amazon; Import von Titeln, Beschreibungen, Materialien, Bildern und Zielmärkten                                                                       |
+| **SKU-Klassifizierung**      | KI extrahiert strukturierte Attribute (Kategorie, Materialien, Alter usw.); Pflichten stammen aus einer **von Experten kuratierten Matrix**, nicht aus freiem Modelloutput |
+| **Checkliste pro Land**      | Pflichten mit Schweregrad, Fristen und operativem Status — von «27 Länder Rechtstext» zu «deine N nächsten Schritte»                                                       |
+| **GPSR-Dokumentengenerator** | Entwürfe für Risikobewertung, technische Dokumentation, Konformitätserklärung, Kennzeichnungselemente — aus kategoriespezifischen Vorlagen                                 |
+| **RP und EPR über Partner**  | Orchestrierung der Benennung einer Responsible Person und Registrierungen bei Konsortien über integrierte Partner (Varco koordiniert, erbringt den Service nicht)          |
 
 ### MVP-Umfang (v1)
 
@@ -85,15 +85,15 @@ Aus der Matrix erzeugte Einträge erscheinen pro **SKU × Land**: Pflichttyp (te
 
 ## Technologie-Stack
 
-| Komponente | Technologie                                        |
-| ---------- | -------------------------------------------------- |
-| Monorepo   | pnpm + Turborepo                                   |
-| Frontend   | Next.js 15, TypeScript                             |
-| API        | NestJS                                             |
-| Worker     | BullMQ + Redis                                     |
-| Database   | PostgreSQL 16, Drizzle ORM                         |
-| Auth       | Auth.js v5                                         |
-| Storage    | MinIO (lokal) / S3 (Produktion)                    |
+| Komponente | Technologie                                            |
+| ---------- | ------------------------------------------------------ |
+| Monorepo   | pnpm + Turborepo                                       |
+| Frontend   | Next.js 15, TypeScript                                 |
+| API        | NestJS                                                 |
+| Worker     | BullMQ + Redis                                         |
+| Database   | PostgreSQL 16, Drizzle ORM                             |
+| Auth       | Auth.js v5                                             |
+| Storage    | MinIO (lokal) / S3 (Produktion)                        |
 | LLM        | Abstrahierter Provider: `mock` \| `ollama` \| `openai` |
 
 ## Schnellstart
@@ -126,12 +126,12 @@ In einem zweiten Terminal, während `pnpm dev` läuft, Katalog, Checkliste und D
 pnpm demo:populate
 ```
 
-| Dienst   | URL                   |
-| -------- | --------------------- |
-| Web      | http://localhost:3000 |
-| API      | http://localhost:3001 |
-| Mailhog  | http://localhost:8025 |
-| MinIO    | http://localhost:9001 |
+| Dienst  | URL                   |
+| ------- | --------------------- |
+| Web     | http://localhost:3000 |
+| API     | http://localhost:3001 |
+| Mailhog | http://localhost:8025 |
+| MinIO   | http://localhost:9001 |
 
 Mit `LLM_PROVIDER=mock` und `SHOPIFY_API_MODE=mock` sind für die lokale Entwicklung keine externen API-Schlüssel nötig.
 
@@ -165,14 +165,14 @@ varco/
 
 ## Glossar
 
-| Begriff  | Bedeutung                                                                                        |
-| -------- | ------------------------------------------------------------------------------------------------ |
-| **GPSR** | EU-Verordnung über die allgemeine Produktsicherheit, in Kraft seit Dezember 2024                 |
+| Begriff  | Bedeutung                                                                                         |
+| -------- | ------------------------------------------------------------------------------------------------- |
+| **GPSR** | EU-Verordnung über die allgemeine Produktsicherheit, in Kraft seit Dezember 2024                  |
 | **EPR**  | Extended Producer Responsibility — Registrierung und Beiträge für Verpackungen/Produkte, pro Land |
-| **PPWR** | EU-Verordnung über Verpackungen und Verpackungsabfälle                                           |
-| **RP**   | Responsible Person — in der EU niedergelassene verantwortliche Stelle für die Konformität        |
-| **DoC**  | Konformitätserklärung (Declaration of Conformity)                                                |
-| **SKU**  | Einzelner Katalogartikel                                                                         |
+| **PPWR** | EU-Verordnung über Verpackungen und Verpackungsabfälle                                            |
+| **RP**   | Responsible Person — in der EU niedergelassene verantwortliche Stelle für die Konformität         |
+| **DoC**  | Konformitätserklärung (Declaration of Conformity)                                                 |
+| **SKU**  | Einzelner Katalogartikel                                                                          |
 
 ## Lizenz
 
@@ -186,9 +186,9 @@ Beiträge zum Repository werden nur auf Einladung angenommen.
 
 ## Dokumentation
 
-| Dokument                                             | Inhalt                                             |
-| ---------------------------------------------------- | -------------------------------------------------- |
-| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Systemarchitektur, Domänen, API, Datenmodell       |
-| [design/README.md](./design/README.md)               | Visuelles Referenzsystem (Replit-inspired)         |
-| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Farb-Tokens, Typografie, UI-Komponenten            |
-| [CONTRIBUTING.md](./CONTRIBUTING.md)                   | Entwicklungs-Setup, Code-Standards, PR-Prozess     |
+| Dokument                                             | Inhalt                                         |
+| ---------------------------------------------------- | ---------------------------------------------- |
+| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Systemarchitektur, Domänen, API, Datenmodell   |
+| [design/README.md](./design/README.md)               | Visuelles Referenzsystem (Replit-inspired)     |
+| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Farb-Tokens, Typografie, UI-Komponenten        |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Entwicklungs-Setup, Code-Standards, PR-Prozess |

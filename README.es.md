@@ -22,13 +22,13 @@ Marcas D2C y vendedores en marketplaces (Shopify, Amazon, Etsy) con catálogos d
 
 ## Qué hace Varco
 
-| Funcionalidad                   | Descripción                                                                                                                                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Escaneo de catálogo**         | Conexión a Shopify/Amazon; importación de títulos, descripciones, materiales, imágenes y mercados objetivo                                                          |
-| **Clasificación SKU**           | La IA extrae atributos estructurados (categoría, materiales, edad, etc.); las obligaciones provienen de una **matriz curada por expertos**, no de la salida libre del modelo |
-| **Checklist por país**          | Obligaciones con gravedad, plazos y estado operativo — de «27 países de legalés» a «tus N acciones pendientes»                                                     |
-| **Generador de documentos GPSR**| Borradores de evaluación de riesgos, esqueleto de expediente técnico, declaración de conformidad, elementos de etiquetado — desde plantillas por categoría          |
-| **RP y RAP vía partners**       | Orquestación de la designación de Responsible Person y registros en consorcios mediante partners integrados (Varco coordina, no presta el servicio)                 |
+| Funcionalidad                    | Descripción                                                                                                                                                                  |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Escaneo de catálogo**          | Conexión a Shopify/Amazon; importación de títulos, descripciones, materiales, imágenes y mercados objetivo                                                                   |
+| **Clasificación SKU**            | La IA extrae atributos estructurados (categoría, materiales, edad, etc.); las obligaciones provienen de una **matriz curada por expertos**, no de la salida libre del modelo |
+| **Checklist por país**           | Obligaciones con gravedad, plazos y estado operativo — de «27 países de legalés» a «tus N acciones pendientes»                                                               |
+| **Generador de documentos GPSR** | Borradores de evaluación de riesgos, esqueleto de expediente técnico, declaración de conformidad, elementos de etiquetado — desde plantillas por categoría                   |
+| **RP y RAP vía partners**        | Orquestación de la designación de Responsible Person y registros en consorcios mediante partners integrados (Varco coordina, no presta el servicio)                          |
 
 ### Alcance MVP (v1)
 
@@ -85,15 +85,15 @@ Las entradas generadas por la matriz aparecen por **SKU × país**: tipo de obli
 
 ## Stack tecnológico
 
-| Componente | Tecnología                                        |
-| ---------- | ------------------------------------------------- |
-| Monorepo   | pnpm + Turborepo                                  |
-| Frontend   | Next.js 15, TypeScript                            |
-| API        | NestJS                                            |
-| Worker     | BullMQ + Redis                                    |
-| Database   | PostgreSQL 16, Drizzle ORM                        |
-| Auth       | Auth.js v5                                        |
-| Storage    | MinIO (local) / S3 (producción)                   |
+| Componente | Tecnología                                          |
+| ---------- | --------------------------------------------------- |
+| Monorepo   | pnpm + Turborepo                                    |
+| Frontend   | Next.js 15, TypeScript                              |
+| API        | NestJS                                              |
+| Worker     | BullMQ + Redis                                      |
+| Database   | PostgreSQL 16, Drizzle ORM                          |
+| Auth       | Auth.js v5                                          |
+| Storage    | MinIO (local) / S3 (producción)                     |
 | LLM        | Proveedor abstracto: `mock` \| `ollama` \| `openai` |
 
 ## Inicio rápido
@@ -165,14 +165,14 @@ varco/
 
 ## Glosario
 
-| Término  | Significado                                                                                      |
-| -------- | ------------------------------------------------------------------------------------------------ |
-| **GPSR** | Reglamento general de seguridad de los productos (UE), en vigor desde diciembre de 2024          |
-| **EPR**  | Extended Producer Responsibility — registro y contribuciones por envases/productos, por país   |
-| **PPWR** | Reglamento UE sobre envases y residuos de envases                                              |
-| **RP**   | Responsible Person — entidad establecida en la UE responsable de la conformidad                |
-| **DoC**  | Declaración de Conformidad                                                                       |
-| **SKU**  | Artículo individual del catálogo                                                                 |
+| Término  | Significado                                                                                  |
+| -------- | -------------------------------------------------------------------------------------------- |
+| **GPSR** | Reglamento general de seguridad de los productos (UE), en vigor desde diciembre de 2024      |
+| **EPR**  | Extended Producer Responsibility — registro y contribuciones por envases/productos, por país |
+| **PPWR** | Reglamento UE sobre envases y residuos de envases                                            |
+| **RP**   | Responsible Person — entidad establecida en la UE responsable de la conformidad              |
+| **DoC**  | Declaración de Conformidad                                                                   |
+| **SKU**  | Artículo individual del catálogo                                                             |
 
 ## Licencia
 
@@ -186,9 +186,9 @@ Las contribuciones al repositorio se aceptan solo por invitación.
 
 ## Documentación
 
-| Documento                                            | Contenido                                          |
-| ---------------------------------------------------- | -------------------------------------------------- |
+| Documento                                            | Contenido                                                |
+| ---------------------------------------------------- | -------------------------------------------------------- |
 | [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Arquitectura del sistema, dominios, API, modelo de datos |
-| [design/README.md](./design/README.md)               | Sistema visual de referencia (Replit-inspired)     |
-| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Tokens de color, tipografía, componentes UI        |
-| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Setup de desarrollo, estándares de código, proceso PR |
+| [design/README.md](./design/README.md)               | Sistema visual de referencia (Replit-inspired)           |
+| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Tokens de color, tipografía, componentes UI              |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Setup de desarrollo, estándares de código, proceso PR    |

@@ -22,13 +22,13 @@ Marques D2C et vendeurs sur marketplace (Shopify, Amazon, Etsy) avec des catalog
 
 ## Ce que fait Varco
 
-| Fonctionnalité                    | Description                                                                                                                                                         |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Scan du catalogue**             | Connexion à Shopify/Amazon ; import des titres, descriptions, matériaux, images et marchés cibles                                                                   |
-| **Classification SKU**            | L'IA extrait des attributs structurés (catégorie, matériaux, âge, etc.) ; les obligations proviennent d'une **matrice validée par des experts**, pas de la sortie libre du modèle |
-| **Checklist par pays**            | Obligations avec gravité, échéances et statut opérationnel — de « 27 pays de jargon juridique » à « vos N actions à mener »                                       |
-| **Générateur de documents GPSR**  | Brouillons d'évaluation des risques, squelette de dossier technique, déclaration de conformité, éléments d'étiquetage — à partir de modèles par catégorie           |
-| **RP et REP via partenaires**     | Orchestration de la nomination de Responsible Person et des enregistrements auprès des éco-organismes via des partenaires intégrés (Varco coordonne, ne fournit pas le service) |
+| Fonctionnalité                   | Description                                                                                                                                                                       |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Scan du catalogue**            | Connexion à Shopify/Amazon ; import des titres, descriptions, matériaux, images et marchés cibles                                                                                 |
+| **Classification SKU**           | L'IA extrait des attributs structurés (catégorie, matériaux, âge, etc.) ; les obligations proviennent d'une **matrice validée par des experts**, pas de la sortie libre du modèle |
+| **Checklist par pays**           | Obligations avec gravité, échéances et statut opérationnel — de « 27 pays de jargon juridique » à « vos N actions à mener »                                                       |
+| **Générateur de documents GPSR** | Brouillons d'évaluation des risques, squelette de dossier technique, déclaration de conformité, éléments d'étiquetage — à partir de modèles par catégorie                         |
+| **RP et REP via partenaires**    | Orchestration de la nomination de Responsible Person et des enregistrements auprès des éco-organismes via des partenaires intégrés (Varco coordonne, ne fournit pas le service)   |
 
 ### Périmètre MVP (v1)
 
@@ -85,16 +85,16 @@ Les entrées générées par la matrice apparaissent par **SKU × pays** : type 
 
 ## Stack technique
 
-| Composant  | Technologie                                        |
-| ---------- | -------------------------------------------------- |
-| Monorepo   | pnpm + Turborepo                                   |
-| Frontend   | Next.js 15, TypeScript                             |
-| API        | NestJS                                             |
-| Worker     | BullMQ + Redis                                     |
-| Database   | PostgreSQL 16, Drizzle ORM                         |
-| Auth       | Auth.js v5                                         |
-| Storage    | MinIO (local) / S3 (production)                    |
-| LLM        | Fournisseur abstrait : `mock` \| `ollama` \| `openai` |
+| Composant | Technologie                                           |
+| --------- | ----------------------------------------------------- |
+| Monorepo  | pnpm + Turborepo                                      |
+| Frontend  | Next.js 15, TypeScript                                |
+| API       | NestJS                                                |
+| Worker    | BullMQ + Redis                                        |
+| Database  | PostgreSQL 16, Drizzle ORM                            |
+| Auth      | Auth.js v5                                            |
+| Storage   | MinIO (local) / S3 (production)                       |
+| LLM       | Fournisseur abstrait : `mock` \| `ollama` \| `openai` |
 
 ## Démarrage rapide
 
@@ -126,12 +126,12 @@ Dans un second terminal, avec `pnpm dev` actif, remplissez catalogue, checklist 
 pnpm demo:populate
 ```
 
-| Service  | URL                   |
-| -------- | --------------------- |
-| Web      | http://localhost:3000 |
-| API      | http://localhost:3001 |
-| Mailhog  | http://localhost:8025 |
-| MinIO    | http://localhost:9001 |
+| Service | URL                   |
+| ------- | --------------------- |
+| Web     | http://localhost:3000 |
+| API     | http://localhost:3001 |
+| Mailhog | http://localhost:8025 |
+| MinIO   | http://localhost:9001 |
 
 Avec `LLM_PROVIDER=mock` et `SHOPIFY_API_MODE=mock`, aucune clé API externe n'est nécessaire pour le développement local.
 
@@ -167,10 +167,10 @@ varco/
 
 | Terme    | Signification                                                                                    |
 | -------- | ------------------------------------------------------------------------------------------------ |
-| **GPSR** | Règlement général sur la sécurité des produits (UE), en vigueur depuis décembre 2024           |
+| **GPSR** | Règlement général sur la sécurité des produits (UE), en vigueur depuis décembre 2024             |
 | **EPR**  | Extended Producer Responsibility — enregistrement et contributions emballages/produits, par pays |
 | **PPWR** | Règlement UE sur les emballages et les déchets d'emballages                                      |
-| **RP**   | Responsible Person — entité établie dans l'UE responsable de la conformité                     |
+| **RP**   | Responsible Person — entité établie dans l'UE responsable de la conformité                       |
 | **DoC**  | Déclaration de Conformité                                                                        |
 | **SKU**  | Article individuel du catalogue                                                                  |
 
@@ -186,9 +186,9 @@ Les contributions au dépôt sont acceptées sur invitation uniquement.
 
 ## Documentation
 
-| Document                                             | Contenu                                            |
-| ---------------------------------------------------- | -------------------------------------------------- |
+| Document                                             | Contenu                                                |
+| ---------------------------------------------------- | ------------------------------------------------------ |
 | [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Architecture système, domaines, API, modèle de données |
-| [design/README.md](./design/README.md)               | Système visuel de référence (Replit-inspired)      |
-| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Tokens couleur, typographie, composants UI         |
-| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Setup développement, standards de code, processus PR |
+| [design/README.md](./design/README.md)               | Système visuel de référence (Replit-inspired)          |
+| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Tokens couleur, typographie, composants UI             |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Setup développement, standards de code, processus PR   |

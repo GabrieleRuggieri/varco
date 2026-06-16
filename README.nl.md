@@ -22,13 +22,13 @@ D2C-merken en marketplace-verkopers (Shopify, Amazon, Etsy) met catalogi van 10 
 
 ## Wat Varco doet
 
-| Functionaliteit                 | Beschrijving                                                                                                                                                         |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Catalogusscan**               | Koppeling met Shopify/Amazon; import van titels, beschrijvingen, materialen, afbeeldingen en doelmarkten                                                            |
-| **SKU-classificatie**           | AI extraheert gestructureerde attributen (categorie, materialen, leeftijd, enz.); verplichtingen komen uit een **door experts samengestelde matrix**, niet uit vrije modeloutput |
-| **Checklist per land**          | Verplichtingen met ernst, deadlines en operationele status — van «27 landen juridisch jargon» naar «jouw N acties»                                                 |
-| **GPSR-documentgenerator**      | Concepten voor risicobeoordeling, technisch dossier, conformiteitsverklaring, etiketteringselementen — uit categorie-specifieke sjablonen                            |
-| **RP en EPR via partners**      | Orchestratie van benoeming Responsible Person en registraties bij producentenverantwoordelijkheidsorganisaties via geïntegreerde partners (Varco coördineert, levert de dienst niet) |
+| Functionaliteit            | Beschrijving                                                                                                                                                                         |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Catalogusscan**          | Koppeling met Shopify/Amazon; import van titels, beschrijvingen, materialen, afbeeldingen en doelmarkten                                                                             |
+| **SKU-classificatie**      | AI extraheert gestructureerde attributen (categorie, materialen, leeftijd, enz.); verplichtingen komen uit een **door experts samengestelde matrix**, niet uit vrije modeloutput     |
+| **Checklist per land**     | Verplichtingen met ernst, deadlines en operationele status — van «27 landen juridisch jargon» naar «jouw N acties»                                                                   |
+| **GPSR-documentgenerator** | Concepten voor risicobeoordeling, technisch dossier, conformiteitsverklaring, etiketteringselementen — uit categorie-specifieke sjablonen                                            |
+| **RP en EPR via partners** | Orchestratie van benoeming Responsible Person en registraties bij producentenverantwoordelijkheidsorganisaties via geïntegreerde partners (Varco coördineert, levert de dienst niet) |
 
 ### MVP-scope (v1)
 
@@ -85,16 +85,16 @@ Items uit de matrix verschijnen per **SKU × land**: type verplichting (technisc
 
 ## Technologiestack
 
-| Component  | Technologie                                        |
-| ---------- | -------------------------------------------------- |
-| Monorepo   | pnpm + Turborepo                                   |
-| Frontend   | Next.js 15, TypeScript                             |
-| API        | NestJS                                             |
-| Worker     | BullMQ + Redis                                     |
-| Database   | PostgreSQL 16, Drizzle ORM                         |
-| Auth       | Auth.js v5                                         |
-| Storage    | MinIO (lokaal) / S3 (productie)                    |
-| LLM        | Abstracte provider: `mock` \| `ollama` \| `openai` |
+| Component | Technologie                                        |
+| --------- | -------------------------------------------------- |
+| Monorepo  | pnpm + Turborepo                                   |
+| Frontend  | Next.js 15, TypeScript                             |
+| API       | NestJS                                             |
+| Worker    | BullMQ + Redis                                     |
+| Database  | PostgreSQL 16, Drizzle ORM                         |
+| Auth      | Auth.js v5                                         |
+| Storage   | MinIO (lokaal) / S3 (productie)                    |
+| LLM       | Abstracte provider: `mock` \| `ollama` \| `openai` |
 
 ## Snelstart
 
@@ -126,12 +126,12 @@ In een tweede terminal, met `pnpm dev` actief, catalogus, checklist en demo-PDF'
 pnpm demo:populate
 ```
 
-| Service  | URL                   |
-| -------- | --------------------- |
-| Web      | http://localhost:3000 |
-| API      | http://localhost:3001 |
-| Mailhog  | http://localhost:8025 |
-| MinIO    | http://localhost:9001 |
+| Service | URL                   |
+| ------- | --------------------- |
+| Web     | http://localhost:3000 |
+| API     | http://localhost:3001 |
+| Mailhog | http://localhost:8025 |
+| MinIO   | http://localhost:9001 |
 
 Met `LLM_PROVIDER=mock` en `SHOPIFY_API_MODE=mock` zijn geen externe API-sleutels nodig voor lokale ontwikkeling.
 
@@ -165,14 +165,14 @@ varco/
 
 ## Woordenlijst
 
-| Term     | Betekenis                                                                                        |
-| -------- | ------------------------------------------------------------------------------------------------ |
-| **GPSR** | EU-verordening algemene productveiligheid, van kracht sinds december 2024                        |
+| Term     | Betekenis                                                                                         |
+| -------- | ------------------------------------------------------------------------------------------------- |
+| **GPSR** | EU-verordening algemene productveiligheid, van kracht sinds december 2024                         |
 | **EPR**  | Extended Producer Responsibility — registratie en bijdragen voor verpakkingen/producten, per land |
-| **PPWR** | EU-verordening over verpakkingen en verpakkingsafval                                             |
-| **RP**   | Responsible Person — in de EU gevestigde entiteit verantwoordelijk voor conformiteit             |
-| **DoC**  | Conformiteitsverklaring (Declaration of Conformity)                                              |
-| **SKU**  | Individueel catalogusartikel                                                                     |
+| **PPWR** | EU-verordening over verpakkingen en verpakkingsafval                                              |
+| **RP**   | Responsible Person — in de EU gevestigde entiteit verantwoordelijk voor conformiteit              |
+| **DoC**  | Conformiteitsverklaring (Declaration of Conformity)                                               |
+| **SKU**  | Individueel catalogusartikel                                                                      |
 
 ## Licentie
 
@@ -186,9 +186,9 @@ Bijdragen aan de repository worden alleen op uitnodiging geaccepteerd.
 
 ## Documentatie
 
-| Document                                             | Inhoud                                             |
-| ---------------------------------------------------- | -------------------------------------------------- |
-| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Systeemarchitectuur, domeinen, API, datamodel      |
-| [design/README.md](./design/README.md)               | Visueel referentiesysteem (Replit-inspired)        |
-| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Kleurtokens, typografie, UI-componenten            |
-| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Ontwikkel-setup, codestandaarden, PR-proces        |
+| Document                                             | Inhoud                                        |
+| ---------------------------------------------------- | --------------------------------------------- |
+| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Systeemarchitectuur, domeinen, API, datamodel |
+| [design/README.md](./design/README.md)               | Visueel referentiesysteem (Replit-inspired)   |
+| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Kleurtokens, typografie, UI-componenten       |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Ontwikkel-setup, codestandaarden, PR-proces   |
