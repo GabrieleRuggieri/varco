@@ -43,21 +43,13 @@
     <circle cx="1060" cy="560" r="2.5" fill="#2492ff"/>
   </g>
 
-  <!-- Brand (centered) -->
-  <g transform="translate(640 52)">
-    <rect x="-26" y="-22" width="44" height="44" rx="10" fill="#ffffff" stroke="#dfddd8" stroke-width="1.5"/>
-    <path d="M-14 10V-2h7c4.5 0 7.5 2.4 7.5 6 0 2.6-1.4 4.6-3.8 5.5L4 10h-5.5l-4.8-6.2h-3.2V10h-5.5zm5.5-10.2h1.8c2 0 3.2-.9 3.2-2.5s-1.2-2.5-3.2-2.5h-1.8v5z" fill="#ff3c00"/>
-    <text x="30" y="4" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="28" font-weight="700" fill="#0e0e0f" letter-spacing="-0.5">Varco</text>
-    <text x="30" y="22" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="12" font-weight="500" fill="#52545a">Copilot compliance UE</text>
-  </g>
-
   <!-- Hero (centered) -->
-  <text x="640" y="118" text-anchor="middle" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="44" font-weight="700" fill="#0e0e0f" letter-spacing="-1">Vendi in Europa</text>
-  <text x="640" y="164" text-anchor="middle" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="44" font-weight="700" fill="#ff3c00" letter-spacing="-1">senza perderti nella normativa</text>
-  <text x="640" y="198" text-anchor="middle" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="15" font-weight="400" fill="#52545a">Catalogo &gt; Classificazione AI &gt; Matrice obblighi &gt; Checklist &gt; Documenti</text>
+  <text x="640" y="78" text-anchor="middle" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="44" font-weight="700" fill="#0e0e0f" letter-spacing="-1">Vendi in Europa</text>
+  <text x="640" y="124" text-anchor="middle" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="44" font-weight="700" fill="#ff3c00" letter-spacing="-1">senza perderti nella normativa</text>
+  <text x="640" y="158" text-anchor="middle" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="15" font-weight="400" fill="#52545a">Catalogo &gt; Classificazione AI &gt; Matrice obblighi &gt; Checklist &gt; Documenti</text>
 
   <!-- Main cards container: centered block 1136px wide at x=72 -->
-  <g transform="translate(72 220)" filter="url(#cardShadow)">
+  <g transform="translate(72 188)" filter="url(#cardShadow)">
     <!-- Left card -->
     <rect x="0" y="0" width="700" height="360" rx="12" fill="#ffffff" stroke="#dfddd8" stroke-width="1.5"/>
 
@@ -137,7 +129,7 @@
   </g>
 
   <!-- Right card -->
-  <g transform="translate(796 220)" filter="url(#cardShadow)">
+  <g transform="translate(796 188)" filter="url(#cardShadow)">
     <rect x="0" y="0" width="412" height="360" rx="12" fill="#ffffff" stroke="#dfddd8" stroke-width="1.5"/>
 
     <text x="206" y="34" text-anchor="middle" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="11" font-weight="600" fill="#898c94" letter-spacing="0.1em">MERCATI MVP</text>
@@ -192,6 +184,4 @@
     </g>
   </g>
 
-  <!-- Footer -->
-  <text x="640" y="612" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#898c94">admin@varco.local / admin  |  pnpm dev  |  LLM_PROVIDER=mock</text>
 </svg>
