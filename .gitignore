@@ -55,3 +55,7 @@ uploads/
 
 # Registro attività locale (note interne, non versionato)
 WORK_LOG.md
+
+# Documentazione compliance EU (note interne)
+06-varco-ai-eu-compliance.md
+06-varco-ai-eu-compliance-it.md
