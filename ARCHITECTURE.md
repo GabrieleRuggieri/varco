@@ -1,6 +1,6 @@
 # Varco — Architettura del sistema
 
-Documento di riferimento per l'implementazione del MVP descritto in `06-varco-ai-eu-compliance-it.md`.  
+Documento di riferimento per l'implementazione del MVP Varco. Contesto prodotto in [README.md](./README.md); flusso software in [CODEMAP.md](./CODEMAP.md).  
 Obiettivo: stack eseguibile **in locale** con mock per servizi esterni non essenziali al core.
 
 ---
@@ -480,6 +480,9 @@ Non necessario per «girare in locale»; documentato per continuità.
 
 ## 14. Backlog architetturale (post-MVP)
 
+Il backlog completo (MVP + post-MVP) è mantenuto in [BACKLOG.md](./BACKLOG.md).  
+Per il flusso implementato oggi vedi [CODEMAP.md](./CODEMAP.md). Per lo stato di avanzamento vedi [PROGRESS.md](./PROGRESS.md).
+
 | Feature                          | Impatto architetturale                                                 |
 | -------------------------------- | ---------------------------------------------------------------------- |
 | Marketplace shield               | Nuovo servizio `marketplace-sync`, webhook Amazon/Etsy, diff attributi |
@@ -606,5 +609,8 @@ Ollama di solito gira **sull’host** (GPU/macOS), non nel container. Il worker/
 
 ## 18. Riferimenti
 
-- Product spec: `06-varco-ai-eu-compliance-it.md`
-- Contributing: `CONTRIBUTING.md`
+- [README.md](./README.md) — contesto prodotto e quick start
+- [CODEMAP.md](./CODEMAP.md) — flusso software end-to-end
+- [PROGRESS.md](./PROGRESS.md) — stato implementazione
+- [BACKLOG.md](./BACKLOG.md) — lavoro rimanente
+- [CONTRIBUTING.md](./CONTRIBUTING.md) — setup sviluppatore

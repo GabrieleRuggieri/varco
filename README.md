@@ -47,7 +47,7 @@ Brand D2C e seller su marketplace (Shopify, Amazon, Etsy) con cataloghi da 10 a 
 - Matrice obblighi versionata con workflow di revisione normativa
 - Provider LLM astratto: mock in CI, Ollama opzionale in sviluppo locale
 
-Funzionalità pianificate in release successive: radar normativo su 27 paesi, scudo marketplace (sync attributi), RAEE/batterie, workspace per agenzie.
+Funzionalità pianificate in release successive: radar normativo su 27 paesi, scudo marketplace (sync attributi), RAEE/batterie, workspace per agenzie. Dettaglio in [BACKLOG.md](./BACKLOG.md).
 
 ## Come funziona (in sintesi)
 
@@ -57,7 +57,7 @@ Catalogo → Classificazione AI (attributi) → Matrice obblighi (lookup) → Ch
 
 **Principio architetturale:** la matrice decide, l'AI non inventa. Il modello classifica e redige testi; la determinazione normativa è lookup su dati verificati.
 
-Per il dettaglio tecnico vedi [ARCHITECTURE.md](./ARCHITECTURE.md).
+Per il dettaglio tecnico vedi [ARCHITECTURE.md](./ARCHITECTURE.md). Per il flusso completo del software (API, worker, dati, integrazioni) vedi [CODEMAP.md](./CODEMAP.md).
 
 ## Guida alla dashboard
 
@@ -196,9 +196,12 @@ I contributi al repository sono accettati solo su invito.
 
 ## Documentazione
 
-| Documento                                            | Contenuto                                          |
-| ---------------------------------------------------- | -------------------------------------------------- |
-| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Architettura di sistema, domini, API, modello dati |
-| [design/README.md](./design/README.md)               | Sistema visivo di riferimento (Replit-inspired)    |
-| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Token colori, tipografia, componenti UI            |
-| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Setup sviluppo, standard di codice, processo PR    |
+| Documento                                            | Contenuto                                                    |
+| ---------------------------------------------------- | ------------------------------------------------------------ |
+| [CODEMAP.md](./CODEMAP.md)                           | Flusso software end-to-end, API, worker, DB, integrazioni    |
+| [PROGRESS.md](./PROGRESS.md)                         | Stato implementazione e cronologia sessioni                  |
+| [BACKLOG.md](./BACKLOG.md)                           | Lavoro rimanente prioritizzato (MVP → post-MVP)              |
+| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Architettura di sistema, domini, decisioni, modello dati     |
+| [design/README.md](./design/README.md)               | Sistema visivo di riferimento (Replit-inspired)              |
+| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Token colori, tipografia, componenti UI                      |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Setup sviluppo, standard di codice, processo PR              |

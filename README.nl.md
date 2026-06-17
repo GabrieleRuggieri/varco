@@ -37,7 +37,7 @@ D2C-merken en marketplace-verkopers (Shopify, Amazon, Etsy) met catalogi van 10 
 - Geversioneerde verplichtingenmatrix met workflow voor regelgevingsreview
 - Abstracte LLM-provider: mock in CI, Ollama optioneel in lokale ontwikkeling
 
-Gepland in latere releases: regelgevingsradar voor 27 landen, marketplace-schild (attribuutsync), WEEE/batterijen, workspace voor bureaus.
+Gepland in latere releases: regelgevingsradar voor 27 landen, marketplace-schild (attribuutsync), WEEE/batterijen, workspace voor bureaus. Details in [BACKLOG.md](./BACKLOG.md).
 
 ## Hoe het werkt (kort)
 
@@ -47,7 +47,7 @@ Catalogus → AI-classificatie (attributen) → Verplichtingenmatrix (lookup) �
 
 **Architectuurprincipe:** de matrix beslist, de AI verzint niets. Het model classificeert en redigeert teksten; de regelgevingsbepaling is lookup op geverifieerde data.
 
-Voor technische details, zie [ARCHITECTURE.md](./ARCHITECTURE.md).
+Voor technische details, zie [ARCHITECTURE.md](./ARCHITECTURE.md). Voor de volledige softwareflow (API, worker, data, integraties), zie [CODEMAP.md](./CODEMAP.md).
 
 ## Dashboardgids
 
@@ -186,9 +186,12 @@ Bijdragen aan de repository worden alleen op uitnodiging geaccepteerd.
 
 ## Documentatie
 
-| Document                                             | Inhoud                                        |
-| ---------------------------------------------------- | --------------------------------------------- |
-| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Systeemarchitectuur, domeinen, API, datamodel |
-| [design/README.md](./design/README.md)               | Visueel referentiesysteem (Replit-inspired)   |
-| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Kleurtokens, typografie, UI-componenten       |
-| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Ontwikkel-setup, codestandaarden, PR-proces   |
+| Document                                             | Inhoud                                                         |
+| ---------------------------------------------------- | -------------------------------------------------------------- |
+| [CODEMAP.md](./CODEMAP.md)                           | End-to-end softwareflow, API, worker, DB, integraties        |
+| [PROGRESS.md](./PROGRESS.md)                         | Implementatiestatus en sessiegeschiedenis                      |
+| [BACKLOG.md](./BACKLOG.md)                           | Geprioriteerd resterend werk (MVP → post-MVP)                  |
+| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Systeemarchitectuur, domeinen, beslissingen, datamodel         |
+| [design/README.md](./design/README.md)               | Visueel referentiesysteem (Replit-inspired)                    |
+| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Kleurtokens, typografie, UI-componenten                        |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Ontwikkel-setup, codestandaarden, PR-proces                    |

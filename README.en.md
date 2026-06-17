@@ -20,13 +20,17 @@ The cover image (`docs/cover.png`) and screenshots are shared across all languag
 
 ## Technical documentation
 
-Architecture, contributing, and design docs are in English:
+Project docs (CODEMAP, PROGRESS, BACKLOG, ARCHITECTURE, CONTRIBUTING) are in Italian. Design tokens are in English.
 
-| Document                               | Description                                   |
-| -------------------------------------- | --------------------------------------------- |
-| [ARCHITECTURE.md](./ARCHITECTURE.md)   | System architecture, domains, API, data model |
-| [CONTRIBUTING.md](./CONTRIBUTING.md)   | Development setup, code standards, PR process |
-| [design/README.md](./design/README.md) | Visual reference system                       |
+| Document                                             | Description                                                  |
+| ---------------------------------------------------- | ------------------------------------------------------------ |
+| [CODEMAP.md](./CODEMAP.md)                           | End-to-end software flow, API, worker, DB, integrations      |
+| [PROGRESS.md](./PROGRESS.md)                         | Implementation status and session history                    |
+| [BACKLOG.md](./BACKLOG.md)                           | Prioritized remaining work (MVP → post-MVP)                  |
+| [ARCHITECTURE.md](./ARCHITECTURE.md)                 | System architecture, domains, decisions, data model          |
+| [design/README.md](./design/README.md)               | Visual reference system (Replit-inspired)                    |
+| [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Color tokens, typography, UI components                        |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                 | Development setup, code standards, PR process                |
 
 ## License
 

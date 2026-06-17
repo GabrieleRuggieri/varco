@@ -6,10 +6,12 @@ Guida per chi sviluppa sul repository Varco — AI compliance copilot per vender
 
 ## Prima di iniziare
 
-1. Leggi `06-varco-ai-eu-compliance-it.md` (contesto prodotto).
+1. Leggi [README.md](./README.md) (contesto prodotto e perimetro MVP).
 2. Leggi [ARCHITECTURE.md](./ARCHITECTURE.md) (stack, domini, mock locali).
-3. Leggi [design/README.md](./design/README.md) e [design/replit/DESIGN.md](./design/replit/DESIGN.md) (sistema visivo di riferimento).
-4. Consulta le issue aperte su GitHub per lo stato del lavoro in corso.
+3. Leggi [CODEMAP.md](./CODEMAP.md) (flusso software, API, worker, integrazioni).
+4. Consulta [PROGRESS.md](./PROGRESS.md) (cosa è fatto) e [BACKLOG.md](./BACKLOG.md) (cosa manca).
+5. Leggi [design/README.md](./design/README.md) e [design/replit/DESIGN.md](./design/replit/DESIGN.md) (sistema visivo di riferimento).
+6. Consulta le issue aperte su GitHub per task specifici.
 
 ---
 
