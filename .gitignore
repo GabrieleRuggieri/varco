@@ -47,3 +47,6 @@ uploads/
 # Deploy
 .vercel
 .netlify
+
+# Rules development
+RULES.md
