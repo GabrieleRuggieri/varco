@@ -186,13 +186,9 @@ varco/
 
 ## Licenza
 
-Il codice è pubblicato in modalità **source available** con tutti i diritti riservati. Vedi [LICENSE](./LICENSE).
+Software proprietario — tutti i diritti riservati. Questo materiale (codice e documentazione) è confidenziale e destinato esclusivamente alla valutazione interna del progetto Varco. Nessun accordo, partnership o impegno commerciale con marketplace, partner di compliance (RP/EPR), consulenti normativi o terzi è implicato da questo repository.
 
-- Consultazione del codice su GitHub: consentita a scopo informativo non commerciale
-- Fork, modifica, deploy o uso (anche personale): richiedono autorizzazione scritta del titolare
-- Uso commerciale: richiede licenza commerciale separata
-
-I contributi al repository sono accettati solo su invito.
+Vedi [LICENSE](./LICENSE) per i termini completi.
 
 ## Documentazione
 

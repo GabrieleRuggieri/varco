@@ -176,13 +176,9 @@ varco/
 
 ## Licentie
 
-De code wordt gepubliceerd als **source available** met alle rechten voorbehouden. Zie [LICENSE](./LICENSE).
+Proprietary software — alle rechten voorbehouden. Dit materiaal (code en documentatie) is vertrouwelijk en uitsluitend bedoeld voor interne evaluatie van het Varco-project. Geen overeenkomst, partnerschap of commerciële verplichting met marketplaces, compliance-partners (RP/EPR), regelgevingsadviseurs of derden wordt geïmpliceerd door deze repository.
 
-- Code-inzage op GitHub: toegestaan voor niet-commerciële informatiedoeleinden
-- Fork, wijziging, deployment of gebruik (ook persoonlijk): schriftelijke toestemming van de rechthebbende vereist
-- Commercieel gebruik: aparte commerciële licentie vereist
-
-Bijdragen aan de repository worden alleen op uitnodiging geaccepteerd.
+Volledige voorwaarden: [LICENSE](./LICENSE).
 
 ## Documentatie
 

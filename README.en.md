@@ -34,4 +34,6 @@ Project docs (CODEMAP, PROGRESS, BACKLOG, ARCHITECTURE, CONTRIBUTING) are in Ita
 
 ## License
 
-Source available — all rights reserved. See [LICENSE](./LICENSE).
+Proprietary software — all rights reserved. This material (code and documentation) is confidential and intended exclusively for internal evaluation of the Varco project. No agreement, partnership, or commercial commitment with marketplaces, compliance partners (RP/EPR), regulatory consultants, or third parties is implied by this repository.
+
+See [LICENSE](./LICENSE) for full terms.

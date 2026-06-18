@@ -176,13 +176,9 @@ varco/
 
 ## Lizenz
 
-Der Code wird als **source available** mit allen Rechten vorbehalten veröffentlicht. Siehe [LICENSE](./LICENSE).
+Proprietäre Software — alle Rechte vorbehalten. Dieses Material (Code und Dokumentation) ist vertraulich und ausschließlich für die interne Bewertung des Varco-Projekts bestimmt. Keine Vereinbarung, Partnerschaft oder kommerzielle Verpflichtung mit Marktplätzen, Compliance-Partnern (RP/EPR), regulatorischen Beratern oder Dritten wird durch dieses Repository impliziert.
 
-- Code-Einsicht auf GitHub: zu nicht-kommerziellen Informationszwecken erlaubt
-- Fork, Änderung, Deployment oder Nutzung (auch privat): schriftliche Genehmigung des Rechteinhabers erforderlich
-- Kommerzielle Nutzung: separate kommerzielle Lizenz erforderlich
-
-Beiträge zum Repository werden nur auf Einladung angenommen.
+Vollständige Bedingungen: [LICENSE](./LICENSE).
 
 ## Dokumentation
 

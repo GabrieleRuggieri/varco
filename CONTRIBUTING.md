@@ -228,14 +228,9 @@ pnpm matrix:validate
 
 ## Licenza
 
-Il codice è pubblicato in modalità **source available** con tutti i diritti riservati.
+Software proprietario — tutti i diritti riservati. Questo materiale (codice e documentazione) è confidenziale e destinato esclusivamente alla valutazione interna del progetto Varco. Nessun accordo, partnership o impegno commerciale con marketplace, partner di compliance (RP/EPR), consulenti normativi o terzi è implicato da questo repository.
+
 Vedi [LICENSE](./LICENSE) per i termini completi.
-
-In sintesi:
-
-- **Consultazione** del codice su GitHub: consentita a scopo informativo non commerciale.
-- **Fork, modifica, deploy o uso** (anche personale): richiedono autorizzazione scritta del titolare.
-- **Uso commerciale** (SaaS, uso aziendale con ricavi, rivendita): richiede licenza commerciale separata.
 
 I contributi al repository sono accettati solo su invito. Con l'invio di un contributo,
 il contributore concede al titolare i diritti necessari per includere e distribuire
