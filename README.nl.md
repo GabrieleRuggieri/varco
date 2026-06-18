@@ -184,6 +184,7 @@ Volledige voorwaarden: [LICENSE](./LICENSE).
 
 | Document                                             | Inhoud                                                         |
 | ---------------------------------------------------- | -------------------------------------------------------------- |
+| [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Interactieve visuele projectgids (openen met `pnpm dev`)     |
 | [CODEMAP.md](./CODEMAP.md)                           | End-to-end softwareflow, API, worker, DB, integraties        |
 | [PROGRESS.md](./PROGRESS.md)                         | Implementatiestatus en sessiegeschiedenis                      |
 | [BACKLOG.md](./BACKLOG.md)                           | Geprioriteerd resterend werk (MVP → post-MVP)                  |

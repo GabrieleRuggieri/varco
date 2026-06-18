@@ -149,6 +149,14 @@ Aggiornare questo file a fine sessione di lavoro o al merge di PR significative.
 |----------|-------|-----------|
 | Design Replit | completato | Tema light warm; IBM Plex Sans |
 
+### 2026-06-18 (sessione 14 — guida interattiva)
+
+| Attività | Stato | Dettaglio |
+|----------|-------|-----------|
+| Guida `/guida` | completato | Pagina pubblica con walkthrough, bento, animazioni; screenshot da `docs/images/` |
+| Login | completato | Form ripristinato; link guida nel footer; route auth invariata |
+| Documentazione | completato | `GUIDA.md`, link in README (tutte le lingue), `CODEMAP.md` aggiornato |
+
 ### 2026-06-12 (sessione 13 — rilascio demo)
 
 | Attività | Stato | Dettaglio |

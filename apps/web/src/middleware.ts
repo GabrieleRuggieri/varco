@@ -12,6 +12,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const isPublic =
     pathname.startsWith('/login') ||
+    pathname.startsWith('/guida') ||
     pathname.startsWith('/api/auth') ||
     pathname === '/favicon.ico';
 

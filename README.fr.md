@@ -184,6 +184,7 @@ Conditions complètes : [LICENSE](./LICENSE).
 
 | Document                                             | Contenu                                                        |
 | ---------------------------------------------------- | -------------------------------------------------------------- |
+| [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Guide visuelle interactive du projet (ouvrir avec `pnpm dev`) |
 | [CODEMAP.md](./CODEMAP.md)                           | Flux logiciel end-to-end, API, worker, DB, intégrations        |
 | [PROGRESS.md](./PROGRESS.md)                         | État d'implémentation et historique des sessions               |
 | [BACKLOG.md](./BACKLOG.md)                           | Travail restant priorisé (MVP → post-MVP)                      |

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Suspense } from 'react';
 import { LoginForm } from '@/components/LoginForm';
 import styles from './login.module.css';
@@ -40,7 +41,10 @@ export default function LoginPage() {
         )}
       </div>
       <p className={styles.bottomNote}>
-        Varco prepara documenti e dati strutturati. Non è consulenza legale.
+        Varco prepara documenti e dati strutturati. Non è consulenza legale.{' '}
+        <Link href="/guida" className={styles.guideLink}>
+          Guida al progetto →
+        </Link>
       </p>
     </div>
   );

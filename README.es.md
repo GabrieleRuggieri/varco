@@ -184,6 +184,7 @@ Términos completos: [LICENSE](./LICENSE).
 
 | Documento                                            | Contenido                                                      |
 | ---------------------------------------------------- | -------------------------------------------------------------- |
+| [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Guía visual interactiva del proyecto (abrir con `pnpm dev`)  |
 | [CODEMAP.md](./CODEMAP.md)                           | Flujo de software end-to-end, API, worker, BD, integraciones   |
 | [PROGRESS.md](./PROGRESS.md)                         | Estado de implementación e historial de sesiones               |
 | [BACKLOG.md](./BACKLOG.md)                           | Trabajo pendiente priorizado (MVP → post-MVP)                  |

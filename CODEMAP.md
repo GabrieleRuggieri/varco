@@ -91,7 +91,7 @@ varco/
 ├── mocks/mock-server/       # Fastify: Shopify, Amazon stub, partner
 ├── fixtures/                # shopify-catalog.json, llm-classifications/
 ├── design/                  # Sistema visivo (Replit-inspired)
-├── docs/images/             # Screenshot dashboard
+├── docs/images/             # Screenshot dashboard (README + guida `/guida`)
 ├── docker-compose.yml       # Infra locale (non le app Node)
 └── turbo.json               # Orchestrazione build/test/lint
 ```
@@ -199,6 +199,7 @@ pnpm demo:populate          # sync + classify + PDF su SKU demo
 | Route | Tipo | Descrizione |
 |-------|------|-------------|
 | `/login` | pubblica | Credenziali demo |
+| `/guida` | pubblica | Guida visiva interattiva al progetto (screenshot da `docs/images/`) |
 | `/` | protetta | Panoramica metriche e pipeline |
 | `/catalog` | protetta | Connessioni marketplace + sync |
 | `/skus` | protetta | Tabella SKU, classifica, genera PDF |

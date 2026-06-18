@@ -194,6 +194,7 @@ Vedi [LICENSE](./LICENSE) per i termini completi.
 
 | Documento                                            | Contenuto                                                    |
 | ---------------------------------------------------- | ------------------------------------------------------------ |
+| [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Guida visiva interattiva al progetto (apri con `pnpm dev`) |
 | [CODEMAP.md](./CODEMAP.md)                           | Flusso software end-to-end, API, worker, DB, integrazioni    |
 | [PROGRESS.md](./PROGRESS.md)                         | Stato implementazione e cronologia sessioni                  |
 | [BACKLOG.md](./BACKLOG.md)                           | Lavoro rimanente prioritizzato (MVP → post-MVP)              |

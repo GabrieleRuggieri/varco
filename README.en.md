@@ -24,6 +24,7 @@ Project docs (CODEMAP, PROGRESS, BACKLOG, ARCHITECTURE, CONTRIBUTING) are in Ita
 
 | Document                                             | Description                                                  |
 | ---------------------------------------------------- | ------------------------------------------------------------ |
+| [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Interactive visual project guide (open with `pnpm dev`) |
 | [CODEMAP.md](./CODEMAP.md)                           | End-to-end software flow, API, worker, DB, integrations      |
 | [PROGRESS.md](./PROGRESS.md)                         | Implementation status and session history                    |
 | [BACKLOG.md](./BACKLOG.md)                           | Prioritized remaining work (MVP → post-MVP)                  |
