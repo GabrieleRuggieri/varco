@@ -70,12 +70,12 @@
 
   <!-- Centered wordmark -->
   <g transform="translate(640 320)">
-    <circle cx="0" cy="-10" r="140" fill="#ff3c00" opacity="0.05" filter="url(#softGlow)"/>
+    <circle cx="0" cy="-8" r="170" fill="#ff3c00" opacity="0.05" filter="url(#softGlow)"/>
 
-    <text x="0" y="12" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="168" font-weight="700" fill="url(#titleAccent)" letter-spacing="-0.06em">Varco</text>
+    <text x="0" y="16" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="228" font-weight="700" fill="url(#titleAccent)" letter-spacing="-0.06em">Varco</text>
 
-    <text x="0" y="82" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="34" font-weight="500" fill="#52545a" letter-spacing="-0.01em">Copilot di compliance per l&apos;Europa</text>
+    <text x="0" y="104" text-anchor="middle" font-family="'IBM Plex Sans', system-ui, sans-serif" font-size="46" font-weight="500" fill="#52545a" letter-spacing="-0.01em">Copilot di compliance per l&apos;Europa</text>
 
-    <rect x="-64" y="108" width="128" height="5" rx="2.5" fill="url(#orangeBar)" opacity="0.85"/>
+    <rect x="-80" y="132" width="160" height="6" rx="3" fill="url(#orangeBar)" opacity="0.85"/>
   </g>
 </svg>
