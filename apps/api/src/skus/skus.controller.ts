@@ -1,10 +1,14 @@
-import { Controller, Get, Param, Post } from '@nestjs/common';
+/**
+ * Controller SKU — lista, classificazione e storico con validazione UUID.
+ */
+import { Controller, Get, Param, ParseUUIDPipe, Post } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
 import { SkusService } from './skus.service';
 
 @ApiTags('skus')
 @Controller('skus')
+/** Esportazione `SkusController` — vedi implementazione sotto. */
 export class SkusController {
   constructor(private readonly skusService: SkusService) {}
 
@@ -20,7 +24,10 @@ export class SkusController {
   @ApiOperation({ summary: 'Accoda classificazione SKU (job sku.classify)' })
   @ApiParam({ name: 'id', description: 'UUID SKU' })
   @ApiOkResponse({ description: 'Job classificazione accodato' })
-  async classify(@Param('id') skuId: string, @CurrentUser() user: RequestUser) {
+  async classify(
+    @Param('id', ParseUUIDPipe) skuId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
     return this.skusService.triggerClassify(user.organizationId, skuId);
   }
 
@@ -28,7 +35,10 @@ export class SkusController {
   @ApiOperation({ summary: 'Ultima classificazione SKU' })
   @ApiParam({ name: 'id', description: 'UUID SKU' })
   @ApiOkResponse({ description: 'Classification run più recente' })
-  async getClassification(@Param('id') skuId: string, @CurrentUser() user: RequestUser) {
+  async getClassification(
+    @Param('id', ParseUUIDPipe) skuId: string,
+    @CurrentUser() user: RequestUser,
+  ) {
     const classification = await this.skusService.getLatestClassification(
       user.organizationId,
       skuId,

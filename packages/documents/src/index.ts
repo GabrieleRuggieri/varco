@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `index` — logica riusabile nel monorepo Varco.
+ */
 export {
   generateDocument,
   type GenerateDocumentInput,

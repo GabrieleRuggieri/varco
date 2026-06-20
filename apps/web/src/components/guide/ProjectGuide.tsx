@@ -1,3 +1,6 @@
+/**
+ * Componente React `ProjectGuide` — interfaccia utente Varco.
+ */
 'use client';
 
 import Image, { type StaticImageData } from 'next/image';
@@ -169,6 +172,7 @@ const NAV = [
   { href: '#avvio', label: 'Avvio' },
 ] as const;
 
+/** Esportazione `ProjectGuide` — vedi implementazione sotto. */
 export function ProjectGuide() {
   return (
     <div className={styles.page}>

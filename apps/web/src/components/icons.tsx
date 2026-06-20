@@ -1,3 +1,6 @@
+/**
+ * Componente React `icons` — interfaccia utente Varco.
+ */
 import type { SVGProps } from 'react';
 
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
@@ -13,6 +16,7 @@ const base = (size = 16): SVGProps<SVGSVGElement> => ({
   strokeLinejoin: 'round' as const,
 });
 
+/** Esportazione `IconHome` — vedi implementazione sotto. */
 export function IconHome({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -21,6 +25,7 @@ export function IconHome({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconBox` — vedi implementazione sotto. */
 export function IconBox({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -30,6 +35,7 @@ export function IconBox({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconList` — vedi implementazione sotto. */
 export function IconList({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -38,6 +44,7 @@ export function IconList({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconCheckSquare` — vedi implementazione sotto. */
 export function IconCheckSquare({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -47,6 +54,7 @@ export function IconCheckSquare({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconSync` — vedi implementazione sotto. */
 export function IconSync({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -57,6 +65,7 @@ export function IconSync({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconLogout` — vedi implementazione sotto. */
 export function IconLogout({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -65,6 +74,7 @@ export function IconLogout({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconDownload` — vedi implementazione sotto. */
 export function IconDownload({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -73,6 +83,7 @@ export function IconDownload({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconSparkle` — vedi implementazione sotto. */
 export function IconSparkle({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -82,6 +93,7 @@ export function IconSparkle({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconWarning` — vedi implementazione sotto. */
 export function IconWarning({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -90,6 +102,7 @@ export function IconWarning({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconDocument` — vedi implementazione sotto. */
 export function IconDocument({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>
@@ -99,6 +112,7 @@ export function IconDocument({ size, ...p }: IconProps) {
   );
 }
 
+/** Esportazione `IconInbox` — vedi implementazione sotto. */
 export function IconInbox({ size, ...p }: IconProps) {
   return (
     <svg {...base(size)} {...p}>

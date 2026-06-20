@@ -1,3 +1,6 @@
+/**
+ * Modulo API NestJS `catalog.module` — backend compliance Varco.
+ */
 import { Module } from '@nestjs/common';
 import { CatalogController } from './catalog.controller';
 import { CatalogService } from './catalog.service';
@@ -6,4 +9,5 @@ import { CatalogService } from './catalog.service';
   controllers: [CatalogController],
   providers: [CatalogService],
 })
+/** Esportazione `CatalogModule` — vedi implementazione sotto. */
 export class CatalogModule {}

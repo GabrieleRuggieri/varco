@@ -1,35 +1,50 @@
-import { IsOptional, IsString } from 'class-validator';
+/**
+ * DTO validazione webhook partner — campi obbligatori per audit trail affidabile.
+ */
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { IsIn, IsISO8601, IsOptional, IsString, IsUUID, MinLength } from 'class-validator';
 
+const PARTNER_EVENT_TYPES = ['rp_nomination', 'epr_registration', 'status_update'] as const;
+const PARTNER_STATUSES = ['pending', 'in_progress', 'completed', 'failed', 'cancelled'] as const;
+
+/** Esportazione `PartnerWebhookDto` — vedi implementazione sotto. */
 export class PartnerWebhookDto {
-  @IsOptional()
+  @ApiProperty({ description: 'Tipo evento partner' })
   @IsString()
-  event?: string;
+  @IsIn(PARTNER_EVENT_TYPES)
+  event!: string;
 
+  @ApiPropertyOptional({ description: 'UUID richiesta partner interna' })
   @IsOptional()
-  @IsString()
+  @IsUUID()
   partner_request_id?: string;
 
-  @IsOptional()
+  @ApiProperty({ description: 'Riferimento esterno partner' })
   @IsString()
-  external_ref?: string;
+  @MinLength(1)
+  external_ref!: string;
 
-  @IsOptional()
+  @ApiProperty({ description: 'Tipo servizio (RP, EPR, ecc.)' })
   @IsString()
-  type?: string;
+  @MinLength(1)
+  type!: string;
 
-  @IsOptional()
+  @ApiProperty({ description: 'Codice paese ISO (es. DE)' })
   @IsString()
-  country?: string;
+  @MinLength(2)
+  country!: string;
 
-  @IsOptional()
+  @ApiProperty({ description: 'Stato elaborazione partner' })
   @IsString()
-  status?: string;
+  @IsIn([...PARTNER_STATUSES])
+  status!: string;
 
+  @ApiPropertyOptional({ description: 'UUID SKU Varco associato' })
   @IsOptional()
-  @IsString()
+  @IsUUID()
   sku_id?: string | null;
 
-  @IsOptional()
-  @IsString()
-  occurred_at?: string;
+  @ApiProperty({ description: 'Timestamp evento ISO-8601' })
+  @IsISO8601()
+  occurred_at!: string;
 }

@@ -1,3 +1,6 @@
+/**
+ * Componente React `AppShell` — interfaccia utente Varco.
+ */
 import type { ReactNode } from 'react';
 import type { VarcoSession } from '@/lib/session';
 import { AmbientMesh } from './AmbientMesh';
@@ -5,6 +8,7 @@ import styles from './AppShell.module.css';
 import { LogoutButton } from './LogoutButton';
 import { SidebarNav } from './SidebarNav';
 
+/** Esportazione `AppShell` — vedi implementazione sotto. */
 export function AppShell({ session, children }: { session: VarcoSession; children: ReactNode }) {
   const initials = session.email.slice(0, 2).toUpperCase();
 

@@ -1,3 +1,6 @@
+/**
+ * Modulo API NestJS `queue.service` — backend compliance Varco.
+ */
 import { Injectable, type OnModuleDestroy } from '@nestjs/common';
 import {
   closeVarcoQueue,
@@ -13,6 +16,7 @@ import type {
 } from '@varco/shared';
 
 @Injectable()
+/** Esportazione `QueueService` — vedi implementazione sotto. */
 export class QueueService implements OnModuleDestroy {
   enqueueCatalogSync(payload: CatalogSyncJobPayload): Promise<EnqueuedJob> {
     return enqueueCatalogSync(payload);

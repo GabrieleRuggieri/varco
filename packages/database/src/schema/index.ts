@@ -1,3 +1,6 @@
+/**
+ * Modulo database `index` — schema Drizzle e accesso PostgreSQL.
+ */
 export * from './enums.js';
 export * from './organizations.js';
 export * from './auth.js';

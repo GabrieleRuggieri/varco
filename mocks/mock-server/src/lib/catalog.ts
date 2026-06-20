@@ -1,3 +1,6 @@
+/**
+ * Mock `catalog` — simulazione servizi esterni per sviluppo locale.
+ */
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,6 +20,7 @@ export type ShopifyProduct = {
   images: { src: string }[];
 };
 
+/** Esportazione `ShopifyVariant` — vedi implementazione sotto. */
 export type ShopifyVariant = {
   id: number;
   product_id: number;
@@ -26,6 +30,7 @@ export type ShopifyVariant = {
   inventory_quantity: number;
 };
 
+/** Esportazione `ShopifyCatalog` — vedi implementazione sotto. */
 export type ShopifyCatalog = {
   products: ShopifyProduct[];
 };

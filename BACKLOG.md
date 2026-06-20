@@ -34,7 +34,7 @@ Per ciò che è già stato fatto vedi [PROGRESS.md](./PROGRESS.md). Per il fluss
 | 8 | **RBAC `regulatory_admin`** | pianificato | Solo ruolo regulatory può approvare regole matrice; enforcement in API |
 | 9 | **Matrice — solo regole `approvata` in staging/prod** | pianificato | Dev usa `bozza`; prod filtra per `review_status` |
 | 10 | **API admin matrice** | pianificato | `GET /matrix/versions`, `POST /matrix/import`, changelog regole |
-| 11 | **Row Level Security cablata** | parziale | Migration `0002_rls.sql` esiste; app non esegue `SET LOCAL varco.org_id` |
+| 11 | **Row Level Security cablata** | completato | `withOrgContext` / `withUserContext` in `@varco/database`; migration `0003_auth_rls_policies` |
 | 12 | **Storage token marketplace cifrato** | pianificato | Token OAuth Shopify/Amazon in DB con encryption at rest |
 | 13 | **Osservabilità worker** | pianificato | Bull Board, metriche job, alerting su failure |
 | 14 | **Test integrazione E2E** | pianificato | catalog.sync → classify → checklist → PDF con fixture |

@@ -1,3 +1,6 @@
+/**
+ * Componente React `SkuActions` — interfaccia utente Varco.
+ */
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -11,6 +14,7 @@ type Props = {
   skuCode: string;
 };
 
+/** Esportazione `SkuActions` — vedi implementazione sotto. */
 export function SkuActions({ skuId, skuCode }: Props) {
   const router = useRouter();
   const { message, isError, busy, post } = useApiPost();

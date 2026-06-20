@@ -1,3 +1,6 @@
+/**
+ * Componente React `DecorativeGraphics` — interfaccia utente Varco.
+ */
 import styles from './DecorativeGraphics.module.css';
 
 /** Doodle SVG ispirati alle grafiche decorative di replit.com */

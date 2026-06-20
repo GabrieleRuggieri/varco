@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `hash` — logica riusabile nel monorepo Varco.
+ */
 import { createHash } from 'node:crypto';
 import type { MatrixBundle } from './schema.js';
 

@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `config` — logica riusabile nel monorepo Varco.
+ */
 export type S3Config = {
   endpoint: string;
   bucket: string;
@@ -6,6 +9,7 @@ export type S3Config = {
   region: string;
 };
 
+/** Esportazione `getS3Config` — vedi implementazione sotto. */
 export function getS3Config(): S3Config {
   const accessKey = process.env.S3_ACCESS_KEY;
   const secretKey = process.env.S3_SECRET_KEY;

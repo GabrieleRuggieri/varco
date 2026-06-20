@@ -1,3 +1,6 @@
+/**
+ * Sorgente TypeScript `useApiPost` — progetto Varco.
+ */
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -14,6 +17,7 @@ type ApiPostOptions = {
   successMessage?: (jobId?: string) => string;
 };
 
+/** Esportazione `useApiPost` — vedi implementazione sotto. */
 export function useApiPost() {
   const router = useRouter();
   const [state, setState] = useState<ApiPostState>({

@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `index` — logica riusabile nel monorepo Varco.
+ */
 export { matrixBundleSchema, obligationRuleSchema } from './schema.js';
 export type { MatrixBundle, ObligationRuleInput } from './schema.js';
 export { loadMatrixBundle, parseMatrixBundle, DEFAULT_MATRIX_PATH } from './load.js';

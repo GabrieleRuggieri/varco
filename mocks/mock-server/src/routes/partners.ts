@@ -1,3 +1,6 @@
+/**
+ * Mock `partners` — simulazione servizi esterni per sviluppo locale.
+ */
 import type { FastifyInstance } from 'fastify';
 import {
   createPartnerRequest,

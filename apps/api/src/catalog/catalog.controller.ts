@@ -1,3 +1,6 @@
+/**
+ * Modulo API NestJS `catalog.controller` — backend compliance Varco.
+ */
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
@@ -6,6 +9,7 @@ import { CatalogSyncDto } from './dto/catalog-sync.dto';
 
 @ApiTags('catalog')
 @Controller('catalog')
+/** Esportazione `CatalogController` — vedi implementazione sotto. */
 export class CatalogController {
   constructor(private readonly catalogService: CatalogService) {}
 

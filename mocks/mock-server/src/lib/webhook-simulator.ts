@@ -1,3 +1,6 @@
+/**
+ * Mock `webhook-simulator` — simulazione servizi esterni per sviluppo locale.
+ */
 import {
   getPartnerRequest,
   recordWebhookEvent,
@@ -28,12 +31,12 @@ async function deliverWebhook(requestId: string, targetUrl: string | null): Prom
   updatePartnerRequestStatus(requestId, 'active');
 
   const payload = {
-    event: 'partner.request.updated',
+    event: 'status_update',
     partner_request_id: request.id,
     external_ref: request.externalRef,
     type: request.type,
     country: request.country,
-    status: 'active' as const,
+    status: 'completed' as const,
     sku_id: request.skuId ?? null,
     occurred_at: new Date().toISOString(),
   };

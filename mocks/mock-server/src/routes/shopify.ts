@@ -1,3 +1,6 @@
+/**
+ * Mock `shopify` — simulazione servizi esterni per sviluppo locale.
+ */
 import type { FastifyInstance } from 'fastify';
 import { countSkus, loadShopifyCatalog } from '../lib/catalog.js';
 

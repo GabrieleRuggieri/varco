@@ -1,3 +1,6 @@
+/**
+ * Sorgente TypeScript `next.config` — progetto Varco.
+ */
 import type { NextConfig } from 'next';
 
 const CSP = [

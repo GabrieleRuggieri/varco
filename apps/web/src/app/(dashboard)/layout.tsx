@@ -1,3 +1,6 @@
+/**
+ * Pagina o route Next.js `layout` — UI dashboard Varco.
+ */
 import { redirect } from 'next/navigation';
 import type { ReactNode } from 'react';
 import { AppShell } from '@/components/AppShell';

@@ -1,3 +1,6 @@
+/**
+ * Pagina o route Next.js `route` — UI dashboard Varco.
+ */
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { signApiAccessToken } from '@varco/auth';
@@ -58,10 +61,12 @@ async function proxy(request: NextRequest, context: RouteContext) {
   });
 }
 
+/** Esportazione `GET` — vedi implementazione sotto. */
 export async function GET(request: NextRequest, context: RouteContext) {
   return proxy(request, context);
 }
 
+/** Esportazione `POST` — vedi implementazione sotto. */
 export async function POST(request: NextRequest, context: RouteContext) {
   return proxy(request, context);
 }

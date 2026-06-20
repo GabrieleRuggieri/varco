@@ -1,3 +1,6 @@
+/**
+ * Modulo database `matrix` — schema Drizzle e accesso PostgreSQL.
+ */
 import { index, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import {
   countryCodeEnum,

@@ -1,3 +1,6 @@
+/**
+ * Modulo database `auth` — schema Drizzle e accesso PostgreSQL.
+ */
 import { integer, pgTable, primaryKey, text, timestamp, unique, uuid } from 'drizzle-orm/pg-core';
 import { orgRoleEnum } from './enums.js';
 import { organizations, users } from './organizations.js';

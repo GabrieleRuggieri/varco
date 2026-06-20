@@ -1,3 +1,6 @@
+/**
+ * Modulo database `organizations` — schema Drizzle e accesso PostgreSQL.
+ */
 import { pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { countryCodeEnum } from './enums.js';
 

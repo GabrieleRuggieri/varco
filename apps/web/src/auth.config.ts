@@ -1,3 +1,6 @@
+/**
+ * Sorgente TypeScript `auth.config` — progetto Varco.
+ */
 import { compare } from 'bcryptjs';
 import { eq } from 'drizzle-orm';
 import type { NextAuthConfig } from 'next-auth';
@@ -8,8 +11,10 @@ import {
   organizations,
   userCredentials,
   users,
+  withUserContext,
 } from '@varco/database';
 
+/** Esportazione `VarcoSessionUser` — vedi implementazione sotto. */
 export type VarcoSessionUser = {
   id: string;
   email: string;
@@ -19,17 +24,20 @@ export type VarcoSessionUser = {
   organizationIds: string[];
 };
 
+/** Carica membership multi-org con policy RLS varco.user_id. */
 async function loadUserContext(userId: string) {
   const db = createDb();
-  const rows = await db
-    .select({
-      organizationId: organizations.id,
-      organizationName: organizations.name,
-      role: organizationMembers.role,
-    })
-    .from(organizationMembers)
-    .innerJoin(organizations, eq(organizationMembers.organizationId, organizations.id))
-    .where(eq(organizationMembers.userId, userId));
+  const rows = await withUserContext(db, userId, (tx) =>
+    tx
+      .select({
+        organizationId: organizations.id,
+        organizationName: organizations.name,
+        role: organizationMembers.role,
+      })
+      .from(organizationMembers)
+      .innerJoin(organizations, eq(organizationMembers.organizationId, organizations.id))
+      .where(eq(organizationMembers.userId, userId)),
+  );
 
   if (rows.length === 0) {
     throw new Error('Utente senza organizzazione associata');
@@ -43,6 +51,7 @@ async function loadUserContext(userId: string) {
   };
 }
 
+/** Esportazione `authConfig` — vedi implementazione sotto. */
 export const authConfig: NextAuthConfig = {
   providers: [
     Credentials({

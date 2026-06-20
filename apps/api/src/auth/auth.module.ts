@@ -1,3 +1,6 @@
+/**
+ * Modulo API NestJS `auth.module` — backend compliance Varco.
+ */
 import { Global, Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
@@ -23,4 +26,5 @@ import { JwtAuthGuard, WebhookSecretGuard } from './jwt-auth.guard.js';
   ],
   exports: [JwtAuthGuard],
 })
+/** Esportazione `AuthModule` — vedi implementazione sotto. */
 export class AuthModule {}

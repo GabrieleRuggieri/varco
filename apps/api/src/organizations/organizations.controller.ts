@@ -1,3 +1,6 @@
+/**
+ * Modulo API NestJS `organizations.controller` — backend compliance Varco.
+ */
 import { Controller, Get } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CurrentUser, type RequestUser } from '../auth/current-user.decorator';
@@ -5,6 +8,7 @@ import { OrganizationsService } from './organizations.service';
 
 @ApiTags('organizations')
 @Controller('organizations')
+/** Esportazione `OrganizationsController` — vedi implementazione sotto. */
 export class OrganizationsController {
   constructor(private readonly organizationsService: OrganizationsService) {}
 

@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `schema` — logica riusabile nel monorepo Varco.
+ */
 import { z } from 'zod';
 
 /** Valori allineati a @varco/shared e enum PostgreSQL */
@@ -57,5 +60,7 @@ export const matrixBundleSchema = z
     }
   });
 
+/** Esportazione `MatrixBundle` — vedi implementazione sotto. */
 export type MatrixBundle = z.infer<typeof matrixBundleSchema>;
+/** Esportazione `ObligationRuleInput` — vedi implementazione sotto. */
 export type ObligationRuleInput = z.infer<typeof obligationRuleSchema>;

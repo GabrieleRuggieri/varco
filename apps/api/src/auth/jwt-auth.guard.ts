@@ -1,3 +1,6 @@
+/**
+ * Modulo API NestJS `jwt-auth.guard` — backend compliance Varco.
+ */
 import {
   type CanActivate,
   type ExecutionContext,
@@ -9,6 +12,7 @@ import { verifyApiAccessToken } from '@varco/auth';
 import { IS_PUBLIC_KEY, WEBHOOK_AUTH_KEY } from './decorators.js';
 
 @Injectable()
+/** Esportazione `JwtAuthGuard` — vedi implementazione sotto. */
 export class JwtAuthGuard implements CanActivate {
   constructor(private readonly reflector: Reflector) {}
 
@@ -42,6 +46,7 @@ export class JwtAuthGuard implements CanActivate {
 }
 
 @Injectable()
+/** Esportazione `WebhookSecretGuard` — vedi implementazione sotto. */
 export class WebhookSecretGuard implements CanActivate {
   constructor(private readonly reflector: Reflector) {}
 

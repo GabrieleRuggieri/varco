@@ -1,35 +1,44 @@
+/**
+ * Servizio documenti — lista, generazione PDF e URL download firmati.
+ * RLS garantisce che un tenant non acceda a documenti di altri.
+ */
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { and, desc, eq } from 'drizzle-orm';
+import { desc, eq } from 'drizzle-orm';
 import { getDownloadUrl } from '@varco/documents';
-import { documents, products, skus, type Database } from '@varco/database';
+import { documents, products, skus, withOrgContext, type Database } from '@varco/database';
 import type { DocumentTemplateId } from '@varco/shared';
 import { DATABASE } from '../database/database.module';
 import { QueueService } from '../queue/queue.service';
 
 @Injectable()
+/** Esportazione `DocumentsService` — vedi implementazione sotto. */
 export class DocumentsService {
   constructor(
     @Inject(DATABASE) private readonly db: Database,
     private readonly queueService: QueueService,
   ) {}
 
+  /** Documenti generati per uno SKU (verifica ownership implicita via RLS). */
   async listBySku(organizationId: string, skuId: string) {
     await this.assertSkuInOrg(organizationId, skuId);
 
-    return this.db
-      .select({
-        id: documents.id,
-        templateId: documents.templateId,
-        version: documents.version,
-        mimeType: documents.mimeType,
-        checksum: documents.checksum,
-        createdAt: documents.createdAt,
-      })
-      .from(documents)
-      .where(eq(documents.skuId, skuId))
-      .orderBy(desc(documents.createdAt));
+    return withOrgContext(this.db, organizationId, (tx) =>
+      tx
+        .select({
+          id: documents.id,
+          templateId: documents.templateId,
+          version: documents.version,
+          mimeType: documents.mimeType,
+          checksum: documents.checksum,
+          createdAt: documents.createdAt,
+        })
+        .from(documents)
+        .where(eq(documents.skuId, skuId))
+        .orderBy(desc(documents.createdAt)),
+    );
   }
 
+  /** Accoda generazione PDF da template GPSR. */
   async triggerGenerate(organizationId: string, skuId: string, templateId: DocumentTemplateId) {
     await this.assertSkuInOrg(organizationId, skuId);
 
@@ -49,20 +58,23 @@ export class DocumentsService {
     };
   }
 
+  /** URL pre-firmato S3/MinIO per download documento. */
   async getDownloadUrl(organizationId: string, documentId: string) {
-    const [row] = await this.db
-      .select({
-        id: documents.id,
-        storageKey: documents.storageKey,
-        templateId: documents.templateId,
-        version: documents.version,
-        mimeType: documents.mimeType,
-      })
-      .from(documents)
-      .innerJoin(skus, eq(documents.skuId, skus.id))
-      .innerJoin(products, eq(skus.productId, products.id))
-      .where(and(eq(documents.id, documentId), eq(products.organizationId, organizationId)))
-      .limit(1);
+    const [row] = await withOrgContext(this.db, organizationId, (tx) =>
+      tx
+        .select({
+          id: documents.id,
+          storageKey: documents.storageKey,
+          templateId: documents.templateId,
+          version: documents.version,
+          mimeType: documents.mimeType,
+        })
+        .from(documents)
+        .innerJoin(skus, eq(documents.skuId, skus.id))
+        .innerJoin(products, eq(skus.productId, products.id))
+        .where(eq(documents.id, documentId))
+        .limit(1),
+    );
 
     if (!row) {
       throw new NotFoundException(`Documento ${documentId} non trovato`);
@@ -80,13 +92,16 @@ export class DocumentsService {
     };
   }
 
+  /** Verifica che lo SKU appartenga al tenant prima di operazioni documento. */
   private async assertSkuInOrg(organizationId: string, skuId: string) {
-    const [row] = await this.db
-      .select({ id: skus.id })
-      .from(skus)
-      .innerJoin(products, eq(skus.productId, products.id))
-      .where(and(eq(skus.id, skuId), eq(products.organizationId, organizationId)))
-      .limit(1);
+    const [row] = await withOrgContext(this.db, organizationId, (tx) =>
+      tx
+        .select({ id: skus.id })
+        .from(skus)
+        .innerJoin(products, eq(skus.productId, products.id))
+        .where(eq(skus.id, skuId))
+        .limit(1),
+    );
 
     if (!row) {
       throw new NotFoundException(`SKU ${skuId} non trovato`);

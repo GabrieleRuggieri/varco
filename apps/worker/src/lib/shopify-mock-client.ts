@@ -1,7 +1,11 @@
+/**
+ * Modulo worker `shopify-mock-client` — job asincroni BullMQ.
+ */
 import { getMockServerUrl } from '../config.js';
 
 const SHOPIFY_API_VERSION = '2024-10';
 
+/** Esportazione `ShopifyVariant` — vedi implementazione sotto. */
 export type ShopifyVariant = {
   id: number;
   product_id: number;
@@ -10,6 +14,7 @@ export type ShopifyVariant = {
   price: string;
 };
 
+/** Esportazione `ShopifyProduct` — vedi implementazione sotto. */
 export type ShopifyProduct = {
   id: number;
   title: string;

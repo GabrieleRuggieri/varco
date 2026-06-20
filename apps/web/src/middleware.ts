@@ -1,3 +1,6 @@
+/**
+ * Sorgente TypeScript `middleware` — progetto Varco.
+ */
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
@@ -8,6 +11,7 @@ function hasSessionCookie(request: NextRequest): boolean {
   );
 }
 
+/** Esportazione `middleware` — vedi implementazione sotto. */
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const isPublic =
@@ -29,6 +33,7 @@ export function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
+/** Esportazione `config` — vedi implementazione sotto. */
 export const config = {
   matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 };

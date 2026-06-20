@@ -5,6 +5,7 @@
 
 /** Paesi UE coperti dal MVP (ISO 3166-1 alpha-2). */
 export const MVP_COUNTRIES = ['DE', 'FR', 'IT', 'ES', 'NL'] as const;
+/** Esportazione `CountryCode` — vedi implementazione sotto. */
 export type CountryCode = (typeof MVP_COUNTRIES)[number];
 
 /** Categorie prodotto coperte dal MVP. */
@@ -15,6 +16,7 @@ export const MVP_PRODUCT_CATEGORIES = [
   'cosmetics',
   'home',
 ] as const;
+/** Esportazione `ProductCategory` — vedi implementazione sotto. */
 export type ProductCategory = (typeof MVP_PRODUCT_CATEGORIES)[number];
 
 /** Tipi di obbligo normativo (subset v1). */
@@ -26,10 +28,12 @@ export const OBLIGATION_TYPES = [
   'epr_packaging',
   'product_safety_assessment',
 ] as const;
+/** Esportazione `ObligationType` — vedi implementazione sotto. */
 export type ObligationType = (typeof OBLIGATION_TYPES)[number];
 
 /** Gravità di un obbligo sulla checklist. */
 export const SEVERITY_LEVELS = ['critical', 'high', 'medium', 'low'] as const;
+/** Esportazione `SeverityLevel` — vedi implementazione sotto. */
 export type SeverityLevel = (typeof SEVERITY_LEVELS)[number];
 
 /** Stati operativi di una voce checklist. */
@@ -41,14 +45,17 @@ export const CHECKLIST_STATUSES = [
   'waived',
   'needs_review',
 ] as const;
+/** Esportazione `ChecklistStatus` — vedi implementazione sotto. */
 export type ChecklistStatus = (typeof CHECKLIST_STATUSES)[number];
 
 /** Stato di revisione di una regola nella matrice obblighi. */
 export const MATRIX_REVIEW_STATUSES = ['bozza', 'revisionata', 'approvata'] as const;
+/** Esportazione `MatrixReviewStatus` — vedi implementazione sotto. */
 export type MatrixReviewStatus = (typeof MATRIX_REVIEW_STATUSES)[number];
 
 /** Provider LLM supportati. */
 export const LLM_PROVIDERS = ['mock', 'ollama', 'openai'] as const;
+/** Esportazione `LlmProvider` — vedi implementazione sotto. */
 export type LlmProvider = (typeof LLM_PROVIDERS)[number];
 
 /** Versione corrente del perimetro MVP — usata nei log e nei fixture. */
@@ -61,20 +68,25 @@ export const WORKER_JOB_NAMES = {
   DOCUMENT_GENERATE: 'document.generate',
 } as const;
 
+/** Esportazione `WorkerJobName` — vedi implementazione sotto. */
 export type WorkerJobName = (typeof WORKER_JOB_NAMES)[keyof typeof WORKER_JOB_NAMES];
 
+/** Esportazione `WORKER_QUEUE_NAME` — vedi implementazione sotto. */
 export const WORKER_QUEUE_NAME = 'varco' as const;
 
+/** Esportazione `CatalogSyncJobPayload` — vedi implementazione sotto. */
 export type CatalogSyncJobPayload = {
   organizationId: string;
   connectionId?: string;
 };
 
+/** Esportazione `SkuClassifyJobPayload` — vedi implementazione sotto. */
 export type SkuClassifyJobPayload = {
   organizationId: string;
   skuId: string;
 };
 
+/** Esportazione `DocumentGenerateJobPayload` — vedi implementazione sotto. */
 export type DocumentGenerateJobPayload = {
   organizationId: string;
   skuId: string;
@@ -83,6 +95,10 @@ export type DocumentGenerateJobPayload = {
 
 /** Template documento GPSR v1 — estendibile per categoria. */
 export const DOCUMENT_TEMPLATE_IDS = ['risk_assessment'] as const;
+/** Esportazione `DocumentTemplateId` — vedi implementazione sotto. */
 export type DocumentTemplateId = (typeof DOCUMENT_TEMPLATE_IDS)[number];
 
+/** Esportazione `DOCUMENT_TEMPLATE_VERSION` — vedi implementazione sotto. */
 export const DOCUMENT_TEMPLATE_VERSION = '1.0.0' as const;
+
+export { logger, createRequestLogger, type VarcoLogger } from './logger.js';

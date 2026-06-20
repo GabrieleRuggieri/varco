@@ -1,3 +1,6 @@
+/**
+ * Componente React `useReveal` — interfaccia utente Varco.
+ */
 'use client';
 
 import { useEffect, useRef, useState } from 'react';

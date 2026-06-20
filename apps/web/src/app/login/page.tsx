@@ -1,3 +1,6 @@
+/**
+ * Pagina o route Next.js `page` — UI dashboard Varco.
+ */
 import Link from 'next/link';
 import { Suspense } from 'react';
 import { LoginForm } from '@/components/LoginForm';

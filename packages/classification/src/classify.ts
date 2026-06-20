@@ -1,7 +1,11 @@
+/**
+ * Package condiviso `classify` — logica riusabile nel monorepo Varco.
+ */
 import type { LlmProvider } from '@varco/shared';
 import { classifyWithMock } from './mock-provider.js';
 import type { SkuClassificationContext, StructuredClassification } from './schema.js';
 
+/** Esportazione `ClassifyOptions` — vedi implementazione sotto. */
 export type ClassifyOptions = {
   provider?: LlmProvider;
 };

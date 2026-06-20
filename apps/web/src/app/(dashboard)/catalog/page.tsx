@@ -1,3 +1,6 @@
+/**
+ * Pagina o route Next.js `page` — UI dashboard Varco.
+ */
 import { CatalogSyncButton } from '@/components/CatalogSyncButton';
 import styles from '@/components/ui/ui.module.css';
 import { api } from '@/lib/api';

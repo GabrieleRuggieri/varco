@@ -1,6 +1,10 @@
+/**
+ * Modulo worker `parse-shopify-tags` — job asincroni BullMQ.
+ */
 import type { CountryCode, ProductCategory } from '@varco/shared';
 import { MVP_COUNTRIES, MVP_PRODUCT_CATEGORIES } from '@varco/shared';
 
+/** Esportazione `ParsedShopifyTags` — vedi implementazione sotto. */
 export type ParsedShopifyTags = {
   categoryHint: ProductCategory | null;
   materials: string[];

@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `s3` — logica riusabile nel monorepo Varco.
+ */
 import { createHash } from 'node:crypto';
 import {
   GetObjectCommand,
@@ -38,10 +41,12 @@ async function ensureBucket(): Promise<void> {
   bucketReady = true;
 }
 
+/** Esportazione `sha256Hex` — vedi implementazione sotto. */
 export function sha256Hex(buffer: Buffer): string {
   return createHash('sha256').update(buffer).digest('hex');
 }
 
+/** Esportazione `uploadPdf` — vedi implementazione sotto. */
 export async function uploadPdf(params: {
   key: string;
   body: Buffer;
@@ -67,6 +72,7 @@ export async function uploadPdf(params: {
   return { checksum, bytes: params.body.length };
 }
 
+/** Esportazione `getDownloadUrl` — vedi implementazione sotto. */
 export async function getDownloadUrl(key: string, expiresInSeconds = 3600): Promise<string> {
   const { bucket } = getS3Config();
   const command = new GetObjectCommand({ Bucket: bucket, Key: key });

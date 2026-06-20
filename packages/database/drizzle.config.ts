@@ -1,3 +1,6 @@
+/**
+ * Modulo database `drizzle.config` — schema Drizzle e accesso PostgreSQL.
+ */
 import { defineConfig } from 'drizzle-kit';
 
 const databaseUrl = process.env.DATABASE_URL;

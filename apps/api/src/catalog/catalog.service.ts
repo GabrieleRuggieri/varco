@@ -1,35 +1,38 @@
+/**
+ * Servizio catalogo — connessioni marketplace e trigger sync.
+ * Tutte le query passano da withOrgContext per enforcement RLS PostgreSQL.
+ */
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { and, eq } from 'drizzle-orm';
-import { catalogConnections, type Database } from '@varco/database';
+import { eq } from 'drizzle-orm';
+import { catalogConnections, withOrgContext, type Database } from '@varco/database';
 import { DATABASE } from '../database/database.module';
 import { QueueService } from '../queue/queue.service';
 
 @Injectable()
+/** Esportazione `CatalogService` — vedi implementazione sotto. */
 export class CatalogService {
   constructor(
     @Inject(DATABASE) private readonly db: Database,
     private readonly queueService: QueueService,
   ) {}
 
+  /** Elenco connessioni catalogo visibili per il tenant corrente. */
   async listConnections(organizationId: string) {
-    return this.db
-      .select()
-      .from(catalogConnections)
-      .where(eq(catalogConnections.organizationId, organizationId));
+    return withOrgContext(this.db, organizationId, (tx) =>
+      tx.select().from(catalogConnections),
+    );
   }
 
+  /** Accoda job catalog.sync dopo verifica ownership connessione. */
   async triggerSync(organizationId: string, connectionId?: string) {
     if (connectionId) {
-      const [connection] = await this.db
-        .select({ id: catalogConnections.id })
-        .from(catalogConnections)
-        .where(
-          and(
-            eq(catalogConnections.id, connectionId),
-            eq(catalogConnections.organizationId, organizationId),
-          ),
-        )
-        .limit(1);
+      const [connection] = await withOrgContext(this.db, organizationId, (tx) =>
+        tx
+          .select({ id: catalogConnections.id })
+          .from(catalogConnections)
+          .where(eq(catalogConnections.id, connectionId))
+          .limit(1),
+      );
 
       if (!connection) {
         throw new NotFoundException(`Connessione catalogo ${connectionId} non trovata`);

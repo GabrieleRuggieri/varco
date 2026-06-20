@@ -1,3 +1,6 @@
+/**
+ * Pagina o route Next.js `page` — UI dashboard Varco.
+ */
 import Link from 'next/link';
 import { api } from '@/lib/api';
 import { getSession } from '@/lib/session';

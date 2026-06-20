@@ -1,3 +1,6 @@
+/**
+ * Modulo database `catalog` — schema Drizzle e accesso PostgreSQL.
+ */
 import { index, jsonb, pgTable, text, timestamp, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
 import { catalogProviderEnum, countryCodeEnum, productCategoryEnum } from './enums.js';
 import { organizations } from './organizations.js';

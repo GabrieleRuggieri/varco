@@ -1,3 +1,6 @@
+/**
+ * Componente React `LoginForm` — interfaccia utente Varco.
+ */
 'use client';
 
 import { signIn } from 'next-auth/react';
@@ -6,6 +9,7 @@ import { useState } from 'react';
 import styles from './ui/ui.module.css';
 import loginStyles from './LoginForm.module.css';
 
+/** Esportazione `LoginForm` — vedi implementazione sotto. */
 export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();

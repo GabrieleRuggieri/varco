@@ -1,6 +1,9 @@
+/**
+ * Entrypoint worker BullMQ — consuma coda `varco` con logging strutturato.
+ */
 import { Worker } from 'bullmq';
 import { getBullMqConnection } from '@varco/queue';
-import { MVP_VERSION, WORKER_QUEUE_NAME } from '@varco/shared';
+import { logger, MVP_VERSION, WORKER_QUEUE_NAME } from '@varco/shared';
 import { processVarcoJob } from './processor.js';
 
 const worker = new Worker(WORKER_QUEUE_NAME, processVarcoJob, {
@@ -9,21 +12,32 @@ const worker = new Worker(WORKER_QUEUE_NAME, processVarcoJob, {
 });
 
 worker.on('completed', (job, result) => {
-  console.log(`[worker] ${job.name} #${job.id} completato`, result);
+  logger.info({
+    event: 'worker.job.completed',
+    jobName: job.name,
+    jobId: job.id,
+    organizationId: (job.data as { organizationId?: string }).organizationId,
+    result,
+  });
 });
 
 worker.on('failed', (job, error) => {
-  console.error(`[worker] ${job?.name ?? 'unknown'} fallito:`, error.message);
+  logger.error({
+    event: 'worker.job.failed',
+    jobName: job?.name,
+    jobId: job?.id,
+    error: error.message,
+  });
 });
 
 worker.on('error', (error) => {
-  console.error('[worker] errore coda:', error.message);
+  logger.error({ event: 'worker.queue.error', error: error.message });
 });
 
-console.log(`[worker] avviato — MVP ${MVP_VERSION}, coda "${WORKER_QUEUE_NAME}"`);
+logger.info({ event: 'worker.started', mvpVersion: MVP_VERSION, queue: WORKER_QUEUE_NAME });
 
 async function shutdown() {
-  console.log('[worker] arresto in corso...');
+  logger.info({ event: 'worker.shutdown' });
   await worker.close();
   process.exit(0);
 }

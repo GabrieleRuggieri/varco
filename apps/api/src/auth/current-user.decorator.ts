@@ -1,8 +1,13 @@
+/**
+ * Modulo API NestJS `current-user.decorator` — backend compliance Varco.
+ */
 import { createParamDecorator, type ExecutionContext } from '@nestjs/common';
 import type { ApiAccessTokenPayload } from '@varco/auth';
 
+/** Esportazione `RequestUser` — vedi implementazione sotto. */
 export type RequestUser = ApiAccessTokenPayload;
 
+/** Esportazione `CurrentUser` — vedi implementazione sotto. */
 export const CurrentUser = createParamDecorator(
   (_data: unknown, ctx: ExecutionContext): RequestUser => {
     const request = ctx.switchToHttp().getRequest<{ user: RequestUser }>();

@@ -21,6 +21,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node --import tsx --test $(find src -name '*.test.ts')"
   },
+  "dependencies": {
+    "pino": "^9.7.0"
+  },
   "devDependencies": {
     "@types/node": "^22.15.29",
     "@varco/tsconfig": "workspace:*",

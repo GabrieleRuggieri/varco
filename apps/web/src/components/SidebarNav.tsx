@@ -1,3 +1,6 @@
+/**
+ * Componente React `SidebarNav` — interfaccia utente Varco.
+ */
 'use client';
 
 import Link from 'next/link';
@@ -12,6 +15,7 @@ const NAV = [
   { href: '/checklist', label: 'Checklist', icon: IconCheckSquare, exact: false },
 ] as const;
 
+/** Esportazione `SidebarNav` — vedi implementazione sotto. */
 export function SidebarNav() {
   const pathname = usePathname();
 

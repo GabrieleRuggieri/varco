@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `jwt` — logica riusabile nel monorepo Varco.
+ */
 import { SignJWT, jwtVerify } from 'jose';
 import {
   API_JWT_AUDIENCE,
@@ -6,6 +9,7 @@ import {
   type ApiAccessTokenPayload,
 } from './types.js';
 
+/** Esportazione `getAuthSecret` — vedi implementazione sotto. */
 export function getAuthSecret(): string {
   const secret = process.env.AUTH_SECRET;
   if (!secret || secret.length < 32) {
@@ -21,6 +25,7 @@ function secretKey(): Uint8Array {
   return new TextEncoder().encode(getAuthSecret());
 }
 
+/** Esportazione `signApiAccessToken` — vedi implementazione sotto. */
 export async function signApiAccessToken(payload: ApiAccessTokenPayload): Promise<string> {
   return new SignJWT({
     email: payload.email,
@@ -37,6 +42,7 @@ export async function signApiAccessToken(payload: ApiAccessTokenPayload): Promis
     .sign(secretKey());
 }
 
+/** Esportazione `verifyApiAccessToken` — vedi implementazione sotto. */
 export async function verifyApiAccessToken(token: string): Promise<ApiAccessTokenPayload> {
   const { payload } = await jwtVerify(token, secretKey(), {
     issuer: process.env.API_JWT_ISSUER ?? API_JWT_ISSUER,

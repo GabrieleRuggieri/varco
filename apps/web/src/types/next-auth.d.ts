@@ -1,3 +1,6 @@
+/**
+ * Sorgente TypeScript `next-auth.d` — progetto Varco.
+ */
 import type { DefaultSession } from 'next-auth';
 
 declare module 'next-auth' {

@@ -1,3 +1,6 @@
+/**
+ * Modulo database `compliance` — schema Drizzle e accesso PostgreSQL.
+ */
 import {
   index,
   jsonb,

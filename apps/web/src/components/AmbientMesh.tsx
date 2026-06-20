@@ -1,3 +1,6 @@
+/**
+ * Componente React `AmbientMesh` — interfaccia utente Varco.
+ */
 import { DecorativeGraphics } from './DecorativeGraphics';
 import styles from './AmbientMesh.module.css';
 

@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `index` — logica riusabile nel monorepo Varco.
+ */
 export { signApiAccessToken, verifyApiAccessToken, getAuthSecret } from './jwt.js';
 export {
   API_JWT_AUDIENCE,

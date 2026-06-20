@@ -1,3 +1,6 @@
+/**
+ * Modulo database `client` — schema Drizzle e accesso PostgreSQL.
+ */
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 import * as schema from './schema/index.js';
@@ -14,4 +17,5 @@ export function createDb(connectionString?: string) {
   return drizzle(client, { schema });
 }
 
+/** Esportazione `Database` — vedi implementazione sotto. */
 export type Database = ReturnType<typeof createDb>;

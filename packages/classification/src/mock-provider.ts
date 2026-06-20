@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `mock-provider` — logica riusabile nel monorepo Varco.
+ */
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import type { ProductCategory } from '@varco/shared';
@@ -14,6 +17,7 @@ type FixtureMap = Record<string, StructuredClassification>;
 
 let cachedFixtures: FixtureMap | null = null;
 
+/** Esportazione `resolveFixturesDir` — vedi implementazione sotto. */
 export function resolveFixturesDir(): string {
   if (process.env.FIXTURES_DIR) {
     return process.env.FIXTURES_DIR;

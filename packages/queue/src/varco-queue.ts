@@ -1,5 +1,9 @@
+/**
+ * Package condiviso `varco-queue` — logica riusabile nel monorepo Varco.
+ */
 import { Queue, type Job, type JobsOptions } from 'bullmq';
 
+/** Esportazione `EnqueuedJob` — vedi implementazione sotto. */
 export type EnqueuedJob = Pick<Job, 'id' | 'name'>;
 import {
   WORKER_QUEUE_NAME,
@@ -19,6 +23,7 @@ const DEFAULT_JOB_OPTIONS: JobsOptions = {
 
 let queue: Queue | null = null;
 
+/** Esportazione `getVarcoQueue` — vedi implementazione sotto. */
 export function getVarcoQueue(): Queue {
   if (!queue) {
     queue = new Queue(WORKER_QUEUE_NAME, { connection: getBullMqConnection() });
@@ -43,6 +48,7 @@ async function addJob(name: string, data: unknown, jobId: string): Promise<Enque
   return { id: job.id, name: job.name };
 }
 
+/** Esportazione `enqueueCatalogSync` — vedi implementazione sotto. */
 export async function enqueueCatalogSync(
   payload: CatalogSyncJobPayload,
   options?: { force?: boolean },
@@ -55,10 +61,12 @@ export async function enqueueCatalogSync(
   );
 }
 
+/** Esportazione `enqueueSkuClassify` — vedi implementazione sotto. */
 export async function enqueueSkuClassify(payload: SkuClassifyJobPayload): Promise<EnqueuedJob> {
   return addJob(WORKER_JOB_NAMES.SKU_CLASSIFY, payload, `sku-classify-${payload.skuId}`);
 }
 
+/** Esportazione `enqueueDocumentGenerate` — vedi implementazione sotto. */
 export async function enqueueDocumentGenerate(
   payload: DocumentGenerateJobPayload,
 ): Promise<EnqueuedJob> {

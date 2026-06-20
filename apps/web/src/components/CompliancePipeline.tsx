@@ -1,3 +1,6 @@
+/**
+ * Componente React `CompliancePipeline` — interfaccia utente Varco.
+ */
 import styles from './CompliancePipeline.module.css';
 import { IconBox, IconCheckSquare, IconDocument, IconSparkle } from './icons';
 

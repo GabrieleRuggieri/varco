@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `index` — logica riusabile nel monorepo Varco.
+ */
 export {
   structuredClassificationSchema,
   type StructuredClassification,

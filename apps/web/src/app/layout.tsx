@@ -1,3 +1,6 @@
+/**
+ * Pagina o route Next.js `layout` — UI dashboard Varco.
+ */
 import type { Metadata } from 'next';
 import { IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
 import type { ReactNode } from 'react';
@@ -18,6 +21,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: 'swap',
 });
 
+/** Esportazione `metadata` — vedi implementazione sotto. */
 export const metadata: Metadata = {
   title: 'Varco — Compliance per vendere in Europa',
   description:

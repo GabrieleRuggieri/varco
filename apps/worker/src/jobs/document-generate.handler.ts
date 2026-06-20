@@ -1,3 +1,7 @@
+/**
+ * Handler job document.generate — PDF GPSR + aggiornamento checklist.
+ * Transazione unica con RLS via withOrgContext nel processor.
+ */
 import { and, desc, eq, inArray, sql } from 'drizzle-orm';
 import { generateDocument } from '@varco/documents';
 import type { StructuredClassification } from '@varco/classification';
@@ -9,7 +13,7 @@ import {
   organizations,
   products,
   skus,
-  type Database,
+  type DbTransaction,
 } from '@varco/database';
 import {
   DOCUMENT_TEMPLATE_VERSION,
@@ -17,6 +21,7 @@ import {
   type DocumentTemplateId,
 } from '@varco/shared';
 
+/** Esportazione `DocumentGenerateResult` — vedi implementazione sotto. */
 export type DocumentGenerateResult = {
   documentId: string;
   skuId: string;
@@ -26,11 +31,12 @@ export type DocumentGenerateResult = {
   checklistItemsUpdated: number;
 };
 
+/** Esportazione `handleDocumentGenerate` — vedi implementazione sotto. */
 export async function handleDocumentGenerate(
-  db: Database,
+  tx: DbTransaction,
   payload: DocumentGenerateJobPayload,
 ): Promise<DocumentGenerateResult> {
-  const [row] = await db
+  const [row] = await tx
     .select({
       skuId: skus.id,
       skuCode: skus.skuCode,
@@ -45,16 +51,14 @@ export async function handleDocumentGenerate(
     .from(skus)
     .innerJoin(products, eq(skus.productId, products.id))
     .innerJoin(organizations, eq(products.organizationId, organizations.id))
-    .where(and(eq(skus.id, payload.skuId), eq(products.organizationId, payload.organizationId)))
+    .where(eq(skus.id, payload.skuId))
     .limit(1);
 
   if (!row) {
-    throw new Error(
-      `SKU ${payload.skuId} non trovato per organizzazione ${payload.organizationId}`,
-    );
+    throw new Error(`SKU ${payload.skuId} non trovato per organizzazione ${payload.organizationId}`);
   }
 
-  const [latestRun] = await db
+  const [latestRun] = await tx
     .select()
     .from(classificationRuns)
     .where(eq(classificationRuns.skuId, payload.skuId))
@@ -83,52 +87,47 @@ export async function handleDocumentGenerate(
     generatedAt: new Date().toISOString(),
   });
 
-  return db.transaction(async (tx) => {
-    const [document] = await tx
-      .insert(documents)
-      .values({
-        skuId: payload.skuId,
-        templateId,
-        version: generated.version,
-        storageKey: generated.storageKey,
-        mimeType: generated.mimeType,
-        checksum: generated.checksum,
-      })
-      .returning();
-
-    if (!document) {
-      throw new Error('Inserimento documento fallito');
-    }
-
-    const rules = await tx
-      .select({ id: obligationRules.id })
-      .from(obligationRules)
-      .where(eq(obligationRules.checklistTemplateId, templateId));
-
-    const ruleIds = rules.map((r) => r.id);
-    let checklistItemsUpdated = 0;
-
-    if (ruleIds.length > 0) {
-      const updated = await tx
-        .update(checklistItems)
-        .set({ status: 'in_progress', updatedAt: sql`now()` })
-        .where(
-          and(
-            eq(checklistItems.skuId, payload.skuId),
-            inArray(checklistItems.obligationRuleId, ruleIds),
-          ),
-        )
-        .returning({ id: checklistItems.id });
-      checklistItemsUpdated = updated.length;
-    }
-
-    return {
-      documentId: document.id,
+  const [document] = await tx
+    .insert(documents)
+    .values({
       skuId: payload.skuId,
       templateId,
-      storageKey: generated.storageKey,
       version: generated.version,
-      checklistItemsUpdated,
-    };
-  });
+      storageKey: generated.storageKey,
+      mimeType: generated.mimeType,
+      checksum: generated.checksum,
+    })
+    .returning();
+
+  if (!document) {
+    throw new Error('Inserimento documento fallito');
+  }
+
+  const rules = await tx
+    .select({ id: obligationRules.id })
+    .from(obligationRules)
+    .where(eq(obligationRules.checklistTemplateId, templateId));
+
+  const ruleIds = rules.map((r) => r.id);
+  let checklistItemsUpdated = 0;
+
+  if (ruleIds.length > 0) {
+    const updated = await tx
+      .update(checklistItems)
+      .set({ status: 'in_progress', updatedAt: sql`now()` })
+      .where(
+        and(eq(checklistItems.skuId, payload.skuId), inArray(checklistItems.obligationRuleId, ruleIds)),
+      )
+      .returning({ id: checklistItems.id });
+    checklistItemsUpdated = updated.length;
+  }
+
+  return {
+    documentId: document.id,
+    skuId: payload.skuId,
+    templateId,
+    storageKey: generated.storageKey,
+    version: generated.version,
+    checklistItemsUpdated,
+  };
 }

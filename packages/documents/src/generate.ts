@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `generate` — logica riusabile nel monorepo Varco.
+ */
 import { DOCUMENT_TEMPLATE_VERSION, type DocumentTemplateId } from '@varco/shared';
 import { buildDocumentStorageKey } from './storage-key.js';
 import { uploadPdf } from './storage/s3.js';
@@ -6,12 +9,14 @@ import {
   type RiskAssessmentContext,
 } from './templates/risk-assessment-toys.js';
 
+/** Esportazione `GenerateDocumentInput` — vedi implementazione sotto. */
 export type GenerateDocumentInput = RiskAssessmentContext & {
   organizationId: string;
   skuId: string;
   version?: string;
 };
 
+/** Esportazione `GenerateDocumentResult` — vedi implementazione sotto. */
 export type GenerateDocumentResult = {
   storageKey: string;
   version: string;
@@ -20,6 +25,7 @@ export type GenerateDocumentResult = {
   mimeType: 'application/pdf';
 };
 
+/** Esportazione `generateDocument` — vedi implementazione sotto. */
 export async function generateDocument(
   input: GenerateDocumentInput,
 ): Promise<GenerateDocumentResult> {

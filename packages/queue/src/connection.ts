@@ -1,5 +1,9 @@
+/**
+ * Package condiviso `connection` — logica riusabile nel monorepo Varco.
+ */
 import type { ConnectionOptions } from 'bullmq';
 
+/** Esportazione `getRedisUrl` — vedi implementazione sotto. */
 export function getRedisUrl(): string {
   return process.env.REDIS_URL ?? 'redis://localhost:6379';
 }

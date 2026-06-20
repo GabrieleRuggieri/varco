@@ -1,17 +1,22 @@
+/**
+ * Modulo worker `catalog-sync.handler` — job asincroni BullMQ.
+ */
 import { and, eq } from 'drizzle-orm';
-import { catalogConnections, products, skus, type Database } from '@varco/database';
+import { catalogConnections, products, skus, type DbTransaction } from '@varco/database';
 import type { CatalogSyncJobPayload } from '@varco/shared';
 import { parseShopifyTags } from '../lib/parse-shopify-tags.js';
 import { fetchAllMockShopifyProducts } from '../lib/shopify-mock-client.js';
 
+/** Esportazione `CatalogSyncResult` — vedi implementazione sotto. */
 export type CatalogSyncResult = {
   productsUpserted: number;
   skusUpserted: number;
   connectionId: string;
 };
 
+/** Esportazione `handleCatalogSync` — vedi implementazione sotto. */
 export async function handleCatalogSync(
-  db: Database,
+  db: DbTransaction,
   payload: CatalogSyncJobPayload,
 ): Promise<CatalogSyncResult> {
   const connection = await resolveConnection(db, payload);
@@ -90,7 +95,7 @@ export async function handleCatalogSync(
   };
 }
 
-async function resolveConnection(db: Database, payload: CatalogSyncJobPayload) {
+async function resolveConnection(db: DbTransaction, payload: CatalogSyncJobPayload) {
   if (payload.connectionId) {
     const [row] = await db
       .select()

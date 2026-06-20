@@ -1,9 +1,13 @@
+/**
+ * Componente React `CatalogSyncButton` — interfaccia utente Varco.
+ */
 'use client';
 
 import { IconSync } from '@/components/icons';
 import { useApiPost } from '@/hooks/useApiPost';
 import styles from './ui/ui.module.css';
 
+/** Esportazione `CatalogSyncButton` — vedi implementazione sotto. */
 export function CatalogSyncButton() {
   const { message, isError, busy, post } = useApiPost();
 

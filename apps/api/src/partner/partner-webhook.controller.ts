@@ -1,3 +1,6 @@
+/**
+ * Modulo API NestJS `partner-webhook.controller` — backend compliance Varco.
+ */
 import { Body, Controller, Headers, Post } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Public, WebhookAuth } from '../auth/decorators.js';
@@ -6,6 +9,7 @@ import { PartnerWebhookDto } from './partner-webhook.dto.js';
 
 @ApiTags('partner')
 @Controller('internal/partner-webhook')
+/** Esportazione `PartnerWebhookController` — vedi implementazione sotto. */
 export class PartnerWebhookController {
   constructor(private readonly partnerWebhookService: PartnerWebhookService) {}
 

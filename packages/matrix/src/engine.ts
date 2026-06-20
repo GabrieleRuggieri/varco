@@ -1,10 +1,15 @@
+/**
+ * Package condiviso `engine` — logica riusabile nel monorepo Varco.
+ */
 import type { ObligationRuleInput } from './schema.js';
 
+/** Esportazione `ClassificationInput` — vedi implementazione sotto. */
 export type ClassificationInput = {
   product_category: ObligationRuleInput['product_categories'][number];
   target_countries: ObligationRuleInput['countries'];
 };
 
+/** Esportazione `MatchRulesOptions` — vedi implementazione sotto. */
 export type MatchRulesOptions = {
   /** In produzione: solo regole `approvata`. In development accetta anche `bozza`. */
   environment?: 'development' | 'staging' | 'production';

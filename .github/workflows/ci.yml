@@ -50,3 +50,49 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  integration:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: varco
+          POSTGRES_PASSWORD: varco
+          POSTGRES_DB: varco
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U varco -d varco"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Prepare environment
+        run: |
+          cp .env.example .env
+          echo "DATABASE_URL=postgresql://varco:varco@localhost:5432/varco" >> .env
+
+      - name: Run migrations
+        run: pnpm db:migrate
+
+      - name: Integration tests (RLS context)
+        run: INTEGRATION_TEST=1 pnpm --filter @varco/database test
+
+      - name: API validation tests
+        run: pnpm --filter @varco/api test

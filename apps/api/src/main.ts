@@ -1,12 +1,16 @@
+/**
+ * Bootstrap NestJS — helmet, CORS, validazione globale, Swagger (solo non-prod).
+ */
 import 'reflect-metadata';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import helmet from 'helmet';
+import { logger } from '@varco/shared';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { logger: false });
 
   app.use(
     helmet({
@@ -53,11 +57,11 @@ async function bootstrap() {
 
     const document = SwaggerModule.createDocument(app, swaggerConfig);
     SwaggerModule.setup('api/docs', app, document);
-    console.log(`[api] OpenAPI: http://localhost:${port}/api/docs`);
+    logger.info({ event: 'api.swagger.ready', url: `http://localhost:${port}/api/docs` });
   }
 
   await app.listen(port);
-  console.log(`[api] NestJS in ascolto su http://localhost:${port}`);
+  logger.info({ event: 'api.started', port, url: `http://localhost:${port}` });
 }
 
 void bootstrap();

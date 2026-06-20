@@ -1,3 +1,6 @@
+/**
+ * Sorgente TypeScript `api` — progetto Varco.
+ */
 import { getApiAccessToken } from './api-auth';
 import { getApiBaseUrl } from './config';
 import { ApiError } from './api-error';
@@ -22,6 +25,7 @@ async function authFetch(path: string, init?: RequestInit): Promise<Response> {
   return fetch(`${getApiBaseUrl()}${path}`, { ...init, headers, cache: 'no-store' });
 }
 
+/** Esportazione `SkuRow` — vedi implementazione sotto. */
 export type SkuRow = {
   id: string;
   skuCode: string;
@@ -33,6 +37,7 @@ export type SkuRow = {
   materials: string[];
 };
 
+/** Esportazione `ChecklistRow` — vedi implementazione sotto. */
 export type ChecklistRow = {
   id: string;
   skuId: string;
@@ -47,6 +52,7 @@ export type ChecklistRow = {
   checklistTemplateId: string | null;
 };
 
+/** Esportazione `DocumentRow` — vedi implementazione sotto. */
 export type DocumentRow = {
   id: string;
   templateId: string;
@@ -55,6 +61,7 @@ export type DocumentRow = {
   createdAt: string;
 };
 
+/** Esportazione `api` — vedi implementazione sotto. */
 export const api = {
   async listConnections() {
     return parseJson<{

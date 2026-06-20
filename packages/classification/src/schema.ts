@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `schema` — logica riusabile nel monorepo Varco.
+ */
 import { z } from 'zod';
 import { MVP_PRODUCT_CATEGORIES } from '@varco/shared';
 
@@ -16,8 +19,10 @@ export const structuredClassificationSchema = z
   })
   .strict();
 
+/** Esportazione `StructuredClassification` — vedi implementazione sotto. */
 export type StructuredClassification = z.infer<typeof structuredClassificationSchema>;
 
+/** Esportazione `SkuClassificationContext` — vedi implementazione sotto. */
 export type SkuClassificationContext = {
   skuCode: string;
   productTitle: string;

@@ -1,6 +1,10 @@
+/**
+ * Package condiviso `risk-assessment-toys` — logica riusabile nel monorepo Varco.
+ */
 import PDFDocument from 'pdfkit';
 import type { DocumentTemplateId } from '@varco/shared';
 
+/** Esportazione `RiskAssessmentContext` — vedi implementazione sotto. */
 export type RiskAssessmentContext = {
   organizationName: string;
   skuCode: string;

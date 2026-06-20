@@ -1,3 +1,6 @@
+/**
+ * Package condiviso `db-mapper` — logica riusabile nel monorepo Varco.
+ */
 import type { obligationRules } from '@varco/database';
 import type { ObligationRuleInput } from './schema.js';
 
