@@ -21,7 +21,7 @@
     "@varco/matrix": "workspace:*",
     "@varco/queue": "workspace:*",
     "@varco/shared": "workspace:*",
-    "bullmq": "^5.53.2",
+    "bullmq": "^5.79.0",
     "drizzle-orm": "^0.45.2"
   },
   "devDependencies": {

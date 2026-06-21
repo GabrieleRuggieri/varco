@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@varco/shared": "workspace:*",
-    "bullmq": "^5.53.2"
+    "bullmq": "^5.79.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",

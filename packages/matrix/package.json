@@ -23,7 +23,7 @@
     "@varco/database": "workspace:*",
     "drizzle-orm": "^0.45.2",
     "yaml": "^2.8.0",
-    "zod": "^3.25.67"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
