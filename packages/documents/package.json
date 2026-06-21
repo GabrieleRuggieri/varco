@@ -28,10 +28,10 @@
     "pdfkit": "^0.17.1"
   },
   "devDependencies": {
-    "@types/node": "^22.15.29",
+    "@types/node": "^26.0.0",
     "@types/pdfkit": "^0.13.9",
     "@varco/tsconfig": "workspace:*",
     "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "typescript": "^6.0.3"
   }
 }

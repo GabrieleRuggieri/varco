@@ -25,8 +25,8 @@
     "bullmq": "^5.53.2"
   },
   "devDependencies": {
-    "@types/node": "^22.15.29",
+    "@types/node": "^26.0.0",
     "@varco/tsconfig": "workspace:*",
-    "typescript": "^5.8.3"
+    "typescript": "^6.0.3"
   }
 }

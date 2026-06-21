@@ -34,12 +34,12 @@
     "postgres": "^3.4.7"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
-    "@types/node": "^22.15.29",
+    "@types/bcryptjs": "^3.0.0",
+    "@types/node": "^26.0.0",
     "@varco/shared": "workspace:*",
     "@varco/tsconfig": "workspace:*",
     "drizzle-kit": "^0.31.1",
     "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "typescript": "^6.0.3"
   }
 }
