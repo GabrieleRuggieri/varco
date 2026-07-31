@@ -1,7 +1,10 @@
 # Varco — Architettura del sistema
 
-Documento di riferimento per l'implementazione del MVP Varco. Contesto prodotto in [README.md](./README.md); flusso software in [CODEMAP.md](./CODEMAP.md).  
-Obiettivo: stack eseguibile **in locale** con mock per servizi esterni non essenziali al core.
+Documento di riferimento per l'architettura Varco (target di prodotto + stack demo). Contesto in [README.md](./README.md); flusso software in [CODEMAP.md](./CODEMAP.md).
+
+> **Stato:** la demo locale è **conclusa** e gira **mock-only** (Shopify, LLM, partner). Sezioni su Ollama, OpenAI, connettori live e post-MVP descrivono l’architettura *prevista*, non funzionalità già presenti. Vedi [PROGRESS.md](./PROGRESS.md) e [BACKLOG.md](./BACKLOG.md).
+
+Obiettivo della demo: stack eseguibile **in locale** con mock per servizi esterni.
 
 ---
 
@@ -612,5 +615,5 @@ Ollama di solito gira **sull’host** (GPU/macOS), non nel container. Il worker/
 - [README.md](./README.md) — contesto prodotto e quick start
 - [CODEMAP.md](./CODEMAP.md) — flusso software end-to-end
 - [PROGRESS.md](./PROGRESS.md) — stato implementazione
-- [BACKLOG.md](./BACKLOG.md) — lavoro rimanente
+- [BACKLOG.md](./BACKLOG.md) — roadmap post-demo
 - [CONTRIBUTING.md](./CONTRIBUTING.md) — setup sviluppatore

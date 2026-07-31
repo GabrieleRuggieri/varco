@@ -4,6 +4,8 @@
 
 **Copilot IA de conformité pour vendre en Europe.**
 
+> **État du dépôt :** démo technique / proof-of-concept **terminée**. Flux local bout-en-bout avec **mocks uniquement** (Shopify, LLM, partenaires). Ce n’est pas un produit en production. Feuille de route optionnelle : [BACKLOG.md](./BACKLOG.md).
+
 Varco transforme les réglementations européennes sur les produits (GPSR, REP, étiquetage, PPWR) en une checklist opérationnelle par SKU, avec des brouillons de documents générés à partir de modèles validés — pour que les marques et les vendeurs puissent développer leurs ventes transfrontalières dans l'UE sans naviguer seuls dans des dizaines de portails et de consultants fragmentés.
 
 > **Important :** Varco accompagne la _préparation_ de documents et de données structurées. Ce n'est pas un conseil juridique et ne certifie pas la conformité du produit. Chaque sortie inclut des mentions de non-responsabilité explicites.
@@ -30,14 +32,15 @@ Marques D2C et vendeurs sur marketplace (Shopify, Amazon, Etsy) avec des catalog
 | **Générateur de documents GPSR** | Brouillons d'évaluation des risques, squelette de dossier technique, déclaration de conformité, éléments d'étiquetage — à partir de modèles par catégorie                         |
 | **RP et REP via partenaires**    | Orchestration de la nomination de Responsible Person et des enregistrements auprès des éco-organismes via des partenaires intégrés (Varco coordonne, ne fournit pas le service)   |
 
-### Périmètre MVP (v1)
+### Périmètre démo (figé)
 
-- **5 catégories** × **5 pays** : jouets, textile, accessoires électroniques, cosmétique, maison × Allemagne, France, Italie, Espagne, Pays-Bas
-- Connecteur catalogue (Shopify prioritaire ; Amazon en phase ultérieure)
-- Matrice d'obligations versionnée avec workflow de révision réglementaire
-- Fournisseur LLM abstrait : mock en CI, Ollama optionnel en développement local
+- **5 catégories** × **5 pays** : jouets, textile, accessoires électroniques, cosmétique, maison × DE, FR, IT, ES, NL
+- Catalogue : **mock Shopify** (`SHOPIFY_API_MODE=mock`) — pas d’OAuth live
+- Classification : uniquement `LLM_PROVIDER=mock` (Ollama/OpenAI non implémentés)
+- Matrice d'obligations en statut **bozza** (12 règles seed) avec disclaimer
+- Documents : un template PDF (`risk_assessment`)
 
-Fonctionnalités prévues dans les prochaines versions : radar réglementaire sur 27 pays, bouclier marketplace (sync attributs), DEEE/piles, espace de travail pour agences. Détail dans [BACKLOG.md](./BACKLOG.md).
+Idées au-delà de la démo : [BACKLOG.md](./BACKLOG.md).
 
 ## Comment ça marche (en bref)
 
@@ -94,7 +97,7 @@ Les entrées générées par la matrice apparaissent par **SKU × pays** : type 
 | Database  | PostgreSQL 16, Drizzle ORM                            |
 | Auth      | Auth.js v5                                            |
 | Storage   | MinIO (local) / S3 (production)                       |
-| LLM       | Fournisseur abstrait : `mock` \| `ollama` \| `openai` |
+| LLM       | Mock (fixtures) ; contrat abstrait pour d’éventuels providers futurs |
 
 ## Démarrage rapide
 
@@ -186,8 +189,8 @@ Conditions complètes : [LICENSE](./LICENSE).
 | ---------------------------------------------------- | -------------------------------------------------------------- |
 | [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Guide visuelle interactive du projet (ouvrir avec `pnpm dev`) |
 | [CODEMAP.md](./CODEMAP.md)                           | Flux logiciel end-to-end, API, worker, DB, intégrations        |
-| [PROGRESS.md](./PROGRESS.md)                         | État d'implémentation et historique des sessions               |
-| [BACKLOG.md](./BACKLOG.md)                           | Travail restant priorisé (MVP → post-MVP)                      |
+| [PROGRESS.md](./PROGRESS.md)                         | Démo terminée — historique d’implémentation                    |
+| [BACKLOG.md](./BACKLOG.md)                           | Feuille de route post-démo (optionnelle)                       |
 | [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Architecture système, domaines, décisions, modèle de données   |
 | [design/README.md](./design/README.md)               | Système visuel de référence (Replit-inspired)                  |
 | [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Tokens couleur, typographie, composants UI                     |

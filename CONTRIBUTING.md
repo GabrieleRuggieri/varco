@@ -10,7 +10,7 @@ Guida per chi sviluppa sul repository Varco — AI compliance copilot per vender
 2. Leggi [ARCHITECTURE.md](./ARCHITECTURE.md) (stack, domini, mock locali).
 3. Leggi [CODEMAP.md](./CODEMAP.md) (flusso software, API, worker, integrazioni).
 4. Apri la [guida interattiva](/guida) su `http://localhost:3000/guida` (con `pnpm dev`).
-5. Consulta [PROGRESS.md](./PROGRESS.md) (cosa è fatto) e [BACKLOG.md](./BACKLOG.md) (cosa manca).
+5. Consulta [PROGRESS.md](./PROGRESS.md) (demo conclusa) e [BACKLOG.md](./BACKLOG.md) (roadmap post-demo, opzionale).
 6. Leggi [design/README.md](./design/README.md) e [design/replit/DESIGN.md](./design/replit/DESIGN.md) (sistema visivo di riferimento).
 7. Consulta le issue aperte su GitHub per task specifici.
 
@@ -79,9 +79,9 @@ pnpm mock:test         # test route Shopify/partner
 curl http://localhost:4010/shopify/catalog/stats
 ```
 
-Con `LLM_PROVIDER=mock` e `SHOPIFY_API_MODE=mock` non servono chiavi API esterne.
+Con `LLM_PROVIDER=mock` e `SHOPIFY_API_MODE=mock` non servono chiavi API esterne — è l’unica modalità supportata dalla demo.
 
-Per testare la classificazione con un modello reale in locale, installa [Ollama](https://ollama.com) e imposta `LLM_PROVIDER=ollama` (vedi [ARCHITECTURE.md](./ARCHITECTURE.md) §17).
+Provider `ollama` / `openai` sono previsti in architettura ma **non implementati** (vedi [ARCHITECTURE.md](./ARCHITECTURE.md) §17 e [BACKLOG.md](./BACKLOG.md)).
 
 ---
 
@@ -140,19 +140,21 @@ git checkout -b feat/short-description
 
 ---
 
-## Aree di contributo
+## Aree di contributo (post-demo, su invito)
+
+La demo è chiusa. Eventuali contributi vanno oltre il perimetro mock — vedi [BACKLOG.md](./BACKLOG.md).
 
 ### Engineering
 
-- Connettori catalogo (Shopify live, Amazon mock → live)
-- Pipeline classificazione e integrazione matrix
-- Generatore documenti GPSR (template + PDF)
-- Dashboard checklist e UX seller
-- Worker, retry, osservabilità
+- Connettori catalogo live (Shopify, Amazon)
+- Provider LLM (Ollama / OpenAI) sullo stesso contratto del mock
+- Template documenti GPSR aggiuntivi
+- Checklist UX (update stato) e orchestrazione partner
+- Worker observability
 
 ### Regulatory / knowledge ops
 
-- Righe matrice in `packages/matrix/data/`
+- Righe matrice in `packages/matrix/data/` (da `bozza` a `approvata`)
 - Review template documenti per categoria
 - Validazione checklist seed 5 categorie × 5 paesi
 - Processo di changelog quando una norma cambia
@@ -163,7 +165,6 @@ git checkout -b feat/short-description
 
 - Flussi onboarding (collega catalogo → prima checklist)
 - Copy disclaimer e confini di responsabilità
-- Lead magnet «scanner 1 SKU gratis»
 - UI allineata a [design/replit/DESIGN.md](./design/replit/DESIGN.md) (token, componenti, do/don't)
 
 ---
@@ -202,7 +203,7 @@ git checkout -b feat/short-description
 
 - Preferire fixture deterministiche in `fixtures/`.
 - Test LLM: `LLM_PROVIDER=mock` — niente chiamate API in CI.
-- Test E2E opzionali in fase MVP; integration su catalog → classify → checklist è prioritario.
+- La demo usa fixture e test unitari; un E2E catalog → classify → checklist → PDF è in roadmap post-demo.
 
 ```bash
 pnpm test

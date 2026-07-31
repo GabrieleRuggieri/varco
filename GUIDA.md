@@ -2,6 +2,8 @@
 
 Guida visiva e interattiva a cosa fa Varco, per chi è pensato e come funziona il flusso compliance.
 
+> Il repository è una **demo tecnica conclusa** (mock-only). Vedi [PROGRESS.md](./PROGRESS.md).
+
 ## Apri la guida
 
 **In locale** (con `pnpm dev` attivo):
@@ -21,7 +23,7 @@ La pagina è pubblica — non serve login. Usa il design system Replit già pres
 | **Principio** | «La matrice decide, l'AI non inventa» |
 | **Flusso** | Pipeline animata a 5 passi + dettaglio operativo |
 | **Dashboard** | Walkthrough con screenshot delle 5 schermate |
-| **MVP** | 5 categorie × 5 paesi |
+| **MVP** | 5 categorie × 5 paesi (perimetro demo congelato) |
 | **Architettura** | Vista semplificata web → API → worker → dati |
 | **Avvio rapido** | Comandi per la demo locale |
 | **Documentazione** | Link a CODEMAP, PROGRESS, BACKLOG, ecc. |
@@ -29,8 +31,8 @@ La pagina è pubblica — non serve login. Usa il design system Replit già pres
 ## Documentazione correlata
 
 - [CODEMAP.md](./CODEMAP.md) — flusso tecnico dettagliato
-- [PROGRESS.md](./PROGRESS.md) — stato implementazione
-- [BACKLOG.md](./BACKLOG.md) — lavoro rimanente
+- [PROGRESS.md](./PROGRESS.md) — demo conclusa, cronologia
+- [BACKLOG.md](./BACKLOG.md) — roadmap post-demo (opzionale)
 - [ARCHITECTURE.md](./ARCHITECTURE.md) — decisioni architetturali
 - [README.md](./README.md) — panoramica e quick start
 

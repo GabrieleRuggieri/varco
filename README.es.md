@@ -4,6 +4,8 @@
 
 **Copiloto de IA de cumplimiento para vender en Europa.**
 
+> **Estado del repositorio:** demo técnica / proof-of-concept **cerrada**. Flujo local de extremo a extremo solo con **mocks** (Shopify, LLM, partners). No es un producto en producción. Roadmap opcional: [BACKLOG.md](./BACKLOG.md).
+
 Varco convierte la normativa europea de productos (GPSR, RAP, etiquetado, PPWR) en una checklist operativa por SKU, con borradores de documentos generados a partir de plantillas revisadas — para que marcas y vendedores puedan ampliar la venta transfronteriza en la UE sin navegar solos decenas de portales y consultores fragmentados.
 
 > **Importante:** Varco apoya la _preparación_ de documentos y datos estructurados. No es asesoramiento legal y no certifica la conformidad del producto. Cada salida incluye descargos de responsabilidad explícitos.
@@ -30,14 +32,15 @@ Marcas D2C y vendedores en marketplaces (Shopify, Amazon, Etsy) con catálogos d
 | **Generador de documentos GPSR** | Borradores de evaluación de riesgos, esqueleto de expediente técnico, declaración de conformidad, elementos de etiquetado — desde plantillas por categoría                   |
 | **RP y RAP vía partners**        | Orquestación de la designación de Responsible Person y registros en consorcios mediante partners integrados (Varco coordina, no presta el servicio)                          |
 
-### Alcance MVP (v1)
+### Alcance demo (congelado)
 
-- **5 categorías** × **5 países**: juguetes, textil, accesorios electrónicos, cosmética, hogar × Alemania, Francia, Italia, España, Países Bajos
-- Conector de catálogo (Shopify prioritario; Amazon en fase posterior)
-- Matriz de obligaciones versionada con flujo de revisión normativa
-- Proveedor LLM abstracto: mock en CI, Ollama opcional en desarrollo local
+- **5 categorías** × **5 países**: juguetes, textil, accesorios electrónicos, cosmética, hogar × DE, FR, IT, ES, NL
+- Catálogo: **mock Shopify** (`SHOPIFY_API_MODE=mock`) — sin OAuth live
+- Clasificación: solo `LLM_PROVIDER=mock` (Ollama/OpenAI no implementados)
+- Matriz de obligaciones en estado **bozza** (12 reglas seed) con disclaimer
+- Documentos: una plantilla PDF (`risk_assessment`)
 
-Funcionalidades previstas en versiones posteriores: radar normativo en 27 países, escudo marketplace (sync de atributos), RAEE/pilas, workspace para agencias. Detalle en [BACKLOG.md](./BACKLOG.md).
+Ideas más allá de la demo: [BACKLOG.md](./BACKLOG.md).
 
 ## Cómo funciona (resumen)
 
@@ -94,7 +97,7 @@ Las entradas generadas por la matriz aparecen por **SKU × país**: tipo de obli
 | Database   | PostgreSQL 16, Drizzle ORM                          |
 | Auth       | Auth.js v5                                          |
 | Storage    | MinIO (local) / S3 (producción)                     |
-| LLM        | Proveedor abstracto: `mock` \| `ollama` \| `openai` |
+| LLM        | Mock (fixtures); contrato abstracto para posibles providers futuros |
 
 ## Inicio rápido
 
@@ -186,8 +189,8 @@ Términos completos: [LICENSE](./LICENSE).
 | ---------------------------------------------------- | -------------------------------------------------------------- |
 | [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Guía visual interactiva del proyecto (abrir con `pnpm dev`)  |
 | [CODEMAP.md](./CODEMAP.md)                           | Flujo de software end-to-end, API, worker, BD, integraciones   |
-| [PROGRESS.md](./PROGRESS.md)                         | Estado de implementación e historial de sesiones               |
-| [BACKLOG.md](./BACKLOG.md)                           | Trabajo pendiente priorizado (MVP → post-MVP)                  |
+| [PROGRESS.md](./PROGRESS.md)                         | Demo cerrada — historial de implementación                     |
+| [BACKLOG.md](./BACKLOG.md)                           | Roadmap post-demo (opcional)                                   |
 | [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Arquitectura del sistema, dominios, decisiones, modelo de datos |
 | [design/README.md](./design/README.md)               | Sistema visual de referencia (Replit-inspired)                 |
 | [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Tokens de color, tipografía, componentes UI                    |

@@ -2,11 +2,13 @@
 
 AI compliance copilot for selling in Europe — turning EU product regulations (GPSR, EPR, labelling, PPWR) into actionable SKU checklists and document drafts.
 
+> **Repository status:** finished technical **demo / proof-of-concept**. Local end-to-end flow with **mocks only** (Shopify, LLM, partners). Not a production product. Optional future ideas: [BACKLOG.md](./BACKLOG.md) (Italian).
+
 ![Varco cover](./docs/cover.png)
 
 ## Readme by language
 
-Varco's MVP covers five markets. Choose your language:
+Demo markets: DE, FR, IT, ES, NL. Choose your language:
 
 |     | Language   | README                         |
 | --- | ---------- | ------------------------------ |
@@ -26,8 +28,8 @@ Project docs (CODEMAP, PROGRESS, BACKLOG, ARCHITECTURE, CONTRIBUTING) are in Ita
 | ---------------------------------------------------- | ------------------------------------------------------------ |
 | [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Interactive visual project guide (open with `pnpm dev`) |
 | [CODEMAP.md](./CODEMAP.md)                           | End-to-end software flow, API, worker, DB, integrations      |
-| [PROGRESS.md](./PROGRESS.md)                         | Implementation status and session history                    |
-| [BACKLOG.md](./BACKLOG.md)                           | Prioritized remaining work (MVP → post-MVP)                  |
+| [PROGRESS.md](./PROGRESS.md)                         | Finished demo — implementation history                       |
+| [BACKLOG.md](./BACKLOG.md)                           | Optional post-demo roadmap                                   |
 | [ARCHITECTURE.md](./ARCHITECTURE.md)                 | System architecture, domains, decisions, data model          |
 | [design/README.md](./design/README.md)               | Visual reference system (Replit-inspired)                    |
 | [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Color tokens, typography, UI components                        |

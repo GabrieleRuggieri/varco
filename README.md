@@ -4,7 +4,9 @@
 
 **Copilot AI di compliance per vendere in Europa.**
 
-Varco trasforma le normative europee sui prodotti (GPSR, EPR, etichettatura, PPWR) in una checklist operativa per SKU, con bozze di documenti generate da template revisionati — così brand e seller possono espandere la vendita cross-border nell'UE senza navigare da soli decine di portali e consulenti frammentati.
+> **Stato del repository:** demo tecnica / proof-of-concept **conclusa**. Flusso end-to-end locale con **solo mock** (Shopify, LLM, partner). Non è un prodotto in produzione né un MVP commercializzabile. La roadmap eventuale è in [BACKLOG.md](./BACKLOG.md).
+
+Varco trasforma le normative europee sui prodotti (GPSR, EPR, etichettatura, PPWR) in una checklist operativa per SKU, con bozze di documenti generate da template — così brand e seller possono espandere la vendita cross-border nell'UE senza navigare da soli decine di portali e consulenti frammentati.
 
 > **Importante:** Varco supporta la _preparazione_ di documenti e dati strutturati. Non è consulenza legale e non certifica la conformità del prodotto. Ogni output include disclaimer espliciti.
 
@@ -32,22 +34,23 @@ Brand D2C e seller su marketplace (Shopify, Amazon, Etsy) con cataloghi da 10 a 
 
 ## Cosa fa
 
-| Funzionalità                  | Descrizione                                                                                                                                                         |
+| Funzionalità                  | Cosa fa la demo                                                                                                                                                     |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Scansione catalogo**        | Collegamento a Shopify/Amazon; import titoli, descrizioni, materiali, immagini e mercati target                                                                     |
-| **Classificazione SKU**       | L'AI estrae attributi strutturati (categoria, materiali, età, ecc.); gli obblighi derivano da una **matrice curata da esperti**, non dall'output libero del modello |
-| **Checklist per paese**       | Obblighi con gravità, scadenze e stato operativo — da «27 paesi di legalese» a «le tue N azioni da fare»                                                            |
-| **Generatore documenti GPSR** | Bozze di risk assessment, scheletro fascicolo tecnico, dichiarazione di conformità, elementi di etichetta — da template per categoria                               |
-| **RP ed EPR via partner**     | Orchestrazione di nomina Responsible Person e registrazioni ai consorzi tramite partner integrati (Varco coordina, non eroga il servizio)                           |
+| **Scansione catalogo**        | Sync da **mock Shopify** (fixture ~21 SKU): titoli, materiali, categorie e mercati target                                                                           |
+| **Classificazione SKU**       | Provider LLM **mock** (fixture): attributi strutturati; gli obblighi derivano dalla **matrice**, non dall'output libero del modello                                 |
+| **Checklist per paese**       | Obblighi con gravità e stato operativo per SKU × paese (DE, FR, IT, ES, NL)                                                                                         |
+| **Generatore documenti GPSR** | Bozza PDF **risk assessment** (template toys) → MinIO                                                                                                               |
+| **Partner RP/EPR**            | Mock-server simula webhook; ingest in API (orchestrazione completa fuori perimetro demo)                                                                            |
 
-### Perimetro MVP (v1)
+### Perimetro demo (congelato)
 
 - **5 categorie** × **5 paesi**: giocattoli, tessile, accessori elettronici, cosmetica, casa × Germania, Francia, Italia, Spagna, Paesi Bassi
-- Connettore catalogo (Shopify prioritario; Amazon in fase successiva)
-- Matrice obblighi versionata con workflow di revisione normativa
-- Provider LLM astratto: mock in CI, Ollama opzionale in sviluppo locale
+- Catalogo: mock Shopify (`SHOPIFY_API_MODE=mock`) — nessun OAuth live
+- Classificazione: solo `LLM_PROVIDER=mock` (Ollama/OpenAI non implementati)
+- Matrice obblighi versionata in **bozza** (12 regole seed) con disclaimer
+- Documenti: un template PDF (`risk_assessment`)
 
-Funzionalità pianificate in release successive: radar normativo su 27 paesi, scudo marketplace (sync attributi), RAEE/batterie, workspace per agenzie. Dettaglio in [BACKLOG.md](./BACKLOG.md).
+Idee oltre la demo (connettori live, più template, radar 27 paesi, ecc.): [BACKLOG.md](./BACKLOG.md).
 
 ## Come funziona (in sintesi)
 
@@ -103,8 +106,8 @@ Le voci generate dalla matrice compaiono per **SKU × paese**: tipo obbligo (fas
 | Worker     | BullMQ + Redis                                    |
 | Database   | PostgreSQL 16, Drizzle ORM                        |
 | Auth       | Auth.js v5                                        |
-| Storage    | MinIO (locale) / S3 (produzione)                  |
-| LLM        | Provider astratto: `mock` \| `ollama` \| `openai` |
+| Storage    | MinIO (locale)                                    |
+| LLM        | Mock (fixture); contratto astratto per eventuali provider futuri |
 
 ## Avvio rapido
 
@@ -196,8 +199,8 @@ Vedi [LICENSE](./LICENSE) per i termini completi.
 | ---------------------------------------------------- | ------------------------------------------------------------ |
 | [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Guida visiva interattiva al progetto (apri con `pnpm dev`) |
 | [CODEMAP.md](./CODEMAP.md)                           | Flusso software end-to-end, API, worker, DB, integrazioni    |
-| [PROGRESS.md](./PROGRESS.md)                         | Stato implementazione e cronologia sessioni                  |
-| [BACKLOG.md](./BACKLOG.md)                           | Lavoro rimanente prioritizzato (MVP → post-MVP)              |
+| [PROGRESS.md](./PROGRESS.md)                         | Demo conclusa — cronologia di implementazione                |
+| [BACKLOG.md](./BACKLOG.md)                           | Roadmap post-demo (opzionale, non bloccante)                 |
 | [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Architettura di sistema, domini, decisioni, modello dati     |
 | [design/README.md](./design/README.md)               | Sistema visivo di riferimento (Replit-inspired)              |
 | [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Token colori, tipografia, componenti UI                      |

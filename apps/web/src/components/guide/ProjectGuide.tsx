@@ -39,11 +39,11 @@ function Section({
 const FLOW_STEPS = [
   {
     label: 'Catalogo',
-    sub: 'Shopify / Amazon',
+    sub: 'Shopify mock',
     color: '#2492ff',
     bg: 'rgba(36, 146, 255, 0.1)',
     icon: IconBox,
-    detail: 'Importi prodotti, varianti SKU, materiali e mercati target dal tuo store.',
+    detail: 'Importi prodotti, varianti SKU, materiali e mercati target dal mock Shopify della demo.',
   },
   {
     label: 'Classifica',
@@ -144,7 +144,7 @@ const DOCS = [
   {
     href: 'https://github.com/GabrieleRuggieri/varco/blob/main/BACKLOG.md',
     name: 'BACKLOG',
-    desc: 'Lavoro rimanente',
+    desc: 'Roadmap post-demo',
   },
   {
     href: 'https://github.com/GabrieleRuggieri/varco/blob/main/ARCHITECTURE.md',
@@ -205,7 +205,7 @@ export function ProjectGuide() {
         <section className={styles.hero}>
           <div className={styles.heroBadge}>
             <span className={styles.heroBadgeDot} />
-            GPSR · EPR · UE — MVP demo
+            GPSR · EPR · UE — demo tecnica
           </div>
           <h1 className={styles.heroTitle}>Compliance europea, una checklist alla volta</h1>
           <p className={styles.heroLead}>
@@ -241,8 +241,9 @@ export function ProjectGuide() {
           <p className={styles.eyebrow}>Per chi è Varco</p>
           <h2 className={styles.title}>Brand D2C e seller su marketplace</h2>
           <p className={styles.lead}>
-            Shopify, Amazon, Etsy — giocattoli, cosmetica, elettronica, tessile, casa. Per chi vende
-            o vuole vendere in Germania, Francia, Italia, Spagna e Paesi Bassi.
+            Shopify (mock in demo), marketplace in roadmap — giocattoli, cosmetica, elettronica,
+            tessile, casa. Per chi vende o vuole vendere in Germania, Francia, Italia, Spagna e
+            Paesi Bassi.
           </p>
           <div className={styles.pillGrid}>
             {[
@@ -278,8 +279,8 @@ export function ProjectGuide() {
               </div>
               <h3 className={styles.cardTitle}>Scansione catalogo</h3>
               <p className={styles.cardBody}>
-                Collegamento a Shopify (prioritario) e Amazon. Import titoli, descrizioni,
-                materiali, immagini e mercati target in un database strutturato per SKU.
+                Sync dal mock Shopify della demo. Import titoli, descrizioni, materiali, immagini e
+                mercati target in un database strutturato per SKU.
               </p>
             </div>
             <div className={`${styles.cardShine} ${styles.bentoNarrow}`}>
@@ -422,10 +423,10 @@ export function ProjectGuide() {
 
         {/* MVP */}
         <Section id="mvp">
-          <p className={styles.eyebrow}>Perimetro MVP</p>
+          <p className={styles.eyebrow}>Perimetro demo</p>
           <h2 className={styles.title}>5 categorie × 5 paesi</h2>
           <p className={styles.lead}>
-            Versione v1 focalizzata sui mercati e verticali più comuni per seller cross-border.
+            Demo tecnica conclusa (mock-only): mercati e verticali tipici per seller cross-border.
             Matrice in stato bozza con disclaimer visibile — non afferma conformità legale.
           </p>
           <div className={styles.pillGrid}>
@@ -469,7 +470,7 @@ export function ProjectGuide() {
           <div className={`${styles.card} ${styles.bentoFull}`} style={{ marginTop: '1.5rem' }}>
             <h3 className={styles.cardTitle}>Job asincroni principali</h3>
             <p className={styles.cardBody}>
-              <strong>catalog.sync</strong> — import prodotti da Shopify mock/live ·{' '}
+              <strong>catalog.sync</strong> — import prodotti da Shopify mock ·{' '}
               <strong>sku.classify</strong> — LLM mock + matchRules sulla matrice ·{' '}
               <strong>document.generate</strong> — PDF risk assessment in MinIO
             </p>
@@ -501,8 +502,7 @@ pnpm demo:populate   # secondo terminale
           <p className={styles.eyebrow}>Approfondimenti</p>
           <h2 className={styles.title}>Documentazione tecnica</h2>
           <p className={styles.lead}>
-            Per sviluppatori e contributor: architettura, code map, backlog e progress nel
-            repository.
+            Per sviluppatori: architettura, code map, roadmap post-demo e progress nel repository.
           </p>
           <div className={styles.docGrid}>
             {DOCS.map((doc) => (

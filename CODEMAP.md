@@ -1,7 +1,8 @@
 # Varco — Code map
 
-Mappa del software: struttura del monorepo, flussi end-to-end, API, job asincroni, dati e integrazioni.  
-Per lo stato di implementazione vedi [PROGRESS.md](./PROGRESS.md). Per il lavoro rimanente vedi [BACKLOG.md](./BACKLOG.md).
+Mappa del software: struttura del monorepo, flussi end-to-end, API, job asincroni, dati e integrazioni.
+
+**Contesto:** demo tecnica **conclusa** (mock-only). Stato in [PROGRESS.md](./PROGRESS.md); idee oltre la demo in [BACKLOG.md](./BACKLOG.md).
 
 ---
 
@@ -291,7 +292,7 @@ flowchart LR
 | `@varco/shared` | `MVP_COUNTRIES`, `MVP_PRODUCT_CATEGORIES`, nomi job, `DOCUMENT_TEMPLATE_IDS` |
 | `@varco/database` | 18 tabelle Drizzle; CLI `db:migrate`, `db:seed` |
 | `@varco/matrix` | `matrix-v0.yaml`, `matchRules()`, CLI `matrix:validate`, `matrix:seed` |
-| `@varco/classification` | `classifySku()` — mock attivo; ollama/openai da implementare |
+| `@varco/classification` | `classifySku()` — solo mock nella demo; ollama/openai fuori perimetro |
 | `@varco/documents` | `generateDocument()` — solo template `risk_assessment` (pdfkit) |
 | `@varco/queue` | `enqueueCatalogSync`, `enqueueSkuClassify`, `enqueueDocumentGenerate` |
 | `@varco/auth` | `signApiAccessToken`, `verifyApiAccessToken` |
@@ -338,21 +339,21 @@ erDiagram
 |------|-----------|
 | `0000_init.sql` | Schema core |
 | `0001_auth.sql` | Tabelle Auth.js |
-| `0002_rls.sql` | Row Level Security (policy definite, **non cablate in app**) |
+| `0002_rls.sql` | Row Level Security base |
+| `0003_auth_rls_policies.sql` | Policy RLS auth; helper `withOrgContext` / `withUserContext` in app |
 
 ---
 
 ## 10. Integrazioni esterne
 
-| Integrazione | Stato attuale | Config env | Implementazione |
-|--------------|---------------|------------|-----------------|
+| Integrazione | Stato demo | Config env | Implementazione |
+|--------------|------------|------------|-----------------|
 | Shopify | **mock** | `SHOPIFY_API_MODE=mock` | `mocks/mock-server` + worker client |
-| Amazon SP-API | **stub** | `AMAZON_API_MODE=mock` | Endpoint vuoto su mock-server |
+| Amazon SP-API | **stub** (fuori perimetro) | `AMAZON_API_MODE=mock` | Endpoint vuoto su mock-server |
 | LLM | **mock** | `LLM_PROVIDER=mock` | `fixtures/llm-classifications/` |
-| LLM Ollama | pianificato | `LLM_PROVIDER=ollama` | throw in `classify.ts` |
-| LLM OpenAI | pianificato | `LLM_PROVIDER=openai` | throw in `classify.ts` |
+| LLM Ollama / OpenAI | **non implementati** | — | `classify.ts` rifiuta provider ≠ mock |
 | MinIO/S3 | **reale** (locale) | `S3_*` in `.env` | `@varco/documents` via AWS SDK |
-| Partner RP/EPR | **mock** | `PARTNER_API_MODE=mock` | mock-server + webhook simulato |
+| Partner RP/EPR | **mock** (ingest only) | `PARTNER_API_MODE=mock` | mock-server + webhook simulato |
 | Redis | **reale** (locale) | `REDIS_URL` | BullMQ |
 | PostgreSQL | **reale** (locale) | `DATABASE_URL` | Drizzle |
 | Mailhog | infra only | — | Nessun flusso email in app |
@@ -388,7 +389,7 @@ sequenceDiagram
 - API: guard JWT globale; eccezioni: `/health`, `/internal/partner-webhook`
 - Webhook partner: header secret (`WEBHOOK_SECRET`)
 - Rate limiting: ThrottlerModule NestJS
-- RLS Postgres: migration presente, isolamento tenant oggi a livello applicativo
+- RLS Postgres: migration + helper `withOrgContext` / `withUserContext`; isolamento tenant a livello applicativo nella demo
 
 ---
 
@@ -413,7 +414,7 @@ GitHub Actions (`.github/workflows/ci.yml`): lint, test, typecheck, matrix valid
 
 - [README](./README.md) — panoramica prodotto e quick start
 - [ARCHITECTURE.md](./ARCHITECTURE.md) — decisioni architetturali e modello target
-- [PROGRESS.md](./PROGRESS.md) — cosa è stato completato
-- [BACKLOG.md](./BACKLOG.md) — cosa manca
+- [PROGRESS.md](./PROGRESS.md) — demo conclusa, cronologia
+- [BACKLOG.md](./BACKLOG.md) — roadmap post-demo (opzionale)
 - [CONTRIBUTING.md](./CONTRIBUTING.md) — setup sviluppatore
 - [design/replit/DESIGN.md](./design/replit/DESIGN.md) — UI dashboard

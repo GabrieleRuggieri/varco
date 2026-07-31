@@ -4,7 +4,9 @@
 
 **KI-Compliance-Copilot für den Verkauf in Europa.**
 
-Varco wandelt europäische Produktregulierungen (GPSR, EPR, Kennzeichnung, PPWR) in eine operative Checkliste pro SKU um — mit aus geprüften Vorlagen generierten Dokumententwürfen. So können Brands und Seller den grenzüberschreitenden Verkauf in der EU ausbauen, ohne Dutzende fragmentierter Portale und Berater allein navigieren zu müssen.
+> **Repository-Status:** abgeschlossene technische **Demo / Proof-of-Concept**. End-to-End lokal nur mit **Mocks** (Shopify, LLM, Partner). Kein Produktionsprodukt. Optionale Roadmap: [BACKLOG.md](./BACKLOG.md).
+
+Varco wandelt europäische Produktregulierungen (GPSR, EPR, Kennzeichnung, PPWR) in eine operative Checkliste pro SKU um — mit aus Vorlagen generierten Dokumententwürfen. So können Brands und Seller den grenzüberschreitenden Verkauf in der EU ausbauen, ohne Dutzende fragmentierter Portale und Berater allein navigieren zu müssen.
 
 > **Wichtig:** Varco unterstützt die _Vorbereitung_ von Dokumenten und strukturierten Daten. Es ist keine Rechtsberatung und zertifiziert nicht die Produktkonformität. Jeder Output enthält ausdrückliche Haftungsausschlüsse.
 
@@ -30,14 +32,15 @@ D2C-Brands und Marketplace-Seller (Shopify, Amazon, Etsy) mit Katalogen von 10 b
 | **GPSR-Dokumentengenerator** | Entwürfe für Risikobewertung, technische Dokumentation, Konformitätserklärung, Kennzeichnungselemente — aus kategoriespezifischen Vorlagen                                 |
 | **RP und EPR über Partner**  | Orchestrierung der Benennung einer Responsible Person und Registrierungen bei Konsortien über integrierte Partner (Varco koordiniert, erbringt den Service nicht)          |
 
-### MVP-Umfang (v1)
+### Demo-Umfang (eingefroren)
 
-- **5 Kategorien** × **5 Länder**: Spielzeug, Textil, elektronisches Zubehör, Kosmetik, Haushalt × Deutschland, Frankreich, Italien, Spanien, Niederlande
-- Katalog-Connector (Shopify priorisiert; Amazon in späterer Phase)
-- Versionierte Pflichtenmatrix mit Workflow zur regulatorischen Prüfung
-- Abstrahierter LLM-Provider: Mock in CI, Ollama optional in lokaler Entwicklung
+- **5 Kategorien** × **5 Länder**: Spielzeug, Textil, elektronisches Zubehör, Kosmetik, Haushalt × DE, FR, IT, ES, NL
+- Katalog: **Mock Shopify** (`SHOPIFY_API_MODE=mock`) — kein Live-OAuth
+- Klassifizierung: nur `LLM_PROVIDER=mock` (Ollama/OpenAI nicht implementiert)
+- Pflichtenmatrix im Status **bozza** (12 Seed-Regeln) mit Disclaimer
+- Dokumente: ein PDF-Template (`risk_assessment`)
 
-Geplant für spätere Releases: Regulierungsradar für 27 Länder, Marketplace-Schutz (Attribut-Sync), WEEE/Batterien, Workspace für Agenturen. Details in [BACKLOG.md](./BACKLOG.md).
+Ideen über die Demo hinaus: [BACKLOG.md](./BACKLOG.md).
 
 ## So funktioniert es (Kurzüberblick)
 
@@ -94,7 +97,7 @@ Aus der Matrix erzeugte Einträge erscheinen pro **SKU × Land**: Pflichttyp (te
 | Database   | PostgreSQL 16, Drizzle ORM                             |
 | Auth       | Auth.js v5                                             |
 | Storage    | MinIO (lokal) / S3 (Produktion)                        |
-| LLM        | Abstrahierter Provider: `mock` \| `ollama` \| `openai` |
+| LLM        | Mock (Fixtures); abstrakter Vertrag für mögliche künftige Provider |
 
 ## Schnellstart
 
@@ -186,8 +189,8 @@ Vollständige Bedingungen: [LICENSE](./LICENSE).
 | ---------------------------------------------------- | -------------------------------------------------------------- |
 | [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Interaktive visuelle Projektanleitung (mit `pnpm dev` öffnen) |
 | [CODEMAP.md](./CODEMAP.md)                           | End-to-End-Softwarefluss, API, Worker, DB, Integrationen       |
-| [PROGRESS.md](./PROGRESS.md)                         | Implementierungsstand und Sitzungschronik                        |
-| [BACKLOG.md](./BACKLOG.md)                           | Priorisierte offene Arbeit (MVP → Post-MVP)                      |
+| [PROGRESS.md](./PROGRESS.md)                         | Abgeschlossene Demo — Implementierungschronik                    |
+| [BACKLOG.md](./BACKLOG.md)                           | Optionale Roadmap nach der Demo                                  |
 | [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Systemarchitektur, Domänen, Entscheidungen, Datenmodell        |
 | [design/README.md](./design/README.md)               | Visuelles Referenzsystem (Replit-inspired)                     |
 | [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Farb-Tokens, Typografie, UI-Komponenten                          |

@@ -23,7 +23,9 @@ export async function classifySku(
       return classifyWithMock(ctx);
     case 'ollama':
     case 'openai':
-      throw new Error(`Provider LLM "${provider}" non ancora implementato — usa mock in sviluppo`);
+      throw new Error(
+        `Provider LLM "${provider}" fuori perimetro demo — usa LLM_PROVIDER=mock`,
+      );
     default:
       return classifyWithMock(ctx);
   }

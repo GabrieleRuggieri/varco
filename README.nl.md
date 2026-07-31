@@ -4,6 +4,8 @@
 
 **AI-compliancecopilot voor verkopen in Europa.**
 
+> **Repositorystatus:** afgeronde technische **demo / proof-of-concept**. Lokale end-to-end flow alleen met **mocks** (Shopify, LLM, partners). Geen productieproduct. Optionele roadmap: [BACKLOG.md](./BACKLOG.md).
+
 Varco zet Europese productregelgeving (GPSR, EPR, etikettering, PPWR) om in een operationele checklist per SKU, met conceptdocumenten gegenereerd uit gecontroleerde sjablonen — zodat merken en verkopers grensoverschrijdende verkoop in de EU kunnen uitbreiden zonder alleen tientallen gefragmenteerde portalen en adviseurs te moeten doorlopen.
 
 > **Belangrijk:** Varco ondersteunt de _voorbereiding_ van documenten en gestructureerde data. Het is geen juridisch advies en certificeert de productconformiteit niet. Elke output bevat expliciete disclaimers.
@@ -30,14 +32,15 @@ D2C-merken en marketplace-verkopers (Shopify, Amazon, Etsy) met catalogi van 10 
 | **GPSR-documentgenerator** | Concepten voor risicobeoordeling, technisch dossier, conformiteitsverklaring, etiketteringselementen — uit categorie-specifieke sjablonen                                            |
 | **RP en EPR via partners** | Orchestratie van benoeming Responsible Person en registraties bij producentenverantwoordelijkheidsorganisaties via geïntegreerde partners (Varco coördineert, levert de dienst niet) |
 
-### MVP-scope (v1)
+### Demo-scope (bevroren)
 
-- **5 categorieën** × **5 landen**: speelgoed, textiel, elektronische accessoires, cosmetica, huishouden × Duitsland, Frankrijk, Italië, Spanje, Nederland
-- Cataloguskoppeling (Shopify prioriteit; Amazon in latere fase)
-- Geversioneerde verplichtingenmatrix met workflow voor regelgevingsreview
-- Abstracte LLM-provider: mock in CI, Ollama optioneel in lokale ontwikkeling
+- **5 categorieën** × **5 landen**: speelgoed, textiel, elektronische accessoires, cosmetica, huishouden × DE, FR, IT, ES, NL
+- Catalogus: **mock Shopify** (`SHOPIFY_API_MODE=mock`) — geen live OAuth
+- Classificatie: alleen `LLM_PROVIDER=mock` (Ollama/OpenAI niet geïmplementeerd)
+- Verplichtingenmatrix in status **bozza** (12 seed-regels) met disclaimer
+- Documenten: één PDF-sjabloon (`risk_assessment`)
 
-Gepland in latere releases: regelgevingsradar voor 27 landen, marketplace-schild (attribuutsync), WEEE/batterijen, workspace voor bureaus. Details in [BACKLOG.md](./BACKLOG.md).
+Ideeën voorbij de demo: [BACKLOG.md](./BACKLOG.md).
 
 ## Hoe het werkt (kort)
 
@@ -94,7 +97,7 @@ Items uit de matrix verschijnen per **SKU × land**: type verplichting (technisc
 | Database  | PostgreSQL 16, Drizzle ORM                         |
 | Auth      | Auth.js v5                                         |
 | Storage   | MinIO (lokaal) / S3 (productie)                    |
-| LLM       | Abstracte provider: `mock` \| `ollama` \| `openai` |
+| LLM       | Mock (fixtures); abstract contract voor eventuele toekomstige providers |
 
 ## Snelstart
 
@@ -186,8 +189,8 @@ Volledige voorwaarden: [LICENSE](./LICENSE).
 | ---------------------------------------------------- | -------------------------------------------------------------- |
 | [GUIDA.md](./GUIDA.md) · [/guida](http://localhost:3000/guida) | Interactieve visuele projectgids (openen met `pnpm dev`)     |
 | [CODEMAP.md](./CODEMAP.md)                           | End-to-end softwareflow, API, worker, DB, integraties        |
-| [PROGRESS.md](./PROGRESS.md)                         | Implementatiestatus en sessiegeschiedenis                      |
-| [BACKLOG.md](./BACKLOG.md)                           | Geprioriteerd resterend werk (MVP → post-MVP)                  |
+| [PROGRESS.md](./PROGRESS.md)                         | Demo afgerond — implementatiegeschiedenis                      |
+| [BACKLOG.md](./BACKLOG.md)                           | Optionele roadmap na de demo                                   |
 | [ARCHITECTURE.md](./ARCHITECTURE.md)                 | Systeemarchitectuur, domeinen, beslissingen, datamodel         |
 | [design/README.md](./design/README.md)               | Visueel referentiesysteem (Replit-inspired)                    |
 | [design/replit/DESIGN.md](./design/replit/DESIGN.md) | Kleurtokens, typografie, UI-componenten                        |
