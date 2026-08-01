@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@varco/shared": "workspace:*",
-    "zod": "^3.25.67"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
